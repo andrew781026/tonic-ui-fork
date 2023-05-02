@@ -1,6 +1,7 @@
 const glob = require("glob")
 const fs = require("fs")
-const { PassThrough } = require("stream")
+const {PassThrough} = require("stream")
+const {execSync} = require('child_process');
 
 const args = process.argv.slice(2)
 const [src, dest] = args
@@ -9,6 +10,7 @@ const mergeFiles = (
   files,
   output,
 ) => {
+
   const writable = fs.createWriteStream(output)
 
   let source = PassThrough()
@@ -17,8 +19,8 @@ const mergeFiles = (
 
   const newFiles = [...files]
   const writeOneFile = (file, nextFile) => {
-    const readable = fs.createReadStream(file, { encoding: "utf8" })
-    readable.pipe(source, { end: false })
+    const readable = fs.createReadStream(file, {encoding: "utf8"})
+    readable.pipe(source, {end: false})
     readable.on("end", () => {
       source.write("\n")
       if (nextFile) writeOneFile(nextFile, newFiles.pop()) // 造成一個遞迴
@@ -39,4 +41,11 @@ const mergeFiles = (
   source.on("error", err => console.error(err))
 }
 
+const cat = (src, dest) => {
+  const isWin = process.platform === "win32";
+  if (isWin) execSync(`type ${src} > ${dest}`)
+  else execSync(`cat ${src} > ${dest}`)
+}
+
 mergeFiles(glob.sync(src), dest)
+// cat(src, dest)
