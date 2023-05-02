@@ -10,10 +10,9 @@
     "precomponents": "postcss --config src/components src/components/**/*.scss --base src --dir dist",
     "components": "node utils/mergeFile.js dist/components/*.scss dist/component.css",
     "postcomponents": "prejss-cli dist/component.css --format commonjs",
-    "full": "postcss src/full/index.css -o dist/full.css --config src/full",
     "build": "npm run base && npm run components",
-    "dev": "cd doc && npm run dev",
-    "add": "touch src/components/unstyled/$npm_config_name.css && touch src/components/styled/$npm_config_name.css"
+    "full": "npm run build && postcss src/full/index.css -o dist/full.css --config src/full",
+    "dev": "npm run build && cd doc && npm run dev"
   },
   "repository": {
     "type": "git",
