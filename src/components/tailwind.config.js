@@ -18,7 +18,6 @@ module.exports = {
   plugins: [
     plugin(function ({addBase, addUtilities}) {
       addBase(require("../../dist/base"));
-      // addUtilities(require("tailwindcss/utilities"));
     }),
   ],
 };

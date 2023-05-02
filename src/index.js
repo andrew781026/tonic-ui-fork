@@ -3,6 +3,7 @@ const tailwindColors = require('tailwindcss/colors')
 
 const colors = require("./colors/index");
 const base = require("../dist/base");
+const component = require("../dist/component");
 
 // ref - https://github.com/saadeghi/daisyui/blob/master/src/index.js
 const mainFunction = ({addBase, addComponents, addUtilities, config, postcss, e, prefix}) => {
@@ -25,9 +26,7 @@ const mainFunction = ({addBase, addComponents, addUtilities, config, postcss, e,
     addBase(base);
 
     // inject components
-    // because rollupjs doesn't support dynamic require
-    let file = styled;
-    addComponents(file);
+    addComponents(component);
 };
 
 module.exports = require("tailwindcss/plugin")(mainFunction, {

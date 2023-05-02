@@ -7,8 +7,11 @@
     "prebase": "postcss --config src/base src/base/*.css --base src --dir dist",
     "base": "node utils/mergeFile.js dist/base/*.css dist/base.css",
     "postbase": "prejss-cli dist/base.css --format commonjs",
-    "components": "postcss --config src/components src/components/**/*.scss --base src --dir dist",
-    "build": "npm run base && npm run utilities:styled && npm run components",
+    "precomponents": "postcss --config src/components src/components/**/*.scss --base src --dir dist",
+    "components": "node utils/mergeFile.js dist/components/*.scss dist/component.css",
+    "postcomponents": "prejss-cli dist/component.css --format commonjs",
+    "full": "postcss src/full/index.css -o dist/full.css --config src/full",
+    "build": "npm run base && npm run components",
     "dev": "cd src/docs && npm run dev",
     "add": "touch src/components/unstyled/$npm_config_name.css && touch src/components/styled/$npm_config_name.css"
   },
