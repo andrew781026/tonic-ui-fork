@@ -14,7 +14,7 @@ const args = process.argv.slice(2)
 const [src, dest] = args
 
 fs.readFile(src, (err, css) => {
-
+  if (err) throw err
   const root = postcss.parse(css)
-  fs.writeFileSync(dest, 'module.exports ='+JSON.stringify(postcssJs.objectify(root)))
+  fs.writeFileSync(dest, 'module.exports =' + JSON.stringify(postcssJs.objectify(root)))
 })

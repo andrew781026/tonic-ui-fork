@@ -6,10 +6,10 @@
   "scripts": {
     "prebase": "postcss --config src/base src/base/*.css --base src --dir dist",
     "base": "node utils/mergeFile.js 'dist/base/*.css' 'dist/base.css'",
-    "postbase": "node utils/prejss.js dist/base.css dist/base.js",
+    "postbase": "node utils/cssToObj.js dist/base.css dist/base.js",
     "precomponents": "postcss --config src/components src/components/**/*.scss --base src --dir dist",
     "components": "node utils/mergeFile.js 'dist/components/*.scss' 'dist/component.css'",
-    "postcomponents": "node utils/prejss.js dist/component.css dist/component.js",
+    "postcomponents": "node utils/cssToObj.js dist/component.css dist/component.js",
     "build": "npm run base && npm run components",
     "full": "npm run build && postcss src/full/index.css -o dist/full.css --config src/full",
     "dev": "npm run build && cd doc && npm run dev"

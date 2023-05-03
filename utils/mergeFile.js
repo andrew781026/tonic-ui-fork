@@ -47,7 +47,7 @@ const cat = (src, dest) => {
   else execSync(`cat ${src} > ${dest}`)
 }
 
-console.log(src, dest)
-
-mergeFiles(glob.sync(src), dest)
+const newSrc = src.replace(/'/g, "")
+const newDest = dest.replace(/'/g, "")
+mergeFiles(glob.sync(newSrc), newDest)
 // cat(src, dest)
