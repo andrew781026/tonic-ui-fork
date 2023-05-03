@@ -12,6 +12,7 @@
     "postcomponents": "node utils/cssToObj.js dist/component.css dist/component.js",
     "build": "npm run base && npm run components",
     "full": "npm run build && postcss src/full/index.css -o dist/full.css --config src/full",
+    "doc:build": "npm run build && cd doc && npm run build",
     "dev": "npm run build && cd doc && npm run dev"
   },
   "repository": {
