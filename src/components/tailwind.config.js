@@ -11,7 +11,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        ...require("../colors/themes")["[data-theme=light]"],
+        ...require("../colors/themes")["[data-theme=default]"],
       }
     }
   },

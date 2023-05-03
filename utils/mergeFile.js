@@ -47,5 +47,7 @@ const cat = (src, dest) => {
   else execSync(`cat ${src} > ${dest}`)
 }
 
+console.log(src, dest)
+
 mergeFiles(glob.sync(src), dest)
 // cat(src, dest)

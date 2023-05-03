@@ -22,7 +22,7 @@ module.exports = {
     "--btn-focus-scale": "1",
     "--tab-radius": "0",
   },
-  "[data-theme=light]": {
+  "[data-theme=default]": {
     "color-scheme": "light",
     transparent: 'transparent',
     current: 'currentColor',
