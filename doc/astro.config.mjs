@@ -6,6 +6,7 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
+  site: 'https://andrew781026.github.io',
+  base: '/tonic-ui-fork',
   integrations: [mdx(), sitemap(), tailwind()]
 });

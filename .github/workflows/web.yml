@@ -22,6 +22,9 @@ on:
         required: false
         default: '2019-12-15T00:00:00.00+08:00 ( [date]T[time]+[timezone] )'
 
+# permissions
+permissions:
+  contents: write
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -41,11 +44,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: install dependencies
-        run: npm i
-
-      # doc dependencies install
-      - name: install dependencies
-        run: cd doc && npm i
+        run: npm i && cd doc && npm i
 
       # Runs a single command using the runners shell
       - name: try to build the project
