@@ -1,0 +1,41 @@
+{
+  "name": "tonic-ui-fork",
+  "version": "0.0.1",
+  "description": "tonic-ui for tailwind version",
+  "main": "index.js",
+  "scripts": {
+    "prebase": "postcss --config src/base src/base/*.css --base src --dir dist",
+    "base": "node utils/mergeFile.js 'dist/base/*.css' 'dist/base.css'",
+    "postbase": "node utils/cssToObj.js dist/base.css dist/base.js",
+    "precomponents": "postcss --config src/components src/components/**/*.scss --base src --dir dist",
+    "components": "node utils/mergeFile.js 'dist/components/*.scss' 'dist/component.css'",
+    "postcomponents": "node utils/cssToObj.js dist/component.css dist/component.js",
+    "build": "npm run base && npm run components",
+    "full": "npm run build && postcss src/full/index.css -o dist/full.css --config src/full",
+    "doc:build": "npm run build && cd doc && npm run build",
+    "dev": "npm run build && cd doc && npm run dev"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew781026/tonic-ui-fork.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrew781026/tonic-ui-fork/issues"
+  },
+  "homepage": "https://github.com/andrew781026/tonic-ui-fork#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "glob": "^10.2.2",
+    "gulp": "^4.0.2",
+    "postcss": "^8.4.23",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "postcss-nested": "^6.0.1",
+    "postcss-nesting": "^11.2.2",
+    "tailwindcss": "^3.3.2",
+    "postcss-js": "^4.0.1"
+  }
+}
