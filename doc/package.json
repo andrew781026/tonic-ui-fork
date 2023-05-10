@@ -17,6 +17,6 @@
     "astro": "^2.3.3",
     "daisyui": "^2.51.6",
     "tailwindcss": "^3.3.2",
-    "consumer-tonic-ui": "git+ssh://git@github.com/andrew781026/tonic-ui-fork.git#lib"
+    "consumer-tonic-ui": "file:../dist"
   }
 }

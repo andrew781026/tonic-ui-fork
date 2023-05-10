@@ -50,16 +50,6 @@ jobs:
       - name: try to build the project
         run: npm run doc:build
 
-      # Deploy to local repo
-      - name: Deploy Lib
-        uses: s0/git-publish-subdir-action@develop
-        env:
-         REPO: self
-         BRANCH: lib
-         FOLDER: dist
-         TARGET_DIR: dist
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
       # use actions-gh-pages to deploy dist to gh-pages
       - name: Deploy Doc
         uses: peaceiris/actions-gh-pages@v3
