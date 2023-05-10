@@ -10,7 +10,9 @@
     "precomponents": "postcss --config src/components src/components/**/*.scss --base src --dir dist",
     "components": "node utils/mergeFile.js 'dist/components/*.scss' 'dist/component.css'",
     "postcomponents": "node utils/cssToObj.js dist/component.css dist/component.js",
-    "build": "npm run base && npm run components",
+    "colors": "cp -r 'src/colors' 'dist/colors'",
+    "root": "cp -r 'src/index.js' 'dist/index.js'",
+    "build": "npm run base && npm run components && npm run colors && npm run root",
     "full": "npm run build && postcss src/full/index.css -o dist/full.css --config src/full",
     "doc:build": "npm run build && cd doc && npm run build",
     "dev": "npm run build && cd doc && npm run dev"
@@ -33,9 +35,9 @@
     "postcss": "^8.4.23",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
+    "postcss-js": "^4.0.1",
     "postcss-nested": "^6.0.1",
     "postcss-nesting": "^11.2.2",
-    "tailwindcss": "^3.3.2",
-    "postcss-js": "^4.0.1"
+    "tailwindcss": "^3.3.2"
   }
 }

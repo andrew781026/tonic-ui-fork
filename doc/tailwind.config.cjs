@@ -5,6 +5,6 @@ module.exports = {
 		extend: {},
 	},
 	plugins: [
-    require('../src/index.js'),
+    require('../dist/index.js'),
   ],
 }

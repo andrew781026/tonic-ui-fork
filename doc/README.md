@@ -22,6 +22,11 @@ Features:
 - ✅ RSS Feed support
 - ✅ Markdown & MDX support
 
+## Relate Design
+
+- [Consumer Design - Token](https://www.figma.com/file/3IUPRpbFX7r0xU9kh05fQ1/%F0%9F%8F%A0-Consumer-Tonic---Style-Guide?type=design&t=016tpmvuG5m9Xiez-0)
+- [Consumer Design - UI Components](https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=8-0&t=IaocdYkmZCvbKuWy-0)
+
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
