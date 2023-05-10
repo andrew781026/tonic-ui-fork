@@ -4,7 +4,10 @@ module.exports = {
 	theme: {
 		extend: {},
 	},
+  tonicui: {
+    themes: ["dark","cupcake","cyberpunk"],
+  },
 	plugins: [
-    require('consumer-tonic-ui/dist/index.js'),
+    require('../dist/index.js'),
   ],
 }
