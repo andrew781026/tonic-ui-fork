@@ -5,6 +5,6 @@ module.exports = {
 		extend: {},
 	},
 	plugins: [
-    require('../dist/index.js'),
+    require('consumer-tonic-ui/dist/index.js'),
   ],
 }

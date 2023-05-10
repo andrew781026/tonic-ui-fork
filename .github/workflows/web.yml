@@ -57,6 +57,7 @@ jobs:
          REPO: self
          BRANCH: lib
          FOLDER: dist
+         TARGET_DIR: dist
          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # use actions-gh-pages to deploy dist to gh-pages
