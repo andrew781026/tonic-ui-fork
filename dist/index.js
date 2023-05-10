@@ -2,6 +2,8 @@ const tailwindColors = require('tailwindcss/colors')
 // docs of tailwind.config.js plugin - https://v1.tailwindcss.com/docs/plugins
 
 const colors = require("./colors/index");
+const themes = require("./colors/themes");
+const colorFunctions = require("./colors/functions");
 const base = require("../dist/base");
 const component = require("../dist/component");
 
@@ -27,6 +29,9 @@ const mainFunction = ({addBase, addComponents, addUtilities, config, postcss, e,
 
   // inject components
   addComponents(component);
+
+  const themeInjector = colorFunctions.injectThemes(addBase, config, themes)
+  themeInjector;
 };
 
 module.exports = require("tailwindcss/plugin")(mainFunction, {
