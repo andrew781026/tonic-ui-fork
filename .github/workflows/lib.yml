@@ -46,6 +46,10 @@ jobs:
       - name: install dependencies
         run: npm i
 
+      # Runs a single command using the runners shell
+      - name: try to build the lib files
+        run: npm run build
+
       # Deploy lib branch
       - name: Deploy Lib
         uses: s0/git-publish-subdir-action@develop
