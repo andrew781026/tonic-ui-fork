@@ -7,3 +7,7 @@
 ~$ npm run dev # run doc server
 ~$ npm run full # build full css for external use
 ```
+
+## Storybook
+
+- get start : https://www.kantega.no/blogg/setting-up-storybook-7-with-vite-and-tailwind-css
