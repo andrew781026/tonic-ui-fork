@@ -6,15 +6,15 @@
 //
 // console.log(postcssJs.objectify(root))
 
-const postcssJs = require('postcss-js')
-const postcss = require('postcss')
-const fs = require('fs')
+const postcssJs = require('postcss-js');
+const postcss = require('postcss');
+const fs = require('fs');
 
-const args = process.argv.slice(2)
-const [src, dest] = args
+const args = process.argv.slice(2);
+const [src, dest] = args;
 
 fs.readFile(src, (err, css) => {
-  if (err) throw err
-  const root = postcss.parse(css)
-  fs.writeFileSync(dest, 'module.exports =' + JSON.stringify(postcssJs.objectify(root)))
-})
+  if (err) throw err;
+  const root = postcss.parse(css);
+  fs.writeFileSync(dest, 'module.exports =' + JSON.stringify(postcssJs.objectify(root)));
+});
