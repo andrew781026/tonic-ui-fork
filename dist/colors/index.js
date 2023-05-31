@@ -11,42 +11,16 @@ const withOpacityValue = (variable, fallbackColor) => {
   };
 };
 
-const colorObject = {
-  'transparent': 'transparent',
-  'current': 'currentColor',
+const getColorObject = (theme) => {
+  const resultObj = {};
 
-  'primary': withOpacityValue('--p'),
-  'primary-focus': withOpacityValue('--pf', '--p'),
-  'primary-content': withOpacityValue('--pc'),
+  Object.entries(theme).forEach(([rule, value]) => {
+    if (['color-scheme', 'transparent', 'current'].includes(rule)) 'do nothing';
+    else if (rule.startsWith('--')) resultObj[rule] = `var(${rule})`;
+    else resultObj[rule] = `var(--${rule})`;
+  });
 
-  'secondary': withOpacityValue('--s'),
-  'secondary-focus': withOpacityValue('--sf', '--s'),
-  'secondary-content': withOpacityValue('--sc'),
-
-  'accent': withOpacityValue('--a'),
-  'accent-focus': withOpacityValue('--af', '--a'),
-  'accent-content': withOpacityValue('--ac'),
-
-  'neutral': withOpacityValue('--n'),
-  'neutral-focus': withOpacityValue('--nf', '--n'),
-  'neutral-content': withOpacityValue('--nc'),
-
-  'base-100': withOpacityValue('--b1'),
-  'base-200': withOpacityValue('--b2', '--b1'),
-  'base-300': withOpacityValue('--b3', '--b2'),
-  'base-content': withOpacityValue('--bc'),
-
-  'info': withOpacityValue('--in'),
-  'info-content': withOpacityValue('--inc', '--nc'),
-
-  'success': withOpacityValue('--su'),
-  'success-content': withOpacityValue('--suc', '--nc'),
-
-  'warning': withOpacityValue('--wa'),
-  'warning-content': withOpacityValue('--wac', '--nc'),
-
-  'error': withOpacityValue('--er'),
-  'error-content': withOpacityValue('--erc', '--nc'),
+  return resultObj;
 };
 
-module.exports = colorObject;
+module.exports = {getColorObject};

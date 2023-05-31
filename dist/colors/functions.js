@@ -21,8 +21,10 @@ module.exports = {
           // const hslArray = Color(value).hsl().array();
           // resultObj[colorNames[rule]] = hslArray[0].toPrecision(5).replace(/\.?0+$/, '') + ' ' + hslArray[1].toPrecision(5).replace(/\.?0+$/, '') + '%' + ' ' + hslArray[2].toPrecision(5).replace(/\.?0+$/, '') + '%';
           resultObj[colorNames[rule]] = value;
-        } else {
+        } else if (rule.startsWith('--')) {
           resultObj[rule] = value;
+        } else {
+          resultObj[`--${rule}`] = value;
         }
       });
       return resultObj;

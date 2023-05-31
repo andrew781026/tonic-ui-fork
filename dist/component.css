@@ -31,10 +31,10 @@
 
 .btn-primary {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-  --tw-gradient-from: #EA0108 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(234 1 8 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-from: var(--primary-default-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: #D50107 var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--primary-default-end) var(--tw-gradient-to-position);
   padding: 10px 24px;
   font-size: 18px;
   line-height: 1.17;
@@ -69,19 +69,19 @@
 
 .btn-primary:hover, .btn-primary.hover {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-  --tw-gradient-from: #DF0108 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(223 1 8 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-from: var(--primary-hover-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: #CD0107 var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--primary-hover-end) var(--tw-gradient-to-position);
     //background: linear-gradient(180deg, #DF0108, #CD0107);
 }
 
 .btn-primary:active, .btn-primary.active {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-  --tw-gradient-from: #CE0107 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(206 1 7 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-from: var(--primary-active-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: #BB0106 var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--primary-active-end) var(--tw-gradient-to-position);
     //background: linear-gradient(180deg, #CE0107, #BB0106);
 }
 
