@@ -278,13 +278,15 @@ module.exports = {
     'accent': '#c07eec',
     'neutral': '#423f00',
     'neutral-content': '#ffee00',
+    'red-10': '#f31119',
+    'red-20': '#10b2c2',
     'base-100': '#ffee00',
     '--rounded-box': '0',
     '--rounded-btn': '0',
     '--rounded-badge': '0',
     '--tab-radius': '0',
   },
-  '[data-theme=cupcake]': {
+  '[data-theme=garden]': {
     'color-scheme': 'light',
     'primary': '#65c3c8',
     'secondary': '#ef9fbc',

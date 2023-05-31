@@ -1,5 +1,6 @@
 const plugin = require('tailwindcss/plugin');
-const responsiveRegex = require('../lib/responsiveRegex'); // use for from-{color} and text-{color}
+const responsiveRegex = require('../lib/responsiveRegex');
+const {getColorObject} = require('../colors'); // use for from-{color} and text-{color}
 module.exports = {
   content: [
     {raw: ''},
@@ -11,7 +12,7 @@ module.exports = {
     },
     extend: {
       colors: {
-        ...require('../colors/defaultTheme'),
+        ...getColorObject(require('../colors/defaultTheme')),
       },
     },
   },
