@@ -38,7 +38,7 @@ module.exports = require('tailwindcss/plugin')(mainFunction, {
     extend: {
       colors: {
         ...colors,
-        ...require('./colors/themes')['[data-theme=light]'],
+        ...require('./colors/defaultTheme'),
         // adding all Tailwind `neutral` shades here so they don't get overridden by daisyUI `neutral` color
         'neutral-50': tailwindColors.neutral[50],
         'neutral-100': tailwindColors.neutral[100],

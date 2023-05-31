@@ -29,6 +29,7 @@ export default {
     label: {control: 'text'},
     onClick: {action: 'onClick'},
     primary: {control: 'boolean'},
+    default: {control: 'boolean'},
     size: {
       control: {type: 'select'},
       options: ['small', 'medium', 'large'],
@@ -63,6 +64,7 @@ export const Secondary = {
 
 export const Large = {
   args: {
+    default: true,
     size: 'large',
     label: 'Button',
   },
@@ -70,6 +72,7 @@ export const Large = {
 
 export const Small = {
   args: {
+    default: true,
     size: 'small',
     label: 'Button',
   },

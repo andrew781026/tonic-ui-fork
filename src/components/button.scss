@@ -30,8 +30,8 @@
 }
 
 .btn-primary {
-  @apply btn;
-  background: linear-gradient(180deg, #EA0108, #D50107);
+  @apply btn bg-gradient-to-b from-primary-default-start to-primary-default-end;
+  //background: linear-gradient(180deg, #EA0108, #D50107);
   border-radius: 4px;
   margin: 4px;
 
@@ -56,11 +56,13 @@
   }
 
   &:hover, &.hover {
-    background: linear-gradient(180deg, #DF0108, #CD0107);
+    @apply bg-gradient-to-b from-primary-hover-start to-primary-hover-end;
+    //background: linear-gradient(180deg, #DF0108, #CD0107);
   }
 
   &:active, &.active {
-    background: linear-gradient(180deg, #CE0107, #BB0106);
+    @apply bg-gradient-to-b from-primary-active-start to-primary-active-end;
+    //background: linear-gradient(180deg, #CE0107, #BB0106);
   }
 
   &:disabled, &.disabled {
