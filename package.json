@@ -12,7 +12,7 @@
     "postcomponents": "node utils/cssToObj.js dist/component.css dist/component.js",
     "cp:colors": "node utils/cp.js --src src/colors --dest dist/colors",
     "cp:root": "node utils/cp.js --src src/index.js --dest dist/index.js",
-    "build": "npm run base && npm run components && npm run colors && npm run root",
+    "build": "npm run base && npm run components && npm run cp:colors && npm run cp:root",
     "full": "npm run build && postcss src/full/index.css -o dist/full.css --config src/full",
     "doc:build": "npm run build && cd doc && npm run build",
     "dev": "npm run build && cd doc && npm run dev",

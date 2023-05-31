@@ -12,7 +12,7 @@ module.exports = {
     extend: {},
   },
   tonicui: {
-    themes: ['dark', 'cupcake', 'cyberpunk'],
+    themes: ['consumer', 'dark', 'cupcake', 'cyberpunk'],
   },
   plugins: [
     require('../dist/index.js'),

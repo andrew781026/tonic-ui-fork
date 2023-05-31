@@ -7,7 +7,6 @@ const argv = require('minimist')(process.argv.slice(2));
 // { _: [], src: "'src/colors'", dest: "'dist/colors'" }
 
 const {src, dest} = argv;
-path.dirname;
 const copyFile = (src, dest) => {
   if (!fs.existsSync(path.dirname(dest))) fs.mkdirSync(path.dirname(dest), {recursive: true});
   fs.writeFileSync(dest, fs.readFileSync(src).toString());

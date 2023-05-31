@@ -12,5 +12,6 @@ module.exports = {
   },
   'rules': {
     'max-len': ['error', {'code': 150}],
+    'new-cap': 0,
   },
 };
