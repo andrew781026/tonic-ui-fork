@@ -26,3 +26,7 @@ module.exports = {
   plugins: [require("consumer-tonic-ui")],
 }
 ```
+
+## Storybook
+
+- get start : https://www.kantega.no/blogg/setting-up-storybook-7-with-vite-and-tailwind-css

@@ -12,21 +12,21 @@ module.exports = [
     // responsive utilites for daisyUI responsive modifiers
     pattern: /.(sm|md|lg|xl)/,
     variants: [
-      "sm",
-      "md",
-      "lg",
-      "xl",
-    ]
+      'sm',
+      'md',
+      'lg',
+      'xl',
+    ],
   },
   {
     // responsive utilites for daisyUI components
     pattern: /(modal-middle|card-side|stats)/,
     variants: [
-      "sm",
-      "md",
-      "lg",
-      "xl",
-    ]
+      'sm',
+      'md',
+      'lg',
+      'xl',
+    ],
   },
   {
     // color utilities for daisyUI colors
@@ -43,8 +43,8 @@ module.exports = [
       // "group-hover",
       // "group-focus",
       // "focus-within",
-      "hover",
-      "focus",
+      'hover',
+      'focus',
       // "focus-visible",
       // "active",
       // "disabled",
