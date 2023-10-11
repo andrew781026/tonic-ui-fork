@@ -13,6 +13,7 @@ module.exports = {
     }
   },
 
+  // hsl : for lighten . darken using https://css-tricks.com/snippets/javascript/lighten-darken-color/
   convertToHsl: function(input) {
     const resultObj = {};
     if (typeof input === 'object' && input !== null) {
@@ -54,8 +55,7 @@ module.exports = {
       config('tonicui.themes').forEach((item, index) => {
         if (typeof item === 'object' && item !== null) {
           Object.entries(item).forEach(([customThemeName, customThemevalue]) => {
-            includedThemesObj['[data-theme=' + customThemeName + ']'] =
-              this.convertToHsl(customThemevalue);
+            includedThemesObj['[data-theme=' + customThemeName + ']'] = this.convertToHsl(customThemevalue);
           });
         }
       });
