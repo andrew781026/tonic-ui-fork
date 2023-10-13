@@ -111,6 +111,11 @@ module.exports = {
       themeOrder.push('light');
     }
 
+    // add default theme colors
+    addBase({
+      [':root']: this.convertToHsl(require('../colors/defaultTheme')),
+    });
+
     // inject themes in order
     themeOrder.forEach((themeName, index) => {
       if (index === 0) {

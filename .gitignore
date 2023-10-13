@@ -4,3 +4,7 @@ node_modules
 dist
 yarn.lock
 storybook-static
+
+
+gen_consumer_design_tokens.json
+gen_default_theme.json

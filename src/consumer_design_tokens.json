@@ -1,0 +1,3636 @@
+{
+    "id": "VariableCollectionId:13773:4137",
+    "name": "Consumer Design Tokens",
+    "modes": {
+        "13773:0": "Mode 1"
+    },
+    "variableIds": [
+        "VariableID:13773:4141",
+        "VariableID:13773:4142",
+        "VariableID:13773:4143",
+        "VariableID:13773:4144",
+        "VariableID:13773:4145",
+        "VariableID:13773:4146",
+        "VariableID:13773:4147",
+        "VariableID:13773:4148",
+        "VariableID:13773:4149",
+        "VariableID:13773:4150",
+        "VariableID:13778:6741",
+        "VariableID:13778:6742",
+        "VariableID:13778:6743",
+        "VariableID:13778:6744",
+        "VariableID:13778:6745",
+        "VariableID:13778:6746",
+        "VariableID:13778:6747",
+        "VariableID:13778:6748",
+        "VariableID:13776:6723",
+        "VariableID:13778:6749",
+        "VariableID:13834:89",
+        "VariableID:13834:90",
+        "VariableID:13834:91",
+        "VariableID:13776:6734",
+        "VariableID:13787:4053",
+        "VariableID:13776:6735",
+        "VariableID:13787:4054",
+        "VariableID:13776:6736",
+        "VariableID:13787:4055",
+        "VariableID:13778:6751",
+        "VariableID:13776:6737",
+        "VariableID:13778:6812",
+        "VariableID:13778:6813",
+        "VariableID:13778:6814",
+        "VariableID:13778:6815",
+        "VariableID:13778:6816",
+        "VariableID:13787:4056",
+        "VariableID:13778:6817",
+        "VariableID:13782:6825",
+        "VariableID:13782:6824",
+        "VariableID:13778:6818",
+        "VariableID:13778:6819",
+        "VariableID:13787:4057",
+        "VariableID:13773:4138",
+        "VariableID:13778:6750",
+        "VariableID:13778:6752",
+        "VariableID:13778:6753",
+        "VariableID:13778:6754",
+        "VariableID:13778:6755",
+        "VariableID:13778:6756",
+        "VariableID:13778:6757",
+        "VariableID:13778:6758",
+        "VariableID:13778:6759",
+        "VariableID:13778:6760",
+        "VariableID:13778:6761",
+        "VariableID:13778:6762",
+        "VariableID:13778:6763",
+        "VariableID:13778:6764",
+        "VariableID:13778:6765",
+        "VariableID:13778:6766",
+        "VariableID:13778:6767",
+        "VariableID:13778:6768",
+        "VariableID:13778:6769",
+        "VariableID:13778:6770",
+        "VariableID:13778:6771",
+        "VariableID:13778:6772",
+        "VariableID:13778:6773",
+        "VariableID:13778:6774",
+        "VariableID:13778:6775",
+        "VariableID:13778:6776",
+        "VariableID:13778:6777",
+        "VariableID:13778:6778",
+        "VariableID:13778:6779",
+        "VariableID:13778:6780",
+        "VariableID:13778:6781",
+        "VariableID:13778:6782",
+        "VariableID:13778:6783",
+        "VariableID:13778:6784",
+        "VariableID:13778:6785",
+        "VariableID:13778:6786",
+        "VariableID:13778:6787",
+        "VariableID:13778:6788",
+        "VariableID:13778:6789",
+        "VariableID:13778:6790",
+        "VariableID:13778:6791",
+        "VariableID:13778:6792",
+        "VariableID:13778:6793",
+        "VariableID:13778:6794",
+        "VariableID:13778:6795",
+        "VariableID:13778:6796",
+        "VariableID:13778:6797",
+        "VariableID:13778:6798",
+        "VariableID:13778:6799",
+        "VariableID:13778:6800",
+        "VariableID:13778:6801",
+        "VariableID:13778:6802",
+        "VariableID:13778:6803",
+        "VariableID:13778:6804",
+        "VariableID:13778:6805",
+        "VariableID:13778:6806",
+        "VariableID:13778:6807",
+        "VariableID:13778:6808",
+        "VariableID:13778:6809",
+        "VariableID:13778:6810",
+        "VariableID:13778:6811",
+        "VariableID:13776:6724",
+        "VariableID:13776:6725",
+        "VariableID:13776:6726",
+        "VariableID:13776:6727",
+        "VariableID:13776:6728",
+        "VariableID:13776:6729",
+        "VariableID:13776:6730",
+        "VariableID:13776:6731",
+        "VariableID:13781:6823",
+        "VariableID:13781:6822",
+        "VariableID:13781:6821",
+        "VariableID:13781:6820",
+        "VariableID:13776:6732",
+        "VariableID:13776:6733",
+        "VariableID:13773:4140"
+    ],
+    "variables": [
+        {
+            "id": "VariableID:13773:4138",
+            "name": "tcsmd/ref/palette/black",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0,
+                    "g": 0,
+                    "b": 0,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13773:4140",
+            "name": "tcsmd/ref/palette/white",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 1,
+                        "g": 1,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13773:4141",
+            "name": "tcsmd/ref/palette/orange/100",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.3803921639919281,
+                    "g": 0.13333334028720856,
+                    "b": 0,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.3803921639919281,
+                        "g": 0.13333334028720856,
+                        "b": 0,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13773:4142",
+            "name": "tcsmd/ref/palette/orange/90",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.4901960790157318,
+                    "g": 0.18039216101169586,
+                    "b": 0,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.4901960790157318,
+                        "g": 0.18039216101169586,
+                        "b": 0,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13773:4143",
+            "name": "tcsmd/ref/palette/orange/80",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.6313725709915161,
+                    "g": 0.21568627655506134,
+                    "b": 0,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.6313725709915161,
+                        "g": 0.21568627655506134,
+                        "b": 0,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13773:4144",
+            "name": "tcsmd/ref/palette/orange/70",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.7176470756530762,
+                    "g": 0.26274511218070984,
+                    "b": 0,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.7176470756530762,
+                        "g": 0.26274511218070984,
+                        "b": 0,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13773:4145",
+            "name": "tcsmd/ref/palette/orange/60",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.800000011920929,
+                    "g": 0.30588236451148987,
+                    "b": 0,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.800000011920929,
+                        "g": 0.30588236451148987,
+                        "b": 0,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13773:4146",
+            "name": "tcsmd/ref/palette/orange/50",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.9490196108818054,
+                    "g": 0.3960784375667572,
+                    "b": 0,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.9490196108818054,
+                        "g": 0.3960784375667572,
+                        "b": 0,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13773:4147",
+            "name": "tcsmd/ref/palette/orange/40",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 1,
+                    "g": 0.46666666865348816,
+                    "b": 0.0313725508749485,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 1,
+                        "g": 0.46666666865348816,
+                        "b": 0.0313725508749485,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13773:4148",
+            "name": "tcsmd/ref/palette/orange/30",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 1,
+                    "g": 0.5882353186607361,
+                    "b": 0.20000000298023224,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 1,
+                        "g": 0.5882353186607361,
+                        "b": 0.20000000298023224,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13773:4149",
+            "name": "tcsmd/ref/palette/orange/20",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 1,
+                    "g": 0.7098039388656616,
+                    "b": 0.4000000059604645,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 1,
+                        "g": 0.7098039388656616,
+                        "b": 0.4000000059604645,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13773:4150",
+            "name": "tcsmd/ref/palette/orange/10",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 1,
+                    "g": 0.9098039269447327,
+                    "b": 0.800000011920929,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 1,
+                        "g": 0.9098039269447327,
+                        "b": 0.800000011920929,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13776:6723",
+            "name": "tcsmd/sys/color/brand-trend-red",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.843137264251709,
+                    "g": 0.09803921729326248,
+                    "b": 0.125490203499794,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.843137264251709,
+                        "g": 0.09803921729326248,
+                        "b": 0.125490203499794,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13776:6724",
+            "name": "tcsmd/ref/palette/gray/100",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.08235294371843338,
+                    "g": 0.08235294371843338,
+                    "b": 0.08235294371843338,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.08235294371843338,
+                        "g": 0.08235294371843338,
+                        "b": 0.08235294371843338,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13776:6725",
+            "name": "tcsmd/ref/palette/gray/90",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.13333334028720856,
+                    "g": 0.13333334028720856,
+                    "b": 0.13333334028720856,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.13333334028720856,
+                        "g": 0.13333334028720856,
+                        "b": 0.13333334028720856,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13776:6726",
+            "name": "tcsmd/ref/palette/gray/80",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.1882352977991104,
+                    "g": 0.1882352977991104,
+                    "b": 0.1882352977991104,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.1882352977991104,
+                        "g": 0.1882352977991104,
+                        "b": 0.1882352977991104,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13776:6727",
+            "name": "tcsmd/ref/palette/gray/70",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.25882354378700256,
+                    "g": 0.25882354378700256,
+                    "b": 0.25882354378700256,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.25882354378700256,
+                        "g": 0.25882354378700256,
+                        "b": 0.25882354378700256,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13776:6728",
+            "name": "tcsmd/ref/palette/gray/60",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.3333333432674408,
+                    "g": 0.3333333432674408,
+                    "b": 0.3333333432674408,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.3333333432674408,
+                        "g": 0.3333333432674408,
+                        "b": 0.3333333432674408,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13776:6729",
+            "name": "tcsmd/ref/palette/gray/50",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.5568627715110779,
+                    "g": 0.5568627715110779,
+                    "b": 0.5568627715110779,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.5568627715110779,
+                        "g": 0.5568627715110779,
+                        "b": 0.5568627715110779,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13776:6730",
+            "name": "tcsmd/ref/palette/gray/40",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.6784313917160034,
+                    "g": 0.6784313917160034,
+                    "b": 0.6784313917160034,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.6784313917160034,
+                        "g": 0.6784313917160034,
+                        "b": 0.6784313917160034,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13776:6731",
+            "name": "tcsmd/ref/palette/gray/30",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.7882353067398071,
+                    "g": 0.7882353067398071,
+                    "b": 0.7882353067398071,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.7882353067398071,
+                        "g": 0.7882353067398071,
+                        "b": 0.7882353067398071,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13776:6732",
+            "name": "tcsmd/ref/palette/gray/20",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.9490196108818054,
+                    "g": 0.9490196108818054,
+                    "b": 0.9490196108818054,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.9490196108818054,
+                        "g": 0.9490196108818054,
+                        "b": 0.9490196108818054,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13776:6733",
+            "name": "tcsmd/ref/palette/gray/10",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.9843137264251709,
+                    "g": 0.9843137264251709,
+                    "b": 0.9843137264251709,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.9843137264251709,
+                        "g": 0.9843137264251709,
+                        "b": 0.9843137264251709,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13776:6734",
+            "name": "tcsmd/sys/color/text-primary",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:13776:6725"
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.13333334028720856,
+                        "g": 0.13333334028720856,
+                        "b": 0.13333334028720856,
+                        "a": 1
+                    },
+                    "alias": "VariableID:13776:6725",
+                    "aliasName": "tcsmd/ref/palette/gray/90"
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13776:6735",
+            "name": "tcsmd/sys/color/text-secondary",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:13776:6728"
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.3333333432674408,
+                        "g": 0.3333333432674408,
+                        "b": 0.3333333432674408,
+                        "a": 1
+                    },
+                    "alias": "VariableID:13776:6728",
+                    "aliasName": "tcsmd/ref/palette/gray/60"
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13776:6736",
+            "name": "tcsmd/sys/color/text-tertiary",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:13776:6729"
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.5568627715110779,
+                        "g": 0.5568627715110779,
+                        "b": 0.5568627715110779,
+                        "a": 1
+                    },
+                    "alias": "VariableID:13776:6729",
+                    "aliasName": "tcsmd/ref/palette/gray/50"
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13776:6737",
+            "name": "tcsmd/sys/color/text-disabled",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:13776:6730"
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.6784313917160034,
+                        "g": 0.6784313917160034,
+                        "b": 0.6784313917160034,
+                        "a": 1
+                    },
+                    "alias": "VariableID:13776:6730",
+                    "aliasName": "tcsmd/ref/palette/gray/40"
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6741",
+            "name": "tcsmd/ref/palette/red/100",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.47843137383461,
+                    "g": 0.019607843831181526,
+                    "b": 0.03529411926865578,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.47843137383461,
+                        "g": 0.019607843831181526,
+                        "b": 0.03529411926865578,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6742",
+            "name": "tcsmd/ref/palette/red/90",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.6039215922355652,
+                    "g": 0.003921568859368563,
+                    "b": 0.0235294122248888,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.6039215922355652,
+                        "g": 0.003921568859368563,
+                        "b": 0.0235294122248888,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6743",
+            "name": "tcsmd/ref/palette/red/80",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.7215686440467834,
+                    "g": 0,
+                    "b": 0.0235294122248888,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.7215686440467834,
+                        "g": 0,
+                        "b": 0.0235294122248888,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6744",
+            "name": "tcsmd/ref/palette/red/70",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.8274509906768799,
+                    "g": 0,
+                    "b": 0.027450980618596077,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.8274509906768799,
+                        "g": 0,
+                        "b": 0.027450980618596077,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6745",
+            "name": "tcsmd/ref/palette/red/60",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.929411768913269,
+                    "g": 0,
+                    "b": 0.0313725508749485,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.929411768913269,
+                        "g": 0,
+                        "b": 0.0313725508749485,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6746",
+            "name": "tcsmd/ref/palette/red/50",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 1,
+                    "g": 0.24705882370471954,
+                    "b": 0.2705882489681244,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 1,
+                        "g": 0.24705882370471954,
+                        "b": 0.2705882489681244,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6747",
+            "name": "tcsmd/ref/palette/red/40",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 1,
+                    "g": 0.3921568691730499,
+                    "b": 0.4117647111415863,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 1,
+                        "g": 0.3921568691730499,
+                        "b": 0.4117647111415863,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6748",
+            "name": "tcsmd/ref/palette/red/30",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.9960784316062927,
+                    "g": 0.5882353186607361,
+                    "b": 0.6039215922355652,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.9960784316062927,
+                        "g": 0.5882353186607361,
+                        "b": 0.6039215922355652,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6749",
+            "name": "tcsmd/ref/palette/red/20",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 1,
+                    "g": 0.7607843279838562,
+                    "b": 0.7686274647712708,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 1,
+                        "g": 0.7607843279838562,
+                        "b": 0.7686274647712708,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6750",
+            "name": "tcsmd/ref/palette/red/10",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 1,
+                    "g": 0.8980392217636108,
+                    "b": 0.9019607901573181,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 1,
+                        "g": 0.8980392217636108,
+                        "b": 0.9019607901573181,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6751",
+            "name": "tcsmd/sys/color/text-emphasis",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:13773:4138"
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0,
+                        "a": 1
+                    },
+                    "alias": "VariableID:13773:4138",
+                    "aliasName": "tcsmd/ref/palette/black"
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6752",
+            "name": "tcsmd/ref/palette/magenta/100",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.40392157435417175,
+                    "g": 0.003921568859368563,
+                    "b": 0.2705882489681244,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.40392157435417175,
+                        "g": 0.003921568859368563,
+                        "b": 0.2705882489681244,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6753",
+            "name": "tcsmd/ref/palette/magenta/90",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.48627451062202454,
+                    "g": 0,
+                    "b": 0.32156863808631897,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.48627451062202454,
+                        "g": 0,
+                        "b": 0.32156863808631897,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6754",
+            "name": "tcsmd/ref/palette/magenta/80",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.5960784554481506,
+                    "g": 0,
+                    "b": 0.3921568691730499,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.5960784554481506,
+                        "g": 0,
+                        "b": 0.3921568691730499,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6755",
+            "name": "tcsmd/ref/palette/magenta/70",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.7215686440467834,
+                    "g": 0.003921568859368563,
+                    "b": 0.47843137383461,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.7215686440467834,
+                        "g": 0.003921568859368563,
+                        "b": 0.47843137383461,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6756",
+            "name": "tcsmd/ref/palette/magenta/60",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.8235294222831726,
+                    "g": 0.027450980618596077,
+                    "b": 0.5607843399047852,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.8235294222831726,
+                        "g": 0.027450980618596077,
+                        "b": 0.5607843399047852,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6757",
+            "name": "tcsmd/ref/palette/magenta/50",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.929411768913269,
+                    "g": 0.25882354378700256,
+                    "b": 0.7058823704719543,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.929411768913269,
+                        "g": 0.25882354378700256,
+                        "b": 0.7058823704719543,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6758",
+            "name": "tcsmd/ref/palette/magenta/40",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.9686274528503418,
+                    "g": 0.46666666865348816,
+                    "b": 0.800000011920929,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.9686274528503418,
+                        "g": 0.46666666865348816,
+                        "b": 0.800000011920929,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6759",
+            "name": "tcsmd/ref/palette/magenta/30",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.9882352948188782,
+                    "g": 0.6627451181411743,
+                    "b": 0.8823529481887817,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.9882352948188782,
+                        "g": 0.6627451181411743,
+                        "b": 0.8823529481887817,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6760",
+            "name": "tcsmd/ref/palette/magenta/20",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 1,
+                    "g": 0.8274509906768799,
+                    "b": 0.9647058844566345,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 1,
+                        "g": 0.8274509906768799,
+                        "b": 0.9647058844566345,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6761",
+            "name": "tcsmd/ref/palette/magenta/10",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 1,
+                    "g": 0.929411768913269,
+                    "b": 0.9843137264251709,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 1,
+                        "g": 0.929411768913269,
+                        "b": 0.9843137264251709,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6762",
+            "name": "tcsmd/ref/palette/purple/100",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.29019609093666077,
+                    "g": 0,
+                    "b": 0.5372549295425415,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.29019609093666077,
+                        "g": 0,
+                        "b": 0.5372549295425415,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6763",
+            "name": "tcsmd/ref/palette/purple/90",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.3529411852359772,
+                    "g": 0,
+                    "b": 0.6549019813537598,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.3529411852359772,
+                        "g": 0,
+                        "b": 0.6549019813537598,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6764",
+            "name": "tcsmd/ref/palette/purple/80",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.40784314274787903,
+                    "g": 0.003921568859368563,
+                    "b": 0.7529411911964417,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.40784314274787903,
+                        "g": 0.003921568859368563,
+                        "b": 0.7529411911964417,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6765",
+            "name": "tcsmd/ref/palette/purple/70",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.48235294222831726,
+                    "g": 0.019607843831181526,
+                    "b": 0.8470588326454163,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.48235294222831726,
+                        "g": 0.019607843831181526,
+                        "b": 0.8470588326454163,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6766",
+            "name": "tcsmd/ref/palette/purple/60",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.6039215922355652,
+                    "g": 0.13333334028720856,
+                    "b": 0.9725490212440491,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.6039215922355652,
+                        "g": 0.13333334028720856,
+                        "b": 0.9725490212440491,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6767",
+            "name": "tcsmd/ref/palette/purple/50",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.7058823704719543,
+                    "g": 0.32156863808631897,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.7058823704719543,
+                        "g": 0.32156863808631897,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6768",
+            "name": "tcsmd/ref/palette/purple/40",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.7843137383460999,
+                    "g": 0.5843137502670288,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.7843137383460999,
+                        "g": 0.5843137502670288,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6769",
+            "name": "tcsmd/ref/palette/purple/30",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.7843137383460999,
+                    "g": 0.5843137502670288,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.7843137383460999,
+                        "g": 0.5843137502670288,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6770",
+            "name": "tcsmd/ref/palette/purple/20",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.9254902005195618,
+                    "g": 0.8705882430076599,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.9254902005195618,
+                        "g": 0.8705882430076599,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6771",
+            "name": "tcsmd/ref/palette/purple/10",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.9607843160629272,
+                    "g": 0.9333333373069763,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.9607843160629272,
+                        "g": 0.9333333373069763,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6772",
+            "name": "tcsmd/ref/palette/green/100",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0,
+                    "g": 0.25882354378700256,
+                    "b": 0.04313725605607033,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0.25882354378700256,
+                        "b": 0.04313725605607033,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6773",
+            "name": "tcsmd/ref/palette/green/90",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0,
+                    "g": 0.33725491166114807,
+                    "b": 0.05882352963089943,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0.33725491166114807,
+                        "b": 0.05882352963089943,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6774",
+            "name": "tcsmd/ref/palette/green/80",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0,
+                    "g": 0.41960784792900085,
+                    "b": 0.07058823853731155,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0.41960784792900085,
+                        "b": 0.07058823853731155,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6775",
+            "name": "tcsmd/ref/palette/green/70",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0,
+                    "g": 0.47058823704719543,
+                    "b": 0.0784313753247261,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0.47058823704719543,
+                        "b": 0.0784313753247261,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6776",
+            "name": "tcsmd/ref/palette/green/60",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0,
+                    "g": 0.5411764979362488,
+                    "b": 0.09019608050584793,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0.5411764979362488,
+                        "b": 0.09019608050584793,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6777",
+            "name": "tcsmd/ref/palette/green/50",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0,
+                    "g": 0.6627451181411743,
+                    "b": 0.11372549086809158,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0.6627451181411743,
+                        "b": 0.11372549086809158,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6778",
+            "name": "tcsmd/ref/palette/green/40",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.13333334028720856,
+                    "g": 0.7882353067398071,
+                    "b": 0.24313725531101227,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.13333334028720856,
+                        "g": 0.7882353067398071,
+                        "b": 0.24313725531101227,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6779",
+            "name": "tcsmd/ref/palette/green/30",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.4313725531101227,
+                    "g": 0.9411764740943909,
+                    "b": 0.5176470875740051,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.4313725531101227,
+                        "g": 0.9411764740943909,
+                        "b": 0.5176470875740051,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6780",
+            "name": "tcsmd/ref/palette/green/20",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.6000000238418579,
+                    "g": 1,
+                    "b": 0.6666666865348816,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.6000000238418579,
+                        "g": 1,
+                        "b": 0.6666666865348816,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6781",
+            "name": "tcsmd/ref/palette/green/10",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.8509804010391235,
+                    "g": 1,
+                    "b": 0.8745098114013672,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.8509804010391235,
+                        "g": 1,
+                        "b": 0.8745098114013672,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6782",
+            "name": "tcsmd/ref/palette/teal/100",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.007843137718737125,
+                    "g": 0.239215686917305,
+                    "b": 0.25882354378700256,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.007843137718737125,
+                        "g": 0.239215686917305,
+                        "b": 0.25882354378700256,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6783",
+            "name": "tcsmd/ref/palette/teal/90",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0,
+                    "g": 0.2980392277240753,
+                    "b": 0.32156863808631897,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0.2980392277240753,
+                        "b": 0.32156863808631897,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6784",
+            "name": "tcsmd/ref/palette/teal/80",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0,
+                    "g": 0.3529411852359772,
+                    "b": 0.3686274588108063,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0.3529411852359772,
+                        "b": 0.3686274588108063,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6785",
+            "name": "tcsmd/ref/palette/teal/70",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.003921568859368563,
+                    "g": 0.4313725531101227,
+                    "b": 0.43921568989753723,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.003921568859368563,
+                        "g": 0.4313725531101227,
+                        "b": 0.43921568989753723,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6786",
+            "name": "tcsmd/ref/palette/teal/60",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0,
+                    "g": 0.5176470875740051,
+                    "b": 0.5176470875740051,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0.5176470875740051,
+                        "b": 0.5176470875740051,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6787",
+            "name": "tcsmd/ref/palette/teal/50",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.09019608050584793,
+                    "g": 0.6431372761726379,
+                    "b": 0.6470588445663452,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.09019608050584793,
+                        "g": 0.6431372761726379,
+                        "b": 0.6470588445663452,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6788",
+            "name": "tcsmd/ref/palette/teal/40",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.1764705926179886,
+                    "g": 0.8117647171020508,
+                    "b": 0.8078431487083435,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.1764705926179886,
+                        "g": 0.8117647171020508,
+                        "b": 0.8078431487083435,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6789",
+            "name": "tcsmd/ref/palette/teal/30",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.4588235318660736,
+                    "g": 0.9019607901573181,
+                    "b": 0.8941176533699036,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.4588235318660736,
+                        "g": 0.9019607901573181,
+                        "b": 0.8941176533699036,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6790",
+            "name": "tcsmd/ref/palette/teal/20",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.7058823704719543,
+                    "g": 0.9411764740943909,
+                    "b": 0.9411764740943909,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.7058823704719543,
+                        "g": 0.9411764740943909,
+                        "b": 0.9411764740943909,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6791",
+            "name": "tcsmd/ref/palette/teal/10",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.843137264251709,
+                    "g": 0.9686274528503418,
+                    "b": 0.9686274528503418,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.843137264251709,
+                        "g": 0.9686274528503418,
+                        "b": 0.9686274528503418,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6792",
+            "name": "tcsmd/ref/palette/blue/100",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.003921568859368563,
+                    "g": 0.1921568661928177,
+                    "b": 0.38823530077934265,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.003921568859368563,
+                        "g": 0.1921568661928177,
+                        "b": 0.38823530077934265,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6793",
+            "name": "tcsmd/ref/palette/blue/90",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0,
+                    "g": 0.26274511218070984,
+                    "b": 0.5254902243614197,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0.26274511218070984,
+                        "b": 0.5254902243614197,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6794",
+            "name": "tcsmd/ref/palette/blue/80",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.003921568859368563,
+                    "g": 0.3333333432674408,
+                    "b": 0.6627451181411743,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.003921568859368563,
+                        "g": 0.3333333432674408,
+                        "b": 0.6627451181411743,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6795",
+            "name": "tcsmd/ref/palette/blue/70",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0,
+                    "g": 0.41960784792900085,
+                    "b": 0.8392156958580017,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0.41960784792900085,
+                        "b": 0.8392156958580017,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6796",
+            "name": "tcsmd/ref/palette/blue/60",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0,
+                    "g": 0.45490196347236633,
+                    "b": 0.9098039269447327,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0.45490196347236633,
+                        "b": 0.9098039269447327,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6797",
+            "name": "tcsmd/ref/palette/blue/50",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.18039216101169586,
+                    "g": 0.5882353186607361,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.18039216101169586,
+                        "g": 0.5882353186607361,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6798",
+            "name": "tcsmd/ref/palette/blue/40",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.41960784792900085,
+                    "g": 0.7098039388656616,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.41960784792900085,
+                        "g": 0.7098039388656616,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6799",
+            "name": "tcsmd/ref/palette/blue/30",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.6509804129600525,
+                    "g": 0.8274509906768799,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.6509804129600525,
+                        "g": 0.8274509906768799,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6800",
+            "name": "tcsmd/ref/palette/blue/20",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.800000011920929,
+                    "g": 0.9019607901573181,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.800000011920929,
+                        "g": 0.9019607901573181,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6801",
+            "name": "tcsmd/ref/palette/blue/10",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.8980392217636108,
+                    "g": 0.9490196108818054,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.8980392217636108,
+                        "g": 0.9490196108818054,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6802",
+            "name": "tcsmd/ref/palette/indigo/100",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.1882352977991104,
+                    "g": 0.10588235408067703,
+                    "b": 0.5921568870544434,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.1882352977991104,
+                        "g": 0.10588235408067703,
+                        "b": 0.5921568870544434,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6803",
+            "name": "tcsmd/ref/palette/indigo/90",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.21568627655506134,
+                    "g": 0.13333334028720856,
+                    "b": 0.7215686440467834,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.21568627655506134,
+                        "g": 0.13333334028720856,
+                        "b": 0.7215686440467834,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6804",
+            "name": "tcsmd/ref/palette/indigo/80",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.26274511218070984,
+                    "g": 0.16470588743686676,
+                    "b": 0.8274509906768799,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.26274511218070984,
+                        "g": 0.16470588743686676,
+                        "b": 0.8274509906768799,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6805",
+            "name": "tcsmd/ref/palette/indigo/70",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.3176470696926117,
+                    "g": 0.21960784494876862,
+                    "b": 0.9333333373069763,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.3176470696926117,
+                        "g": 0.21960784494876862,
+                        "b": 0.9333333373069763,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6806",
+            "name": "tcsmd/ref/palette/indigo/60",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.4156862795352936,
+                    "g": 0.2980392277240753,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.4156862795352936,
+                        "g": 0.2980392277240753,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6807",
+            "name": "tcsmd/ref/palette/indigo/50",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.5568627715110779,
+                    "g": 0.47058823704719543,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.5568627715110779,
+                        "g": 0.47058823704719543,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6808",
+            "name": "tcsmd/ref/palette/indigo/40",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.6705882549285889,
+                    "g": 0.6078431606292725,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.6705882549285889,
+                        "g": 0.6078431606292725,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6809",
+            "name": "tcsmd/ref/palette/indigo/30",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.7921568751335144,
+                    "g": 0.7529411911964417,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.7921568751335144,
+                        "g": 0.7529411911964417,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6810",
+            "name": "tcsmd/ref/palette/indigo/20",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.8823529481887817,
+                    "g": 0.8588235378265381,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.8823529481887817,
+                        "g": 0.8588235378265381,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6811",
+            "name": "tcsmd/ref/palette/indigo/10",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.9411764740943909,
+                    "g": 0.9333333373069763,
+                    "b": 1,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.9411764740943909,
+                        "g": 0.9333333373069763,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6812",
+            "name": "tcsmd/sys/color/text-link",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:13778:6796"
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0.45490196347236633,
+                        "b": 0.9098039269447327,
+                        "a": 1
+                    },
+                    "alias": "VariableID:13778:6796",
+                    "aliasName": "tcsmd/ref/palette/blue/60"
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6813",
+            "name": "tcsmd/sys/color/text-error",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:13778:6745"
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.929411768913269,
+                        "g": 0,
+                        "b": 0.0313725508749485,
+                        "a": 1
+                    },
+                    "alias": "VariableID:13778:6745",
+                    "aliasName": "tcsmd/ref/palette/red/60"
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6814",
+            "name": "tcsmd/sys/color/text-warning",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:13773:4146"
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.9490196108818054,
+                        "g": 0.3960784375667572,
+                        "b": 0,
+                        "a": 1
+                    },
+                    "alias": "VariableID:13773:4146",
+                    "aliasName": "tcsmd/ref/palette/orange/50"
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6815",
+            "name": "tcsmd/sys/color/text-safe",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:13778:6777"
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0.6627451181411743,
+                        "b": 0.11372549086809158,
+                        "a": 1
+                    },
+                    "alias": "VariableID:13778:6777",
+                    "aliasName": "tcsmd/ref/palette/green/50"
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6816",
+            "name": "tcsmd/sys/color/text-white",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:13773:4140"
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 1,
+                        "g": 1,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": "VariableID:13773:4140",
+                    "aliasName": "tcsmd/ref/palette/white"
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6817",
+            "name": "tcsmd/sys/color/severity-error",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:13778:6746"
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 1,
+                        "g": 0.24705882370471954,
+                        "b": 0.2705882489681244,
+                        "a": 1
+                    },
+                    "alias": "VariableID:13778:6746",
+                    "aliasName": "tcsmd/ref/palette/red/50"
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6818",
+            "name": "tcsmd/sys/color/severity-info",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:13778:6797"
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.18039216101169586,
+                        "g": 0.5882353186607361,
+                        "b": 1,
+                        "a": 1
+                    },
+                    "alias": "VariableID:13778:6797",
+                    "aliasName": "tcsmd/ref/palette/blue/50"
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13778:6819",
+            "name": "tcsmd/sys/color/severity-unknown",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:13776:6729"
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.5568627715110779,
+                        "g": 0.5568627715110779,
+                        "b": 0.5568627715110779,
+                        "a": 1
+                    },
+                    "alias": "VariableID:13776:6729",
+                    "aliasName": "tcsmd/ref/palette/gray/50"
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13781:6820",
+            "name": "tcsmd/ref/palette/gray/22",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.929411768913269,
+                    "g": 0.929411768913269,
+                    "b": 0.929411768913269,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.929411768913269,
+                        "g": 0.929411768913269,
+                        "b": 0.929411768913269,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13781:6821",
+            "name": "tcsmd/ref/palette/gray/24",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.8980392217636108,
+                    "g": 0.8980392217636108,
+                    "b": 0.8980392217636108,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.8980392217636108,
+                        "g": 0.8980392217636108,
+                        "b": 0.8980392217636108,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13781:6822",
+            "name": "tcsmd/ref/palette/gray/26",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.8627451062202454,
+                    "g": 0.8627451062202454,
+                    "b": 0.8627451062202454,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.8627451062202454,
+                        "g": 0.8627451062202454,
+                        "b": 0.8627451062202454,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13781:6823",
+            "name": "tcsmd/ref/palette/gray/28",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "r": 0.8352941274642944,
+                    "g": 0.8352941274642944,
+                    "b": 0.8352941274642944,
+                    "a": 1
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.8352941274642944,
+                        "g": 0.8352941274642944,
+                        "b": 0.8352941274642944,
+                        "a": 1
+                    },
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13782:6824",
+            "name": "tcsmd/sys/color/severity-success",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:13778:6777"
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0,
+                        "g": 0.6627451181411743,
+                        "b": 0.11372549086809158,
+                        "a": 1
+                    },
+                    "alias": "VariableID:13778:6777",
+                    "aliasName": "tcsmd/ref/palette/green/50"
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13782:6825",
+            "name": "tcsmd/sys/color/severity-warning",
+            "description": "",
+            "type": "COLOR",
+            "valuesByMode": {
+                "13773:0": {
+                    "type": "VARIABLE_ALIAS",
+                    "id": "VariableID:13773:4146"
+                }
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": {
+                        "r": 0.9490196108818054,
+                        "g": 0.3960784375667572,
+                        "b": 0,
+                        "a": 1
+                    },
+                    "alias": "VariableID:13773:4146",
+                    "aliasName": "tcsmd/ref/palette/orange/50"
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13787:4053",
+            "name": "tcsmd/ref/radius/circle",
+            "description": "50%",
+            "type": "FLOAT",
+            "valuesByMode": {
+                "13773:0": 999
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": 999,
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13787:4054",
+            "name": "tcsmd/ref/radius/lg",
+            "description": "",
+            "type": "FLOAT",
+            "valuesByMode": {
+                "13773:0": 12
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": 12,
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13787:4055",
+            "name": "tcsmd/ref/radius/md",
+            "description": "",
+            "type": "FLOAT",
+            "valuesByMode": {
+                "13773:0": 8
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": 8,
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13787:4056",
+            "name": "tcsmd/ref/radius/sm",
+            "description": "",
+            "type": "FLOAT",
+            "valuesByMode": {
+                "13773:0": 4
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": 4,
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13787:4057",
+            "name": "tcsmd/ref/radius/xs",
+            "description": "",
+            "type": "FLOAT",
+            "valuesByMode": {
+                "13773:0": 2
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": 2,
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13834:89",
+            "name": "tcsmd/ref/border/thick",
+            "description": "",
+            "type": "FLOAT",
+            "valuesByMode": {
+                "13773:0": 2
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": 2,
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13834:90",
+            "name": "tcsmd/ref/border/thin",
+            "description": "",
+            "type": "FLOAT",
+            "valuesByMode": {
+                "13773:0": 1
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": 1,
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        },
+        {
+            "id": "VariableID:13834:91",
+            "name": "tcsmd/ref/border/extra-thin",
+            "description": "",
+            "type": "FLOAT",
+            "valuesByMode": {
+                "13773:0": 0.5
+            },
+            "resolvedValuesByMode": {
+                "13773:0": {
+                    "resolvedValue": 0.5,
+                    "alias": null
+                }
+            },
+            "scopes": [
+                "ALL_SCOPES"
+            ],
+            "hiddenFromPublishing": false,
+            "codeSyntax": {}
+        }
+    ]
+}
