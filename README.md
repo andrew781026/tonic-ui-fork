@@ -30,3 +30,7 @@ module.exports = {
 ## Storybook
 
 - get start : https://www.kantega.no/blogg/setting-up-storybook-7-with-vite-and-tailwind-css
+
+## Luma Method
+
+- [Switch font color for different backgrounds with CSS](https://css-tricks.com/switch-font-color-for-different-backgrounds-with-css/)

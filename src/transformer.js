@@ -8,7 +8,13 @@ const getColorName = name => {
   const hasPalette = name.includes('palette');
   const paletteColor = nameSplit[4] ? `${nameSplit[0]}-${nameSplit[3]}-${nameSplit[4]}` : `${nameSplit[0]}-${nameSplit[3]}`;
   const systemColor = `${nameSplit[0]}-color-${nameSplit[3]}`
-  return hasPalette ? paletteColor : systemColor ;
+  return hasPalette ? paletteColor : systemColor;
+}
+
+const getGroup = name => {
+  const nameSplit = name.split('/');
+  const group = nameSplit[4] ? nameSplit[3] : null;
+  return group;
 }
 
 const data = consumer_design_tokens["variables"].map(obj => {
@@ -22,7 +28,8 @@ const data = consumer_design_tokens["variables"].map(obj => {
       type: obj.type,
       description: obj.description,
       colorName: getColorName(obj.name),
-      color: values.type ? `refId=${values.id}` : `rgba(${Math.floor(values.r*255)},${Math.floor(values.g*255)},${Math.floor(values.b*255)},${values.a})`
+      group: getGroup(obj.name),
+      color: values.type ? `refId=${values.id}` : `rgba(${Math.floor(values.r * 255)},${Math.floor(values.g * 255)},${Math.floor(values.b * 255)},${values.a})`
     }
   } else if (obj.type === 'FLOAT') {
 

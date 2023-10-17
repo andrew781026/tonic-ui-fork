@@ -5,6 +5,6 @@ dist
 yarn.lock
 storybook-static
 
-
 gen_consumer_design_tokens.json
+grouped_design_token.json
 gen_default_theme.json
