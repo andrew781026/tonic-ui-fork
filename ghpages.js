@@ -4,6 +4,7 @@ const path = require('path');
 const ghpages = require('gh-pages');
 
 const options = {
+  dotfiles: true, // make .nojekyll be upload
   branch: 'gh-pages',
   repo: 'git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git' // project github repo
 };

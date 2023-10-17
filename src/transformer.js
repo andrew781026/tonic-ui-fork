@@ -29,7 +29,8 @@ const data = consumer_design_tokens["variables"].map(obj => {
       description: obj.description,
       colorName: getColorName(obj.name),
       group: getGroup(obj.name),
-      color: values.type ? `refId=${values.id}` : `rgba(${Math.floor(values.r * 255)},${Math.floor(values.g * 255)},${Math.floor(values.b * 255)},${values.a})`
+      order: obj.name.split('/')[4],
+      color: (values.type === 'VARIABLE_ALIAS') ? `refId=${values.id}` : `rgba(${Math.floor(values.r * 255)},${Math.floor(values.g * 255)},${Math.floor(values.b * 255)},${values.a})`
     }
   } else if (obj.type === 'FLOAT') {
 
