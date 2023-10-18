@@ -1,9 +1,9 @@
-name: ACDPFrontendDeployDev
+name: consumer-tonic-ui-dist
 
 on:
   workflow_dispatch:
-  push:
-    branches:
+#  push:
+#    branches:
 #      - dev
 
 permissions:
