@@ -17,7 +17,7 @@ npm run full # build full css for external use
 1. You need [Node.js](https://tailwindcss.com/docs/installation) and [Tailwind CSS](https://tailwindcss.com/docs/installation) installed.
 2. Install consumer-tonic-ui
 ```js
-npm install --save git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git
+npm install --save git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git#dist
 ```
 3.Then add daisyUI to your tailwind.config.js files:
 ```js
@@ -37,7 +37,9 @@ module.exports = {
 consumer-tonic-design-system ( JSON ) -> transform json ( github-action ) -> dist 分支 ( gen_consumer_design_tokens.json . gen_default_theme.json 這兩個 output 檔案 )
 
 --------
-consumer-tonic-ui ( vanilla-JS ) -> dist 分支
+consumer-tonic-ui ( vanilla-JS ) -> npm run build ( github-action )  -> dist 分支
+                                 -> npm run astro:publish ( github-action ) -> gh-pages 分支
+
 consumer-tonic-ui-react ( react-JS ) -> dist 分支
 consumer-tonic-ui-vue ( vue-JS ) -> dist 分支
 --------

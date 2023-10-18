@@ -1,0 +1,55 @@
+name: ACDPFrontendDeployDev
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+#      - dev
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  build:
+    name: deploy plugin
+    runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-dev
+    steps:
+      - name: Get commit short id
+        id: get-id
+        run: |
+          id=$(echo ${{ github.sha }} | cut -c 1-10)
+          echo "id=$id" >> $GITHUB_OUTPUT
+
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Check Node version
+        run: node -v
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
+
+      - name: Create tag
+        id: tag
+        run: echo "TAG=dev-v${{ steps.date.outputs.date }}.${{ github.run_number }}" >> $GITHUB_ENV
+
+      - name: Push tag
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git tag ${{ env.TAG }}
+          git push origin ${{ env.TAG }}
+
+      - name: build dist
+        run: |
+          npm i
+          npm run build
+
+      - name: deploy
+        if: ${{ github.ref == 'refs/heads/dev' }} # only deploy dev
+        run: npm run publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+

@@ -18,7 +18,8 @@
     "full": "npm run build && postcss src/full/index.css -o dist/full.css --config src/full",
     "doc:build": "npm run build && cd doc && npm run build",
     "dev": "npm run build && cd doc && npm run dev",
-    "lint": "eslint src/**/*.js"
+    "lint": "eslint src/**/*.js",
+    "publish": "node publish.js"
   },
   "repository": {
     "type": "git",
