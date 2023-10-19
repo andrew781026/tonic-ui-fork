@@ -53,10 +53,19 @@ ring-offset-{COLOR_NAME}
   1. Design Token : https://www.figma.com/file/3IUPRpbFX7r0xU9kh05fQ1/%F0%9F%8F%A0-Consumer-Tonic---Style-Guide?type=design&node-id=13-168&mode=design&t=LjpMgN6YfJAnn0Xf-0
   2. UI Component : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=8-0&mode=design&t=RskMEIEmOQGIAzYT-0
 
-
 4. [ASK] [icons](https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=28237-26683&mode=design&t=303QDeCHKclypmON-0)
 5. [ASK] [whole page trendmicro loader - SSS EB1#V-10](https://wiki.jarvis.trendmicro.com/display/JOP/SSS+Internal+Beta+1+-+Visual+Design+Related+Report) => using [lottie](https://airbnb.design/lottie/)
    - [awsmd loader](https://dribbble.com/shots/2657317-Logo-loader-animation)
    - [google loader](https://dribbble.com/shots/4971869-Google-Loader)
    - [spy-family loader](https://spy-family.net/)
    - [fpp loader](https://www.fpp.net/)
+
+### HIE Share
+
+- https://help.figma.com/hc/en-us/articles/4406787442711#variables
+- tmc_style_guide_test.json ( dark-mode )
+
+### FED ToDo
+
+- [UI Component - Button](https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=23310-130511&mode=design&t=EM5r6Tuoh43PvvSt-0)
+- Astro Doc Layout ( Pending... )
