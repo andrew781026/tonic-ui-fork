@@ -1,0 +1,28 @@
+{
+  "name": "consumer-tonic-ui-dist",
+  "version": "0.0.1",
+  "description": "tonic-ui for tailwind version",
+  "main": "index.js",
+  "scripts": {
+    "dev": "echo 'dev'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andrew781026/tonic-ui-fork.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/andrew781026/tonic-ui-fork/issues"
+  },
+  "homepage": "https://github.com/andrew781026/tonic-ui-fork#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.3.2"
+  },
+  "peerDependencies": {
+    "autoprefixer": "^10.0.2",
+    "postcss": "^8.4.23",
+    "postcss-cli": "^10.1.0"
+  }
+}
