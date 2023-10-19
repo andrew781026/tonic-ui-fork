@@ -19,6 +19,8 @@ jobs:
 
       - name: Check out code
         uses: actions/checkout@v3
+        with:
+          ref: dev
 
       - name: Check Node version
         run: node -v
@@ -37,4 +39,3 @@ jobs:
         run: node publish.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-

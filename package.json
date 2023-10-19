@@ -14,6 +14,7 @@
     "cp:colors": "node utils/cp.js --src src/colors --dest dist/colors",
     "cp:root": "node utils/cp.js --src src/index.js --dest dist/index.js",
     "cp:gen": "node utils/cp.js --src src/gen_default_theme.json --dest dist/gen_default_theme.json",
+    "prebuild": "cd src && node transformer.js && node toDefaultTheme.js && node grouping.js",
     "build": "npm run base && npm run components && npm run cp:colors && npm run cp:gen && npm run cp:lib && npm run cp:root",
     "full": "npm run build && postcss src/full/index.css -o dist/full.css --config src/full",
     "doc:build": "npm run build && cd doc && npm run build",
