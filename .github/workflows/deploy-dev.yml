@@ -11,12 +11,6 @@ jobs:
     name: deploy plugin
     runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-dev
     steps:
-      - name: Get commit short id
-        id: get-id
-        run: |
-          id=$(echo ${{ github.sha }} | cut -c 1-10)
-          echo "id=$id" >> $GITHUB_OUTPUT
-
       - name: Check out code
         uses: actions/checkout@v3
         with:
@@ -25,15 +19,6 @@ jobs:
       - name: Check Node version
         run: node -v
 
-      - name: Get current date
-        id: date
-        run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
-
-      - name: Create Git
-        run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-
       - name: build dist
         run: |
           npm i
@@ -41,6 +26,9 @@ jobs:
 
       - name: deploy
         if: ${{ github.ref == 'refs/heads/dev' }} # only deploy dev
-        run: node publish.js
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          node publish.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
