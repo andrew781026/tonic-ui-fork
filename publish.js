@@ -5,7 +5,7 @@ const ghpages = require('gh-pages');
 const copyFile = require('./utils/copyFile');
 
 const repo = process.env.GH_TOKEN
-  ? `https://${process.env.GH_TOKEN}@adc.github.trendmicro.com/Consumer-WSE/MyAccount5-Laravel.git`
+  ? `https://${process.env.GH_TOKEN}@adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui.git`
   : 'git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git';
 
 const options = {
