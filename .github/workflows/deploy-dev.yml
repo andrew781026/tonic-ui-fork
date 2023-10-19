@@ -6,7 +6,6 @@ on:
     branches:
       - dev
 
-
 jobs:
   build:
     name: deploy plugin
@@ -27,17 +26,6 @@ jobs:
       - name: Get current date
         id: date
         run: echo "date=$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
-
-      - name: Create tag
-        id: tag
-        run: echo "TAG=dev-v${{ steps.date.outputs.date }}.${{ github.run_number }}" >> $GITHUB_ENV
-
-      - name: Push tag
-        run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git tag ${{ env.TAG }}
-          git push origin ${{ env.TAG }}
 
       - name: build dist
         run: |
