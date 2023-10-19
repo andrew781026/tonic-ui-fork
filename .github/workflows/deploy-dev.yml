@@ -2,7 +2,11 @@ name: consumer-tonic-ui-dist
 
 on:
   workflow_dispatch:
-  
+  push:
+    branches:
+      - dev
+
+
 jobs:
   build:
     name: deploy plugin

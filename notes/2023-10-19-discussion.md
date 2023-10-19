@@ -55,7 +55,7 @@ ring-offset-{COLOR_NAME}
 
 
 4. [ASK] [icons](https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=28237-26683&mode=design&t=303QDeCHKclypmON-0)
-5. [ASK] [whole page trendmicro loader - SSS EB1#V-10](https://wiki.jarvis.trendmicro.com/display/JOP/SSS+Internal+Beta+1+-+Visual+Design+Related+Report)
+5. [ASK] [whole page trendmicro loader - SSS EB1#V-10](https://wiki.jarvis.trendmicro.com/display/JOP/SSS+Internal+Beta+1+-+Visual+Design+Related+Report) => using [lottie](https://airbnb.design/lottie/)
    - [awsmd loader](https://dribbble.com/shots/2657317-Logo-loader-animation)
    - [google loader](https://dribbble.com/shots/4971869-Google-Loader)
    - [spy-family loader](https://spy-family.net/)
