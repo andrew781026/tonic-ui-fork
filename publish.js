@@ -16,7 +16,7 @@ const callback = err => {
 };
 
 // for dist using
-copyFile(path.resolve(__dirname, 'dist-package.json'),path.resolve(__dirname,'dist', 'dist-package.json'));
+copyFile(path.resolve(__dirname, 'dist-package.json'),path.resolve(__dirname,'dist', 'package.json'));
 
 /**
  * This task pushes to the `master` branch of the configured `repo`.

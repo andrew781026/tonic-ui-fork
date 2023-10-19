@@ -3,8 +3,8 @@
 const colors = require('./colors/index');
 const themes = require('./colors/themes');
 const colorFunctions = require('./colors/functions.js');
-const base = require('../dist/base.js');
-const component = require('../dist/component.js');
+const base = require('./base.js'); // using base.js in dist folder , but for dependency need ./
+const component = require('./component.js'); // using component.js in dist folder , but for dependency need ./
 const {getColorObject} = require('./colors/index.js');
 
 // ref - https://github.com/saadeghi/daisyui/blob/master/src/index.js
@@ -26,7 +26,7 @@ const mainFunction = ({addBase, addComponents, addUtilities, config, postcss, e,
   // inject @base style
   addBase(base);
 
-  // inject components
+  // inject components - button
   addComponents(component);
 
   const themeInjector = colorFunctions.injectThemes(addBase, config, themes);
