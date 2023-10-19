@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const ghpages = require('gh-pages');
+const copyFile = require('./utils/copyFile');
 
 const options = {
   branch: 'dist',
@@ -13,6 +14,9 @@ const callback = err => {
   if (err) console.error(err);
   else console.log('publish success');
 };
+
+// for dist using
+copyFile(path.resolve(__dirname, 'dist-package.json'),path.resolve(__dirname,'dist', 'dist-package.json'));
 
 /**
  * This task pushes to the `master` branch of the configured `repo`.
