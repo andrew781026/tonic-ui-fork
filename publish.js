@@ -11,7 +11,10 @@ const options = {
 
 const callback = err => {
 
-  if (err) console.error(err);
+  if (err) {
+    console.error(err);
+    process.exit(1); // exit node process with 'failure' code
+  }
   else console.log('publish success');
 };
 
