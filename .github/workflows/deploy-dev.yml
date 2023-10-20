@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    permissions: write-all
     name: deploy plugin
     runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-dev
     steps:
