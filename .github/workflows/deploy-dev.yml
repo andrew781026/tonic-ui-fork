@@ -13,7 +13,7 @@ permissions:
 jobs:
   plugin:
     name: deploy plugin
-    runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-dev
+    runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-plugin
     steps:
       - name: Check out code
         uses: actions/checkout@v3
@@ -39,7 +39,7 @@ jobs:
   ghpage:
     needs: plugin
     name: gh-page for doc
-    runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-dev
+    runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-ghpage
     steps:
       - name: Check out code
         uses: actions/checkout@v3
