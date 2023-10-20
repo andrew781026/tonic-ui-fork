@@ -4,7 +4,7 @@ const path = require('path');
 const ghpages = require('gh-pages');
 const copyFile = require('./utils/copyFile');
 
-console.log('process.env.GITHUB_TOKEN=', process.env.GITHUB_TOKEN);
+console.log('  process.env.GITHUB_TOKEN=', process.env.GITHUB_TOKEN);
 
 const repo = process.env.GITHUB_TOKEN
   // ? `https://git:${process.env.GITHUB_TOKEN}@adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui.git`
