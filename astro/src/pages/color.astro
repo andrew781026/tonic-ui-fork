@@ -1,6 +1,6 @@
 ---
 import DarkImage from '../img/Dark.png';
-import colors from '../../../src/grouped_design_token.json';
+import colors from 'consumer-tonic-design-system/grouped_design_token.json';
 
 /*
   // ref : https://css-tricks.com/switch-font-color-for-different-backgrounds-with-css/
@@ -34,6 +34,27 @@ const textColorSwitcher = bgColor => {
   return ( l * 100 >  threshold ) ? 'text-black' : 'text-white';
 }
 
+const getHex = bgColor => {
+
+  if (!bgColor) return '';
+
+  let sep = bgColor.indexOf(",") > -1 ? "," : " ";
+  let rgb = bgColor.substr(5).split(")")[0].split(sep);
+
+  for (let R in rgb) {
+    let r = rgb[R];
+    if (r.indexOf("%") > -1)
+      rgb[R] = Math.round(r.substr(0,r.length - 1) / 100 * 255);
+  }
+
+  // Make r, g, and b fractions of 1
+  let r = rgb[0] ,
+    g = rgb[1] ,
+    b = rgb[2] ;
+
+  return rgbToHex(r,g,b);
+}
+
 // ref: https://css-tricks.com/converting-color-spaces-in-javascript/
 //      https://gist.github.com/mjackson/5311256
 function rgbToHsl(r, g, b) {
@@ -58,6 +79,13 @@ function rgbToHsl(r, g, b) {
   }
 
   return { h, s, l };
+}
+
+function rgbToHex(r, g, b) {
+  const hexR = parseInt(r).toString(16).padStart(2,'0');
+  const hexG = parseInt(g).toString(16).padStart(2,'0');
+  const hexB = parseInt(b).toString(16).padStart(2,'0');
+  return "#" + hexR + hexG + hexB;
 }
 ---
 
@@ -84,12 +112,12 @@ function rgbToHsl(r, g, b) {
           value.map(item => (
             <div class={`flex w-full p-3 bg-${item.colorName} ${textColorSwitcher(item.color)}`}>
               <p class="flex-1 m-0">{item.colorName}</p>
-              <p class="m-0">{item.color}</p>
+              <p class="m-0">{getHex(item.color)}</p>
             </div>
           ))
         }
       </div>
-    ))}
+      ))}
   </div>
 </main>
 </body>

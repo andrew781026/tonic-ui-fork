@@ -1,4 +1,4 @@
-const gen_default_theme = require('../gen_default_theme.json');
+const gen_default_theme = require('consumer-tonic-design-system/gen_default_theme.json');
 
 module.exports = {
   'color-scheme': 'light',

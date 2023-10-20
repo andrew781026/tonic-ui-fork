@@ -2,7 +2,11 @@
 const fs = require('fs');
 const path = require('path');
 const ghpages = require('gh-pages');
-const copyFile = require('./utils/copyFile');
+
+const copyFile = (src, dest) => {
+  if (!fs.existsSync(path.dirname(dest))) fs.mkdirSync(path.dirname(dest), {recursive: true});
+  fs.writeFileSync(dest, fs.readFileSync(src).toString());
+};
 
 console.log('  process.env.GITHUB_TOKEN=', process.env.GITHUB_TOKEN);
 
