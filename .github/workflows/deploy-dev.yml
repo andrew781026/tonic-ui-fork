@@ -27,6 +27,8 @@ jobs:
         run: |
           npm i
           npm run build
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: deploy
         if: ${{ github.ref == 'refs/heads/dev' }} # only deploy dev
