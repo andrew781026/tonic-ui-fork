@@ -6,31 +6,59 @@ on:
     branches:
       - temp
 
+permissions:
+  id-token: write
+  contents: write
+
 jobs:
-  build:
+  plugin:
     name: deploy plugin
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
+    runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-plugin
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-        with:
-          ref: temp
 
       - name: Check Node version
         run: node -v
+
+      - name: Authenticate with private NPM package
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.NODE_AUTH_TOKEN }}" > ~/.npmrc
 
       - name: build dist
         run: |
           npm i
           npm run build
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
       - name: deploy
-        if: ${{ github.ref == 'refs/heads/temp' }} # only deploy temp
         run: |
           git config --local user.email "actions@github.com"
           git config --local user.name "GitHub Actions"
           node publish.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  ghpage:
+    needs: plugin
+    name: gh-page for doc
+    runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-ghpage
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Check Node version
+        run: node -v
+
+      - name: build astro
+        run: |
+          cd astro
+          npm i
+          npm run astro:build
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
+      - name: deploy
+        run: node ghpahes.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
