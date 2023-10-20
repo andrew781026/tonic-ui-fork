@@ -1,0 +1,27 @@
+name: consumer-tonic-ui-dist
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+
+permissions:
+  id-token: write
+  contents: write
+
+jobs:
+  plugin:
+    name: deploy plugin
+    runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-plugin
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          ref: dev
+
+      - name: Authenticate with private NPM package
+        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ./.npmrc
+
+      - name: test install
+        run: npm i
