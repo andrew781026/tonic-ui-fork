@@ -20,8 +20,5 @@ jobs:
         with:
           ref: dev
 
-      - name: Authenticate with private NPM package
-        run: echo "//registry.npmjs.org/:_authToken=${{ secrets.GITHUB_TOKEN }}" > ./.npmrc
-
       - name: test install
-        run: npm i
+        run: npm i -s "git+https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-design-system.git#web-dist"
