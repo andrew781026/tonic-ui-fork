@@ -2,6 +2,10 @@
 
 this is a fork of [daisyui](https://github.com/saadeghi/daisyui)
 
-### build Tailwind Plugin
+### Install Consumer-Tonic-UI Plugin
+
+
+
+### Using Consumer-Tonic-UI Plugin in Tailwind
 
 
