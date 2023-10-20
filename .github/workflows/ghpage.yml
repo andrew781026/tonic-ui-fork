@@ -7,6 +7,7 @@ on:
 #      - dev
 
 permissions:
+  id-token: read
   contents: write
 
 jobs:
