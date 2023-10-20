@@ -6,9 +6,11 @@ on:
     branches:
       - dev
 
+permissions:
+  contents: write
+
 jobs:
-  build:
-    permissions: write-all
+  plugin:
     name: deploy plugin
     runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-dev
     steps:
@@ -33,3 +35,26 @@ jobs:
           node publish.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  ghpage:
+    name: gh-page for doc
+    runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-dev
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Check Node version
+        run: node -v
+
+      - name: build astro
+        run: |
+          cd astro
+          npm i
+          npm run astro:build
+
+      - name: deploy
+        if: ${{ github.ref == 'refs/heads/dev' }} # only deploy dev
+        run: node ghpahes.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
