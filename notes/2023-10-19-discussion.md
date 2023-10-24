@@ -2,14 +2,7 @@
 
 ### What FED Plan
 
-consumer-tonic-design-system ( JSON ) -> transform json ( github-action ) -> dist 分支 ( gen_consumer_design_tokens.json . gen_default_theme.json 這兩個 output 檔案 )
-
---------
-consumer-tonic-ui ( vanilla-JS ) -> npm run build ( github-action )  -> dist 分支
--> npm run astro:publish ( github-action ) -> gh-pages 分支
-
-consumer-tonic-ui-react ( react-JS ) -> dist 分支
-consumer-tonic-ui-vue ( vue-JS ) -> dist 分支
+![repo structure](imgs/pic_03.png)
 
 ### What FED Done
 
@@ -19,12 +12,11 @@ consumer-tonic-ui-vue ( vue-JS ) -> dist 分支
 
 > Color Palettes
 
-- Color Palettes A - https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui/color/
-- Color Palettes B - https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui/color2/
+- Color Palettes - https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui/color/
 
 > Class ( using tailwind , so below class are done !! )
 
-![gen flow](imgs/pic_02.png)
+![install plugin](imgs/pic_02.png)
 
 ```
 bg-{COLOR_NAME}
@@ -65,7 +57,8 @@ ring-offset-{COLOR_NAME}
 - https://help.figma.com/hc/en-us/articles/4406787442711#variables
 - tmc_style_guide_test.json ( dark-mode )
 
-### FED ToDo
+### FED ToDo Topics
 
 - [UI Component - Button](https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=23310-130511&mode=design&t=EM5r6Tuoh43PvvSt-0)
 - Astro Doc Layout ( Pending... )
+- theme color for dark-mode

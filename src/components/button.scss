@@ -1,3 +1,5 @@
+/* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=8-0&mode=design&t=hKQjHK8C96rHEMP3-0 */
+
 .btn {
   padding: 10px 24px;
   font-size: 18px;
@@ -19,7 +21,8 @@
 }
 
 .btn-loading {
-  background: #D5D5D5;
+  @apply bg-tcsmd-gray-28;
+  //background: #D5D5D5;
   border: none;
   cursor: wait;
 
@@ -30,8 +33,8 @@
 }
 
 .btn-primary {
-  @apply btn bg-gradient-to-b from-primary-default-start to-primary-default-end;
-  //background: linear-gradient(180deg, #EA0108, #D50107);
+  @apply btn bg-gradient-to-b from-enabled-primary-start to-enabled-primary-end;
+  //background: linear-gradient(180deg, #EA0008, #D30007);
   border-radius: 4px;
   margin: 4px;
 
@@ -56,12 +59,12 @@
   }
 
   &:hover, &.hover {
-    @apply bg-gradient-to-b from-primary-hover-start to-primary-hover-end;
-    //background: linear-gradient(180deg, #DF0108, #CD0107);
+    @apply bg-gradient-to-b from-hover-primary-start to-hover-primary-end;
+    //background: linear-gradient(180deg, #D30007, #B80006);
   }
 
   &:active, &.active {
-    @apply bg-gradient-to-b from-primary-active-start to-primary-active-end;
+    @apply bg-gradient-to-b from-active-primary-start to-active-primary-end;
     //background: linear-gradient(180deg, #CE0107, #BB0106);
   }
 
@@ -82,6 +85,100 @@
 .btn-default {
   @apply btn;
   background: linear-gradient(180deg, #FAFAFA, #F2F2F2);
+  border-radius: 4px;
+  margin: 4px;
+
+  &.rounded {
+    border-radius: 20px;
+  }
+
+  &.small {
+    padding: 7px 24px;
+
+    &.rounded {
+      border-radius: 16px;
+    }
+  }
+
+  &.large {
+    padding: 20px 40px;
+
+    &.rounded {
+      border-radius: 30px;
+    }
+  }
+
+  &:hover, &.hover {
+    background: linear-gradient(180deg, #ececec, #e7e7e7);
+  }
+
+  &:active, &.active {
+    background: linear-gradient(180deg, #DBDBDB, #D6D6D6);
+  }
+
+  &:disabled, &.disabled {
+    @apply btn-disabled;
+  }
+
+  &.loading {
+    @apply btn-loading;
+  }
+
+  &:focus, &.focus {
+    border: 2px solid #0074E8;
+  }
+}
+
+.btn-emphasis {
+  @apply btn;
+  background: linear-gradient(to bottom, #0074E8, #006BD6);
+  border-radius: 4px;
+  margin: 4px;
+
+  &.rounded {
+    border-radius: 999px;
+  }
+
+  &.small {
+    padding: 7px 24px;
+
+    &.rounded {
+      border-radius: 16px;
+    }
+  }
+
+  &.large {
+    padding: 20px 40px;
+
+    &.rounded {
+      border-radius: 30px;
+    }
+  }
+
+  &:hover, &.hover {
+    background: linear-gradient(180deg, #006BD6, #0155A9);
+  }
+
+  &:active, &.active {
+    background: linear-gradient(180deg, #0155A9, #004386);
+  }
+
+  &:disabled, &.disabled {
+    @apply btn-disabled;
+  }
+
+  &.loading {
+    @apply btn-loading;
+  }
+
+  &:focus, &.focus {
+    border: 2px solid #0074E8;
+  }
+}
+
+.btn-ghost {
+  @apply btn;
+  background: transparent;
   border-radius: 4px;
   margin: 4px;
 
