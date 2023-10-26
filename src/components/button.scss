@@ -83,8 +83,7 @@
 }
 
 .btn-default {
-  @apply btn;
-  background: linear-gradient(180deg, #FAFAFA, #F2F2F2);
+  @apply btn from-enabled-default-start to-enabled-default-end;
   border-radius: 4px;
   margin: 4px;
 
@@ -109,11 +108,13 @@
   }
 
   &:hover, &.hover {
-    background: linear-gradient(180deg, #ececec, #e7e7e7);
+    @apply bg-gradient-to-b from-hover-default-start to-hover-default-end;
+    //background: linear-gradient(180deg, #ececec, #e7e7e7);
   }
 
   &:active, &.active {
-    background: linear-gradient(180deg, #DBDBDB, #D6D6D6);
+    @apply bg-gradient-to-b from-active-default-start to-active-default-end;
+    //background: linear-gradient(180deg, #DBDBDB, #D6D6D6);
   }
 
   &:disabled, &.disabled {
@@ -156,11 +157,13 @@
   }
 
   &:hover, &.hover {
-    background: linear-gradient(180deg, #006BD6, #0155A9);
+    @apply bg-gradient-to-b from-hover-emphasis-start to-hover-emphasis-end;
+    //background: linear-gradient(180deg, #006BD6, #0155A9);
   }
 
   &:active, &.active {
-    background: linear-gradient(180deg, #0155A9, #004386);
+    @apply bg-gradient-to-b from-active-emphasis-start to-active-emphasis-end;
+    //background: linear-gradient(180deg, #0155A9, #004386);
   }
 
   &:disabled, &.disabled {
@@ -203,11 +206,13 @@
   }
 
   &:hover, &.hover {
-    background: linear-gradient(180deg, #ececec, #e7e7e7);
+    @apply bg-gradient-to-b from-hover-ghost-start to-hover-ghost-end;
+    //background: linear-gradient(180deg, #ececec, #e7e7e7);
   }
 
   &:active, &.active {
-    background: linear-gradient(180deg, #DBDBDB, #D6D6D6);
+    @apply bg-gradient-to-b from-active-ghost-start to-active-ghost-end;
+    //background: linear-gradient(180deg, #DBDBDB, #D6D6D6);
   }
 
   &:disabled, &.disabled {

@@ -1,4 +1,4 @@
-const gen_default_theme = require('consumer-tonic-design-system/gen_default_theme.json');
+const gen_default_theme = require('consumer-tonic-design-system/default_gen_default_theme.json');
 
 module.exports = {
   'color-scheme': 'light',
@@ -13,15 +13,33 @@ module.exports = {
   // 'primary-active-start': '#CE0107',
   // 'primary-active-end': '#BB0106',
 
+  'loading': '#D5D5D5', // tcsmd-gray-28
+
   'enabled-primary-start': '#EB0008',
   'enabled-primary-end': '#D30007',
   'hover-primary-start': '#D30007',
-  'hover-primary-end': '#D30007',
-  'active-primary-start': '#D30007',
-  'active-primary-end': '#D30007',
-  'disabled-primary-start': '#D30007',
-  'disabled-primary-end': '#D30007',
-  'loading': '#D5D5D5', // tcsmd-gray-28
+  'hover-primary-end': '#B80006',
+  'active-primary-start': '#CE0107',
+  'active-primary-end': '#BB0106',
+
+  'enabled-default-start': '#FAFAFA',
+  'enabled-default-end': '#F2F2F2',
+  'hover-default-start': '#ececec',
+  'hover-default-end': '#e7e7e7',
+  'active-default-start': '#DBDBDB',
+  'active-default-end': '#D6D6D6',
+
+  'enabled-emphasis-start': '#0074E8',
+  'enabled-emphasis-end': '#006BD6',
+  'hover-emphasis-start': '#006BD6',
+  'hover-emphasis-end': '#0155A9',
+  'active-emphasis-start': '#0155A9',
+  'active-emphasis-end': '#004386',
+
+  'hover-ghost-start': '#ececec',
+  'hover-ghost-end': '#e7e7e7',
+  'active-ghost-start': '#DBDBDB',
+  'active-ghost-end': '#D6D6D6',
 
   // 'orange-100': '#612200',
   // 'orange-90': '#7D2E00',

@@ -15,6 +15,11 @@ module.exports = {
     ...bgColors,
   ],
 
+  tonicui: {
+    themes: ['consumer'],
+    darkTheme: ['dark'],
+  },
+
 	theme: {
 		extend: {},
 	},
