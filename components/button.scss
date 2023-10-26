@@ -337,7 +337,10 @@
 }
 
 .btn-ghost:disabled, .btn-ghost.disabled {
-  background-color: transparent;
+  --tw-gradient-from: transparent var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: transparent var(--tw-gradient-to-position);
   opacity: 0.4;
   cursor: not-allowed;
 }
