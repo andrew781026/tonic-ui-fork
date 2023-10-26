@@ -1,4 +1,10 @@
+const dark_default_theme = require('consumer-tonic-design-system/dark_gen_default_theme.json');
+
 module.exports = {
+  '[data-theme=dark]': {
+    'color-scheme': 'dark',
+    ...dark_default_theme
+  },
   '[data-theme=black]': {
     'color-scheme': 'dark',
     'primary': '#343232',

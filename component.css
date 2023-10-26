@@ -1,3 +1,5 @@
+/* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=8-0&mode=design&t=hKQjHK8C96rHEMP3-0 */
+
 .btn {
   padding: 10px 24px;
   font-size: 18px;
@@ -19,7 +21,8 @@
   }
 
 .btn-loading {
-  background: #D5D5D5;
+  background-color: var(--tcsmd-gray-28);
+  //background: #D5D5D5;
   border: none;
   cursor: wait;
 }
@@ -31,10 +34,10 @@
 
 .btn-primary {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-  --tw-gradient-from: var(--primary-default-start) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--enabled-primary-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--primary-default-end) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--enabled-primary-end) var(--tw-gradient-to-position);
   padding: 10px 24px;
   font-size: 18px;
   line-height: 1.17;
@@ -42,7 +45,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  //background: linear-gradient(180deg, #EA0108, #D50107);
+  //background: linear-gradient(180deg, #EA0008, #D30007);
   border-radius: 4px;
   margin: 4px;
 }
@@ -69,19 +72,19 @@
 
 .btn-primary:hover, .btn-primary.hover {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-  --tw-gradient-from: var(--primary-hover-start) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--hover-primary-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--primary-hover-end) var(--tw-gradient-to-position);
-    //background: linear-gradient(180deg, #DF0108, #CD0107);
+  --tw-gradient-to: var(--hover-primary-end) var(--tw-gradient-to-position);
+    //background: linear-gradient(180deg, #D30007, #B80006);
 }
 
 .btn-primary:active, .btn-primary.active {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-  --tw-gradient-from: var(--primary-active-start) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--active-primary-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--primary-active-end) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--active-primary-end) var(--tw-gradient-to-position);
     //background: linear-gradient(180deg, #CE0107, #BB0106);
 }
 
@@ -96,7 +99,8 @@
   }
 
 .btn-primary.loading {
-  background: #D5D5D5;
+  background-color: var(--tcsmd-gray-28);
+  //background: #D5D5D5;
   border: none;
   cursor: wait;
 }
@@ -112,6 +116,10 @@
   }
 
 .btn-default {
+  --tw-gradient-from: var(--enabled-default-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: var(--enabled-default-end) var(--tw-gradient-to-position);
   padding: 10px 24px;
   font-size: 18px;
   line-height: 1.17;
@@ -119,7 +127,6 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(180deg, #FAFAFA, #F2F2F2);
   border-radius: 4px;
   margin: 4px;
 }
@@ -145,12 +152,22 @@
     }
 
 .btn-default:hover, .btn-default.hover {
-    background: linear-gradient(180deg, #ececec, #e7e7e7);
-  }
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+  --tw-gradient-from: var(--hover-default-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: var(--hover-default-end) var(--tw-gradient-to-position);
+    //background: linear-gradient(180deg, #ececec, #e7e7e7);
+}
 
 .btn-default:active, .btn-default.active {
-    background: linear-gradient(180deg, #DBDBDB, #D6D6D6);
-  }
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+  --tw-gradient-from: var(--active-default-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: var(--active-default-end) var(--tw-gradient-to-position);
+    //background: linear-gradient(180deg, #DBDBDB, #D6D6D6);
+}
 
 .btn-default:disabled, .btn-default.disabled {
   opacity: 0.4;
@@ -163,7 +180,8 @@
   }
 
 .btn-default.loading {
-  background: #D5D5D5;
+  background-color: var(--tcsmd-gray-28);
+  //background: #D5D5D5;
   border: none;
   cursor: wait;
 }
@@ -174,6 +192,160 @@
   }
 
 .btn-default:focus, .btn-default.focus {
+    border: 2px solid #0074E8;
+  }
+
+.btn-emphasis {
+  padding: 10px 24px;
+  font-size: 18px;
+  line-height: 1.17;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(to bottom, #0074E8, #006BD6);
+  border-radius: 4px;
+  margin: 4px;
+}
+
+.btn-emphasis.rounded {
+    border-radius: 999px;
+  }
+
+.btn-emphasis.small {
+    padding: 7px 24px;
+  }
+
+.btn-emphasis.small.rounded {
+      border-radius: 16px;
+    }
+
+.btn-emphasis.large {
+    padding: 20px 40px;
+  }
+
+.btn-emphasis.large.rounded {
+      border-radius: 30px;
+    }
+
+.btn-emphasis:hover, .btn-emphasis.hover {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+  --tw-gradient-from: var(--hover-emphasis-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: var(--hover-emphasis-end) var(--tw-gradient-to-position);
+    //background: linear-gradient(180deg, #006BD6, #0155A9);
+}
+
+.btn-emphasis:active, .btn-emphasis.active {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+  --tw-gradient-from: var(--active-emphasis-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: var(--active-emphasis-end) var(--tw-gradient-to-position);
+    //background: linear-gradient(180deg, #0155A9, #004386);
+}
+
+.btn-emphasis:disabled, .btn-emphasis.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-emphasis:disabled:focus, .btn-emphasis.disabled:focus {
+    border: none;
+    outline: none;
+  }
+
+.btn-emphasis.loading {
+  background-color: var(--tcsmd-gray-28);
+  //background: #D5D5D5;
+  border: none;
+  cursor: wait;
+}
+
+.btn-emphasis.loading:focus {
+    border: none;
+    outline: none;
+  }
+
+.btn-emphasis:focus, .btn-emphasis.focus {
+    border: 2px solid #0074E8;
+  }
+
+.btn-ghost {
+  padding: 10px 24px;
+  font-size: 18px;
+  line-height: 1.17;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: transparent;
+  border-radius: 4px;
+  margin: 4px;
+}
+
+.btn-ghost.rounded {
+    border-radius: 20px;
+  }
+
+.btn-ghost.small {
+    padding: 7px 24px;
+  }
+
+.btn-ghost.small.rounded {
+      border-radius: 16px;
+    }
+
+.btn-ghost.large {
+    padding: 20px 40px;
+  }
+
+.btn-ghost.large.rounded {
+      border-radius: 30px;
+    }
+
+.btn-ghost:hover, .btn-ghost.hover {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+  --tw-gradient-from: var(--hover-ghost-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: var(--hover-ghost-end) var(--tw-gradient-to-position);
+    //background: linear-gradient(180deg, #ececec, #e7e7e7);
+}
+
+.btn-ghost:active, .btn-ghost.active {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+  --tw-gradient-from: var(--active-ghost-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: var(--active-ghost-end) var(--tw-gradient-to-position);
+    //background: linear-gradient(180deg, #DBDBDB, #D6D6D6);
+}
+
+.btn-ghost:disabled, .btn-ghost.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-ghost:disabled:focus, .btn-ghost.disabled:focus {
+    border: none;
+    outline: none;
+  }
+
+.btn-ghost.loading {
+  background-color: var(--tcsmd-gray-28);
+  //background: #D5D5D5;
+  border: none;
+  cursor: wait;
+}
+
+.btn-ghost.loading:focus {
+    border: none;
+    outline: none;
+  }
+
+.btn-ghost:focus, .btn-ghost.focus {
     border: 2px solid #0074E8;
   }
 
