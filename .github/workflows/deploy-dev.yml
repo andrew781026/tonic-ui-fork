@@ -36,7 +36,6 @@ jobs:
           touch ~/.ssh/config
           printf "Host *\n\tStrictHostKeyChecking no\n\tIdentityFile ${{ env.SSH_KEY_FILE }}\n\tLogLevel ERROR\n" >> ~/.ssh/config
           cat ~/.ssh/config
-          git ls-remote --refs ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-design-system.git web-dist
 
       - name: build dist
         run: |
