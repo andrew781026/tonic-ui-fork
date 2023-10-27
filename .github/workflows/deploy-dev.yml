@@ -64,7 +64,9 @@ jobs:
           ssh-key: ${{ secrets.SERVICE_ACCOUNT_SSH_KEY }}
 
       - name: Check Node version
-        run: node -v
+        run: |
+          node -v
+          ping adc.github.trendmicro.com -c 1
 
       - name: Setup SSH Permission
         uses: actions/ssh-config@v1
