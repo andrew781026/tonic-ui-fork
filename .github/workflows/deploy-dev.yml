@@ -64,9 +64,7 @@ jobs:
           ssh-key: ${{ secrets.SERVICE_ACCOUNT_SSH_KEY }}
 
       - name: Check Node version
-        run: |
-          node -v
-          ping adc.github.trendmicro.com -c 1
+        run: node -v
 
       - name: Setup SSH Permission
         uses: actions/ssh-config@v1
@@ -80,7 +78,6 @@ jobs:
           touch ~/.ssh/config
           printf "Host *\n\tStrictHostKeyChecking no\n\tIdentityFile ${{ env.SSH_KEY_FILE }}\n\tLogLevel ERROR\n" >> ~/.ssh/config
           cat ~/.ssh/config
-          git ls-remote --refs ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-design-system.git web-dist
 
       - name: build astro
         run: |
