@@ -7,7 +7,7 @@
     "astro:start": "astro dev",
     "astro:build": "astro build",
     "astro:preview": "astro preview",
-    "astro:deploy": "node ghpages.js",
+    "astro:deploy": "node ghpages.cjs",
     "astro": "astro"
   },
   "dependencies": {
