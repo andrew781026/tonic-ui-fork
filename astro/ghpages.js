@@ -16,9 +16,9 @@ const callback = err => {
 };
 
 // ref : https://stackoverflow.com/questions/11577147/how-to-fix-http-404-on-github-pages
-fs.writeFileSync(path.resolve(__dirname, './astro/dist','.nojekyll'),'');
+fs.writeFileSync(path.resolve(__dirname, './dist','.nojekyll'),'');
 
 /**
  * This task pushes to the `master` branch of the configured `repo`.
  */
-ghpages.publish(path.resolve(__dirname, './astro/dist'), options, callback);
+ghpages.publish(path.resolve(__dirname, './dist'), options, callback);

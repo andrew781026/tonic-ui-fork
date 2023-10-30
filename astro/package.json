@@ -7,7 +7,7 @@
     "astro:start": "astro dev",
     "astro:build": "astro build",
     "astro:preview": "astro preview",
-    "astro:deploy": "node ../ghpages.js",
+    "astro:deploy": "node ghpages.js",
     "astro": "astro"
   },
   "dependencies": {
@@ -20,6 +20,7 @@
   },
   "devDependencies": {
     "consumer-tonic-design-system": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-design-system.git#web-dist",
-    "consumer-tonic-ui": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git#dist"
+    "consumer-tonic-ui": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git#dist",
+    "gh-pages": "^6.0.0"
   }
 }
