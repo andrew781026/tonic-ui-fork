@@ -89,6 +89,11 @@
 }
 
 .btn-primary:disabled, .btn-primary.disabled {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+  --tw-gradient-from: var(--enabled-primary-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: var(--enabled-primary-end) var(--tw-gradient-to-position);
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -116,6 +121,7 @@
   }
 
 .btn-default {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   --tw-gradient-from: var(--enabled-default-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
@@ -152,7 +158,6 @@
     }
 
 .btn-default:hover, .btn-default.hover {
-  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   --tw-gradient-from: var(--hover-default-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
@@ -161,7 +166,6 @@
 }
 
 .btn-default:active, .btn-default.active {
-  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   --tw-gradient-from: var(--active-default-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
@@ -170,6 +174,10 @@
 }
 
 .btn-default:disabled, .btn-default.disabled {
+  --tw-gradient-from: var(--enabled-default-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: var(--enabled-default-end) var(--tw-gradient-to-position);
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -196,6 +204,11 @@
   }
 
 .btn-emphasis {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+  --tw-gradient-from: var(--enabled-emphasis-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: var(--enabled-emphasis-end) var(--tw-gradient-to-position);
   padding: 10px 24px;
   font-size: 18px;
   line-height: 1.17;
@@ -203,7 +216,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(to bottom, #0074E8, #006BD6);
+  //background: linear-gradient(to bottom, #0074E8, #006BD6);
   border-radius: 4px;
   margin: 4px;
 }
@@ -324,6 +337,10 @@
 }
 
 .btn-ghost:disabled, .btn-ghost.disabled {
+  --tw-gradient-from: transparent var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: transparent var(--tw-gradient-to-position);
   opacity: 0.4;
   cursor: not-allowed;
 }
