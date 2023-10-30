@@ -17,8 +17,9 @@
     "url": "https://github.com/andrew781026/tonic-ui-fork/issues"
   },
   "homepage": "https://github.com/andrew781026/tonic-ui-fork#readme",
-  "devDependencies": {
-    "tailwindcss": "^3.3.2"
+  "dependencies": {
+    "tailwindcss": "^3.3.2",
+    "color": "^4.2.3"
   },
   "peerDependencies": {
     "autoprefixer": "^10.0.2",
