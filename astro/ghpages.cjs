@@ -3,16 +3,28 @@ const fs = require('fs');
 const path = require('path');
 const ghpages = require('gh-pages');
 
+console.log('process.env.GITHUB_TOKEN=', process.env.GITHUB_TOKEN);
+
+const repo = process.env.GITHUB_TOKEN
+  ? `https://git:${process.env.GITHUB_TOKEN}@adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui.git`
+  : 'git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git';
+
 const options = {
   dotfiles: true, // make .nojekyll be upload
   branch: 'gh-pages',
-  repo: 'git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git' // project github repo
+  repo,
+  user: {
+    name: 'GitHub Actions',
+    email: 'actions.github@trendmicro.com'
+  }
 };
 
 const callback = err => {
 
-  if (err) console.error(err);
-  else console.log('publish success');
+  if (err) {
+    console.error(err);
+    process.exit(1); // exit node process with 'failure' code
+  } else console.log('publish success');
 };
 
 // ref : https://stackoverflow.com/questions/11577147/how-to-fix-http-404-on-github-pages
