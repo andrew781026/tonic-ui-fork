@@ -1,4 +1,4 @@
-const colors = require('consumer-tonic-design-system/gen_default_theme.json');
+const colors = require('consumer-tonic-design-system/default_gen_default_theme.json');
 const bgColors = Object.entries(colors).map(([key,value]) => `bg-${key}`);
 
 /** @type {import('tailwindcss').Config} */
