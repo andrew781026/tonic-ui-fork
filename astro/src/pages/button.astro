@@ -22,38 +22,82 @@ const textColor = variant => ['default','ghost'].includes(variant) ? 'text-black
     <img class="mr-4" src={DarkImage} alt="logo" width="50" height="50"/>
     Buttons
   </h1>
-  {
-    variants.map(variant => (
-  <div class="bg-amber-50 mb-8">
-    <div class="bg-amber-600 text-white p-4 uppercase text-3xl">
-      {variant}
-    </div>
-    <div class="flex flex-wrap gap-4 p-4">
+  <div class="flex flex-wrap gap-16">
+    <div class="w-[800px] p-4 bg-red-200">
+      <div class="p-4 uppercase text-3xl">
+        BUTTON
+      </div>
       {
-        states.map(state => (
-          <div class={`flex w-full items-center gap-4`}>
-            <p class="w-24 text-2xl">{state.charAt(0).toUpperCase() + state.slice(1)}</p>
-            <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
-              Button
-            </button>
-            <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
-              <span>+</span>
-              Button
-            </button>
-            <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
-              Button
-              <span>+</span>
-            </button>
-            <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
-              +
-            </button>
-          </div>
-        ))
-      }
-    </div>
+        variants.map(variant => (
+          <div class="bg-amber-50 mb-8">
+            <div class="bg-amber-600 text-white p-4 uppercase text-3xl">
+              {variant}
+            </div>
+            <div class="flex flex-wrap gap-4 p-4">
+              {
+                states.map(state => (
+                  <div class={`flex w-full items-center gap-4`}>
+                    <p class="w-24 text-2xl">{state.charAt(0).toUpperCase() + state.slice(1)}</p>
+                    <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
+                      Button
+                    </button>
+                    <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
+                      <span>+</span>
+                      Button
+                    </button>
+                    <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
+                      Button
+                      <span>+</span>
+                    </button>
+                    <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
+                      +
+                    </button>
+                  </div>
+                ))
+                }
+                </div>
+                </div>
+                ))
+                }
+                </div>
+                <div class="w-[800px] p-4 bg-red-200">
+                  <div class="p-4 uppercase text-3xl">
+                    TEXT-BUTTON
+                  </div>
+                  {
+                    variants.map(variant => (
+                      <div class="bg-amber-50 mb-8">
+                        <div class="bg-amber-600 text-white p-4 uppercase text-3xl">
+                          {variant}
+                        </div>
+                        <div class="flex flex-wrap gap-4 p-4">
+                          {
+                            states.map(state => (
+                              <div class={`flex w-full items-center gap-4`}>
+                                <p class="w-24 text-2xl">{state.charAt(0).toUpperCase() + state.slice(1)}</p>
+                                <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
+                                  Button
+                                </button>
+                                <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
+                                  <span>+</span>
+                                  Button
+                                </button>
+                                <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
+                                  Button
+                                  <span>+</span>
+                                </button>
+                                <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
+                                  +
+                                </button>
+                              </div>
+                            ))
+                            }
+                            </div>
+                            </div>
+                            ))
+                            }
+      </div>
   </div>
-  ))
-  }
 </main>
 </body>
 </html>
