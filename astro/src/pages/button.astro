@@ -1,6 +1,11 @@
 ---
 import DarkImage from '../img/Dark.png';
-import colors from 'consumer-tonic-design-system/grouped_design_token.json';
+
+const btnVariants = ['btn-primary', 'btn-default', 'btn-emphasis', 'btn-ghost'];
+const variants = ['primary', 'default', 'emphasis', 'ghost'];
+const states = ['enabled', 'hover', 'active', 'disabled', 'loading', 'focus'];
+
+const textColor = variant => ['default','ghost'].includes(variant) ? 'text-black' : 'text-white' ;
 
 ---
 
@@ -15,10 +20,40 @@ import colors from 'consumer-tonic-design-system/grouped_design_token.json';
 <main class="h-screen content-center p-8">
   <h1 class="flex text-3xl items-center mb-16">
     <img class="mr-4" src={DarkImage} alt="logo" width="50" height="50"/>
-    Token - Color Palettes
+    Buttons
   </h1>
-  <div class="flex flex-wrap gap-4">
+  {
+    variants.map(variant => (
+  <div class="bg-amber-50 mb-8">
+    <div class="bg-amber-600 text-white p-4 uppercase text-3xl">
+      {variant}
+    </div>
+    <div class="flex flex-wrap gap-4 p-4">
+      {
+        states.map(state => (
+          <div class={`flex w-full items-center gap-4`}>
+            <p class="w-24 text-2xl">{state.charAt(0).toUpperCase() + state.slice(1)}</p>
+            <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
+              Button
+            </button>
+            <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
+              <span>+</span>
+              Button
+            </button>
+            <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
+              Button
+              <span>+</span>
+            </button>
+            <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
+              +
+            </button>
+          </div>
+        ))
+      }
+    </div>
   </div>
+  ))
+  }
 </main>
 </body>
 </html>
