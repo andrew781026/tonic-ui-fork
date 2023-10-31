@@ -1,5 +1,6 @@
 ---
 import DarkImage from "../img/Dark.png";
+import IconPlus from "../components/icons/IconPlus.astro";
 
 const btnVariants = [
   'tcsmd-btn-primary', 'tcsmd-btn-default', 'tcsmd-btn-emphasis', 'tcsmd-btn-ghost',
@@ -34,13 +35,13 @@ const textColor = variant => ['default','ghost'].includes(variant) ? 'text-black
             <div class="flex flex-wrap gap-3">
               <button class={`${variant}`}>Default</button>
               <button class={`${variant} hover`}>
-                <span>+</span>
+                <IconPlus />
                 Hover
               </button>
               <button class={`${variant} active`}>
-                <span>+</span>
+                <IconPlus />
                 active
-                <span>+</span>
+                <IconPlus />
               </button>
               <button class={`${variant} disabled`}>disabled</button>
               <button class={`${variant} loading`}>loading</button>
