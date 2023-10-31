@@ -105,6 +105,10 @@
     outline: none;
   }
 
+.tcsmd-text-btn:disabled:focus, .tcsmd-text-btn:disabled.focus, .tcsmd-text-btn.disabled:focus, .tcsmd-text-btn.disabled.focus {
+  border-color: transparent;
+}
+
 .tcsmd-text-btn.loading {
   background-color: transparent;
   background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
@@ -548,6 +552,10 @@
     outline: none;
   }
 
+.tcsmd-text-btn-primary:disabled:focus,.tcsmd-text-btn-primary:disabled.focus,.tcsmd-text-btn-primary.disabled:focus,.tcsmd-text-btn-primary.disabled.focus {
+  border-color: transparent;
+}
+
 .tcsmd-text-btn-primary.loading {
   background-color: transparent;
   background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
@@ -629,6 +637,10 @@
     outline: none;
   }
 
+.tcsmd-text-btn-default:disabled:focus,.tcsmd-text-btn-default:disabled.focus,.tcsmd-text-btn-default.disabled:focus,.tcsmd-text-btn-default.disabled.focus {
+  border-color: transparent;
+}
+
 .tcsmd-text-btn-default.loading {
   background-color: transparent;
   background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
@@ -709,6 +721,10 @@
 .tcsmd-text-btn-emphasis:disabled:focus,.tcsmd-text-btn-emphasis.disabled:focus {
     outline: none;
   }
+
+.tcsmd-text-btn-emphasis:disabled:focus,.tcsmd-text-btn-emphasis:disabled.focus,.tcsmd-text-btn-emphasis.disabled:focus,.tcsmd-text-btn-emphasis.disabled.focus {
+  border-color: transparent;
+}
 
 .tcsmd-text-btn-emphasis.loading {
   background-color: transparent;
