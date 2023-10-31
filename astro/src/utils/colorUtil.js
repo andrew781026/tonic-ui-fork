@@ -34,6 +34,7 @@ export const textColorSwitcher = bgColor => {
 }
 
 export const getHex = bgColor => {
+  if (bgColor?.startsWith('var')) return bgColor;
   const {r, g, b, a} = getRgba(bgColor);
   return rgbToHex(r, g, b);
 }
