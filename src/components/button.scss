@@ -5,7 +5,6 @@
   cursor: not-allowed;
 
   &:focus {
-    border: none;
     outline: none;
   }
 }
@@ -23,6 +22,7 @@
 }
 
 .tcsmd-btn {
+  @apply border-2 border-transparent outline outline-2 outline-transparent;
   padding: 10px 24px;
   font-size: 18px;
   line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
@@ -32,8 +32,6 @@
 
   border-radius: 4px;
   margin: 4px;
-  border: 2px solid transparent;
-  outline: 2px solid transparent;
 
   &.rounded {
     border-radius: 999px;
@@ -144,6 +142,10 @@
 
   &:disabled, &.disabled {
     @apply tcsmd-btn-disabled from-enabled-default-start to-enabled-default-end;
+
+    &:focus, &.focus {
+      @apply border-tcsmd-gray-50;
+    }
   }
 
   &.loading {
@@ -151,7 +153,7 @@
   }
 
   &:focus, &.focus {
-    border: 2px solid #0074E8;
+    @apply border-transparent outline-tcsmd-blue-60;
   }
 }
 
@@ -167,7 +169,7 @@
   }
 
   &:disabled, &.disabled {
-    @apply tcsmd-btn-disabled;
+    @apply tcsmd-btn-disabled bg-gradient-to-b from-enabled-emphasis-start to-enabled-emphasis-end;
   }
 
   &.loading {
@@ -180,7 +182,8 @@
 }
 
 .tcsmd-btn-ghost {
-  @apply tcsmd-btn bg-transparent border border-tcsmd-gray-26 text-tcsmd-color-text-primary;
+  @apply tcsmd-btn bg-transparent border-tcsmd-gray-26 text-tcsmd-color-text-primary;
+  border-width:1px;
 
   &:hover, &.hover {
     @apply bg-gradient-to-b from-hover-ghost-start to-hover-ghost-end border-tcsmd-gray-50;
@@ -192,6 +195,10 @@
 
   &:disabled, &.disabled {
     @apply tcsmd-btn-disabled from-transparent to-transparent border-tcsmd-gray-30;
+
+    &:focus, &.focus {
+      @apply border-tcsmd-gray-30;
+    }
   }
 
   &.loading {
@@ -199,7 +206,7 @@
   }
 
   &:focus, &.focus {
-    @apply border-2 border-tcsmd-blue-60;
+    @apply border-transparent outline-tcsmd-blue-60;
   }
 }
 
