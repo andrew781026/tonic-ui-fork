@@ -31,7 +31,7 @@
   align-items: center;
   gap: 8px;
 
-  border-radius: 4px;
+  //border-radius: 4px;
   margin: 4px;
   border: 2px solid transparent;
   outline: 2px solid transparent;
@@ -55,6 +55,7 @@
 
 .tcsmd-text-btn {
   border-width: 2px;
+  border-color: transparent;
   background-color: transparent; /* background-color: transparent */
 
   padding: 10px 24px; /* height = 40px , font-size = 18px , line-height = normal */
@@ -138,7 +139,7 @@
   align-items: center;
   gap: 8px;
 
-  border-radius: 4px;
+  //border-radius: 4px;
   margin: 4px;
   border: 2px solid transparent;
   outline: 2px solid transparent;
@@ -222,7 +223,7 @@
   align-items: center;
   gap: 8px;
 
-  border-radius: 4px;
+  //border-radius: 4px;
   margin: 4px;
   border: 2px solid transparent;
   outline: 2px solid transparent;
@@ -243,6 +244,10 @@
 .tcsmd-btn-default.large {
     padding: 20px 40px;
   }
+
+.tcsmd-btn-default {
+  border: 0.5px solid #8e8e8e;
+}
 
 .tcsmd-btn-default:hover, .tcsmd-btn-default.hover {
   --tw-gradient-from: var(--hover-default-start) var(--tw-gradient-from-position);
@@ -302,7 +307,7 @@
   align-items: center;
   gap: 8px;
 
-  border-radius: 4px;
+  //border-radius: 4px;
   margin: 4px;
   border: 2px solid transparent;
   outline: 2px solid transparent;
@@ -367,6 +372,9 @@
   }
 
 .tcsmd-btn-ghost {
+  border-width: 1px;
+  border-color: var(--tcsmd-gray-26);
+  background-color: transparent;
   padding: 10px 24px;
   font-size: 18px;
   line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
@@ -375,7 +383,7 @@
   align-items: center;
   gap: 8px;
 
-  border-radius: 4px;
+  //border-radius: 4px;
   margin: 4px;
   border: 2px solid transparent;
   outline: 2px solid transparent;
@@ -397,11 +405,8 @@
     padding: 20px 40px;
   }
 
-.tcsmd-btn-ghost {
-  background: transparent;
-}
-
 .tcsmd-btn-ghost:hover, .tcsmd-btn-ghost.hover {
+  border-color: var(--tcsmd-gray-50);
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   --tw-gradient-from: var(--hover-ghost-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
@@ -410,6 +415,7 @@
 }
 
 .tcsmd-btn-ghost:active, .tcsmd-btn-ghost.active {
+  border-color: var(--tcsmd-gray-50);
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   --tw-gradient-from: var(--active-ghost-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
@@ -418,6 +424,7 @@
 }
 
 .tcsmd-btn-ghost:disabled, .tcsmd-btn-ghost.disabled {
+  border-color: var(--tcsmd-gray-30);
   --tw-gradient-from: transparent var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(0 0 0 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
@@ -432,6 +439,7 @@
   }
 
 .tcsmd-btn-ghost.loading {
+  border-color: var(--tcsmd-gray-30);
   background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
 
   border: none;
@@ -444,14 +452,16 @@
   }
 
 .tcsmd-btn-ghost:focus, .tcsmd-btn-ghost.focus {
-    border: 2px solid #0074E8;
-  }
+  border-width: 2px;
+  border-color: var(--tcsmd-blue-60);
+}
 
 /* ----  Text Button  ---- */
 
 .tcsmd-text-btn-primary {
   color: var(--tcsmd-color-text-primary);
   border-width: 2px;
+  border-color: transparent;
   background-color: transparent; /* background-color: transparent */
 
   padding: 10px 24px; /* height = 40px , font-size = 18px , line-height = normal */
@@ -534,6 +544,7 @@
 .tcsmd-text-btn-default {
   color: var(--tcsmd-color-brand-trend-red);
   border-width: 2px;
+  border-color: transparent;
   background-color: transparent; /* background-color: transparent */
 
   padding: 10px 24px; /* height = 40px , font-size = 18px , line-height = normal */
@@ -616,6 +627,7 @@
 .tcsmd-text-btn-emphasis {
   color: var(--tcsmd-blue-60);
   border-width: 2px;
+  border-color: transparent;
   background-color: transparent; /* background-color: transparent */
 
   padding: 10px 24px; /* height = 40px , font-size = 18px , line-height = normal */
