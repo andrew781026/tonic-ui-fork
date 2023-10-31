@@ -1,42 +1,45 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
-import {SITE_TITLE, SITE_DESCRIPTION} from '../consts';
+import DarkImage from "../img/Dark.png";
+
+const btnVariants = [
+  'tcsmd-btn-primary', 'tcsmd-btn-default', 'tcsmd-btn-emphasis', 'tcsmd-btn-ghost',
+  'tcsmd-text-btn-primary', 'tcsmd-text-btn-default', 'tcsmd-text-btn-emphasis',
+];
+const states = ['enabled', 'hover', 'active', 'disabled', 'loading', 'focus'];
+
+const textColor = variant => ['default','ghost'].includes(variant) ? 'text-black' : 'text-white' ;
 ---
 
 <!DOCTYPE html>
 <html lang="zh-tw">
 <head>
-  <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION}/>
+  <title>Color Palette</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="icon" type="image/png" sizes="16x16" href={DarkImage}>
 </head>
 <body>
-<main class="grid place-items-center h-screen content-center">
-  <h1 class="text-red-90 hover:text-green-300">🧑‍🚀 Hello, Astronaut!</h1>
-  <hr class="hr">
-  <h2 class="text-2xl font-900 mr-auto mb-4"> 📃 Primary</h2>
-  <div class="flex flex-wrap gap-3">
-    <button class="btn-primary">Default</button>
-    <button class="btn-primary hover">Hover</button>
-    <button class="btn-primary active">active</button>
-    <button class="btn-primary disabled">disabled</button>
-    <button class="btn-primary loading">loading</button>
-    <button class="btn-primary focus">focus</button>
+<main class="min-h-screen content-center p-8">
+  <div class="flex flex-wrap gap-8">
+    <div>
+      <a href="color">
+        <button class="tc">
+
+        </button>
+      </a>
+      <iframe class="w-[500px] h-[500px] border-2 rounded-2xl border-amber-200" src="color">
+        你的瀏覽器不支援 iframe
+      </iframe>
+    </div>
+
+    <div>
+      <iframe class="w-[500px] h-[500px] border-2 rounded-2xl border-amber-200" src="button">
+        你的瀏覽器不支援 iframe
+      </iframe>
+    </div>
+
   </div>
-  <hr class="hr">
-  <h2 class="text-2xl font-900 mr-auto mb-4"> 📃 Rounded</h2>
-  <div class="flex flex-wrap gap-3">
-    <button class="btn-primary hover">Default</button>
-    <button class="btn-primary hover rounded">Default</button>
-  </div>
-  <hr class="hr">
-  <h2 class="text-2xl font-900 mr-auto mb-4"> 📃 Size</h2>
-  <div class="flex flex-wrap gap-3 items-end">
-    <button class="btn-primary small">small</button>
-    <button class="btn-primary">Default</button>
-    <button class="btn-primary large">large</button>
-  </div>
-  <hr class="hr">
+
 </main>
-<Footer/>
 </body>
 </html>

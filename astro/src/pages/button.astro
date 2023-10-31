@@ -1,12 +1,13 @@
 ---
-import DarkImage from '../img/Dark.png';
+import DarkImage from "../img/Dark.png";
 
-const btnVariants = ['btn-primary', 'btn-default', 'btn-emphasis', 'btn-ghost'];
-const variants = ['primary', 'default', 'emphasis', 'ghost'];
+const btnVariants = [
+  'tcsmd-btn-primary', 'tcsmd-btn-default', 'tcsmd-btn-emphasis', 'tcsmd-btn-ghost',
+  'tcsmd-text-btn-primary', 'tcsmd-text-btn-default', 'tcsmd-text-btn-emphasis',
+];
 const states = ['enabled', 'hover', 'active', 'disabled', 'loading', 'focus'];
 
 const textColor = variant => ['default','ghost'].includes(variant) ? 'text-black' : 'text-white' ;
-
 ---
 
 <!DOCTYPE html>
@@ -14,89 +15,55 @@ const textColor = variant => ['default','ghost'].includes(variant) ? 'text-black
 <head>
   <title>Color Palette</title>
   <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <link rel="icon" type="image/png" sizes="16x16" href={DarkImage}>
 </head>
 <body>
-<main class="h-screen content-center p-8">
+<main class="min-h-screen content-center p-8">
   <h1 class="flex text-3xl items-center mb-16">
     <img class="mr-4" src={DarkImage} alt="logo" width="50" height="50"/>
     Buttons
   </h1>
-  <div class="flex flex-wrap gap-16">
-    <div class="w-[800px] p-4 bg-red-200">
-      <div class="p-4 uppercase text-3xl">
-        BUTTON
-      </div>
-      {
-        variants.map(variant => (
-          <div class="bg-amber-50 mb-8">
-            <div class="bg-amber-600 text-white p-4 uppercase text-3xl">
-              {variant}
+  <div class="flex flex-wrap gap-8">
+    {
+      btnVariants.map(variant => (
+        <div class="w-full md:w-[600px] rounded-2xl border-8 border-amber-200">
+          <h1 class="text-2xl font-900 bg-amber-200 p-2"> 📚 {variant}</h1>
+          <div class="p-4">
+            <h2 class="text-2xl font-900 mr-auto mb-4"> 📃 State</h2>
+            <div class="flex flex-wrap gap-3">
+              <button class={`${variant}`}>Default</button>
+              <button class={`${variant} hover`}>
+                <span>+</span>
+                Hover
+              </button>
+              <button class={`${variant} active`}>
+                <span>+</span>
+                active
+                <span>+</span>
+              </button>
+              <button class={`${variant} disabled`}>disabled</button>
+              <button class={`${variant} loading`}>loading</button>
+              <button class={`${variant} focus`}>focus</button>
             </div>
-            <div class="flex flex-wrap gap-4 p-4">
-              {
-                states.map(state => (
-                  <div class={`flex w-full items-center gap-4`}>
-                    <p class="w-24 text-2xl">{state.charAt(0).toUpperCase() + state.slice(1)}</p>
-                    <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
-                      Button
-                    </button>
-                    <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
-                      <span>+</span>
-                      Button
-                    </button>
-                    <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
-                      Button
-                      <span>+</span>
-                    </button>
-                    <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
-                      +
-                    </button>
-                  </div>
-                ))
-                }
-                </div>
-                </div>
-                ))
-                }
-                </div>
-                <div class="w-[800px] p-4 bg-red-200">
-                  <div class="p-4 uppercase text-3xl">
-                    TEXT-BUTTON
-                  </div>
-                  {
-                    variants.map(variant => (
-                      <div class="bg-amber-50 mb-8">
-                        <div class="bg-amber-600 text-white p-4 uppercase text-3xl">
-                          {variant}
-                        </div>
-                        <div class="flex flex-wrap gap-4 p-4">
-                          {
-                            states.map(state => (
-                              <div class={`flex w-full items-center gap-4`}>
-                                <p class="w-24 text-2xl">{state.charAt(0).toUpperCase() + state.slice(1)}</p>
-                                <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
-                                  Button
-                                </button>
-                                <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
-                                  <span>+</span>
-                                  Button
-                                </button>
-                                <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
-                                  Button
-                                  <span>+</span>
-                                </button>
-                                <button class={`btn-${variant} ${state} ${ textColor(variant) }`}>
-                                  +
-                                </button>
-                              </div>
-                            ))
-                            }
-                            </div>
-                            </div>
-                            ))
-                            }
-      </div>
+            <hr class="hr">
+            <h2 class="text-2xl font-900 mr-auto mb-4"> 📃 Rounded</h2>
+            <div class="flex flex-wrap gap-3">
+              <button class={`${variant} hover`}>Default</button>
+              <button class={`${variant} hover rounded`}>Default</button>
+            </div>
+            <hr class="hr">
+            <h2 class="text-2xl font-900 mr-auto mb-4"> 📃 Size</h2>
+            <div class="flex flex-wrap gap-3 items-end">
+              <button class={`${variant} hover xs`}>xs</button>
+              <button class={`${variant} hover small`}>small</button>
+              <button class={`${variant} hover`}>Default</button>
+              <button class={`${variant} hover large`}>large</button>
+            </div>
+          </div>
+        </div>
+      ))
+    }
   </div>
 </main>
 </body>
