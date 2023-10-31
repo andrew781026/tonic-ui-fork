@@ -182,7 +182,7 @@
 }
 
 .tcsmd-btn-ghost {
-  @apply tcsmd-btn bg-transparent border-1 border-tcsmd-gray-26;
+  @apply tcsmd-btn bg-transparent border border-tcsmd-gray-26;
 
   &:hover, &.hover {
     @apply bg-gradient-to-b from-hover-ghost-start to-hover-ghost-end border-tcsmd-gray-50;
