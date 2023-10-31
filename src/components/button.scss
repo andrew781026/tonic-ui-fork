@@ -90,6 +90,10 @@
 
   &:disabled, &.disabled {
     @apply tcsmd-btn-disabled bg-transparent;
+
+    &:focus, &.focus {
+      @apply border-transparent;
+    }
   }
 
   &.loading {
