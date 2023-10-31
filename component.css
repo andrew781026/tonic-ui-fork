@@ -26,7 +26,6 @@
   padding: 10px 24px;
   font-size: 18px;
   line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
-  color: #fff;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -131,10 +130,10 @@
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--enabled-primary-end) var(--tw-gradient-to-position);
+  color: var(--tcsmd-white);
   padding: 10px 24px;
   font-size: 18px;
   line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
-  color: #fff;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -205,9 +204,10 @@
   }
 
 .tcsmd-btn-primary:focus, .tcsmd-btn-primary.focus {
-    border: 2px solid #fff;
-    outline: 2px solid #0074E8;
-  }
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: var(--tcsmd-blue-60);
+}
 
 .tcsmd-btn-default {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
@@ -215,10 +215,10 @@
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--enabled-default-end) var(--tw-gradient-to-position);
+  color: var(--tcsmd-color-text-primary);
   padding: 10px 24px;
   font-size: 18px;
   line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
-  color: #fff;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -299,10 +299,10 @@
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--enabled-emphasis-end) var(--tw-gradient-to-position);
+  color: var(--tcsmd-white);
   padding: 10px 24px;
   font-size: 18px;
   line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
-  color: #fff;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -368,17 +368,19 @@
   }
 
 .tcsmd-btn-emphasis:focus, .tcsmd-btn-emphasis.focus {
-    border: 2px solid #0074E8;
-  }
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: var(--tcsmd-blue-60);
+}
 
 .tcsmd-btn-ghost {
   border-width: 1px;
   border-color: var(--tcsmd-gray-26);
   background-color: transparent;
+  color: var(--tcsmd-color-text-primary);
   padding: 10px 24px;
   font-size: 18px;
   line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
-  color: #fff;
   display: flex;
   align-items: center;
   gap: 8px;
