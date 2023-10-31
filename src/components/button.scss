@@ -26,7 +26,6 @@
   padding: 10px 24px;
   font-size: 18px;
   line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
-  color: #fff;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -108,7 +107,7 @@
 /* ----  Normal Button  ---- */
 
 .tcsmd-btn-primary  {
-  @apply tcsmd-btn bg-gradient-to-b from-enabled-primary-start to-enabled-primary-end;
+  @apply tcsmd-btn bg-gradient-to-b from-enabled-primary-start to-enabled-primary-end text-tcsmd-white;
 
   &:hover, &.hover {
     @apply bg-gradient-to-b from-hover-primary-start to-hover-primary-end;
@@ -127,13 +126,12 @@
   }
 
   &:focus, &.focus {
-    border: 2px solid #fff;
-    outline: 2px solid #0074E8;
+    @apply outline-2 outline-tcsmd-blue-60 outline-offset-2;
   }
 }
 
 .tcsmd-btn-default {
-  @apply tcsmd-btn bg-gradient-to-b from-enabled-default-start to-enabled-default-end;
+  @apply tcsmd-btn bg-gradient-to-b from-enabled-default-start to-enabled-default-end text-tcsmd-color-text-primary;
   border: 0.5px solid #8e8e8e;
 
   &:hover, &.hover {
@@ -158,7 +156,7 @@
 }
 
 .tcsmd-btn-emphasis {
-  @apply tcsmd-btn bg-gradient-to-b from-enabled-emphasis-start to-enabled-emphasis-end;
+  @apply tcsmd-btn bg-gradient-to-b from-enabled-emphasis-start to-enabled-emphasis-end text-tcsmd-white;
 
   &:hover, &.hover {
     @apply bg-gradient-to-b from-hover-emphasis-start to-hover-emphasis-end;
@@ -177,12 +175,12 @@
   }
 
   &:focus, &.focus {
-    border: 2px solid #0074E8;
+    @apply outline-2 outline-tcsmd-blue-60 outline-offset-2;
   }
 }
 
 .tcsmd-btn-ghost {
-  @apply tcsmd-btn bg-transparent border border-tcsmd-gray-26;
+  @apply tcsmd-btn bg-transparent border border-tcsmd-gray-26 text-tcsmd-color-text-primary;
 
   &:hover, &.hover {
     @apply bg-gradient-to-b from-hover-ghost-start to-hover-ghost-end border-tcsmd-gray-50;
