@@ -38,6 +38,13 @@ module.exports = require('tailwindcss/plugin')(mainFunction, {
     extend: {
       colors: {
         ...colors,
+        ...getColorObject(Object.values(require('./colors/themes')).reduce((pre, curr) => {
+
+          return {
+            ...pre,
+            ...curr
+          }
+        }, {})),
         ...getColorObject(require('./colors/defaultTheme')),
       },
     },
