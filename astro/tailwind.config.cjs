@@ -1,5 +1,9 @@
 const colors = require('consumer-tonic-design-system/default_gen_default_theme.json');
-const bgColors = Object.entries(colors).map(([key,value]) => `bg-${key}`);
+const {getColorObject} = require('consumer-tonic-ui/colors/index.js');
+
+const darkColor = {...getColorObject(require('consumer-tonic-ui/colors/themes')['[data-theme=dark]'])};
+const bgColors = Object.entries({...colors,...darkColor}).map(([key,value]) => `bg-${key}`);
+
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -16,7 +20,7 @@ module.exports = {
   ],
 
   tonicui: {
-    themes: ['consumer'],
+    themes: ['consumer','dark'],
     darkTheme: ['dark'],
   },
 
