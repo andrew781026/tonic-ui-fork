@@ -6,8 +6,9 @@
 }
 
 .tcsmd-btn-disabled:focus {
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-btn-loading {
   background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
@@ -17,22 +18,21 @@
 }
 
 .tcsmd-btn-loading:focus {
-    border: none;
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-btn {
+  /* width = border + padding + width */
   border-width: 2px;
   border-color: transparent;
-  outline-style: solid;
-  outline-width: 2px;
-  outline-color: transparent;
   padding: 10px 24px;
   font-size: 18px;
   line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
 
   border-radius: 4px;
   margin: 4px;
@@ -65,6 +65,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
 
 
   border-radius: 4px;
@@ -102,8 +103,9 @@
 }
 
 .tcsmd-text-btn:disabled:focus, .tcsmd-text-btn.disabled:focus {
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-text-btn:disabled:focus, .tcsmd-text-btn:disabled.focus, .tcsmd-text-btn.disabled:focus, .tcsmd-text-btn.disabled.focus {
   border-color: transparent;
@@ -118,9 +120,9 @@
 }
 
 .tcsmd-text-btn.loading:focus {
-    border: none;
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-text-btn:focus, .tcsmd-text-btn.focus {
   border-color: var(--tcsmd-blue-60);
@@ -136,17 +138,16 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--enabled-primary-end) var(--tw-gradient-to-position);
   color: var(--tcsmd-white);
+  /* width = border + padding + width */
   border-width: 2px;
   border-color: transparent;
-  outline-style: solid;
-  outline-width: 2px;
-  outline-color: transparent;
   padding: 10px 24px;
   font-size: 18px;
   line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
 
   border-radius: 4px;
   margin: 4px;
@@ -195,8 +196,9 @@
 }
 
 .tcsmd-btn-primary:disabled:focus, .tcsmd-btn-primary.disabled:focus {
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-btn-primary.loading {
   background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
@@ -206,14 +208,14 @@
 }
 
 .tcsmd-btn-primary.loading:focus {
-    border: none;
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-btn-primary:focus, .tcsmd-btn-primary.focus {
-  outline-width: 2px;
-  outline-offset: 2px;
-  outline-color: var(--tcsmd-blue-60);
+  border-width: 2px;
+  border-color: var(--tcsmd-blue-60);
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 1);
 }
 
 .tcsmd-btn-default {
@@ -223,17 +225,16 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--enabled-default-end) var(--tw-gradient-to-position);
   color: var(--tcsmd-color-text-primary);
+  /* width = border + padding + width */
   border-width: 2px;
   border-color: transparent;
-  outline-style: solid;
-  outline-width: 2px;
-  outline-color: transparent;
   padding: 10px 24px;
   font-size: 18px;
   line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
 
   border-radius: 4px;
   margin: 4px;
@@ -283,8 +284,9 @@
 }
 
 .tcsmd-btn-default:disabled:focus, .tcsmd-btn-default.disabled:focus {
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-btn-default:disabled:focus, .tcsmd-btn-default:disabled.focus, .tcsmd-btn-default.disabled:focus, .tcsmd-btn-default.disabled.focus {
   border-color: var(--tcsmd-gray-50);
@@ -298,13 +300,13 @@
 }
 
 .tcsmd-btn-default.loading:focus {
-    border: none;
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-btn-default:focus, .tcsmd-btn-default.focus {
-  border-color: transparent;
-  outline-color: var(--tcsmd-blue-60);
+  border-color: var(--tcsmd-blue-60);
+    box-shadow: inset 0 0 0 1.5px var(--tcsmd-blue-60);
 }
 
 .tcsmd-btn-emphasis {
@@ -314,17 +316,16 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--enabled-emphasis-end) var(--tw-gradient-to-position);
   color: var(--tcsmd-white);
+  /* width = border + padding + width */
   border-width: 2px;
   border-color: transparent;
-  outline-style: solid;
-  outline-width: 2px;
-  outline-color: transparent;
   padding: 10px 24px;
   font-size: 18px;
   line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
 
   border-radius: 4px;
   margin: 4px;
@@ -373,8 +374,9 @@
 }
 
 .tcsmd-btn-emphasis:disabled:focus, .tcsmd-btn-emphasis.disabled:focus {
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-btn-emphasis.loading {
   background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
@@ -384,31 +386,30 @@
 }
 
 .tcsmd-btn-emphasis.loading:focus {
-    border: none;
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-btn-emphasis:focus, .tcsmd-btn-emphasis.focus {
-  outline-width: 2px;
-  outline-offset: 2px;
-  outline-color: var(--tcsmd-blue-60);
+  border-width: 2px;
+  border-color: var(--tcsmd-blue-60);
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 1);
 }
 
 .tcsmd-btn-ghost {
   border-color: var(--tcsmd-gray-26);
   background-color: transparent;
   color: var(--tcsmd-color-text-primary);
+  /* width = border + padding + width */
   border-width: 2px;
   border-color: transparent;
-  outline-style: solid;
-  outline-width: 2px;
-  outline-color: transparent;
   padding: 10px 24px;
   font-size: 18px;
   line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
 
   border-radius: 4px;
   margin: 4px;
@@ -463,8 +464,9 @@
 }
 
 .tcsmd-btn-ghost:disabled:focus, .tcsmd-btn-ghost.disabled:focus {
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-btn-ghost:disabled:focus, .tcsmd-btn-ghost:disabled.focus, .tcsmd-btn-ghost.disabled:focus, .tcsmd-btn-ghost.disabled.focus {
   border-color: var(--tcsmd-gray-30);
@@ -479,13 +481,13 @@
 }
 
 .tcsmd-btn-ghost.loading:focus {
-    border: none;
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-btn-ghost:focus, .tcsmd-btn-ghost.focus {
-  border-color: transparent;
-  outline-color: var(--tcsmd-blue-60);
+  border-color: var(--tcsmd-blue-60);
+    box-shadow: inset 0 0 0 1.5px var(--tcsmd-blue-60);
 }
 
 /* ----  Text Button  ---- */
@@ -502,6 +504,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
 
 
   border-radius: 4px;
@@ -539,8 +542,9 @@
 }
 
 .tcsmd-text-btn-primary:disabled:focus,.tcsmd-text-btn-primary.disabled:focus {
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-text-btn-primary:disabled,.tcsmd-text-btn-primary.disabled {
   background-color: transparent;
@@ -549,8 +553,9 @@
 }
 
 .tcsmd-text-btn-primary:disabled:focus,.tcsmd-text-btn-primary.disabled:focus {
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-text-btn-primary:disabled:focus,.tcsmd-text-btn-primary:disabled.focus,.tcsmd-text-btn-primary.disabled:focus,.tcsmd-text-btn-primary.disabled.focus {
   border-color: transparent;
@@ -565,9 +570,9 @@
 }
 
 .tcsmd-text-btn-primary.loading:focus {
-    border: none;
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-text-btn-primary:focus,.tcsmd-text-btn-primary.focus {
   border-color: var(--tcsmd-blue-60);
@@ -587,6 +592,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
 
 
   border-radius: 4px;
@@ -624,8 +630,9 @@
 }
 
 .tcsmd-text-btn-default:disabled:focus,.tcsmd-text-btn-default.disabled:focus {
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-text-btn-default:disabled,.tcsmd-text-btn-default.disabled {
   background-color: transparent;
@@ -634,8 +641,9 @@
 }
 
 .tcsmd-text-btn-default:disabled:focus,.tcsmd-text-btn-default.disabled:focus {
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-text-btn-default:disabled:focus,.tcsmd-text-btn-default:disabled.focus,.tcsmd-text-btn-default.disabled:focus,.tcsmd-text-btn-default.disabled.focus {
   border-color: transparent;
@@ -650,9 +658,9 @@
 }
 
 .tcsmd-text-btn-default.loading:focus {
-    border: none;
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-text-btn-default:focus,.tcsmd-text-btn-default.focus {
   border-color: var(--tcsmd-blue-60);
@@ -672,6 +680,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  position: relative;
 
 
   border-radius: 4px;
@@ -709,8 +718,9 @@
 }
 
 .tcsmd-text-btn-emphasis:disabled:focus,.tcsmd-text-btn-emphasis.disabled:focus {
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-text-btn-emphasis:disabled,.tcsmd-text-btn-emphasis.disabled {
   background-color: transparent;
@@ -719,8 +729,9 @@
 }
 
 .tcsmd-text-btn-emphasis:disabled:focus,.tcsmd-text-btn-emphasis.disabled:focus {
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-text-btn-emphasis:disabled:focus,.tcsmd-text-btn-emphasis:disabled.focus,.tcsmd-text-btn-emphasis.disabled:focus,.tcsmd-text-btn-emphasis.disabled.focus {
   border-color: transparent;
@@ -735,9 +746,9 @@
 }
 
 .tcsmd-text-btn-emphasis.loading:focus {
-    border: none;
-    outline: none;
-  }
+  border-color: transparent;
+    box-shadow: none;
+}
 
 .tcsmd-text-btn-emphasis:focus,.tcsmd-text-btn-emphasis.focus {
   border-color: var(--tcsmd-blue-60);
