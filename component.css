@@ -11,7 +11,7 @@
 }
 
 .tcsmd-btn-loading {
-  background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
+  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
   cursor: wait;
@@ -112,8 +112,9 @@
 }
 
 .tcsmd-text-btn.loading {
-  background-color: transparent;
-  background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
   cursor: wait;
@@ -201,7 +202,11 @@
 }
 
 .tcsmd-btn-primary.loading {
-  background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
+  --tw-gradient-from: var(--enabled-primary-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: var(--enabled-primary-end) var(--tw-gradient-to-position);
+  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
   cursor: wait;
@@ -293,7 +298,11 @@
 }
 
 .tcsmd-btn-default.loading {
-  background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
+  --tw-gradient-from: var(--enabled-default-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: var(--enabled-default-end) var(--tw-gradient-to-position);
+  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
   cursor: wait;
@@ -364,7 +373,6 @@
 }
 
 .tcsmd-btn-emphasis:disabled, .tcsmd-btn-emphasis.disabled {
-  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   --tw-gradient-from: var(--enabled-emphasis-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
@@ -379,7 +387,11 @@
 }
 
 .tcsmd-btn-emphasis.loading {
-  background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
+  --tw-gradient-from: var(--enabled-emphasis-start) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: var(--enabled-emphasis-end) var(--tw-gradient-to-position);
+  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
   cursor: wait;
@@ -474,7 +486,7 @@
 
 .tcsmd-btn-ghost.loading {
   border-color: var(--tcsmd-gray-30);
-  background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
+  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
   cursor: wait;
@@ -483,6 +495,13 @@
 .tcsmd-btn-ghost.loading:focus {
   border-color: transparent;
     box-shadow: none;
+}
+
+.tcsmd-btn-ghost.loading .loader {
+  border-color: var(--tcsmd-gray-26);
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+      border-width:1px;
 }
 
 .tcsmd-btn-ghost:focus, .tcsmd-btn-ghost.focus {
@@ -562,8 +581,9 @@
 }
 
 .tcsmd-text-btn-primary.loading {
-  background-color: transparent;
-  background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
   cursor: wait;
@@ -650,8 +670,9 @@
 }
 
 .tcsmd-text-btn-default.loading {
-  background-color: transparent;
-  background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
   cursor: wait;
@@ -738,8 +759,9 @@
 }
 
 .tcsmd-text-btn-emphasis.loading {
-  background-color: transparent;
-  background-color: var(--tcsmd-gray-28); /* background: #D5D5D5; */
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
   cursor: wait;
@@ -774,4 +796,70 @@
   }
 
 /* https://fontello.com/ - svg to @font-face ~ https://yunusozcan.medium.com/how-to-create-icon-font-like-font-awesome-ce32ea7c7385 */
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: inherit;
+  border-radius: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+svg.circle-progress {
+  width: 24px;
+  height: 24px;
+}
+
+svg.circle-progress .bg {
+  fill: none;
+  stroke-width: 2px;
+  stroke: currentColor;
+  opacity: 0.4;
+}
+
+svg.circle-progress .progress {
+  fill: none;
+  stroke-width: 2px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-dasharray: 60;
+  transform-origin: 50% 50%;
+  animation: progress-circular-dash 1.4s ease-in-out infinite,progress-circular-rotate 1.4s linear infinite;
+}
+
+@keyframes progress-circular-dash {
+  0% {
+    stroke-dashoffset: 10;
+  }
+  30% {
+    stroke-dashoffset: 55;
+  }
+  31% {
+    stroke-dashoffset: 55;
+  }
+  100% {
+    stroke-dashoffset: 10;
+  }
+}
+
+@keyframes progress-circular-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  30% {
+    transform: rotate(720deg);
+  }
+  31% {
+    transform: rotate(720deg);
+  }
+  100% {
+    transform: rotate(1440deg);
+  }
+}
 
