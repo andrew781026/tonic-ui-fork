@@ -14,16 +14,16 @@
 
 > Dark Theme
 
-- Buttons - https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui/dark-color/
+- Dark - https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui/dark-color/
 
 ( loading state need to discuss )
 
 ### Need To Confirm
 
-1. Button Loading State
-2. Next Step ?
+Button Loading State -> hover is ok , but need some good animate
 
 ### FED ToDo Topics
 
-- Astro Doc Layout ( Pending... )
-- theme color for dark-mode
+- Astro Doc Layout 
+- Button Loading
+- Button Focus State styling error fix
