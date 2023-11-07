@@ -25,13 +25,17 @@
 .tcsmd-btn {
   /* width = border + padding + width */
   @apply border-2 border-transparent;
-  padding: 10px 24px;
+  padding: 7px 24px; /* height = 40px */
   font-size: 18px;
-  line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
+  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   position: relative;
+
+  min-width: 100px;
+  min-height: 40px;
 
   border-radius: 4px;
   margin: 4px;
@@ -41,29 +45,38 @@
   }
 
   &.xs {
-    padding: 5px 16px; /* height = 24px , font-size = 14px , line-height = normal */
+    padding: 0 16px; /* height = 24px */
+    min-width: 60px;
+    min-height: 24px;
   }
 
   &.small {
-    padding: 7px 24px;
+    padding: 4px 24px; /* height = 32px */
+    min-width: 80px;
+    min-height: 32px;
   }
 
   &.large {
-    padding: 20px 40px;
+    padding: 17px 40px; /* height = 60px */
+    min-width: 100px;
+    min-height: 60px;
   }
 }
 
 .tcsmd-text-btn {
   @apply bg-transparent border-2 border-transparent; /* background-color: transparent */
 
-  padding: 10px 24px; /* height = 40px , font-size = 18px , line-height = normal */
+  padding: 10px 24px; /* height = 40px */
   font-size: 18px;
-  line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
+  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   position: relative;
 
+  min-width: 100px;
+  min-height: 40px;
 
   border-radius: 4px;
   margin: 4px;
@@ -73,15 +86,21 @@
   }
 
   &.xs {
-    padding: 5px 16px; /* height = 24px , font-size = 14px , line-height = normal */
+    padding: 0 16px; /* height = 24px */
+    min-width: 60px;
+    min-height: 24px;
   }
 
   &.small {
-    padding: 7px 24px;
+    padding: 4px 24px; /* height = 32px */
+    min-width: 80px;
+    min-height: 32px;
   }
 
   &.large {
-    padding: 20px 40px;
+    padding: 17px 40px; /* height = 60px */
+    min-width: 100px;
+    min-height: 60px;
   }
 
   &:hover, &.hover {
