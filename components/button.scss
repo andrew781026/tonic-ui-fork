@@ -26,13 +26,17 @@
   /* width = border + padding + width */
   border-width: 2px;
   border-color: transparent;
-  padding: 10px 24px;
+  padding: 7px 24px; /* height = 40px */
   font-size: 18px;
-  line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
+  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   position: relative;
+
+  min-width: 100px;
+  min-height: 40px;
 
   border-radius: 4px;
   margin: 4px;
@@ -43,15 +47,21 @@
   }
 
 .tcsmd-btn.xs {
-    padding: 5px 16px; /* height = 24px , font-size = 14px , line-height = normal */
+    padding: 0 16px; /* height = 24px */
+    min-width: 60px;
+    min-height: 24px;
   }
 
 .tcsmd-btn.small {
-    padding: 7px 24px;
+    padding: 4px 24px; /* height = 32px */
+    min-width: 80px;
+    min-height: 32px;
   }
 
 .tcsmd-btn.large {
-    padding: 20px 40px;
+    padding: 17px 40px; /* height = 60px */
+    min-width: 100px;
+    min-height: 60px;
   }
 
 .tcsmd-text-btn {
@@ -59,14 +69,17 @@
   border-color: transparent;
   background-color: transparent; /* background-color: transparent */
 
-  padding: 10px 24px; /* height = 40px , font-size = 18px , line-height = normal */
+  padding: 10px 24px; /* height = 40px */
   font-size: 18px;
-  line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
+  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   position: relative;
 
+  min-width: 100px;
+  min-height: 40px;
 
   border-radius: 4px;
   margin: 4px;
@@ -77,15 +90,21 @@
   }
 
 .tcsmd-text-btn.xs {
-    padding: 5px 16px; /* height = 24px , font-size = 14px , line-height = normal */
+    padding: 0 16px; /* height = 24px */
+    min-width: 60px;
+    min-height: 24px;
   }
 
 .tcsmd-text-btn.small {
-    padding: 7px 24px;
+    padding: 4px 24px; /* height = 32px */
+    min-width: 80px;
+    min-height: 32px;
   }
 
 .tcsmd-text-btn.large {
-    padding: 20px 40px;
+    padding: 17px 40px; /* height = 60px */
+    min-width: 100px;
+    min-height: 60px;
   }
 
 .tcsmd-text-btn:hover, .tcsmd-text-btn.hover {
@@ -142,13 +161,17 @@
   /* width = border + padding + width */
   border-width: 2px;
   border-color: transparent;
-  padding: 10px 24px;
+  padding: 7px 24px; /* height = 40px */
   font-size: 18px;
-  line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
+  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   position: relative;
+
+  min-width: 100px;
+  min-height: 40px;
 
   border-radius: 4px;
   margin: 4px;
@@ -159,15 +182,21 @@
   }
 
 .tcsmd-btn-primary.xs {
-    padding: 5px 16px; /* height = 24px , font-size = 14px , line-height = normal */
+    padding: 0 16px; /* height = 24px */
+    min-width: 60px;
+    min-height: 24px;
   }
 
 .tcsmd-btn-primary.small {
-    padding: 7px 24px;
+    padding: 4px 24px; /* height = 32px */
+    min-width: 80px;
+    min-height: 32px;
   }
 
 .tcsmd-btn-primary.large {
-    padding: 20px 40px;
+    padding: 17px 40px; /* height = 60px */
+    min-width: 100px;
+    min-height: 60px;
   }
 
 .tcsmd-btn-primary:hover, .tcsmd-btn-primary.hover {
@@ -233,13 +262,17 @@
   /* width = border + padding + width */
   border-width: 2px;
   border-color: transparent;
-  padding: 10px 24px;
+  padding: 7px 24px; /* height = 40px */
   font-size: 18px;
-  line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
+  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   position: relative;
+
+  min-width: 100px;
+  min-height: 40px;
 
   border-radius: 4px;
   margin: 4px;
@@ -250,15 +283,21 @@
   }
 
 .tcsmd-btn-default.xs {
-    padding: 5px 16px; /* height = 24px , font-size = 14px , line-height = normal */
+    padding: 0 16px; /* height = 24px */
+    min-width: 60px;
+    min-height: 24px;
   }
 
 .tcsmd-btn-default.small {
-    padding: 7px 24px;
+    padding: 4px 24px; /* height = 32px */
+    min-width: 80px;
+    min-height: 32px;
   }
 
 .tcsmd-btn-default.large {
-    padding: 20px 40px;
+    padding: 17px 40px; /* height = 60px */
+    min-width: 100px;
+    min-height: 60px;
   }
 
 .tcsmd-btn-default {
@@ -328,13 +367,17 @@
   /* width = border + padding + width */
   border-width: 2px;
   border-color: transparent;
-  padding: 10px 24px;
+  padding: 7px 24px; /* height = 40px */
   font-size: 18px;
-  line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
+  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   position: relative;
+
+  min-width: 100px;
+  min-height: 40px;
 
   border-radius: 4px;
   margin: 4px;
@@ -345,15 +388,21 @@
   }
 
 .tcsmd-btn-emphasis.xs {
-    padding: 5px 16px; /* height = 24px , font-size = 14px , line-height = normal */
+    padding: 0 16px; /* height = 24px */
+    min-width: 60px;
+    min-height: 24px;
   }
 
 .tcsmd-btn-emphasis.small {
-    padding: 7px 24px;
+    padding: 4px 24px; /* height = 32px */
+    min-width: 80px;
+    min-height: 32px;
   }
 
 .tcsmd-btn-emphasis.large {
-    padding: 20px 40px;
+    padding: 17px 40px; /* height = 60px */
+    min-width: 100px;
+    min-height: 60px;
   }
 
 .tcsmd-btn-emphasis:hover, .tcsmd-btn-emphasis.hover {
@@ -415,13 +464,17 @@
   /* width = border + padding + width */
   border-width: 2px;
   border-color: transparent;
-  padding: 10px 24px;
+  padding: 7px 24px; /* height = 40px */
   font-size: 18px;
-  line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
+  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   position: relative;
+
+  min-width: 100px;
+  min-height: 40px;
 
   border-radius: 4px;
   margin: 4px;
@@ -432,15 +485,21 @@
   }
 
 .tcsmd-btn-ghost.xs {
-    padding: 5px 16px; /* height = 24px , font-size = 14px , line-height = normal */
+    padding: 0 16px; /* height = 24px */
+    min-width: 60px;
+    min-height: 24px;
   }
 
 .tcsmd-btn-ghost.small {
-    padding: 7px 24px;
+    padding: 4px 24px; /* height = 32px */
+    min-width: 80px;
+    min-height: 32px;
   }
 
 .tcsmd-btn-ghost.large {
-    padding: 20px 40px;
+    padding: 17px 40px; /* height = 60px */
+    min-width: 100px;
+    min-height: 60px;
   }
 
 .tcsmd-btn-ghost {
@@ -517,14 +576,17 @@
   border-color: transparent;
   background-color: transparent; /* background-color: transparent */
 
-  padding: 10px 24px; /* height = 40px , font-size = 18px , line-height = normal */
+  padding: 10px 24px; /* height = 40px */
   font-size: 18px;
-  line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
+  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   position: relative;
 
+  min-width: 100px;
+  min-height: 40px;
 
   border-radius: 4px;
   margin: 4px;
@@ -535,15 +597,21 @@
   }
 
 .tcsmd-text-btn-primary.xs {
-    padding: 5px 16px; /* height = 24px , font-size = 14px , line-height = normal */
+    padding: 0 16px; /* height = 24px */
+    min-width: 60px;
+    min-height: 24px;
   }
 
 .tcsmd-text-btn-primary.small {
-    padding: 7px 24px;
+    padding: 4px 24px; /* height = 32px */
+    min-width: 80px;
+    min-height: 32px;
   }
 
 .tcsmd-text-btn-primary.large {
-    padding: 20px 40px;
+    padding: 17px 40px; /* height = 60px */
+    min-width: 100px;
+    min-height: 60px;
   }
 
 .tcsmd-text-btn-primary:hover,.tcsmd-text-btn-primary.hover {
@@ -606,14 +674,17 @@
   border-color: transparent;
   background-color: transparent; /* background-color: transparent */
 
-  padding: 10px 24px; /* height = 40px , font-size = 18px , line-height = normal */
+  padding: 10px 24px; /* height = 40px */
   font-size: 18px;
-  line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
+  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   position: relative;
 
+  min-width: 100px;
+  min-height: 40px;
 
   border-radius: 4px;
   margin: 4px;
@@ -624,15 +695,21 @@
   }
 
 .tcsmd-text-btn-default.xs {
-    padding: 5px 16px; /* height = 24px , font-size = 14px , line-height = normal */
+    padding: 0 16px; /* height = 24px */
+    min-width: 60px;
+    min-height: 24px;
   }
 
 .tcsmd-text-btn-default.small {
-    padding: 7px 24px;
+    padding: 4px 24px; /* height = 32px */
+    min-width: 80px;
+    min-height: 32px;
   }
 
 .tcsmd-text-btn-default.large {
-    padding: 20px 40px;
+    padding: 17px 40px; /* height = 60px */
+    min-width: 100px;
+    min-height: 60px;
   }
 
 .tcsmd-text-btn-default:hover,.tcsmd-text-btn-default.hover {
@@ -695,14 +772,17 @@
   border-color: transparent;
   background-color: transparent; /* background-color: transparent */
 
-  padding: 10px 24px; /* height = 40px , font-size = 18px , line-height = normal */
+  padding: 10px 24px; /* height = 40px */
   font-size: 18px;
-  line-height: normal; /* default value of roughly 1.2, depending on the element's font-family. */
+  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   position: relative;
 
+  min-width: 100px;
+  min-height: 40px;
 
   border-radius: 4px;
   margin: 4px;
@@ -713,15 +793,21 @@
   }
 
 .tcsmd-text-btn-emphasis.xs {
-    padding: 5px 16px; /* height = 24px , font-size = 14px , line-height = normal */
+    padding: 0 16px; /* height = 24px */
+    min-width: 60px;
+    min-height: 24px;
   }
 
 .tcsmd-text-btn-emphasis.small {
-    padding: 7px 24px;
+    padding: 4px 24px; /* height = 32px */
+    min-width: 80px;
+    min-height: 32px;
   }
 
 .tcsmd-text-btn-emphasis.large {
-    padding: 20px 40px;
+    padding: 17px 40px; /* height = 60px */
+    min-width: 100px;
+    min-height: 60px;
   }
 
 .tcsmd-text-btn-emphasis:hover,.tcsmd-text-btn-emphasis.hover {
