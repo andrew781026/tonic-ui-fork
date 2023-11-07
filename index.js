@@ -6,6 +6,7 @@ const colorFunctions = require('./colors/functions.js');
 const base = require('./base.js'); // using base.js in dist folder , but for dependency need ./
 const component = require('./component.js'); // using component.js in dist folder , but for dependency need ./
 const {getColorObject} = require('./colors/index.js');
+const plugin = require('tailwindcss/plugin');
 
 // ref - https://github.com/saadeghi/daisyui/blob/master/src/index.js
 const mainFunction = ({addBase, addComponents, addUtilities, config, postcss, e, prefix}) => {
@@ -33,22 +34,44 @@ const mainFunction = ({addBase, addComponents, addUtilities, config, postcss, e,
   themeInjector;
 };
 
-module.exports = require('tailwindcss/plugin')(mainFunction, {
-  theme: {
-    extend: {
-      colors: {
-        ...colors,
-        ...getColorObject(Object.values(require('./colors/themes')).reduce((pre, curr) => {
+// module.exports = require('tailwindcss/plugin')(mainFunction, {
+//   theme: {
+//     extend: {
+//       colors: {
+//         ...colors,
+//         ...getColorObject(Object.values(require('./colors/themes')).reduce((pre, curr) => {
+//
+//           return {
+//             ...pre,
+//             ...curr
+//           }
+//         }, {})),
+//         ...getColorObject(require('./colors/defaultTheme')),
+//       },
+//     },
+//   },
+// });
 
-          return {
-            ...pre,
-            ...curr
-          }
-        }, {})),
-        ...getColorObject(require('./colors/defaultTheme')),
+module.exports = plugin.withOptions(
+  (options = {}) => mainFunction,
+  (options = {}) => ({
+    theme: {
+      extend: {
+        ...options,
+        colors: {
+          ...colors,
+          ...getColorObject(Object.values(require('./colors/themes')).reduce((pre, curr) => {
+
+            return {
+              ...pre,
+              ...curr
+            }
+          }, {})),
+          ...getColorObject(require('./colors/defaultTheme')),
+        },
       },
     },
-  },
-});
+  })
+)
 
 module.safelist = require('./lib/responsiveRegex.js');
