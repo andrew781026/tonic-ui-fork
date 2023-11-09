@@ -34,24 +34,6 @@ const mainFunction = ({addBase, addComponents, addUtilities, config, postcss, e,
   themeInjector;
 };
 
-// module.exports = require('tailwindcss/plugin')(mainFunction, {
-//   theme: {
-//     extend: {
-//       colors: {
-//         ...colors,
-//         ...getColorObject(Object.values(require('./colors/themes')).reduce((pre, curr) => {
-//
-//           return {
-//             ...pre,
-//             ...curr
-//           }
-//         }, {})),
-//         ...getColorObject(require('./colors/defaultTheme')),
-//       },
-//     },
-//   },
-// });
-
 module.exports = plugin.withOptions(
   (options = {}) => mainFunction,
   (options = {}) => ({
