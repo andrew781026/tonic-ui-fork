@@ -7,6 +7,8 @@ const base = require('./base.js'); // using base.js in dist folder , but for dep
 const component = require('./component.js'); // using component.js in dist folder , but for dependency need ./
 const {getColorObject} = require('./colors/index.js');
 const plugin = require('tailwindcss/plugin');
+const default_button_gen_float = require('consumer-tonic-design-system/default_button_gen_float.json');
+const default_gen_float = require('consumer-tonic-design-system/default_gen_float.json');
 
 // ref - https://github.com/saadeghi/daisyui/blob/master/src/index.js
 const mainFunction = ({addBase, addComponents, addUtilities, config, postcss, e, prefix}) => {
@@ -34,30 +36,32 @@ const mainFunction = ({addBase, addComponents, addUtilities, config, postcss, e,
   themeInjector;
 };
 
-// module.exports = require('tailwindcss/plugin')(mainFunction, {
-//   theme: {
-//     extend: {
-//       colors: {
-//         ...colors,
-//         ...getColorObject(Object.values(require('./colors/themes')).reduce((pre, curr) => {
-//
-//           return {
-//             ...pre,
-//             ...curr
-//           }
-//         }, {})),
-//         ...getColorObject(require('./colors/defaultTheme')),
-//       },
-//     },
-//   },
-// });
-
 module.exports = plugin.withOptions(
   (options = {}) => mainFunction,
   (options = {}) => ({
     theme: {
       extend: {
         ...options,
+        width: {
+          'btn-xs': default_button_gen_float["tcsmd-comp-button-size-xs"],
+          'btn-sm': default_button_gen_float["tcsmd-comp-button-size-sm"],
+          'btn-md': default_button_gen_float["tcsmd-comp-button-size-md"],
+          'btn-lg': default_button_gen_float["tcsmd-comp-button-size-lg"],
+        },
+        borderRadius: {
+          none: '0px',
+          xs: default_gen_float["tcsmd-ref-radius-xs"],
+          DEFAULT: default_gen_float["tcsmd-ref-radius-sm"],
+          sm: default_gen_float["tcsmd-ref-radius-sm"],
+          md: default_gen_float["tcsmd-ref-radius-md"],
+          lg: default_gen_float["tcsmd-ref-radius-lg"],
+          full: default_gen_float["tcsmd-ref-radius-circle"],
+        },
+        borderWidth: {
+          'extra-thin': default_gen_float["tcsmd-ref-border-extra-thin"],
+          'thin': default_gen_float["tcsmd-ref-border-thin"],
+          'thick': default_gen_float["tcsmd-ref-border-thick"],
+        },
         colors: {
           ...colors,
           ...getColorObject(Object.values(require('./colors/themes')).reduce((pre, curr) => {
