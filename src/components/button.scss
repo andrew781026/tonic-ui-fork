@@ -24,7 +24,7 @@
 
 .tcsmd-btn {
   /* width = border + padding + width */
-  @apply border-2 border-transparent;
+  @apply border-2 border-transparent min-h-btn-md rounded-sm;
   padding: 7px 24px; /* height = 40px */
   font-size: 18px;
   line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
@@ -35,36 +35,34 @@
   position: relative;
 
   min-width: 100px;
-  min-height: 40px;
 
-  border-radius: 4px;
   margin: 4px;
 
   &.rounded {
-    border-radius: 999px;
+    @apply rounded-full;
   }
 
   &.xs {
+    @apply min-h-btn-xs;
     padding: 0 16px; /* height = 24px */
     min-width: 60px;
-    min-height: 24px;
   }
 
   &.small {
+    @apply min-h-btn-sm;
     padding: 4px 24px; /* height = 32px */
     min-width: 80px;
-    min-height: 32px;
   }
 
   &.large {
+    @apply min-h-btn-lg;
     padding: 17px 40px; /* height = 60px */
     min-width: 100px;
-    min-height: 60px;
   }
 }
 
 .tcsmd-text-btn {
-  @apply bg-transparent border-2 border-transparent; /* background-color: transparent */
+  @apply bg-transparent border-2 border-transparent min-h-btn-md rounded-sm; /* background-color: transparent */
 
   padding: 10px 24px; /* height = 40px */
   font-size: 18px;
@@ -76,31 +74,29 @@
   position: relative;
 
   min-width: 100px;
-  min-height: 40px;
 
-  border-radius: 4px;
   margin: 4px;
 
   &.rounded {
-    border-radius: 999px;
+    @apply rounded-full;
   }
 
   &.xs {
+    @apply min-h-btn-xs;
     padding: 0 16px; /* height = 24px */
     min-width: 60px;
-    min-height: 24px;
   }
 
   &.small {
+    @apply min-h-btn-sm;
     padding: 4px 24px; /* height = 32px */
     min-width: 80px;
-    min-height: 32px;
   }
 
   &.large {
+    @apply min-h-btn-lg;
     padding: 17px 40px; /* height = 60px */
     min-width: 100px;
-    min-height: 60px;
   }
 
   &:hover, &.hover {
@@ -263,18 +259,6 @@
 .hr {
   margin: 16px 0;
   width: 100%;
-}
-
-.icon-plus {
-  /* tool : https://yoksel.github.io/url-encoder/ */
-  background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='black' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.49983 1.5C8.49983 1.22386 8.27598 1 7.99983 1C7.72369 1 7.49983 1.22386 7.49983 1.5L7.49983 7.5H1.5C1.22386 7.5 1 7.72386 1 8C1 8.27614 1.22386 8.5 1.5 8.5H7.49983L7.49983 14.4996C7.49983 14.7757 7.72369 14.9996 7.99983 14.9996C8.27597 14.9996 8.49983 14.7757 8.49983 14.4996L8.49983 8.5H14.4996C14.7757 8.5 14.9996 8.27614 14.9996 8C14.9996 7.72386 14.7757 7.5 14.4996 7.5H8.49983L8.49983 1.5Z' /%3E%3C/svg%3E%0A");
-  background-position: 1px center;
-  width: 16px;
-  height: 16px;
-
-  &.white {
-    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.49983 1.5C8.49983 1.22386 8.27598 1 7.99983 1C7.72369 1 7.49983 1.22386 7.49983 1.5L7.49983 7.5H1.5C1.22386 7.5 1 7.72386 1 8C1 8.27614 1.22386 8.5 1.5 8.5H7.49983L7.49983 14.4996C7.49983 14.7757 7.72369 14.9996 7.99983 14.9996C8.27597 14.9996 8.49983 14.7757 8.49983 14.4996L8.49983 8.5H14.4996C14.7757 8.5 14.9996 8.27614 14.9996 8C14.9996 7.72386 14.7757 7.5 14.4996 7.5H8.49983L8.49983 1.5Z' /%3E%3C/svg%3E%0A");
-  }
 }
 
 /* https://fontello.com/ - svg to @font-face ~ https://yunusozcan.medium.com/how-to-create-icon-font-like-font-awesome-ce32ea7c7385 */

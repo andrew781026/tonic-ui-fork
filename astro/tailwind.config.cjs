@@ -22,7 +22,7 @@ module.exports = {
               roboto: ['Roboto', 'sans-serif'],
             },
             fontSize: {
-              xs: ['12px', '16px'],
+              xs: ['12px', '16px'], // [ font-size , line-height ]
               sm: ['14px', '20px'],
               base: ['16px', '24px'],
               lg: ['18px', '28px'],
