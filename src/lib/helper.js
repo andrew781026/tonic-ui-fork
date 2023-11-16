@@ -1,16 +1,3 @@
-const withOpacityValue = (variable, fallbackColor) => {
-  return ({opacityValue}) => {
-    let fallbackColorValue = '';
-    if (fallbackColor) {
-      fallbackColorValue = `, var(${fallbackColor})`;
-    }
-    if (opacityValue === undefined) {
-      return `hsl(var(${variable}${fallbackColorValue}))`;
-    }
-    return `hsl(var(${variable}${fallbackColorValue}) / ${opacityValue})`;
-  };
-};
-
 const getColorObject = (theme) => {
   const resultObj = {};
 

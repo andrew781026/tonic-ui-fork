@@ -4,7 +4,7 @@ const path = require("path");
 
 const defaultTheme = require('../src/colors/defaultTheme');
 const themes = require('../src/colors/themes');
-const {getColorObject} = require('../src/colors/index.js');
+const {getColorObject} = require('../src/lib/helper.js');
 
 const jsonFolder = path.resolve(__dirname, '../dist/json');
 if (!fs.existsSync(jsonFolder)) fs.mkdirSync(jsonFolder, {recursive: true});

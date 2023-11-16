@@ -2,7 +2,7 @@ const plugin = require('tailwindcss/plugin');
 const default_button_gen_float = require('consumer-tonic-design-system/default_button_gen_float.json');
 const default_gen_float = require('consumer-tonic-design-system/default_gen_float.json');
 const responsiveRegex = require('../lib/responsiveRegex');
-const {getColorObject} = require('../colors'); // use for from-{color} and text-{color}
+const {getColorObject} = require('../lib/helper.js'); // use for from-{color} and text-{color}
 module.exports = {
   content: [
     {raw: ''},

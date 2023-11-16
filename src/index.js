@@ -1,17 +1,16 @@
 // docs of tailwind.config.js plugin - https://v1.tailwindcss.com/docs/plugins
 
-const colors = require('./colors/index');
 const themes = require('./colors/themes');
 const colorFunctions = require('./colors/functions.js');
 const base = require('./base.js'); // using base.js in dist folder , but for dependency need ./
 const component = require('./component.js'); // using component.js in dist folder , but for dependency need ./
-const {getColorObject} = require('./colors/index.js');
+const {getColorObject} = require('./lib/helper.js');
 const plugin = require('tailwindcss/plugin');
 const default_button_gen_float = require('consumer-tonic-design-system/default_button_gen_float.json');
 const default_gen_float = require('consumer-tonic-design-system/default_gen_float.json');
 
 // ref - https://github.com/saadeghi/daisyui/blob/master/src/index.js
-const mainFunction = ({addBase, addComponents, addUtilities, config, postcss, e, prefix}) => {
+const mainFunction = options => ({addBase, addComponents, addUtilities, config, postcss, e, prefix}) => {
   // Add your custom styles here
 
   // addUtilities(), for registering new utility styles
@@ -25,7 +24,6 @@ const mainFunction = ({addBase, addComponents, addUtilities, config, postcss, e,
   // config(), for looking up values in the user's Tailwind configuration
   // postcss, for doing low-level manipulation with PostCSS directly
 
-
   // inject @base style
   addBase(base);
 
@@ -37,13 +35,13 @@ const mainFunction = ({addBase, addComponents, addUtilities, config, postcss, e,
 };
 
 module.exports = plugin.withOptions(
-  (options = {}) => mainFunction,
+  (options = {}) => mainFunction(options),
   (options = {}) => ({
     theme: {
       extend: {
         ...options,
-        width: {
-          'btn-xs': default_button_gen_float["tcsmd-comp-button-size-xs"],
+        height: {
+          'btn-xs': default_button_gen_float["tcsmd-ref-height-xs"],
           'btn-sm': default_button_gen_float["tcsmd-comp-button-size-sm"],
           'btn-md': default_button_gen_float["tcsmd-comp-button-size-md"],
           'btn-lg': default_button_gen_float["tcsmd-comp-button-size-lg"],
@@ -63,7 +61,6 @@ module.exports = plugin.withOptions(
           'thick': default_gen_float["tcsmd-ref-border-thick"],
         },
         colors: {
-          ...colors,
           ...getColorObject(Object.values(require('./colors/themes')).reduce((pre, curr) => {
 
             return {

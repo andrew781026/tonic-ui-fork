@@ -10,14 +10,13 @@
     "precomponents": "postcss --config src/components src/components/**/*.scss --base src --dir dist",
     "components": "node utils/mergeFile.js 'dist/components/*.scss' 'dist/component.css'",
     "postcomponents": "node utils/cssToObj.js dist/component.css dist/component.js",
-    "cp:lib": "node utils/cp.js --src src/lib/responsiveRegex.js --dest dist/lib/responsiveRegex.js",
+    "cp:lib": "node utils/cp.js --src src/lib --dest dist/lib",
     "cp:colors": "node utils/cp.js --src src/colors --dest dist/colors",
     "cp:root": "node utils/cp.js --src src/index.js --dest dist/index.js",
     "gen:colors": "node utils/colorGenerator.js",
     "build": "npm run base && npm run components && npm run gen:colors && npm run cp:colors && npm run cp:lib && npm run cp:root",
-    "full": "npm run build && postcss src/full/index.css -o dist/full.css --config src/full",
-    "doc:build": "npm run build && cd doc && npm run build",
-    "dev": "npm run build && cd doc && npm run dev",
+    "doc:build": "npm run build && cd astro && npm run build",
+    "dev": "npm run build && cd astro && npm run dev",
     "lint": "eslint src/**/*.js",
     "publish": "node publish.js"
   },
@@ -35,7 +34,8 @@
   "dependencies": {
     "color": "^4.2.3",
     "consumer-tonic-design-system": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-design-system.git#web-dist",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.2",
+    "tailwindcss-themer": "^3.1.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
