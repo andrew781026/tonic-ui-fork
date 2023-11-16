@@ -24,7 +24,7 @@
 
 .tcsmd-btn {
   /* width = border + padding + width */
-  @apply border-2 border-transparent min-h-btn-md rounded-sm;
+  @apply border-2 min-h-btn-md rounded-sm;
   padding: 7px 24px; /* height = 40px */
   font-size: 18px;
   line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
@@ -128,7 +128,7 @@
 /* ----  Normal Button  ---- */
 
 .tcsmd-btn-primary  {
-  @apply tcsmd-btn bg-gradient-to-b from-enabled-primary-start to-enabled-primary-end text-tcsmd-white;
+  @apply tcsmd-btn border-transparent bg-gradient-to-b from-enabled-primary-start to-enabled-primary-end text-tcsmd-white;
 
   &:hover, &.hover {
     @apply bg-gradient-to-b from-hover-primary-start to-hover-primary-end;
@@ -183,7 +183,7 @@
 }
 
 .tcsmd-btn-emphasis {
-  @apply tcsmd-btn bg-gradient-to-b from-enabled-emphasis-start to-enabled-emphasis-end text-tcsmd-white;
+  @apply tcsmd-btn border-transparent bg-gradient-to-b from-enabled-emphasis-start to-enabled-emphasis-end text-tcsmd-white;
 
   &:hover, &.hover {
     @apply bg-gradient-to-b from-hover-emphasis-start to-hover-emphasis-end;
