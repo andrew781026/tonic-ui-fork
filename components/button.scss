@@ -27,7 +27,6 @@
   min-height: 40px;
   border-radius: 4px;
   border-width: 2px;
-  border-color: transparent;
   padding: 7px 24px; /* height = 40px */
   font-size: 18px;
   line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
@@ -152,6 +151,7 @@
 /* ----  Normal Button  ---- */
 
 .tcsmd-btn-primary {
+  border-color: transparent;
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   --tw-gradient-from: var(--tcsmd-red-60) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
@@ -162,7 +162,6 @@
   min-height: 40px;
   border-radius: 4px;
   border-width: 2px;
-  border-color: transparent;
   padding: 7px 24px; /* height = 40px */
   font-size: 18px;
   line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
@@ -263,7 +262,6 @@
   min-height: 40px;
   border-radius: 4px;
   border-width: 2px;
-  border-color: transparent;
   padding: 7px 24px; /* height = 40px */
   font-size: 18px;
   line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
@@ -358,6 +356,7 @@
 }
 
 .tcsmd-btn-emphasis {
+  border-color: transparent;
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
   --tw-gradient-from: var(--tcsmd-blue-60) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
@@ -368,7 +367,6 @@
   min-height: 40px;
   border-radius: 4px;
   border-width: 2px;
-  border-color: transparent;
   padding: 7px 24px; /* height = 40px */
   font-size: 18px;
   line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
@@ -465,7 +463,6 @@
   min-height: 40px;
   border-radius: 4px;
   border-width: 2px;
-  border-color: transparent;
   padding: 7px 24px; /* height = 40px */
   font-size: 18px;
   line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
