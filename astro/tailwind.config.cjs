@@ -1,8 +1,7 @@
-const colors = require('consumer-tonic-design-system/default_gen_default_theme.json');
-const {getColorObject} = require('consumer-tonic-ui/colors/index.js');
+const allThemeColor = require('consumer-tonic-ui/json/allThemeColor.json');
+const genTheme = require('consumer-tonic-ui/json/genTheme.json');
 
-const darkColor = {...getColorObject(require('consumer-tonic-ui/colors/themes')['[data-theme=dark]'])};
-const bgColors = Object.entries({...colors,...darkColor}).map(([key,value]) => `bg-${key}`);
+const bgColors = Object.entries({...allThemeColor,...genTheme}).map(([key,value]) => `bg-${key}`);
 
 /*
 
