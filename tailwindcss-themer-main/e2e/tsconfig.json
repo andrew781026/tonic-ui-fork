@@ -1,9 +1,0 @@
-{
-  "extends": "../tsconfig.json",
-  "compilerOptions": {
-    "module": "esnext",
-    "target": "esnext"
-  },
-  "include": ["."],
-  "exclude": ["test_repos/templates"]
-}
