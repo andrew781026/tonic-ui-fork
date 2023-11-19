@@ -1,7 +1,7 @@
 {
   "name": "consumer-tonic-ui-astro",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "scripts": {
     "astro:dev": "astro dev --port 3017",
     "astro:start": "astro dev",
@@ -16,7 +16,8 @@
     "@astrojs/sitemap": "^1.2.2",
     "@astrojs/tailwind": "^3.1.2",
     "astro": "^2.3.3",
-    "tailwindcss": "^3.3.2"
+    "tailwindcss": "^3.3.2",
+    "tailwindcss-themer": "^3.1.2"
   },
   "devDependencies": {
     "consumer-tonic-ui": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git#dist",

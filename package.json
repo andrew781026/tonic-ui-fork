@@ -1,6 +1,6 @@
 {
   "name": "consumer-tonic-ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "tonic-ui for tailwind version",
   "main": "index.js",
   "scripts": {
@@ -34,8 +34,8 @@
   "dependencies": {
     "color": "^4.2.3",
     "consumer-tonic-design-system": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-design-system.git#web-dist",
-    "tailwindcss": "^3.3.2",
-    "tailwindcss-themer": "^3.1.2"
+    "deepmerge": "^4.3.1",
+    "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",

@@ -1,4 +1,4 @@
-# 2023-11-02 Discussion
+# 2023-11-19 Discussion
 
 ### What FED Done
 
@@ -8,9 +8,11 @@
 
 ### Need To Confirm
 
+- border radius - circle , full
 - Issue Co-work Pattern
 - [Themes for Figma Export Json](https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-design-system/issues/1)
 
 ### FED ToDo Topics
 
 - Astro Doc Layout 
+- Component Input Page

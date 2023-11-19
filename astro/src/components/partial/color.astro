@@ -6,15 +6,15 @@ const {colors} = Astro.props;
 const textColorSwitcher = l => l > 0.65 ? 'text-black' : 'text-white'
 ---
 
-<div class="flex flex-wrap gap-4">
+<div class="default flex flex-wrap gap-4">
   {Object.entries(colors).map(([key, value]) => (
-    <div class="flex flex-col w-[360px] mix-blend-difference">
+    <div class="ja flex flex-col w-[360px] mix-blend-difference">
       <div class={`text-2xl font-900 w-full p-3 uppercase bg-${value[0]?.colorName} ${ textColorSwitcher(value[0]?.hsl?.l) }`}>
         {key}
       </div>
       {
         value.map(item => (
-          <div class={`flex w-full p-3 bg-${item.colorName} ${ textColorSwitcher(item?.hsl?.l) }`}>
+          <div class={`font-roboto text-2xl flex w-full p-3 bg-${item.colorName} ${ textColorSwitcher(item?.hsl?.l) }`}>
             <p class="flex-1 m-0">{item.colorName}</p>
             <p class="m-0">{getHex(item.color)}</p>
           </div>

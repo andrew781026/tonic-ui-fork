@@ -73,3 +73,7 @@ consumer-tonic-ui-vue ( vue-JS ) -> dist 分支
    - [google loader](https://dribbble.com/shots/4971869-Google-Loader)
    - [spy-family loader](https://spy-family.net/)
    - [fpp loader](https://www.fpp.net/)
+
+-------
+
+## 如何讓 font-size 中的設定只在特定 selector 中生效？
