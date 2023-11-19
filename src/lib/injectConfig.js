@@ -1,10 +1,5 @@
 const {current} = require("../colors/defaultTheme");
 
-const resolveInset = (extend, api) => {
-  //  inset: ThemeConfig['spacing']
-
-  return {}
-}
 
 const resolveFontSize = config => {
   // console.log(CSS.escape('--Button.onHover')) // --Button\.onHover
@@ -40,44 +35,84 @@ const resolveFontSize = config => {
 
   return Object.entries(config)
     .map(([key, value]) => {
-      if (typeof value === "string") return {[`--fontSize-${key}-0`]: value};
-      else if (Array.isArray(value) && value[1] && typeof value[1] === "string") {
+      if (typeof value === "string" || typeof value === "number") return {[`--fontSize-${key}-0`]: value};
+      else if (Array.isArray(value) && value[1] && (typeof value[1] === "string" || typeof value === "number")) {
         return {
           [`--fontSize-${key}-0`]: value[0],
           [`--fontSize-${key}-1-lineHeight`]: value[1]
         }
-      }
-      else if (Array.isArray(value) && value[1] ) {
+      } else if (Array.isArray(value) && value[1]) {
         return {
           [`--fontSize-${key}-0`]: value[0],
           [`--fontSize-${key}-1-lineHeight`]: value[1].lineHeight,
           [`--fontSize-${key}-1-letterSpacing`]: value[1].letterSpacing,
           [`--fontSize-${key}-1-fontWeight`]: value[1].fontWeight
         }
-      }
-      else throw new Error(`fontSize Config format error , config=${config}`);
+      } else throw new Error(`fontSize Config format error , config=${config}`);
     })
-    .reduce( (pre,curr) => ({...pre, ...curr}) ,{});
+    .reduce((pre, curr) => ({...pre, ...curr}), {});
 }
 
-const resolveAnimation = (extend, api) => {
+const resolveColor = (extend, api) => {
+
+  // borderColor . backgroundColor . gradientColorStops . divideColor . fill . stroke . textColor . textDecorationColor . placeholderColor . caretColor . accentColor . boxShadowColor . outlineColor . ringColor . ringOffsetColor
+  // ThemeConfig['borderColor'] = ThemeConfig['colors'] = ResolvableTo<RecursiveKeyValuePair>
 
   return {}
+}
+
+const resolveKeyValuePair = (config = {}, type) => {
+
+  const result = {};
+
+  for (const [key, value] of Object.entries(config)) {
+    if (typeof value === "string" || typeof value === "number") result[`--${type}-${key}`] = value;
+    else throw new Error(`${type} Config error on (key,value)=(${key},${value}) , config=${config}`);
+  }
+
+  return result;
 }
 
 const resolveThemeExtensionAsCustomProps = (extend, api) => {
 
   /*
-    fontFamily
-    fontSize -> [ font-size , line-height ] or font-size
-    spacing ->
-    lineHeight ->
-    borderRadius ->
-    colors ->
-    keyframes ->
-    animation ->
+    ThemeConfig ref map :
+      ThemeConfig['spacing'] = ResolvableTo<KeyValuePair>
+      ThemeConfig['borderWidth'] = ResolvableTo<KeyValuePair>
+      ThemeConfig['borderColor'] = ThemeConfig['colors'] = ResolvableTo<RecursiveKeyValuePair>
+      ThemeConfig['borderOpacity'] = ThemeConfig['opacity'] = ResolvableTo<KeyValuePair>
+      ThemeConfig['blur'] = ResolvableTo<KeyValuePair>
+      ThemeConfig['brightness'] = ResolvableTo<KeyValuePair>
+      ThemeConfig['contrast'] = ResolvableTo<KeyValuePair>
+      ThemeConfig['grayscale'] = ResolvableTo<KeyValuePair>
+      ThemeConfig['hueRotate'] = ResolvableTo<KeyValuePair>
+      ThemeConfig['hueRotate'] = ResolvableTo<KeyValuePair>
+      ThemeConfig['invert'] = ResolvableTo<KeyValuePair>
+      ThemeConfig['saturate'] = ResolvableTo<KeyValuePair>
+      ThemeConfig['sepia'] = ResolvableTo<KeyValuePair>
+   */
+  // so need additional resolve [ supports , data , colors , container , keyframes , fontFamily , fontSize , dropShadow ]
 
+  /*
+   // Responsiveness
+  screens: ResolvableTo<ScreensConfig>
+  supports: ResolvableTo<Record<string, string>>
+  data: ResolvableTo<Record<string, string>>
 
+  // Reusable base configs
+  colors: ResolvableTo<RecursiveKeyValuePair> => can Recursive KeyValuePair
+  spacing: ResolvableTo<KeyValuePair>
+
+  // Components
+  container: ResolvableTo<
+    Partial<{
+      screens: ScreensConfig
+      center: boolean
+      padding: string | Record<string, string>
+    }>
+  >
+
+  // Utilities
   inset: ThemeConfig['spacing']
   zIndex: ResolvableTo<KeyValuePair>
   order: ResolvableTo<KeyValuePair>
@@ -213,13 +248,124 @@ const resolveThemeExtensionAsCustomProps = (extend, api) => {
   transitionDuration: ResolvableTo<KeyValuePair>
   willChange: ResolvableTo<KeyValuePair>
   content: ResolvableTo<KeyValuePair>
+
+  // Custom
+  [key: string]: any
    */
 
-  const fontSizeConfig = resolveFontSize(extend.fontSize);
-
-  return {
-    ...fontSizeConfig,
+  const result = {
+    spacing: resolveKeyValuePair(extend.spacing, 'spacing'),
+    inset: resolveKeyValuePair(extend.inset, 'inset'),
+    zIndex: resolveKeyValuePair(extend.zIndex, 'zIndex'),
+    order: resolveKeyValuePair(extend.order, 'order'),
+    gridColumn: resolveKeyValuePair(extend.gridColumn, 'gridColumn'),
+    gridColumnStart: resolveKeyValuePair(extend.gridColumnStart, 'gridColumnStart'),
+    gridColumnEnd: resolveKeyValuePair(extend.gridColumnEnd, 'gridColumnEnd'),
+    gridRow: resolveKeyValuePair(extend.gridRow, 'gridRow'),
+    gridRowStart: resolveKeyValuePair(extend.gridRowStart, 'gridRowStart'),
+    gridRowEnd: resolveKeyValuePair(extend.gridRowEnd, 'gridRowEnd'),
+    margin: resolveKeyValuePair(extend.margin, 'margin'),
+    aspectRatio: resolveKeyValuePair(extend.aspectRatio, 'aspectRatio'),
+    height: resolveKeyValuePair(extend.height, 'height'),
+    maxHeight: resolveKeyValuePair(extend.maxHeight, 'maxHeight'),
+    minHeight: resolveKeyValuePair(extend.minHeight, 'minHeight'),
+    width: resolveKeyValuePair(extend.width, 'width'),
+    maxWidth: resolveKeyValuePair(extend.maxWidth, 'maxWidth'),
+    minWidth: resolveKeyValuePair(extend.minWidth, 'minWidth'),
+    flex: resolveKeyValuePair(extend.flex, 'flex'),
+    flexShrink: resolveKeyValuePair(extend.flexShrink, 'flexShrink'),
+    flexGrow: resolveKeyValuePair(extend.flexGrow, 'flexGrow'),
+    flexBasis: resolveKeyValuePair(extend.flexBasis, 'flexBasis'),
+    borderSpacing: resolveKeyValuePair(extend.borderSpacing, 'borderSpacing'),
+    transformOrigin: resolveKeyValuePair(extend.transformOrigin, 'transformOrigin'),
+    translate: resolveKeyValuePair(extend.translate, 'translate'),
+    rotate: resolveKeyValuePair(extend.rotate, 'rotate'),
+    skew: resolveKeyValuePair(extend.skew, 'skew'),
+    scale: resolveKeyValuePair(extend.scale, 'scale'),
+    animation: resolveKeyValuePair(extend.animation, 'animation'),
+    // keyframes - not yet
+    cursor: resolveKeyValuePair(extend.cursor, 'cursor'),
+    scrollMargin: resolveKeyValuePair(extend.scrollMargin, 'scrollMargin'),
+    scrollPadding: resolveKeyValuePair(extend.scrollPadding, 'scrollPadding'),
+    listStyleType: resolveKeyValuePair(extend.listStyleType, 'listStyleType'),
+    columns: resolveKeyValuePair(extend.columns, 'columns'),
+    gridAutoColumns: resolveKeyValuePair(extend.gridAutoColumns, 'gridAutoColumns'),
+    gridAutoRows: resolveKeyValuePair(extend.gridAutoRows, 'gridAutoRows'),
+    gridTemplateColumns: resolveKeyValuePair(extend.gridTemplateColumns, 'gridTemplateColumns'),
+    gridTemplateRows: resolveKeyValuePair(extend.gridTemplateRows, 'gridTemplateRows'),
+    gap: resolveKeyValuePair(extend.gap, 'gap'),
+    space: resolveKeyValuePair(extend.space, 'space'),
+    divideWidth: resolveKeyValuePair(extend.divideWidth, 'divideWidth'),
+    divideColor: resolveKeyValuePair(extend.divideColor, 'divideColor'),
+    divideOpacity: resolveKeyValuePair(extend.divideOpacity, 'divideOpacity'),
+    borderRadius: resolveKeyValuePair(extend.borderRadius, 'borderRadius'),
+    borderWidth: resolveKeyValuePair(extend.borderWidth, 'borderWidth'),
+    borderColor: resolveKeyValuePair(extend.borderColor, 'borderColor'),
+    borderOpacity: resolveKeyValuePair(extend.borderOpacity, 'borderOpacity'),
+    backgroundColor: resolveKeyValuePair(extend.backgroundColor, 'backgroundColor'),
+    backgroundOpacity: resolveKeyValuePair(extend.backgroundOpacity, 'backgroundOpacity'),
+    backgroundImage: resolveKeyValuePair(extend.backgroundImage, 'backgroundImage'),
+    // gradientColorStops - not yet
+    backgroundSize: resolveKeyValuePair(extend.backgroundSize, 'backgroundSize'),
+    backgroundPosition: resolveKeyValuePair(extend.backgroundPosition, 'backgroundPosition'),
+    // fill - not yet
+    // stroke - not yet
+    strokeWidth: resolveKeyValuePair(extend.strokeWidth, 'strokeWidth'),
+    objectPosition: resolveKeyValuePair(extend.objectPosition, 'objectPosition'),
+    padding: resolveKeyValuePair(extend.padding, 'padding'),
+    textIndent: resolveKeyValuePair(extend.textIndent, 'textIndent'),
+    // fontFamily - not yet
+    fontSize: resolveFontSize(extend.fontSize),
+    fontWeight: resolveKeyValuePair(extend.fontWeight, 'fontWeight'),
+    lineHeight: resolveKeyValuePair(extend.lineHeight, 'lineHeight'),
+    letterSpacing: resolveKeyValuePair(extend.letterSpacing, 'letterSpacing'),
+    // textColor - not yet
+    textOpacity: resolveKeyValuePair(extend.textOpacity, 'textOpacity'),
+    // textDecorationColor - not yet
+    textDecorationThickness: resolveKeyValuePair(extend.textDecorationThickness, 'textDecorationThickness'),
+    textUnderlineOffset: resolveKeyValuePair(extend.textUnderlineOffset, 'textUnderlineOffset'),
+    // placeholderColor - not yet
+    placeholderOpacity: resolveKeyValuePair(extend.placeholderOpacity, 'placeholderOpacity'),
+    // caretColor - not yet
+    // accentColor - not yet
+    opacity: resolveKeyValuePair(extend.opacity, 'opacity'),
+    boxShadow: resolveKeyValuePair(extend.boxShadow, 'boxShadow'),
+    // boxShadowColor - not yet
+    outlineWidth: resolveKeyValuePair(extend.outlineWidth, 'outlineWidth'),
+    outlineOffset: resolveKeyValuePair(extend.outlineOffset, 'outlineOffset'),
+    // outlineColor - not yet
+    ringWidth: resolveKeyValuePair(extend.ringWidth, 'ringWidth'),
+    // ringColor - not yet
+    ringOpacity: resolveKeyValuePair(extend.ringOpacity, 'ringOpacity'),
+    ringOffsetWidth: resolveKeyValuePair(extend.ringOffsetWidth, 'ringOffsetWidth'),
+    // ringOffsetColor - not yet
+    blur: resolveKeyValuePair(extend.blur, 'blur'),
+    brightness: resolveKeyValuePair(extend.brightness, 'brightness'),
+    contrast: resolveKeyValuePair(extend.contrast, 'contrast'),
+    // dropShadow - not yet
+    grayscale: resolveKeyValuePair(extend.grayscale, 'grayscale'),
+    hueRotate: resolveKeyValuePair(extend.hueRotate, 'hueRotate'),
+    invert: resolveKeyValuePair(extend.invert, 'invert'),
+    saturate: resolveKeyValuePair(extend.saturate, 'saturate'),
+    sepia: resolveKeyValuePair(extend.sepia, 'sepia'),
+    backdropBlur: resolveKeyValuePair(extend.backdropBlur, 'backdropBlur'),
+    backdropBrightness: resolveKeyValuePair(extend.backdropBrightness, 'backdropBrightness'),
+    backdropContrast: resolveKeyValuePair(extend.backdropContrast, 'backdropContrast'),
+    backdropGrayscale: resolveKeyValuePair(extend.backdropGrayscale, 'backdropGrayscale'),
+    backdropHueRotate: resolveKeyValuePair(extend.backdropHueRotate, 'backdropHueRotate'),
+    backdropInvert: resolveKeyValuePair(extend.backdropInvert, 'backdropInvert'),
+    backdropOpacity: resolveKeyValuePair(extend.backdropOpacity, 'backdropOpacity'),
+    backdropSaturate: resolveKeyValuePair(extend.backdropSaturate, 'backdropSaturate'),
+    backdropSepia: resolveKeyValuePair(extend.backdropSepia, 'backdropSepia'),
+    transitionProperty: resolveKeyValuePair(extend.transitionProperty, 'transitionProperty'),
+    transitionTimingFunction: resolveKeyValuePair(extend.transitionTimingFunction, 'transitionTimingFunction'),
+    transitionDelay: resolveKeyValuePair(extend.transitionDelay, 'transitionDelay'),
+    transitionDuration: resolveKeyValuePair(extend.transitionDuration, 'transitionDuration'),
+    willChange: resolveKeyValuePair(extend.willChange, 'willChange'),
+    content: resolveKeyValuePair(extend.content, 'content'),
   }
+
+  return Object.values(result).reduce((pre, curr) => ({...pre, ...curr}), {});
 }
 
 module.exports = {
@@ -230,7 +376,7 @@ module.exports = {
     const rootOrHost = inShadowRoot ? ':host' : ':root';
 
     // defaultTheme consider :root setting
-    if (defaultTheme){
+    if (defaultTheme) {
       addBase({
         [rootOrHost]: resolveThemeExtensionAsCustomProps(defaultTheme.extend, api)
       })

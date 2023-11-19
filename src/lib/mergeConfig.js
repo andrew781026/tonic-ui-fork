@@ -1,28 +1,53 @@
-// const {mergeDeep} = require('../lib/deepMerge');
-const merge = require('deepmerge');
+const themeConfig = require('../lib/themeConfig.js');
+// const merge = require('deepmerge');
+
 
 const shallowMerge = extendArr => {
 
-  const keys = extendArr
-    .filter(extend => extend)
-    .reduce((pre, curr) => [...pre, ...Object.keys(curr)], []);
+  // const keys = extendArr
+  //   .filter(extend => extend)
+  //   .reduce((pre, curr) => [...pre, ...Object.keys(curr)], []);
 
-  const uniqueKeys = Array.from(new Set(keys));
+  // const uniqueKeys = Array.from(new Set(keys));
+
+  const keys = Object.keys(themeConfig);
 
   return extendArr
     .filter(extend => extend)
     .reduce((pre, curr) => {
       const result = {};
 
-      for (const uniqueKey of uniqueKeys) {
-        result[uniqueKey] = {
-          ...(pre[uniqueKey] || {}),
-          ...(curr[uniqueKey] || {}),
+      for (const key of keys) {
+        result[key] = {
+          ...(pre[key] || {}),
+          ...(curr[key] || {}),
         }
       }
 
       return result;
     }, {});
+}
+
+// so need additional resolve [ supports , data , colors , container , keyframes , fontFamily , fontSize , dropShadow ]
+
+
+const getKeyValuePair = (config, type) => {
+
+  // ResolvableTo<KeyValuePair>
+
+  return Object.entries(config)
+    .map(([key, value]) => {
+
+      // md: 1,  => md: 'var(--order-md)'
+      if (typeof value === "number") return {[key]: `var(--${type}-${key})`};
+      // xs: 'var(--ggg)', => xs: 'var(--ggg)'
+      else if (typeof value === "string" && value.startsWith('var')) return {[key]: value};
+      // xs: '12px', => xs: 'var(--spacing-xs)'
+      else if (typeof value === "string" && !value.startsWith('var')) return {[key]: `var(--${type}-${key})`};
+      // other type , not tailwind fontSize config
+      else throw new Error(`fontSize Config format error , config=${config}`);
+    })
+    .reduce((pre, curr) => ({...pre, ...curr}), {});
 }
 
 const getFontSize = config => {
@@ -125,22 +150,125 @@ module.exports = {
     // need shallow merge as every KeyValuePair ( extend.fontSize . extend.minWidth . extend.width ... )
     const allExtend = shallowMerge([tonicUiTheme, ...themeExtends, defaultExtend]);
 
-    // TODO : fontSize 在 merge 時會出現 [ '12px' , '16px' , '14px' , '16px' ] 的情況，需要做修正
-    console.log(allExtend);
+    // console.log(allExtend);
 
-    // change all extend config to var
-    const fontSize = getFontSize(allExtend.fontSize);
 
     const output = {
       ...allExtend,
-      fontSize
+
+      spacing: getKeyValuePair(allExtend.spacing, 'spacing'),
+      inset: getKeyValuePair(allExtend.inset, 'inset'),
+      zIndex: getKeyValuePair(allExtend.zIndex, 'zIndex'),
+      order: getKeyValuePair(allExtend.order, 'order'),
+      gridColumn: getKeyValuePair(allExtend.gridColumn, 'gridColumn'),
+      gridColumnStart: getKeyValuePair(allExtend.gridColumnStart, 'gridColumnStart'),
+      gridColumnEnd: getKeyValuePair(allExtend.gridColumnEnd, 'gridColumnEnd'),
+      gridRow: getKeyValuePair(allExtend.gridRow, 'gridRow'),
+      gridRowStart: getKeyValuePair(allExtend.gridRowStart, 'gridRowStart'),
+      gridRowEnd: getKeyValuePair(allExtend.gridRowEnd, 'gridRowEnd'),
+      margin: getKeyValuePair(allExtend.margin, 'margin'),
+      aspectRatio: getKeyValuePair(allExtend.aspectRatio, 'aspectRatio'),
+      height: getKeyValuePair(allExtend.height, 'height'),
+      maxHeight: getKeyValuePair(allExtend.maxHeight, 'maxHeight'),
+      minHeight: getKeyValuePair(allExtend.minHeight, 'minHeight'),
+      width: getKeyValuePair(allExtend.width, 'width'),
+      maxWidth: getKeyValuePair(allExtend.maxWidth, 'maxWidth'),
+      minWidth: getKeyValuePair(allExtend.minWidth, 'minWidth'),
+      flex: getKeyValuePair(allExtend.flex, 'flex'),
+      flexShrink: getKeyValuePair(allExtend.flexShrink, 'flexShrink'),
+      flexGrow: getKeyValuePair(allExtend.flexGrow, 'flexGrow'),
+      flexBasis: getKeyValuePair(allExtend.flexBasis, 'flexBasis'),
+      borderSpacing: getKeyValuePair(allExtend.borderSpacing, 'borderSpacing'),
+      transformOrigin: getKeyValuePair(allExtend.transformOrigin, 'transformOrigin'),
+      translate: getKeyValuePair(allExtend.translate, 'translate'),
+      rotate: getKeyValuePair(allExtend.rotate, 'rotate'),
+      skew: getKeyValuePair(allExtend.skew, 'skew'),
+      scale: getKeyValuePair(allExtend.scale, 'scale'),
+      animation: getKeyValuePair(allExtend.animation, 'animation'),
+      // keyframes - not yet
+      cursor: getKeyValuePair(allExtend.cursor, 'cursor'),
+      scrollMargin: getKeyValuePair(allExtend.scrollMargin, 'scrollMargin'),
+      scrollPadding: getKeyValuePair(allExtend.scrollPadding, 'scrollPadding'),
+      listStyleType: getKeyValuePair(allExtend.listStyleType, 'listStyleType'),
+      columns: getKeyValuePair(allExtend.columns, 'columns'),
+      gridAutoColumns: getKeyValuePair(allExtend.gridAutoColumns, 'gridAutoColumns'),
+      gridAutoRows: getKeyValuePair(allExtend.gridAutoRows, 'gridAutoRows'),
+      gridTemplateColumns: getKeyValuePair(allExtend.gridTemplateColumns, 'gridTemplateColumns'),
+      gridTemplateRows: getKeyValuePair(allExtend.gridTemplateRows, 'gridTemplateRows'),
+      gap: getKeyValuePair(allExtend.gap, 'gap'),
+      space: getKeyValuePair(allExtend.space, 'space'),
+      divideWidth: getKeyValuePair(allExtend.divideWidth, 'divideWidth'),
+      divideColor: getKeyValuePair(allExtend.divideColor, 'divideColor'),
+      divideOpacity: getKeyValuePair(allExtend.divideOpacity, 'divideOpacity'),
+      borderRadius: getKeyValuePair(allExtend.borderRadius, 'borderRadius'),
+      borderWidth: getKeyValuePair(allExtend.borderWidth, 'borderWidth'),
+      borderColor: getKeyValuePair(allExtend.borderColor, 'borderColor'),
+      borderOpacity: getKeyValuePair(allExtend.borderOpacity, 'borderOpacity'),
+      backgroundColor: getKeyValuePair(allExtend.backgroundColor, 'backgroundColor'),
+      backgroundOpacity: getKeyValuePair(allExtend.backgroundOpacity, 'backgroundOpacity'),
+      backgroundImage: getKeyValuePair(allExtend.backgroundImage, 'backgroundImage'),
+      // gradientColorStops - not yet
+      backgroundSize: getKeyValuePair(allExtend.backgroundSize, 'backgroundSize'),
+      backgroundPosition: getKeyValuePair(allExtend.backgroundPosition, 'backgroundPosition'),
+      // fill - not yet
+      // stroke - not yet
+      strokeWidth: getKeyValuePair(allExtend.strokeWidth, 'strokeWidth'),
+      objectPosition: getKeyValuePair(allExtend.objectPosition, 'objectPosition'),
+      padding: getKeyValuePair(allExtend.padding, 'padding'),
+      textIndent: getKeyValuePair(allExtend.textIndent, 'textIndent'),
+      // fontFamily - not yet
+      fontSize: getFontSize(allExtend.fontSize),
+      fontWeight: getKeyValuePair(allExtend.fontWeight, 'fontWeight'),
+      lineHeight: getKeyValuePair(allExtend.lineHeight, 'lineHeight'),
+      letterSpacing: getKeyValuePair(allExtend.letterSpacing, 'letterSpacing'),
+      // textColor - not yet
+      textOpacity: getKeyValuePair(allExtend.textOpacity, 'textOpacity'),
+      // textDecorationColor - not yet
+      textDecorationThickness: getKeyValuePair(allExtend.textDecorationThickness, 'textDecorationThickness'),
+      textUnderlineOffset: getKeyValuePair(allExtend.textUnderlineOffset, 'textUnderlineOffset'),
+      // placeholderColor - not yet
+      placeholderOpacity: getKeyValuePair(allExtend.placeholderOpacity, 'placeholderOpacity'),
+      // caretColor - not yet
+      // accentColor - not yet
+      opacity: getKeyValuePair(allExtend.opacity, 'opacity'),
+      boxShadow: getKeyValuePair(allExtend.boxShadow, 'boxShadow'),
+      // boxShadowColor - not yet
+      outlineWidth: getKeyValuePair(allExtend.outlineWidth, 'outlineWidth'),
+      outlineOffset: getKeyValuePair(allExtend.outlineOffset, 'outlineOffset'),
+      // outlineColor - not yet
+      ringWidth: getKeyValuePair(allExtend.ringWidth, 'ringWidth'),
+      // ringColor - not yet
+      ringOpacity: getKeyValuePair(allExtend.ringOpacity, 'ringOpacity'),
+      ringOffsetWidth: getKeyValuePair(allExtend.ringOffsetWidth, 'ringOffsetWidth'),
+      // ringOffsetColor - not yet
+      blur: getKeyValuePair(allExtend.blur, 'blur'),
+      brightness: getKeyValuePair(allExtend.brightness, 'brightness'),
+      contrast: getKeyValuePair(allExtend.contrast, 'contrast'),
+      // dropShadow - not yet
+      grayscale: getKeyValuePair(allExtend.grayscale, 'grayscale'),
+      hueRotate: getKeyValuePair(allExtend.hueRotate, 'hueRotate'),
+      invert: getKeyValuePair(allExtend.invert, 'invert'),
+      saturate: getKeyValuePair(allExtend.saturate, 'saturate'),
+      sepia: getKeyValuePair(allExtend.sepia, 'sepia'),
+      backdropBlur: getKeyValuePair(allExtend.backdropBlur, 'backdropBlur'),
+      backdropBrightness: getKeyValuePair(allExtend.backdropBrightness, 'backdropBrightness'),
+      backdropContrast: getKeyValuePair(allExtend.backdropContrast, 'backdropContrast'),
+      backdropGrayscale: getKeyValuePair(allExtend.backdropGrayscale, 'backdropGrayscale'),
+      backdropHueRotate: getKeyValuePair(allExtend.backdropHueRotate, 'backdropHueRotate'),
+      backdropInvert: getKeyValuePair(allExtend.backdropInvert, 'backdropInvert'),
+      backdropOpacity: getKeyValuePair(allExtend.backdropOpacity, 'backdropOpacity'),
+      backdropSaturate: getKeyValuePair(allExtend.backdropSaturate, 'backdropSaturate'),
+      backdropSepia: getKeyValuePair(allExtend.backdropSepia, 'backdropSepia'),
+      transitionProperty: getKeyValuePair(allExtend.transitionProperty, 'transitionProperty'),
+      transitionTimingFunction: getKeyValuePair(allExtend.transitionTimingFunction, 'transitionTimingFunction'),
+      transitionDelay: getKeyValuePair(allExtend.transitionDelay, 'transitionDelay'),
+      transitionDuration: getKeyValuePair(allExtend.transitionDuration, 'transitionDuration'),
+      willChange: getKeyValuePair(allExtend.willChange, 'willChange'),
+      content: getKeyValuePair(allExtend.content, 'content'),
     };
 
-    console.log(output);
+    // console.log(output);
 
-    return {
-      ...allExtend,
-      fontSize
-    }
+    return output;
   }
 }

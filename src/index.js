@@ -46,44 +46,44 @@ const mainFunction = options => api => {
   injectConfig(options, api);
 };
 
+const tonicUiTheme = {
+  extend: {
+    height: {
+      'btn-xs': default_button_gen_float["tcsmd-comp-button-size-xs"],
+      'btn-sm': default_button_gen_float["tcsmd-comp-button-size-sm"],
+      'btn-md': default_button_gen_float["tcsmd-comp-button-size-md"],
+      'btn-lg': default_button_gen_float["tcsmd-comp-button-size-lg"],
+    },
+    borderRadius: {
+      none: '0px',
+      xs: default_gen_float["tcsmd-ref-radius-xs"],
+      DEFAULT: default_gen_float["tcsmd-ref-radius-sm"],
+      sm: default_gen_float["tcsmd-ref-radius-sm"],
+      md: default_gen_float["tcsmd-ref-radius-md"],
+      lg: default_gen_float["tcsmd-ref-radius-lg"],
+      full: default_gen_float["tcsmd-ref-radius-circle"],
+    },
+    borderWidth: {
+      'extra-thin': default_gen_float["tcsmd-ref-border-extra-thin"],
+      'thin': default_gen_float["tcsmd-ref-border-thin"],
+      'thick': default_gen_float["tcsmd-ref-border-thick"],
+    },
+    colors: {
+      ...getColorObject(Object.values(require('./colors/themes')).reduce((pre, curr) => {
+
+        return {
+          ...pre,
+          ...curr
+        }
+      }, {})),
+      ...getColorObject(require('./colors/defaultTheme')),
+    },
+  },
+};
+
 module.exports = plugin.withOptions(
   (options = {}) => mainFunction(options),
   (options = {}) => {
-
-    const tonicUiTheme = {
-      extend: {
-        height: {
-          'btn-xs': default_button_gen_float["tcsmd-comp-button-size-xs"],
-          'btn-sm': default_button_gen_float["tcsmd-comp-button-size-sm"],
-          'btn-md': default_button_gen_float["tcsmd-comp-button-size-md"],
-          'btn-lg': default_button_gen_float["tcsmd-comp-button-size-lg"],
-        },
-        borderRadius: {
-          none: '0px',
-          xs: default_gen_float["tcsmd-ref-radius-xs"],
-          DEFAULT: default_gen_float["tcsmd-ref-radius-sm"],
-          sm: default_gen_float["tcsmd-ref-radius-sm"],
-          md: default_gen_float["tcsmd-ref-radius-md"],
-          lg: default_gen_float["tcsmd-ref-radius-lg"],
-          full: default_gen_float["tcsmd-ref-radius-circle"],
-        },
-        borderWidth: {
-          'extra-thin': default_gen_float["tcsmd-ref-border-extra-thin"],
-          'thin': default_gen_float["tcsmd-ref-border-thin"],
-          'thick': default_gen_float["tcsmd-ref-border-thick"],
-        },
-        colors: {
-          ...getColorObject(Object.values(require('./colors/themes')).reduce((pre, curr) => {
-
-            return {
-              ...pre,
-              ...curr
-            }
-          }, {})),
-          ...getColorObject(require('./colors/defaultTheme')),
-        },
-      },
-    };
 
     return {
       theme:
