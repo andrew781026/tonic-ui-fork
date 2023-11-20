@@ -35,7 +35,9 @@ const resolveFontSize = config => {
     .map(([key, value]) => {
       const escapedKey = cssEscape(key);
 
-      if (typeof value === "string" || typeof value === "number") return {[`--fontSize-${escapedKey}-0`]: value};
+      if (!value) return {};
+      else if (typeof value === "function") return {};
+      else if (typeof value === "string" || typeof value === "number") return {[`--fontSize-${escapedKey}-0`]: value};
       else if (Array.isArray(value) && value[1] && (typeof value[1] === "string" || typeof value === "number")) {
         return {
           [`--fontSize-${escapedKey}-0`]: value[0],
@@ -97,7 +99,9 @@ const resolveFontFamily = config => {
     .map(([key, value]) => {
       const escapedKey = cssEscape(key);
 
-      if (typeof value === "string") return {[`--fontFamily-${escapedKey}-0`]: value};
+      if (!value) return {};
+      else if (typeof value === "function") return {};
+      else if (typeof value === "string") return {[`--fontFamily-${escapedKey}-0`]: value};
       else if (Array.isArray(value) && (value[1]?.fontFeatureSettings || value[1]?.fontVariationSettings)) {
         return {
           [`--fontFamily-${escapedKey}-0`]: (typeof value[0] === "string") ? value[0] : value[0].join(','),
@@ -134,10 +138,11 @@ const resolveColor = (config = {}, type, result = {}, prefix = '') => {
  */
 
   for (const [key, value] of Object.entries(config)) {
-    if (!value) continue;
-
     const escapedKey = cssEscape(key);
-    if (typeof value === "string") result[`--${type}-${prefix}-${escapedKey}`] = value;
+
+    if (!value) continue;
+    else if (typeof value === "function") continue;
+    else if (typeof value === "string") result[`--${type}-${prefix}-${escapedKey}`] = value;
     else if (typeof value === "object") resolveColor(value, type, result, `${prefix}-${escapedKey}`);
     else throw new Error(`${type} Config error on (key,value)=(${key},${value}) , config=${config}`);
   }
@@ -162,7 +167,8 @@ const resolveKeyframes = (config = {}) => {
 
   for (const [key, value] of Object.entries(config)) {
     const escapedKey = cssEscape(key);
-    if (typeof value === "string" || typeof value === "number") result[`--keyframes-${escapedKey}`] = value;
+    if (typeof value === "function") continue;
+    else if (typeof value === "string" || typeof value === "number") result[`--keyframes-${escapedKey}`] = value;
     else throw new Error(`keyframes Config error on (key,value)=(${key},${value}) , config=${config}`);
   }
 
@@ -175,7 +181,10 @@ const resolveKeyValuePair = (config = {}, type) => {
 
   for (const [key, value] of Object.entries(config)) {
     const escapedKey = cssEscape(key);
-    if (typeof value === "string" || typeof value === "number") result[`--${type}-${escapedKey}`] = value;
+
+    if (!value) continue;
+    else if (typeof value === "function") continue;
+    else if (typeof value === "string" || typeof value === "number") result[`--${type}-${escapedKey}`] = value;
     else throw new Error(`${type} Config error on (key,value)=(${key},${value}) , config=${config}`);
   }
 
@@ -482,13 +491,20 @@ module.exports = {
   injectConfig: (option, api) => {
 
     const {addBase} = api;
-    const {defaultTheme, themes, inShadowRoot} = option;
+    const {defaultTheme, themes, inShadowRoot, tonicUiTheme, tailwindTheme} = option;
     const rootOrHost = inShadowRoot ? ':host' : ':root';
 
-    // defaultTheme consider :root setting
+    // defaultTheme :root setting
     if (defaultTheme) {
       addBase({
         [rootOrHost]: resolveThemeExtensionAsCustomProps(defaultTheme.extend, api)
+      })
+    }
+
+    // tailwindTheme :root setting
+    if (tailwindTheme) {
+      addBase({
+        [rootOrHost]: resolveThemeExtensionAsCustomProps(tailwindTheme, api)
       })
     }
 

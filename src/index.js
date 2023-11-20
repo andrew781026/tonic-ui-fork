@@ -8,6 +8,7 @@ const {getColorObject} = require('./lib/helper.js');
 const {injectConfig} = require('./lib/injectConfig.js');
 const {mergeConfig} = require('./lib/mergeConfig.js');
 const plugin = require('tailwindcss/plugin');
+const tailwindTheme = require('tailwindcss/stubs/config.full.js').theme;
 const default_button_gen_float = require('consumer-tonic-design-system/default_button_gen_float.json');
 const default_gen_float = require('consumer-tonic-design-system/default_gen_float.json');
 
@@ -82,13 +83,17 @@ const tonicUiTheme = {
 };
 
 module.exports = plugin.withOptions(
-  (options = {}) => mainFunction(options),
+  (options = {}) => mainFunction({...options, tonicUiTheme: tonicUiTheme.extend, tailwindTheme}),
   (options = {}) => {
 
     return {
       theme:
         {
-          extend: mergeConfig(options, tonicUiTheme.extend)
+          extend: mergeConfig({
+            ...options,
+            tonicUiTheme: tonicUiTheme.extend,
+            tailwindTheme
+          })
         }
     };
   }
