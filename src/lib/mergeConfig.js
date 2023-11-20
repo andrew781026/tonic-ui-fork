@@ -29,6 +29,22 @@ const shallowMerge = extendArr => {
 
 // so need additional resolve [ supports , data , colors , container , keyframes , fontFamily , fontSize , dropShadow ]
 
+const getColors = (config = {}, type, result = {}, prefix = '') => {
+
+  // ResolvableTo<KeyValuePair>
+
+  for (const [key, value] of Object.entries(config)) {
+    if (!value) continue;
+    const escapedKey = cssEscape(key);
+
+    if (typeof value === "string" && value.startsWith('var')) result[key] = value;
+    else if (typeof value === "string" && !value.startsWith('var')) result[key] = `var(--${type}-${prefix}-${escapedKey})`;
+    else if (typeof value === "object") getColors(value, type, result, `${prefix}-${escapedKey}`);
+    else throw new Error(`fontSize Config format error , config=${config}`);
+  }
+
+  return result;
+}
 
 const getKeyValuePair = (config, type) => {
 
@@ -54,6 +70,88 @@ const getKeyValuePair = (config, type) => {
 // TODO : media query cannot using css variable , hard to theme switch
 const getScreen = config => {
   // doc : https://tailwindcss.com/docs/screens
+}
+
+const getFontFontFamily = config => {
+
+  /*
+  fontFamily: ResolvableTo<
+    KeyValuePair<
+      string,
+      | string
+      | [fontSize: string, lineHeight: string]
+      | [
+          fontSize: string,
+          configuration: Partial<{
+            lineHeight: string
+            letterSpacing: string
+            fontWeight: string | number
+          }>
+        ]
+    >
+  >
+   */
+
+  /*
+  fontFamily: {
+    'mono': 'Helvetica, Arial, sans-serif',
+    'body': ['Helvetica', 'Arial', 'sans-serif'],
+     sans: [
+        '"Inter var", sans-serif',
+        {
+          fontFeatureSettings: '"cv11", "ss01"',
+          fontVariationSettings: '"opsz" 32'
+        },
+      ],
+     display: [
+        ['ui-sans-serif', 'system-ui'],
+        {
+          fontFeatureSettings: '"cv11", "ss01"',
+          fontVariationSettings: '"opsz" 32'
+        },
+      ],
+  },
+   */
+
+  return Object.entries(config)
+    .map(([key, value]) => {
+      const escapedKey = cssEscape(key);
+
+      if (typeof value === "string" && value.startsWith('var')) {
+        return {[key]: value};
+      }
+      // 'mono': 'Helvetica, Arial, sans-serif',  => '5xl': 'var(--fontSize-5xl-0)'
+      else if (typeof value === "string") {
+        return {[key]: `var(--fontFamily-${escapedKey}-0)`};
+      }
+      /*
+         sans: [
+          '"Inter var", sans-serif',
+          {
+            fontFeatureSettings: '"cv11", "ss01"',
+            fontVariationSettings: '"opsz" 32'
+          },
+        ],
+       */
+      else if (Array.isArray(value) && (value[1]?.fontFeatureSettings || value[1]?.fontVariationSettings)) {
+        return {
+          [key]: [
+            `var(--fontFamily-${escapedKey}-0)`,
+            {
+              fontFeatureSettings: `var(--fontFamily-${escapedKey}-1-fontFeatureSettings)`,
+              fontVariationSettings: `var(--fontFamily-${escapedKey}-1-fontVariationSettings)`,
+            }
+          ]
+        }
+      }
+      // 'body': ['Helvetica', 'Arial', 'sans-serif'],
+      else if (Array.isArray(value)) {
+        return {[key]: `var(--fontFamily-${escapedKey}-0)`};
+      }
+      // other type , not tailwind fontSize config
+      else throw new Error(`fontSize Config format error , config=${config}`);
+    })
+    .reduce((pre, curr) => ({...pre, ...curr}), {});
 }
 
 const getFontSize = config => {
@@ -158,10 +256,10 @@ module.exports = {
 
     // console.log(allExtend);
 
-
     const output = {
       ...allExtend,
 
+      colors: getColors(allExtend.colors, 'colors'),
       spacing: getKeyValuePair(allExtend.spacing, 'spacing'),
       inset: getKeyValuePair(allExtend.inset, 'inset'),
       zIndex: getKeyValuePair(allExtend.zIndex, 'zIndex'),
@@ -204,49 +302,49 @@ module.exports = {
       gap: getKeyValuePair(allExtend.gap, 'gap'),
       space: getKeyValuePair(allExtend.space, 'space'),
       divideWidth: getKeyValuePair(allExtend.divideWidth, 'divideWidth'),
-      divideColor: getKeyValuePair(allExtend.divideColor, 'divideColor'),
+      divideColor: getColors(allExtend.divideColor, 'divideColor'),
       divideOpacity: getKeyValuePair(allExtend.divideOpacity, 'divideOpacity'),
       borderRadius: getKeyValuePair(allExtend.borderRadius, 'borderRadius'),
       borderWidth: getKeyValuePair(allExtend.borderWidth, 'borderWidth'),
-      borderColor: getKeyValuePair(allExtend.borderColor, 'borderColor'),
+      borderColor: getColors(allExtend.borderColor, 'borderColor'),
       borderOpacity: getKeyValuePair(allExtend.borderOpacity, 'borderOpacity'),
-      backgroundColor: getKeyValuePair(allExtend.backgroundColor, 'backgroundColor'),
+      backgroundColor: getColors(allExtend.backgroundColor, 'backgroundColor'),
       backgroundOpacity: getKeyValuePair(allExtend.backgroundOpacity, 'backgroundOpacity'),
       backgroundImage: getKeyValuePair(allExtend.backgroundImage, 'backgroundImage'),
-      // gradientColorStops - not yet
+      gradientColorStops: getColors(allExtend.gradientColorStops, 'gradientColorStops'),
       backgroundSize: getKeyValuePair(allExtend.backgroundSize, 'backgroundSize'),
       backgroundPosition: getKeyValuePair(allExtend.backgroundPosition, 'backgroundPosition'),
-      // fill - not yet
-      // stroke - not yet
+      fill: getColors(allExtend.fill, 'fill'),
+      stroke: getColors(allExtend.stroke, 'stroke'),
       strokeWidth: getKeyValuePair(allExtend.strokeWidth, 'strokeWidth'),
       objectPosition: getKeyValuePair(allExtend.objectPosition, 'objectPosition'),
       padding: getKeyValuePair(allExtend.padding, 'padding'),
       textIndent: getKeyValuePair(allExtend.textIndent, 'textIndent'),
-      // fontFamily - not yet
+      fontFamily: getFontFontFamily(allExtend.fontFamily),
       fontSize: getFontSize(allExtend.fontSize),
       fontWeight: getKeyValuePair(allExtend.fontWeight, 'fontWeight'),
       lineHeight: getKeyValuePair(allExtend.lineHeight, 'lineHeight'),
       letterSpacing: getKeyValuePair(allExtend.letterSpacing, 'letterSpacing'),
-      // textColor - not yet
+      textColor: getColors(allExtend.textColor, 'textColor'),
       textOpacity: getKeyValuePair(allExtend.textOpacity, 'textOpacity'),
-      // textDecorationColor - not yet
+      textDecorationColor: getColors(allExtend.textDecorationColor, 'textDecorationColor'),
       textDecorationThickness: getKeyValuePair(allExtend.textDecorationThickness, 'textDecorationThickness'),
       textUnderlineOffset: getKeyValuePair(allExtend.textUnderlineOffset, 'textUnderlineOffset'),
-      // placeholderColor - not yet
+      placeholderColor: getColors(allExtend.placeholderColor, 'placeholderColor'),
       placeholderOpacity: getKeyValuePair(allExtend.placeholderOpacity, 'placeholderOpacity'),
-      // caretColor - not yet
-      // accentColor - not yet
+      caretColor: getColors(allExtend.caretColor, 'caretColor'),
+      accentColor: getColors(allExtend.accentColor, 'accentColor'),
       opacity: getKeyValuePair(allExtend.opacity, 'opacity'),
       boxShadow: getKeyValuePair(allExtend.boxShadow, 'boxShadow'),
-      // boxShadowColor - not yet
+      boxShadowColor: getColors(allExtend.boxShadowColor, 'boxShadowColor'),
       outlineWidth: getKeyValuePair(allExtend.outlineWidth, 'outlineWidth'),
       outlineOffset: getKeyValuePair(allExtend.outlineOffset, 'outlineOffset'),
-      // outlineColor - not yet
+      outlineColor: getColors(allExtend.outlineColor, 'outlineColor'),
       ringWidth: getKeyValuePair(allExtend.ringWidth, 'ringWidth'),
-      // ringColor - not yet
+      ringColor: getColors(allExtend.ringColor, 'ringColor'),
       ringOpacity: getKeyValuePair(allExtend.ringOpacity, 'ringOpacity'),
       ringOffsetWidth: getKeyValuePair(allExtend.ringOffsetWidth, 'ringOffsetWidth'),
-      // ringOffsetColor - not yet
+      ringOffsetColor: getColors(allExtend.ringOffsetColor, 'ringOffsetColor'),
       blur: getKeyValuePair(allExtend.blur, 'blur'),
       brightness: getKeyValuePair(allExtend.brightness, 'brightness'),
       contrast: getKeyValuePair(allExtend.contrast, 'contrast'),

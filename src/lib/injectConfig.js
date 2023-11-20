@@ -53,14 +53,99 @@ const resolveFontSize = config => {
     .reduce((pre, curr) => ({...pre, ...curr}), {});
 }
 
-const resolveColor = (extend, api) => {
+const resolveFontFamily = config => {
+
+  /*
+  fontFamily: ResolvableTo<
+    KeyValuePair<
+      string,
+      | string
+      | string[]
+      | [
+          fontFamily: string | string[],
+          configuration: Partial<{
+            fontFeatureSettings: string
+            fontVariationSettings: string
+          }>
+        ]
+    >
+  >
+   */
+
+  /*
+  fontFamily: {
+    'mono': 'Helvetica, Arial, sans-serif',
+    'body': ['Helvetica', 'Arial', 'sans-serif'],
+     sans: [
+        '"Inter var", sans-serif',
+        {
+          fontFeatureSettings: '"cv11", "ss01"',
+          fontVariationSettings: '"opsz" 32'
+        },
+      ],
+     display: [
+        ['ui-sans-serif', 'system-ui'],
+        {
+          fontFeatureSettings: '"cv11", "ss01"',
+          fontVariationSettings: '"opsz" 32'
+        },
+      ],
+  },
+   */
+
+  return Object.entries(config)
+    .map(([key, value]) => {
+      const escapedKey = cssEscape(key);
+
+      if (typeof value === "string") return {[`--fontFamily-${escapedKey}-0`]: value};
+      else if (Array.isArray(value) && (value[1]?.fontFeatureSettings || value[1]?.fontVariationSettings)) {
+        return {
+          [`--fontFamily-${escapedKey}-0`]: (typeof value[0] === "string") ? value[0] : value[0].join(','),
+          [`--fontFamily-${escapedKey}-1-fontFeatureSettings`]: value[1]?.fontFeatureSettings,
+          [`--fontFamily-${escapedKey}-1-fontVariationSettings`]: value[1]?.fontVariationSettings,
+        }
+      } else if (Array.isArray(value)) {
+        return {
+          [`--fontFamily-${escapedKey}-0`]: value.join(','),
+        }
+      } else throw new Error(`fontSize Config format error , config=${config}`);
+    })
+    .reduce((pre, curr) => ({...pre, ...curr}), {});
+}
+
+const resolveColor = (config = {}, type, result = {}, prefix = '') => {
 
   // colors: ResolvableTo<RecursiveKeyValuePair> => can Recursive KeyValuePair
 
-  return {}
+  /*
+   colors: {
+        'regal-blue': '#243c5a',
+        'tahiti': {
+            100: '#cffafe',
+            200: '#a5f3fc',
+            light: '#67e8f9',
+            dark: '#06b6d4',
+            600: '#0891b2',
+            700: '#0e7490',
+            800: '#155e75',
+            900: '#164e63',
+        },
+   },
+ */
+
+  for (const [key, value] of Object.entries(config)) {
+    if (!value) continue;
+
+    const escapedKey = cssEscape(key);
+    if (typeof value === "string") result[`--${type}-${prefix}-${escapedKey}`] = value;
+    else if (typeof value === "object") resolveColor(value, type, result, `${prefix}-${escapedKey}`);
+    else throw new Error(`${type} Config error on (key,value)=(${key},${value}) , config=${config}`);
+  }
+
+  return result;
 }
 
-const resolveKeyframes = (config={}) => {
+const resolveKeyframes = (config = {}) => {
 
   //   keyframes: ResolvableTo<KeyValuePair<string, KeyValuePair<string, KeyValuePair>>>
 
@@ -84,7 +169,6 @@ const resolveKeyframes = (config={}) => {
   return result;
 }
 
-
 const resolveKeyValuePair = (config = {}, type) => {
 
   const result = {};
@@ -97,7 +181,6 @@ const resolveKeyValuePair = (config = {}, type) => {
 
   return result;
 }
-
 
 const resolveThemeExtensionAsCustomProps = (extend, api) => {
 
@@ -280,6 +363,7 @@ const resolveThemeExtensionAsCustomProps = (extend, api) => {
    */
 
   const result = {
+    colors: resolveKeyValuePair(extend.colors, 'colors'),
     spacing: resolveKeyValuePair(extend.spacing, 'spacing'),
     inset: resolveKeyValuePair(extend.inset, 'inset'),
     zIndex: resolveKeyValuePair(extend.zIndex, 'zIndex'),
@@ -322,49 +406,49 @@ const resolveThemeExtensionAsCustomProps = (extend, api) => {
     gap: resolveKeyValuePair(extend.gap, 'gap'),
     space: resolveKeyValuePair(extend.space, 'space'),
     divideWidth: resolveKeyValuePair(extend.divideWidth, 'divideWidth'),
-    divideColor: resolveKeyValuePair(extend.divideColor, 'divideColor'),
+    divideColor: resolveColor(extend.divideColor, 'divideColor'),
     divideOpacity: resolveKeyValuePair(extend.divideOpacity, 'divideOpacity'),
     borderRadius: resolveKeyValuePair(extend.borderRadius, 'borderRadius'),
     borderWidth: resolveKeyValuePair(extend.borderWidth, 'borderWidth'),
-    borderColor: resolveKeyValuePair(extend.borderColor, 'borderColor'),
+    borderColor: resolveColor(extend.borderColor, 'borderColor'),
     borderOpacity: resolveKeyValuePair(extend.borderOpacity, 'borderOpacity'),
-    backgroundColor: resolveKeyValuePair(extend.backgroundColor, 'backgroundColor'),
+    backgroundColor: resolveColor(extend.backgroundColor, 'backgroundColor'),
     backgroundOpacity: resolveKeyValuePair(extend.backgroundOpacity, 'backgroundOpacity'),
     backgroundImage: resolveKeyValuePair(extend.backgroundImage, 'backgroundImage'),
-    // gradientColorStops - not yet
+    gradientColorStops: resolveColor(extend.gradientColorStops, 'gradientColorStops'),
     backgroundSize: resolveKeyValuePair(extend.backgroundSize, 'backgroundSize'),
     backgroundPosition: resolveKeyValuePair(extend.backgroundPosition, 'backgroundPosition'),
-    // fill - not yet
-    // stroke - not yet
+    fill: resolveColor(extend.fill, 'fill'),
+    stroke: resolveColor(extend.stroke, 'stroke'),
     strokeWidth: resolveKeyValuePair(extend.strokeWidth, 'strokeWidth'),
     objectPosition: resolveKeyValuePair(extend.objectPosition, 'objectPosition'),
     padding: resolveKeyValuePair(extend.padding, 'padding'),
     textIndent: resolveKeyValuePair(extend.textIndent, 'textIndent'),
-    // fontFamily - not yet
+    fontFamily: resolveFontFamily(extend.fontFamily),
     fontSize: resolveFontSize(extend.fontSize),
     fontWeight: resolveKeyValuePair(extend.fontWeight, 'fontWeight'),
     lineHeight: resolveKeyValuePair(extend.lineHeight, 'lineHeight'),
     letterSpacing: resolveKeyValuePair(extend.letterSpacing, 'letterSpacing'),
-    // textColor - not yet
+    textColor: resolveColor(extend.textColor, 'textColor'),
     textOpacity: resolveKeyValuePair(extend.textOpacity, 'textOpacity'),
-    // textDecorationColor - not yet
+    textDecorationColor: resolveColor(extend.textDecorationColor, 'textDecorationColor'),
     textDecorationThickness: resolveKeyValuePair(extend.textDecorationThickness, 'textDecorationThickness'),
     textUnderlineOffset: resolveKeyValuePair(extend.textUnderlineOffset, 'textUnderlineOffset'),
-    // placeholderColor - not yet
+    placeholderColor: resolveColor(extend.placeholderColor, 'placeholderColor'),
     placeholderOpacity: resolveKeyValuePair(extend.placeholderOpacity, 'placeholderOpacity'),
-    // caretColor - not yet
-    // accentColor - not yet
+    caretColor: resolveColor(extend.caretColor, 'caretColor'),
+    accentColor: resolveColor(extend.accentColor, 'accentColor'),
     opacity: resolveKeyValuePair(extend.opacity, 'opacity'),
     boxShadow: resolveKeyValuePair(extend.boxShadow, 'boxShadow'),
-    // boxShadowColor - not yet
+    boxShadowColor: resolveColor(extend.boxShadowColor, 'boxShadowColor'),
     outlineWidth: resolveKeyValuePair(extend.outlineWidth, 'outlineWidth'),
     outlineOffset: resolveKeyValuePair(extend.outlineOffset, 'outlineOffset'),
-    // outlineColor - not yet
+    outlineColor: resolveColor(extend.outlineColor, 'outlineColor'),
     ringWidth: resolveKeyValuePair(extend.ringWidth, 'ringWidth'),
-    // ringColor - not yet
+    ringColor: resolveColor(extend.ringColor, 'ringColor'),
     ringOpacity: resolveKeyValuePair(extend.ringOpacity, 'ringOpacity'),
     ringOffsetWidth: resolveKeyValuePair(extend.ringOffsetWidth, 'ringOffsetWidth'),
-    // ringOffsetColor - not yet
+    ringOffsetColor: resolveColor(extend.ringOffsetColor, 'ringOffsetColor'),
     blur: resolveKeyValuePair(extend.blur, 'blur'),
     brightness: resolveKeyValuePair(extend.brightness, 'brightness'),
     contrast: resolveKeyValuePair(extend.contrast, 'contrast'),
