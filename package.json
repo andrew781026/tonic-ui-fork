@@ -34,6 +34,7 @@
   "dependencies": {
     "color": "^4.2.3",
     "consumer-tonic-design-system": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-design-system.git#web-dist",
+    "cssesc": "^3.0.0",
     "deepmerge": "^4.3.1",
     "tailwindcss": "^3.3.2"
   },

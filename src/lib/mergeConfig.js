@@ -1,6 +1,5 @@
 const themeConfig = require('../lib/themeConfig.js');
-// const merge = require('deepmerge');
-
+const {cssEscape} = require("../lib/cssEscape.js");
 
 const shallowMerge = extendArr => {
 
@@ -37,21 +36,27 @@ const getKeyValuePair = (config, type) => {
 
   return Object.entries(config)
     .map(([key, value]) => {
+      const escapedKey = cssEscape(key);
 
       // md: 1,  => md: 'var(--order-md)'
-      if (typeof value === "number") return {[key]: `var(--${type}-${key})`};
+      if (typeof value === "number") return {[key]: `var(--${type}-${escapedKey})`};
       // xs: 'var(--ggg)', => xs: 'var(--ggg)'
       else if (typeof value === "string" && value.startsWith('var')) return {[key]: value};
       // xs: '12px', => xs: 'var(--spacing-xs)'
-      else if (typeof value === "string" && !value.startsWith('var')) return {[key]: `var(--${type}-${key})`};
+      else if (typeof value === "string" && !value.startsWith('var')) return {[key]: `var(--${type}-${escapedKey})`};
       // other type , not tailwind fontSize config
       else throw new Error(`fontSize Config format error , config=${config}`);
     })
     .reduce((pre, curr) => ({...pre, ...curr}), {});
 }
 
+
+// TODO : media query cannot using css variable , hard to theme switch
+const getScreen = config => {
+  // doc : https://tailwindcss.com/docs/screens
+}
+
 const getFontSize = config => {
-  // console.log(CSS.escape('--Button.onHover')) // --Button\.onHover
 
   /*
   fontSize: ResolvableTo<
@@ -93,18 +98,19 @@ const getFontSize = config => {
 
   return Object.entries(config)
     .map(([key, value]) => {
+      const escapedKey = cssEscape(key);
 
       // '5xl': 46px,  => '5xl': 'var(--fontSize-5xl-0)'
       if (typeof value === "string") {
-        return {[key]: getVarObj(key, value, 'fontSize')};
+        return {[key]: getVarObj(escapedKey, value, 'fontSize')};
       }
 
       // xs: ['10px', '16px'],  => xs: [ 'var(--fontSize-xs-0)' , 'var(--fontSize-xs-1-lineHeight)' ]
       else if (Array.isArray(value) && value[1] && (typeof value[1] === "string" || typeof value[1] === "number")) {
         return {
           [key]: [
-            getVarObj(key, value[0], 'fontSize'),
-            getVarObj(key, value[1], 'lineHeight')
+            getVarObj(escapedKey, value[0], 'fontSize'),
+            getVarObj(escapedKey, value[1], 'lineHeight')
           ]
         }
       }
@@ -123,11 +129,11 @@ const getFontSize = config => {
       else if (Array.isArray(value) && value[1]) {
         return {
           [key]: [
-            getVarObj(key, value[0], 'fontSize'),
+            getVarObj(escapedKey, value[0], 'fontSize'),
             {
-              lineHeight: getVarObj(key, value[1].lineHeight, 'lineHeight'),
-              letterSpacing: getVarObj(key, value[1].letterSpacing, 'letterSpacing'),
-              fontWeight: getVarObj(key, value[1].fontWeight, 'fontWeight'),
+              lineHeight: getVarObj(escapedKey, value[1].lineHeight, 'lineHeight'),
+              letterSpacing: getVarObj(escapedKey, value[1].letterSpacing, 'letterSpacing'),
+              fontWeight: getVarObj(escapedKey, value[1].fontWeight, 'fontWeight'),
             }
           ]
         }

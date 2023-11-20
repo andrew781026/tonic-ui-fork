@@ -1,8 +1,6 @@
-const {current} = require("../colors/defaultTheme");
-
+const {cssEscape} = require("../lib/cssEscape.js");
 
 const resolveFontSize = config => {
-  // console.log(CSS.escape('--Button.onHover')) // --Button\.onHover
 
   /*
   fontSize: ResolvableTo<
@@ -35,18 +33,20 @@ const resolveFontSize = config => {
 
   return Object.entries(config)
     .map(([key, value]) => {
-      if (typeof value === "string" || typeof value === "number") return {[`--fontSize-${key}-0`]: value};
+      const escapedKey = cssEscape(key);
+
+      if (typeof value === "string" || typeof value === "number") return {[`--fontSize-${escapedKey}-0`]: value};
       else if (Array.isArray(value) && value[1] && (typeof value[1] === "string" || typeof value === "number")) {
         return {
-          [`--fontSize-${key}-0`]: value[0],
-          [`--fontSize-${key}-1-lineHeight`]: value[1]
+          [`--fontSize-${escapedKey}-0`]: value[0],
+          [`--fontSize-${escapedKey}-1-lineHeight`]: value[1]
         }
       } else if (Array.isArray(value) && value[1]) {
         return {
-          [`--fontSize-${key}-0`]: value[0],
-          [`--fontSize-${key}-1-lineHeight`]: value[1].lineHeight,
-          [`--fontSize-${key}-1-letterSpacing`]: value[1].letterSpacing,
-          [`--fontSize-${key}-1-fontWeight`]: value[1].fontWeight
+          [`--fontSize-${escapedKey}-0`]: value[0],
+          [`--fontSize-${escapedKey}-1-lineHeight`]: value[1].lineHeight,
+          [`--fontSize-${escapedKey}-1-letterSpacing`]: value[1].letterSpacing,
+          [`--fontSize-${escapedKey}-1-fontWeight`]: value[1].fontWeight
         }
       } else throw new Error(`fontSize Config format error , config=${config}`);
     })
@@ -55,23 +55,49 @@ const resolveFontSize = config => {
 
 const resolveColor = (extend, api) => {
 
-  // borderColor . backgroundColor . gradientColorStops . divideColor . fill . stroke . textColor . textDecorationColor . placeholderColor . caretColor . accentColor . boxShadowColor . outlineColor . ringColor . ringOffsetColor
-  // ThemeConfig['borderColor'] = ThemeConfig['colors'] = ResolvableTo<RecursiveKeyValuePair>
+  // colors: ResolvableTo<RecursiveKeyValuePair> => can Recursive KeyValuePair
 
   return {}
 }
+
+const resolveKeyframes = (config={}) => {
+
+  //   keyframes: ResolvableTo<KeyValuePair<string, KeyValuePair<string, KeyValuePair>>>
+
+  /*
+    keyframes: {
+        wiggle: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        }
+      }
+   */
+
+  const result = {};
+
+  for (const [key, value] of Object.entries(config)) {
+    const escapedKey = cssEscape(key);
+    if (typeof value === "string" || typeof value === "number") result[`--keyframes-${escapedKey}`] = value;
+    else throw new Error(`keyframes Config error on (key,value)=(${key},${value}) , config=${config}`);
+  }
+
+  return result;
+}
+
 
 const resolveKeyValuePair = (config = {}, type) => {
 
   const result = {};
 
   for (const [key, value] of Object.entries(config)) {
-    if (typeof value === "string" || typeof value === "number") result[`--${type}-${key}`] = value;
+    const escapedKey = cssEscape(key);
+    if (typeof value === "string" || typeof value === "number") result[`--${type}-${escapedKey}`] = value;
     else throw new Error(`${type} Config error on (key,value)=(${key},${value}) , config=${config}`);
   }
 
   return result;
 }
+
 
 const resolveThemeExtensionAsCustomProps = (extend, api) => {
 

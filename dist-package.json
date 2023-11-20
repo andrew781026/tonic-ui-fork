@@ -20,7 +20,7 @@
   "dependencies": {
     "consumer-tonic-design-system": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-design-system.git#web-dist",
     "color": "^4.2.3",
-    "deepmerge": "^4.3.1"
+    "css.escape": "^1.5.1"
   },
   "peerDependencies": {
     "autoprefixer": "^10.0.2",

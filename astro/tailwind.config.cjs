@@ -20,7 +20,7 @@ const themerExampleConfig = {
   themes: [
     {
       name: 'default',
-      selectors: ['.default'],
+      selectors: [`[data-theme="default"]`],
       mediaQuery: '@media (prefers-color-scheme: dark)',
 
       extend: {
@@ -146,7 +146,7 @@ const themerExampleConfig = {
     },
     {
       name: 'ja',
-      selectors: ['.ja'],
+      selectors: [`[data-theme="ja"]`,'.ja'],
       extend: {
         fontFamily: {
           roboto: ['Roboto', 'sans-serif'],
