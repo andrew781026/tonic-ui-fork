@@ -1,6 +1,6 @@
 const {cssEscape} = require("../lib/cssEscape.js");
 
-const resolveFontSize = config => {
+const resolveFontSize = (config = {}) => {
 
   /*
   fontSize: ResolvableTo<
@@ -55,7 +55,7 @@ const resolveFontSize = config => {
     .reduce((pre, curr) => ({...pre, ...curr}), {});
 }
 
-const resolveFontFamily = config => {
+const resolveFontFamily = (config = {}) => {
 
   /*
   fontFamily: ResolvableTo<
@@ -505,7 +505,13 @@ module.exports = {
     // tailwindTheme :root setting
     if (tailwindTheme) {
       addBase({
-        [rootOrHost]: resolveThemeExtensionAsCustomProps(tailwindTheme, api)
+        [rootOrHost]: resolveThemeExtensionAsCustomProps(tailwindTheme.theme, api)
+      })
+    }
+
+    if (tonicUiTheme) {
+      addBase({
+        [rootOrHost]: resolveThemeExtensionAsCustomProps(tonicUiTheme.extend, api)
       })
     }
 

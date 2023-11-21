@@ -2,7 +2,19 @@
 
 .tcsmd-btn-disabled {
   opacity: 0.4;
-  cursor: not-allowed;
+  /* cursor: not-allowed; */
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    pointer-events: auto;
+    cursor: not-allowed;
+  }
 
   &:focus {
     @apply border-transparent;
@@ -14,7 +26,19 @@
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
-  cursor: wait;
+  /* cursor: wait; */
+  pointer-events: none;
+
+  &::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    pointer-events: auto;
+    cursor: wait;
+  }
 
   &:focus {
     @apply border-transparent;
@@ -100,11 +124,11 @@
   }
 
   &:hover, &.hover {
-    @apply bg-tcsmd-gray-22;
+    @apply bg-tcsmd-ref-palette-gray-22;
   }
 
   &:active, &.active {
-    @apply bg-tcsmd-gray-26;
+    @apply bg-tcsmd-ref-palette-gray-26;
   }
 
   &:disabled, &.disabled {
@@ -120,15 +144,14 @@
   }
 
   &:focus, &.focus {
-    @apply border-tcsmd-blue-60;
-    /* border: 2px solid #0074E8 */
+    @apply border-tcsmd-ref-palette-blue-60;
   }
 }
 
 /* ----  Normal Button  ---- */
 
 .tcsmd-btn-primary  {
-  @apply tcsmd-btn border-transparent bg-gradient-to-b from-enabled-primary-start to-enabled-primary-end text-tcsmd-white;
+  @apply tcsmd-btn border-transparent bg-gradient-to-b from-enabled-primary-start to-enabled-primary-end text-tcsmd-ref-palette-white;
 
   &:hover, &.hover {
     @apply bg-gradient-to-b from-hover-primary-start to-hover-primary-end;
@@ -147,13 +170,13 @@
   }
 
   &:focus, &.focus {
-    @apply border-2 border-tcsmd-blue-60;
+    @apply border-2 border-tcsmd-ref-palette-blue-60;
     box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 1);
   }
 }
 
 .tcsmd-btn-default {
-  @apply tcsmd-btn bg-gradient-to-b from-enabled-default-start to-enabled-default-end text-tcsmd-color-text-primary;
+  @apply tcsmd-btn bg-gradient-to-b from-enabled-default-start to-enabled-default-end text-tcsmd-sys-color-text-primary;
   border: 0.5px solid #8e8e8e;
 
   &:hover, &.hover {
@@ -168,7 +191,7 @@
     @apply tcsmd-btn-disabled from-enabled-default-start to-enabled-default-end;
 
     &:focus, &.focus {
-      @apply border-tcsmd-gray-50;
+      @apply border-tcsmd-ref-palette-gray-50;
     }
   }
 
@@ -177,13 +200,13 @@
   }
 
   &:focus, &.focus {
-    @apply border-tcsmd-blue-60;
-    box-shadow: inset 0 0 0 1.5px var(--tcsmd-blue-60);
+    @apply border-tcsmd-ref-palette-blue-60;
+    box-shadow: inset 0 0 0 1.5px var(--tcsmd-ref-palette-blue-60);
   }
 }
 
 .tcsmd-btn-emphasis {
-  @apply tcsmd-btn border-transparent bg-gradient-to-b from-enabled-emphasis-start to-enabled-emphasis-end text-tcsmd-white;
+  @apply tcsmd-btn border-transparent bg-gradient-to-b from-enabled-emphasis-start to-enabled-emphasis-end text-tcsmd-ref-palette-white;
 
   &:hover, &.hover {
     @apply bg-gradient-to-b from-hover-emphasis-start to-hover-emphasis-end;
@@ -202,58 +225,58 @@
   }
 
   &:focus, &.focus {
-    @apply border-2 border-tcsmd-blue-60;
+    @apply border-2 border-tcsmd-ref-palette-blue-60;
     box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 1);
   }
 }
 
 .tcsmd-btn-ghost {
-  @apply tcsmd-btn bg-transparent border-tcsmd-gray-26 text-tcsmd-color-text-primary;
+  @apply tcsmd-btn bg-transparent border-tcsmd-ref-palette-gray-26 text-tcsmd-sys-color-text-primary;
   border-width:1px;
 
   &:hover, &.hover {
-    @apply bg-gradient-to-b from-hover-ghost-start to-hover-ghost-end border-tcsmd-gray-50;
+    @apply bg-gradient-to-b from-hover-ghost-start to-hover-ghost-end border-tcsmd-ref-palette-gray-50;
   }
 
   &:active, &.active {
-    @apply bg-gradient-to-b from-active-ghost-start to-active-ghost-end border-tcsmd-gray-50;
+    @apply bg-gradient-to-b from-active-ghost-start to-active-ghost-end border-tcsmd-ref-palette-gray-50;
   }
 
   &:disabled, &.disabled {
-    @apply tcsmd-btn-disabled from-transparent to-transparent border-tcsmd-gray-30;
+    @apply tcsmd-btn-disabled from-transparent to-transparent border-tcsmd-ref-palette-gray-30;
 
     &:focus, &.focus {
-      @apply border-tcsmd-gray-30;
+      @apply border-tcsmd-ref-palette-gray-30;
     }
   }
 
   &.loading {
-    @apply tcsmd-btn-loading border-tcsmd-gray-30;
+    @apply tcsmd-btn-loading border-tcsmd-ref-palette-gray-30;
 
     .loader{
-      @apply border-tcsmd-gray-26 bg-white;
+      @apply border-tcsmd-ref-palette-gray-26 bg-white;
       border-width:1px;
     }
   }
 
   &:focus, &.focus {
-    @apply border-tcsmd-blue-60;
-    box-shadow: inset 0 0 0 1.5px var(--tcsmd-blue-60);
+    @apply border-tcsmd-ref-palette-blue-60;
+    box-shadow: inset 0 0 0 1.5px var(--tcsmd-ref-palette-blue-60);
   }
 }
 
 /* ----  Text Button  ---- */
 
 .tcsmd-text-btn-primary {
-  @apply tcsmd-text-btn text-tcsmd-color-text-primary;
+  @apply tcsmd-text-btn text-tcsmd-sys-color-text-primary;
 }
 
 .tcsmd-text-btn-default {
-  @apply tcsmd-text-btn text-tcsmd-color-brand-trend-red;
+  @apply tcsmd-text-btn text-tcsmd-sys-color-brand-trend-red;
 }
 
 .tcsmd-text-btn-emphasis {
-  @apply tcsmd-text-btn text-tcsmd-blue-60;
+  @apply tcsmd-text-btn text-tcsmd-ref-palette-blue-60;
 }
 
 .hr {
@@ -275,6 +298,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  pointer-events: none;
 }
 
 svg.circle-progress {

@@ -8,9 +8,8 @@ const {getColorObject} = require('./lib/helper.js');
 const {injectConfig} = require('./lib/injectConfig.js');
 const {mergeConfig} = require('./lib/mergeConfig.js');
 const plugin = require('tailwindcss/plugin');
-const tailwindTheme = require('tailwindcss/stubs/config.full.js').theme;
-const default_button_gen_float = require('consumer-tonic-design-system/default_button_gen_float.json');
-const default_gen_float = require('consumer-tonic-design-system/default_gen_float.json');
+const tailwindTheme = require('tailwindcss/stubs/config.full.js');
+const {consumerDefaultTheme} = require('./themes/themes.js');
 
 const defaultOptions = {
   inShadowRoot: false, // setting used in shadow root or not ?
@@ -41,49 +40,51 @@ const mainFunction = options => api => {
   // inject components - button
   addComponents(component);
 
-  const themeInjector = colorFunctions.injectThemes(addBase, config, themes);
-  themeInjector;
+  // const themeInjector = colorFunctions.injectThemes(addBase, config, themes);
+  // themeInjector;
 
   injectConfig(options, api);
 };
 
-const tonicUiTheme = {
-  extend: {
-    height: {
-      'btn-xs': default_button_gen_float["tcsmd-comp-button-size-xs"],
-      'btn-sm': default_button_gen_float["tcsmd-comp-button-size-sm"],
-      'btn-md': default_button_gen_float["tcsmd-comp-button-size-md"],
-      'btn-lg': default_button_gen_float["tcsmd-comp-button-size-lg"],
-    },
-    borderRadius: {
-      none: '0px',
-      xs: default_gen_float["tcsmd-ref-radius-xs"],
-      DEFAULT: default_gen_float["tcsmd-ref-radius-sm"],
-      sm: default_gen_float["tcsmd-ref-radius-sm"],
-      md: default_gen_float["tcsmd-ref-radius-md"],
-      lg: default_gen_float["tcsmd-ref-radius-lg"],
-      full: default_gen_float["tcsmd-ref-radius-circle"],
-    },
-    borderWidth: {
-      'extra-thin': default_gen_float["tcsmd-ref-border-extra-thin"],
-      'thin': default_gen_float["tcsmd-ref-border-thin"],
-      'thick': default_gen_float["tcsmd-ref-border-thick"],
-    },
-    colors: {
-      ...getColorObject(Object.values(require('./colors/themes')).reduce((pre, curr) => {
+// const tonicUiTheme = {
+//   extend: {
+//     height: {
+//       'btn-xs': default_button_gen_float["tcsmd-comp-button-size-xs"],
+//       'btn-sm': default_button_gen_float["tcsmd-comp-button-size-sm"],
+//       'btn-md': default_button_gen_float["tcsmd-comp-button-size-md"],
+//       'btn-lg': default_button_gen_float["tcsmd-comp-button-size-lg"],
+//     },
+//     borderRadius: {
+//       none: '0px',
+//       xs: default_gen_float["tcsmd-ref-radius-xs"],
+//       DEFAULT: default_gen_float["tcsmd-ref-radius-sm"],
+//       sm: default_gen_float["tcsmd-ref-radius-sm"],
+//       md: default_gen_float["tcsmd-ref-radius-md"],
+//       lg: default_gen_float["tcsmd-ref-radius-lg"],
+//       full: default_gen_float["tcsmd-ref-radius-circle"],
+//     },
+//     borderWidth: {
+//       'extra-thin': default_gen_float["tcsmd-ref-border-extra-thin"],
+//       'thin': default_gen_float["tcsmd-ref-border-thin"],
+//       'thick': default_gen_float["tcsmd-ref-border-thick"],
+//     },
+//     colors: {
+//       ...getColorObject(Object.values(require('./colors/themes')).reduce((pre, curr) => {
+//
+//         return {
+//           ...pre,
+//           ...curr
+//         }
+//       }, {})),
+//       ...getColorObject(require('./colors/defaultTheme')),
+//     },
+//   },
+// };
 
-        return {
-          ...pre,
-          ...curr
-        }
-      }, {})),
-      ...getColorObject(require('./colors/defaultTheme')),
-    },
-  },
-};
+const tonicUiTheme = consumerDefaultTheme
 
 module.exports = plugin.withOptions(
-  (options = {}) => mainFunction({...options, tonicUiTheme: tonicUiTheme.extend, tailwindTheme}),
+  (options = {}) => mainFunction({...options, tonicUiTheme, tailwindTheme}),
   (options = {}) => {
 
     return {
@@ -92,7 +93,7 @@ module.exports = plugin.withOptions(
           extend: mergeConfig({
             ...options,
             tonicUiTheme: tonicUiTheme.extend,
-            tailwindTheme
+            tailwindTheme: tailwindTheme.theme,
           })
         }
     };

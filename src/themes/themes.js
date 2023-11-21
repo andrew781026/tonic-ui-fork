@@ -899,7 +899,7 @@ const newsTheme = {
 
 const consumerDefaultTheme = {
   name: 'consumerDefault',
-  selectors: [`[data-theme="consumerDefault"]`],
+  selectors: [':root', ':host'],
   extend: {
     height: {
       'btn-xs': default_button_gen_float["tcsmd-comp-button-size-xs"],
@@ -922,7 +922,6 @@ const consumerDefaultTheme = {
       'thick': default_gen_float["tcsmd-ref-border-thick"],
     },
     colors: {
-
       'transparent': 'transparent',
       'current': 'currentColor',
       'primary': '#343232',
@@ -963,8 +962,8 @@ const consumerDefaultTheme = {
 
 const consumerDarkTheme = {
   name: 'consumerDark',
-  selectors: [`[data-theme="consumerDark"]`],
-  mediaQuery: '@media (prefers-color-scheme: dark)',
+  selectors: [':root', ':host', `[data-theme="consumerDark"]`],
+  // mediaQuery: '@media (prefers-color-scheme: dark)',
   extend: {
     colors: {
       ...dark_default_theme
