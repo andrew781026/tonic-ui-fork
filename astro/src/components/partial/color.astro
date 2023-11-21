@@ -16,7 +16,7 @@ const textColorSwitcher = l => l > 0.65 ? 'text-black' : 'text-white'
         value.map(item => (
           <div class={`flex w-full p-3 bg-${item.colorName} ${ textColorSwitcher(item?.hsl?.l) }`}>
             <p class="flex-1 m-0">{item.colorName}</p>
-            <p class="m-0">{getHex(item.color)}</p>
+            <p class="m-0 text-right" style="max-width:50%">{getHex(item.color)}</p>
           </div>
         ))
       }
