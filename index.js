@@ -2,8 +2,8 @@
 
 const themes = require('./colors/themes');
 const colorFunctions = require('./colors/functions.js');
-const base = require('./base.js'); // using base.js in dist folder , but for dependency need ./
-const component = require('./component.js'); // using component.js in dist folder , but for dependency need ./
+// const base = require('./base.js'); // using base.js in dist folder , but for dependency need ./
+// const component = require('./component.js'); // using component.js in dist folder , but for dependency need ./
 const {getColorObject} = require('./lib/helper.js');
 const {injectConfig} = require('./lib/injectConfig.js');
 const {mergeConfig} = require('./lib/mergeConfig.js');
@@ -34,11 +34,15 @@ const mainFunction = options => api => {
 
   const {addBase, addComponents, addUtilities, config, postcss, e, prefix} = api;
 
-  // inject @base style
-  addBase(base);
+  try {
+    // inject @base style
+    addBase(require('./base.js'));
 
-  // inject components - button
-  addComponents(component);
+    // inject components - button
+    addComponents(require('./component.js'));
+  } catch (e) {
+  }
+
 
   // const themeInjector = colorFunctions.injectThemes(addBase, config, themes);
   // themeInjector;
