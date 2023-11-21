@@ -31,7 +31,7 @@ const getColors = (config = {}, type, result = {}, prefix = '') => {
     const escapedKey = cssEscape(key);
 
     if (!value) continue;
-    else if (typeof value === "function") continue;
+    else if (typeof value === "function") result[key] = value;
     else if (typeof value === "string" && value.startsWith('var')) result[key] = value;
     else if (typeof value === "string" && !value.startsWith('var')) result[key] = `var(--${type}-${prefix}-${escapedKey})`;
     else if (typeof value === "object") getColors(value, type, result, `${prefix}-${escapedKey}`);
@@ -50,7 +50,7 @@ const getKeyValuePair = (config, type) => {
       const escapedKey = cssEscape(key);
 
       if (!value) return {};
-      else if (typeof value === "function") return {};
+      else if (typeof value === "function") return {[key]: value};
       // md: 1,  => md: 'var(--order-md)'
       else if (typeof value === "number") return {[key]: `var(--${type}-${escapedKey})`};
       // xs: 'var(--ggg)', => xs: 'var(--ggg)'
@@ -240,7 +240,6 @@ module.exports = {
     const {defaultTheme, themes = [], tonicUiTheme, tailwindTheme} = option;
 
     const defaultExtend = defaultTheme?.extend || {};
-    if (!themes || !Array.isArray(themes)) return defaultExtend;
 
     const themeExtends = themes.map(theme => theme?.extend).filter(extend => extend);
 
@@ -303,7 +302,7 @@ module.exports = {
       borderOpacity: getKeyValuePair(allExtend.borderOpacity, 'borderOpacity'),
       backgroundColor: getColors(allExtend.backgroundColor, 'backgroundColor'),
       backgroundOpacity: getKeyValuePair(allExtend.backgroundOpacity, 'backgroundOpacity'),
-      backgroundImage: getKeyValuePair(allExtend.backgroundImage, 'backgroundImage'),
+      // backgroundImage: getKeyValuePair(allExtend.backgroundImage, 'backgroundImage'),
       gradientColorStops: getColors(allExtend.gradientColorStops, 'gradientColorStops'),
       backgroundSize: getKeyValuePair(allExtend.backgroundSize, 'backgroundSize'),
       backgroundPosition: getKeyValuePair(allExtend.backgroundPosition, 'backgroundPosition'),
