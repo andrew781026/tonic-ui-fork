@@ -328,7 +328,7 @@
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--tcsmd-ref-palette-gray-20) var(--tw-gradient-to-position);
-  color: var(--tcsmd-ref-palette-gray-90);
+  color: var(--colors--tcsmd-ref-palette-gray-90);
   /* width = border + padding + width */
   min-height: var(--minHeight-btn-md);
   border-radius: var(--borderRadius-sm);
@@ -577,7 +577,7 @@
 .tcsmd-btn-ghost {
   border-color: var(--colors--tcsmd-ref-palette-gray-26);
   background-color: var(--colors--transparent);
-  color: var(--tcsmd-ref-palette-gray-90);
+  color: var(--colors--tcsmd-ref-palette-gray-90);
   /* width = border + padding + width */
   min-height: var(--minHeight-btn-md);
   border-radius: var(--borderRadius-sm);
@@ -711,7 +711,7 @@
 /* ----  Text Button  ---- */
 
 .tcsmd-text-btn-primary {
-  color: var(--tcsmd-ref-palette-gray-90);
+  color: var(--colors--tcsmd-ref-palette-gray-90);
   min-height: var(--minHeight-btn-md);
   border-radius: var(--borderRadius-sm);
   border-width: var(--borderWidth-2);
