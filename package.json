@@ -11,10 +11,11 @@
     "components": "node utils/mergeFile.js 'dist/components/*.scss' 'dist/component.css'",
     "postcomponents": "node utils/cssToObj.js dist/component.css dist/component.js",
     "cp:lib": "node utils/cp.js --src src/lib --dest dist/lib",
+    "cp:themes": "node utils/cp.js --src src/themes --dest dist/themes",
     "cp:colors": "node utils/cp.js --src src/colors --dest dist/colors",
     "cp:root": "node utils/cp.js --src src/index.js --dest dist/index.js",
     "gen:colors": "node utils/colorGenerator.js",
-    "build": "npm run base && npm run components && npm run gen:colors && npm run cp:colors && npm run cp:lib && npm run cp:root",
+    "build": "npm run base && npm run components && npm run gen:colors && npm run cp:colors && npm run cp:themes && npm run cp:lib && npm run cp:root",
     "doc:build": "npm run build && cd astro && npm run build",
     "dev": "npm run build && cd astro && npm run dev",
     "lint": "eslint src/**/*.js",
@@ -33,13 +34,13 @@
   "homepage": "https://github.com/andrew781026/tonic-ui-fork#readme",
   "dependencies": {
     "color": "^4.2.3",
-    "consumer-tonic-design-system": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-design-system.git#web-dist",
     "cssesc": "^3.0.0",
     "deepmerge": "^4.3.1",
     "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.14",
+    "consumer-tonic-design-system": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-design-system.git#web-dist",
     "eslint": "^8.40.0",
     "eslint-config-google": "^0.14.0",
     "gh-pages": "^6.0.0",

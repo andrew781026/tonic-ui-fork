@@ -3,12 +3,6 @@ const {cssEscape} = require("../lib/cssEscape.js");
 
 const shallowMerge = extendArr => {
 
-  // const keys = extendArr
-  //   .filter(extend => extend)
-  //   .reduce((pre, curr) => [...pre, ...Object.keys(curr)], []);
-
-  // const uniqueKeys = Array.from(new Set(keys));
-
   const keys = Object.keys(themeConfig);
 
   return extendArr
@@ -41,7 +35,7 @@ const getColors = (config = {}, type, result = {}, prefix = '') => {
     else if (typeof value === "string" && value.startsWith('var')) result[key] = value;
     else if (typeof value === "string" && !value.startsWith('var')) result[key] = `var(--${type}-${prefix}-${escapedKey})`;
     else if (typeof value === "object") getColors(value, type, result, `${prefix}-${escapedKey}`);
-    else throw new Error(`fontSize Config format error , config=${config}`);
+    else throw new Error(`Config format error , [type=fontSize] ~ ${key}=${JSON.stringify(value, null, 2)}`);
   }
 
   return result;
@@ -68,7 +62,6 @@ const getKeyValuePair = (config, type) => {
     })
     .reduce((pre, curr) => ({...pre, ...curr}), {});
 }
-
 
 // TODO : media query cannot using css variable , hard to theme switch
 const getScreen = config => {
@@ -97,6 +90,7 @@ const getFontFontFamily = config => {
 
   /*
   fontFamily: {
+    'kk': 'var(--kk)',
     'mono': 'Helvetica, Arial, sans-serif',
     'body': ['Helvetica', 'Arial', 'sans-serif'],
      sans: [
@@ -145,7 +139,7 @@ const getFontFontFamily = config => {
           ]
         }
       }
-      // 'body': ['Helvetica', 'Arial', 'sans-serif'],
+      // 'body': ['Helvetica', 'Arial', 'sans-serif'], => body : 'var(--fontFamily-body-0)'
       else if (Array.isArray(value)) return {[key]: `var(--fontFamily-${escapedKey}-0)`};
       // other type , not tailwind fontSize config
       else throw new Error(`fontSize Config format error , config=${config}`);

@@ -17,6 +17,8 @@ const bgColors = Object.entries({...allThemeColor,...genTheme}).map(([key,value]
 
 // ========= tailwindcss-themer configs might need to add to plugin settings =========
 const themerExampleConfig = {
+  // inShadowRoot: false, // :root , :host
+  // defaultTheme: {extend: tailwindTheme},
   themes: [
     {
       name: 'default',

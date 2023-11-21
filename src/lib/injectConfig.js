@@ -109,6 +109,7 @@ const resolveFontFamily = config => {
           [`--fontFamily-${escapedKey}-1-fontVariationSettings`]: value[1]?.fontVariationSettings,
         }
       } else if (Array.isArray(value)) {
+        // 'body': ['Helvetica', 'Arial', 'sans-serif'], => :root { --fontFamily-body-0 : "'Helvetica', 'Arial', 'sans-serif'" }
         return {
           [`--fontFamily-${escapedKey}-0`]: value.join(','),
         }
@@ -372,7 +373,7 @@ const resolveThemeExtensionAsCustomProps = (extend, api) => {
    */
 
   const result = {
-    colors: resolveKeyValuePair(extend.colors, 'colors'),
+    colors: resolveColor(extend.colors, 'colors'),
     spacing: resolveKeyValuePair(extend.spacing, 'spacing'),
     inset: resolveKeyValuePair(extend.inset, 'inset'),
     zIndex: resolveKeyValuePair(extend.zIndex, 'zIndex'),
