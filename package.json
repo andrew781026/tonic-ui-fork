@@ -4,6 +4,7 @@
   "description": "tonic-ui for tailwind version",
   "main": "index.js",
   "scripts": {
+    "tsc": "tsc",
     "prebase": "postcss --config src/base src/base/*.css --base src --dir dist",
     "base": "node utils/mergeFile.js 'dist/base/*.css' 'dist/base.css'",
     "postbase": "node utils/cssToObj.js dist/base.css dist/base.js",
@@ -15,6 +16,7 @@
     "cp:error": "node utils/cp.js --src src/error --dest dist/error",
     "cp:root": "node utils/cp.js --src src/index.js --dest dist/index.js",
     "build": "npm run base && npm run components && npm run cp:error && npm run cp:themes && npm run cp:lib && npm run cp:root",
+    "new:build": "tsc && npm run base && npm run components && node utils/copyFiles.js",
     "doc:build": "npm run build && cd astro && npm run build",
     "dev": "npm run build && cd astro && npm run dev",
     "lint": "eslint src/**/*.js",
@@ -32,9 +34,6 @@
   },
   "homepage": "https://github.com/andrew781026/tonic-ui-fork#readme",
   "dependencies": {
-    "color": "^4.2.3",
-    "cssesc": "^3.0.0",
-    "deepmerge": "^4.3.1",
     "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
@@ -46,12 +45,14 @@
     "glob": "^10.2.2",
     "gulp": "^4.0.2",
     "minimist": "^1.2.8",
+    "ncp": "^2.0.0",
     "postcss": "^8.4.23",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
     "postcss-js": "^4.0.1",
     "postcss-nested": "^6.0.1",
-    "postcss-nesting": "^11.2.2"
+    "postcss-nesting": "^11.2.2",
+    "typescript": "^5.2.2"
   },
   "peerDependencies": {
     "autoprefixer": "^10.0.2",

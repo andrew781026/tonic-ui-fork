@@ -1,11 +1,4 @@
-// TODO : need more css Escape pattern
-module.exports = {
-  /**
-   * Escape css.
-   * @param {string} css
-   * @returns {string} css
-   */
-  cssEscape: css => css.replaceAll('.','\\.'),
+export const cssEscape = (css: string): string => {
   // # => throw Error
   /*
   Certainly, here is a simplified list of characters you should consider escaping in CSS selectors:
@@ -31,4 +24,5 @@ module.exports = {
       || (double bar) - column combinator in CSS Grid
       In CSS, you escape these characters by placing a backslash \ before them. For example, to select an element with the ID id#with#hash, you would write #id\#with\#hash in your CSS
    */
+  return css.replaceAll('.', '\\.');
 }

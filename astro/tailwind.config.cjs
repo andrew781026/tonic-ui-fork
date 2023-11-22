@@ -290,6 +290,6 @@ module.exports = {
   },
   plugins: [
     // require('tailwindcss-themer')(themerExampleConfig),
-    require('consumer-tonic-ui')(themerExampleConfig),
+    require('consumer-tonic-ui').default(themerExampleConfig),
   ],
 }

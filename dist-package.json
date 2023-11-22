@@ -18,9 +18,7 @@
   },
   "homepage": "https://github.com/andrew781026/tonic-ui-fork#readme",
   "dependencies": {
-    "consumer-tonic-design-system": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-design-system.git#v0.0.4",
-    "color": "^4.2.3",
-    "css.escape": "^1.5.1"
+    "consumer-tonic-design-system": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-design-system.git#v0.0.4"
   },
   "peerDependencies": {
     "autoprefixer": "^10.0.2",

@@ -1,5 +1,6 @@
-const {cssEscape} = require("../lib/cssEscape.js");
-const {TonicConfigError} = require("../error/error.js");
+import {cssEscape} from "./cssEscape";
+import {TonicConfigError} from "../error/error";
+import {KeyValuePair, ResolvableTo, ThemeConfig, PluginAPI, MultiThemePluginOptions} from '../type/define'
 
 const resolveFontSize = (config = {}) => {
 
@@ -119,7 +120,7 @@ const resolveFontFamily = (config = {}) => {
     .reduce((pre, curr) => ({...pre, ...curr}), {});
 }
 
-const resolveColor = (config = {}, type, result = {}, prefix = '') => {
+const resolveColor = (config = {}, type: string, result: KeyValuePair = {}, prefix = '') => {
 
   // colors: ResolvableTo<RecursiveKeyValuePair> => can Recursive KeyValuePair
 
@@ -153,7 +154,7 @@ const resolveColor = (config = {}, type, result = {}, prefix = '') => {
   return result;
 }
 
-const resolveKeyframes = (config = {}) => {
+const resolveKeyframes = (config = {}): ResolvableTo<KeyValuePair> => {
 
   //   keyframes: ResolvableTo<KeyValuePair<string, KeyValuePair<string, KeyValuePair>>>
 
@@ -178,19 +179,19 @@ const resolveKeyframes = (config = {}) => {
       }
    */
 
-  const result = {};
+  const result: ResolvableTo<KeyValuePair> = {};
 
   for (const [key, value] of Object.entries(config)) {
     const escapedKey = cssEscape(key);
     if (typeof value === "function") continue;
-    else if (typeof value === "string" || typeof value === "number") result[`--keyframes-${escapedKey}`] = value;
+    else if (typeof value === "string" || typeof value === "number") result[`--keyframes-${escapedKey}`] = value.toString();
     else throw new Error(`keyframes Config error on (key,value)=(${key},${value}) , config=${config}`);
   }
 
   return result;
 }
 
-const resolveDropShadow = (config = {}) => {
+const resolveDropShadow = (config = {}): KeyValuePair => {
 
   //   dropShadow: ResolvableTo<KeyValuePair<string, string | string[]>>
   /*
@@ -203,7 +204,7 @@ const resolveDropShadow = (config = {}) => {
       }
    */
 
-  const result = {};
+  const result: KeyValuePair = {};
 
   for (const [key, value] of Object.entries(config)) {
     const escapedKey = cssEscape(key);
@@ -217,9 +218,9 @@ const resolveDropShadow = (config = {}) => {
   return result;
 }
 
-const resolveKeyValuePair = (config = {}, type) => {
+const resolveKeyValuePair = (config = {}, type: string) => {
 
-  const result = {};
+  const result: ResolvableTo<KeyValuePair> = {};
 
   for (const [key, value] of Object.entries(config)) {
     const escapedKey = cssEscape(key);
@@ -227,14 +228,14 @@ const resolveKeyValuePair = (config = {}, type) => {
     if (!value) continue;
     else if (typeof value === "function") continue;
     else if (typeof value === "string" && value.includes('var')) continue;
-    else if (typeof value === "string" || typeof value === "number") result[`--${type}-${escapedKey}`] = value;
+    else if (typeof value === "string" || typeof value === "number") result[`--${type}-${escapedKey}`] = value.toString();
     else throw new TonicConfigError({type, key, value});
   }
 
   return result;
 }
 
-const resolveThemeExtensionAsCustomProps = (extend, api) => {
+const resolveThemeExtensionAsCustomProps = (extend: ThemeConfig, api: PluginAPI) => {
 
   /*
     ThemeConfig ref map :
@@ -370,54 +371,52 @@ const resolveThemeExtensionAsCustomProps = (extend, api) => {
   return Object.values(result).reduce((pre, curr) => ({...pre, ...curr}), {});
 }
 
-module.exports = {
-  injectConfig: (option, api) => {
+export const injectConfig = (option: MultiThemePluginOptions, api: PluginAPI) => {
 
-    const {addBase} = api;
-    const {defaultTheme, themes, inShadowRoot, tonicUiTheme, tailwindTheme} = option;
-    const rootOrHost = inShadowRoot ? ':host' : ':root';
+  const {addBase} = api;
+  const {defaultTheme, themes, inShadowRoot, tonicUiTheme, tailwindTheme} = option;
+  const rootOrHost = inShadowRoot ? ':host' : ':root';
 
-    // defaultTheme :root setting
-    if (defaultTheme) {
-      addBase({
-        [rootOrHost]: resolveThemeExtensionAsCustomProps(defaultTheme.extend, api)
-      })
-    }
-
-    // tailwindTheme :root setting
-    if (tailwindTheme) {
-      addBase({
-        [rootOrHost]: resolveThemeExtensionAsCustomProps(tailwindTheme.theme, api)
-      })
-    }
-
-    if (tonicUiTheme) {
-      addBase({
-        [rootOrHost]: resolveThemeExtensionAsCustomProps(tonicUiTheme.extend, api)
-      })
-    }
-
-    Array.isArray(themes) && themes.forEach(theme => {
-      const {mediaQuery, selectors} = theme;
-
-      if (mediaQuery && selectors.length > 0) {
-        addBase({
-          [mediaQuery]: {
-            [selectors.join(', ')]: resolveThemeExtensionAsCustomProps(theme.extend, api)
-          }
-        })
-      } else if (selectors.length > 0) {
-        addBase({
-          [selectors.join(', ')]: resolveThemeExtensionAsCustomProps(theme.extend, api)
-        })
-      } else if (mediaQuery) {
-        addBase({
-          [mediaQuery]: {
-            [rootOrHost]: resolveThemeExtensionAsCustomProps(theme.extend, api)
-          }
-        })
-      }
-    });
-
+  // defaultTheme :root setting
+  if (defaultTheme && defaultTheme.extend) {
+    addBase({
+      [rootOrHost]: resolveThemeExtensionAsCustomProps(defaultTheme.extend, api)
+    })
   }
+
+  // tailwindTheme :root setting
+  if (tailwindTheme && tailwindTheme.theme) {
+    addBase({
+      [rootOrHost]: resolveThemeExtensionAsCustomProps(tailwindTheme.theme, api)
+    })
+  }
+
+  // tonicUiTheme :root setting
+  if (tonicUiTheme && tonicUiTheme.extend) {
+    addBase({
+      [rootOrHost]: resolveThemeExtensionAsCustomProps(tonicUiTheme.extend, api)
+    })
+  }
+
+  Array.isArray(themes) && themes.forEach(theme => {
+    const {mediaQuery, selectors} = theme;
+
+    if (mediaQuery && selectors.length > 0) {
+      addBase({
+        [mediaQuery]: {
+          [selectors.join(', ')]: resolveThemeExtensionAsCustomProps(theme.extend, api)
+        }
+      })
+    } else if (selectors.length > 0) {
+      addBase({
+        [selectors.join(', ')]: resolveThemeExtensionAsCustomProps(theme.extend, api)
+      })
+    } else if (mediaQuery) {
+      addBase({
+        [mediaQuery]: {
+          [rootOrHost]: resolveThemeExtensionAsCustomProps(theme.extend, api)
+        }
+      })
+    }
+  });
 }
