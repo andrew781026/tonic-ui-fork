@@ -39,7 +39,7 @@ jobs:
       - name: build dist
         run: |
           npm i
-          npm run build
+          npm run new:build
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
