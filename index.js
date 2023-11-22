@@ -3,8 +3,6 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.safelist = void 0;
 const injectConfig_1 = require("./lib/injectConfig");
 const mergeConfig_1 = require("./lib/mergeConfig");
 const plugin_1 = __importDefault(require("tailwindcss/plugin"));
@@ -48,7 +46,7 @@ const mainFunction = (options) => (api) => {
     (0, injectConfig_1.injectConfig)(options, api);
 };
 const tonicUiTheme = themes_1.consumerDefaultTheme;
-exports.default = plugin_1.default.withOptions((options = {}) => mainFunction({ ...options, tonicUiTheme, tailwindTheme: config_full_js_1.default }), (options = {}) => {
+const consumerTonicUiPlugin = plugin_1.default.withOptions((options = {}) => mainFunction({ ...options, tonicUiTheme, tailwindTheme: config_full_js_1.default }), (options = {}) => {
     return {
         theme: {
             extend: (0, mergeConfig_1.mergeConfig)({
@@ -59,5 +57,6 @@ exports.default = plugin_1.default.withOptions((options = {}) => mainFunction({ 
         }
     };
 });
-const responsiveRegex_1 = __importDefault(require("./lib/responsiveRegex"));
-exports.safelist = responsiveRegex_1.default;
+module.exports = consumerTonicUiPlugin;
+// import responsiveRegex from './lib/responsiveRegex';
+// export const safelist = responsiveRegex;
