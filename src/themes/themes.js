@@ -510,6 +510,35 @@ const idpPortalTheme = {
   },
 }
 
+const idpExtraTheme = {
+  name: 'idpExtra',
+  selectors: [`[data-theme="idpExtra"]`],
+  extend: {
+    colors: {
+      'enabled-primary-start': 'var(--colors--tcsmd-ref-palette-blue-60)',
+      'enabled-primary-end': 'var(--colors--tcsmd-ref-palette-blue-70)',
+      'hover-primary-start': 'var(--colors--tcsmd-ref-palette-blue-70)',
+      'hover-primary-end': 'var(--colors--tcsmd-ref-palette-blue-80)',
+      'active-primary-start': 'var(--colors--tcsmd-ref-palette-blue-80)',
+      'active-primary-end': 'var(--colors--tcsmd-ref-palette-blue-90)',
+
+      'enabled-default-start': 'var(--colors--tcsmd-ref-palette-white)',
+      'enabled-default-end': 'var(--colors--tcsmd-ref-palette-white)',
+      'hover-default-start': 'var(--colors--tcsmd-ref-palette-gray-22)',
+      'hover-default-end': 'var(--colors--tcsmd-ref-palette-gray-22)',
+      'active-default-start': 'var(--colors--tcsmd-ref-palette-gray-26)',
+      'active-default-end': 'var(--colors--tcsmd-ref-palette-gray-26)',
+
+      'enabled-emphasis-start': 'var(--colors--tcsmd-ref-palette-red-60)',
+      'enabled-emphasis-end': 'var(--colors--tcsmd-ref-palette-red-70)',
+      'hover-emphasis-start': 'var(--colors--tcsmd-ref-palette-red-70)',
+      'hover-emphasis-end': 'var(--colors--tcsmd-ref-palette-red-80)',
+      'active-emphasis-start': 'var(--colors--tcsmd-ref-palette-red-80)',
+      'active-emphasis-end': 'var(--colors--tcsmd-ref-palette-red-90)',
+    },
+  },
+}
+
 const idpExtensionDarkTheme = {
   name: 'idpExtensionDark',
   selectors: [`[data-theme="idpExtensionDark"]`],
@@ -982,6 +1011,7 @@ const consumerDarkTheme = {
 module.exports = {
   pwmTheme,
   idpPortalTheme,
+  idpExtraTheme,
   idpExtensionDarkTheme,
   idpExtensionJaTheme,
   newsTheme,
