@@ -1,10 +1,5 @@
 // docs of tailwind.config.js plugin - https://v1.tailwindcss.com/docs/plugins
 
-const themes = require('./colors/themes');
-const colorFunctions = require('./colors/functions.js');
-// const base = require('./base.js'); // using base.js in dist folder , but for dependency need ./
-// const component = require('./component.js'); // using component.js in dist folder , but for dependency need ./
-const {getColorObject} = require('./lib/helper.js');
 const {injectConfig} = require('./lib/injectConfig.js');
 const {mergeConfig} = require('./lib/mergeConfig.js');
 const plugin = require('tailwindcss/plugin');
