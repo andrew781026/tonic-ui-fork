@@ -1,7 +1,9 @@
-const allThemeColor = require('consumer-tonic-ui/json/allThemeColor.json');
-const genTheme = require('consumer-tonic-ui/json/genTheme.json');
+const {consumerDefaultTheme, consumerDarkTheme} = require('consumer-tonic-ui/themes/themes.js');
 
-const bgColors = Object.entries({...allThemeColor,...genTheme}).map(([key,value]) => `bg-${key}`);
+const bgColors = Object.entries({
+  ...consumerDefaultTheme.extend.colors,
+  ...consumerDarkTheme.extend.colors
+}).map(([key, value]) => `bg-${key}`);
 
 /*
 
@@ -113,8 +115,8 @@ const themerExampleConfig = {
         },
         keyframes: {
           completeIconAnimation: {
-            '50%': { transform: 'scale(1.2)' },
-            '100%': { transform: 'scale(1)' },
+            '50%': {transform: 'scale(1.2)'},
+            '100%': {transform: 'scale(1)'},
           },
           completeFadeInAnimation: {
             from: {
@@ -148,7 +150,7 @@ const themerExampleConfig = {
     },
     {
       name: 'ja',
-      selectors: [`[data-theme="ja"]`,'.ja'],
+      selectors: [`[data-theme="ja"]`, '.ja'],
       extend: {
         fontFamily: {
           roboto: ['Roboto', 'sans-serif'],
@@ -237,8 +239,8 @@ const themerExampleConfig = {
         },
         keyframes: {
           completeIconAnimation: {
-            '50%': { transform: 'scale(1.2)' },
-            '100%': { transform: 'scale(1)' },
+            '50%': {transform: 'scale(1.2)'},
+            '100%': {transform: 'scale(1)'},
           },
           completeFadeInAnimation: {
             from: {
@@ -276,26 +278,17 @@ const themerExampleConfig = {
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   mode: 'jit',
-	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
-
-  // safelist: [
-  //   {pattern: /.*/}
-  // ],
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 
   // use safelist to avoid purging tonic-ui classes
   safelist: [
     ...bgColors,
   ],
 
-  tonicui: {
-    themes: ['consumer','dark'],
-    darkTheme: ['dark'],
+  theme: {
+    extend: {},
   },
-
-	theme: {
-		extend: {},
-	},
-	plugins: [
+  plugins: [
     // require('tailwindcss-themer')(themerExampleConfig),
     require('consumer-tonic-ui')(themerExampleConfig),
   ],
