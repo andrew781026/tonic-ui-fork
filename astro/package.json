@@ -20,7 +20,7 @@
     "tailwindcss-themer": "^3.1.2"
   },
   "devDependencies": {
-    "consumer-tonic-ui": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git#dist",
+    "consumer-tonic-ui": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git#v0.0.4",
     "gh-pages": "^6.0.0"
   }
 }
