@@ -1,4 +1,5 @@
 const {cssEscape} = require("../lib/cssEscape.js");
+const {TonicConfigError} = require("../error/error.js");
 
 const resolveFontSize = (config = {}) => {
 
@@ -50,7 +51,7 @@ const resolveFontSize = (config = {}) => {
           [`--fontSize-${escapedKey}-1-letterSpacing`]: value[1].letterSpacing,
           [`--fontSize-${escapedKey}-1-fontWeight`]: value[1].fontWeight
         }
-      } else throw new Error(`fontSize Config format error , config=${config}`);
+      } else throw new TonicConfigError({type: 'fontSize', key, value});
     })
     .reduce((pre, curr) => ({...pre, ...curr}), {});
 }
@@ -113,7 +114,7 @@ const resolveFontFamily = (config = {}) => {
         return {
           [`--fontFamily-${escapedKey}-0`]: value.join(','),
         }
-      } else throw new Error(`fontSize Config format error , config=${config}`);
+      } else throw new TonicConfigError({type: 'fontFamily', key, value});
     })
     .reduce((pre, curr) => ({...pre, ...curr}), {});
 }
@@ -143,9 +144,10 @@ const resolveColor = (config = {}, type, result = {}, prefix = '') => {
 
     if (!value) continue;
     else if (typeof value === "function") continue;
-    else if (typeof value === "string") result[`--${type}-${prefix}-${escapedKey}`] = value;
+    else if (typeof value === "string" && value.includes('var')) continue;
+    else if (typeof value === "string" && !value.includes('var')) result[`--${type}-${prefix}-${escapedKey}`] = value;
     else if (typeof value === "object") resolveColor(value, type, result, `${prefix}-${escapedKey}`);
-    else throw new Error(`${type} Config error on (key,value)=(${key},${value}) , config=${config}`);
+    else throw new TonicConfigError({type, key, value});
   }
 
   return result;
@@ -160,7 +162,19 @@ const resolveKeyframes = (config = {}) => {
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },
           '50%': { transform: 'rotate(3deg)' },
-        }
+        },
+        completeFadeInAnimation: {
+          from: {
+            height: '0px',
+            opacity: 0,
+            visibility: 'hidden',
+          },
+          to: {
+            height: 'auto',
+            opacity: 1,
+            visibility: 'visible',
+          },
+        },
       }
    */
 
@@ -176,6 +190,33 @@ const resolveKeyframes = (config = {}) => {
   return result;
 }
 
+const resolveDropShadow = (config = {}) => {
+
+  //   dropShadow: ResolvableTo<KeyValuePair<string, string | string[]>>
+  /*
+    dropShadow: {
+        '3xl': '0 35px 35px rgba(0, 0, 0, 0.25)',
+        '4xl': [
+            '0 35px 35px rgba(0, 0, 0, 0.25)',
+            '0 45px 65px rgba(0, 0, 0, 0.15)'
+        ]
+      }
+   */
+
+  const result = {};
+
+  for (const [key, value] of Object.entries(config)) {
+    const escapedKey = cssEscape(key);
+    if (typeof value === "function") continue;
+    else if (typeof value === "string" && value.includes('var')) continue;
+    else if (typeof value === "string" && !value.includes('var')) result[`--dropShadow-${escapedKey}`] = value;
+    else if (Array.isArray(value)) result[`--dropShadow-${escapedKey}`] = value.join(',');
+    else throw new TonicConfigError({type: 'DropShadow', key, value});
+  }
+
+  return result;
+}
+
 const resolveKeyValuePair = (config = {}, type) => {
 
   const result = {};
@@ -185,8 +226,9 @@ const resolveKeyValuePair = (config = {}, type) => {
 
     if (!value) continue;
     else if (typeof value === "function") continue;
+    else if (typeof value === "string" && value.includes('var')) continue;
     else if (typeof value === "string" || typeof value === "number") result[`--${type}-${escapedKey}`] = value;
-    else throw new Error(`${type} Config error on (key,value)=(${key},${value}) , config=${config}`);
+    else throw new TonicConfigError({type, key, value});
   }
 
   return result;
@@ -211,166 +253,6 @@ const resolveThemeExtensionAsCustomProps = (extend, api) => {
       ThemeConfig['sepia'] = ResolvableTo<KeyValuePair>
    */
   // so need additional resolve [ supports , data , colors , container , keyframes , fontFamily , fontSize , dropShadow ]
-
-  /*
-   // Responsiveness
-  screens: ResolvableTo<ScreensConfig>
-  supports: ResolvableTo<Record<string, string>>
-  data: ResolvableTo<Record<string, string>>
-
-  // Reusable base configs
-  colors: ResolvableTo<RecursiveKeyValuePair> => can Recursive KeyValuePair
-  spacing: ResolvableTo<KeyValuePair>
-
-  // Components
-  container: ResolvableTo<
-    Partial<{
-      screens: ScreensConfig
-      center: boolean
-      padding: string | Record<string, string>
-    }>
-  >
-
-  // Utilities
-  inset: ThemeConfig['spacing']
-  zIndex: ResolvableTo<KeyValuePair>
-  order: ResolvableTo<KeyValuePair>
-  gridColumn: ResolvableTo<KeyValuePair>
-  gridColumnStart: ResolvableTo<KeyValuePair>
-  gridColumnEnd: ResolvableTo<KeyValuePair>
-  gridRow: ResolvableTo<KeyValuePair>
-  gridRowStart: ResolvableTo<KeyValuePair>
-  gridRowEnd: ResolvableTo<KeyValuePair>
-  margin: ThemeConfig['spacing']
-  aspectRatio: ResolvableTo<KeyValuePair>
-  height: ThemeConfig['spacing']
-  maxHeight: ThemeConfig['spacing']
-  minHeight: ResolvableTo<KeyValuePair>
-  width: ThemeConfig['spacing']
-  maxWidth: ResolvableTo<KeyValuePair>
-  minWidth: ResolvableTo<KeyValuePair>
-  flex: ResolvableTo<KeyValuePair>
-  flexShrink: ResolvableTo<KeyValuePair>
-  flexGrow: ResolvableTo<KeyValuePair>
-  flexBasis: ThemeConfig['spacing']
-  borderSpacing: ThemeConfig['spacing']
-  transformOrigin: ResolvableTo<KeyValuePair>
-  translate: ThemeConfig['spacing']
-  rotate: ResolvableTo<KeyValuePair>
-  skew: ResolvableTo<KeyValuePair>
-  scale: ResolvableTo<KeyValuePair>
-  animation: ResolvableTo<KeyValuePair>
-  keyframes: ResolvableTo<KeyValuePair<string, KeyValuePair<string, KeyValuePair>>>
-  cursor: ResolvableTo<KeyValuePair>
-  scrollMargin: ThemeConfig['spacing']
-  scrollPadding: ThemeConfig['spacing']
-  listStyleType: ResolvableTo<KeyValuePair>
-  columns: ResolvableTo<KeyValuePair>
-  gridAutoColumns: ResolvableTo<KeyValuePair>
-  gridAutoRows: ResolvableTo<KeyValuePair>
-  gridTemplateColumns: ResolvableTo<KeyValuePair>
-  gridTemplateRows: ResolvableTo<KeyValuePair>
-  gap: ThemeConfig['spacing']
-  space: ThemeConfig['spacing']
-  divideWidth: ThemeConfig['borderWidth']
-  divideColor: ThemeConfig['borderColor']
-  divideOpacity: ThemeConfig['borderOpacity']
-  borderRadius: ResolvableTo<KeyValuePair>
-  borderWidth: ResolvableTo<KeyValuePair>
-  borderColor: ThemeConfig['colors']
-  borderOpacity: ThemeConfig['opacity']
-  backgroundColor: ThemeConfig['colors']
-  backgroundOpacity: ThemeConfig['opacity']
-  backgroundImage: ResolvableTo<KeyValuePair>
-  gradientColorStops: ThemeConfig['colors']
-  backgroundSize: ResolvableTo<KeyValuePair>
-  backgroundPosition: ResolvableTo<KeyValuePair>
-  fill: ThemeConfig['colors']
-  stroke: ThemeConfig['colors']
-  strokeWidth: ResolvableTo<KeyValuePair>
-  objectPosition: ResolvableTo<KeyValuePair>
-  padding: ThemeConfig['spacing']
-  textIndent: ThemeConfig['spacing']
-  fontFamily: ResolvableTo<
-    KeyValuePair<
-      string,
-      | string
-      | string[]
-      | [
-          fontFamily: string | string[],
-          configuration: Partial<{
-            fontFeatureSettings: string
-            fontVariationSettings: string
-          }>
-        ]
-    >
-  >
-  fontSize: ResolvableTo<
-    KeyValuePair<
-      string,
-      | string
-      | [fontSize: string, lineHeight: string]
-      | [
-          fontSize: string,
-          configuration: Partial<{
-            lineHeight: string
-            letterSpacing: string
-            fontWeight: string | number
-          }>
-        ]
-    >
-  >
-  fontWeight: ResolvableTo<KeyValuePair>
-  lineHeight: ResolvableTo<KeyValuePair>
-  letterSpacing: ResolvableTo<KeyValuePair>
-  textColor: ThemeConfig['colors']
-  textOpacity: ThemeConfig['opacity']
-  textDecorationColor: ThemeConfig['colors']
-  textDecorationThickness: ResolvableTo<KeyValuePair>
-  textUnderlineOffset: ResolvableTo<KeyValuePair>
-  placeholderColor: ThemeConfig['colors']
-  placeholderOpacity: ThemeConfig['opacity']
-  caretColor: ThemeConfig['colors']
-  accentColor: ThemeConfig['colors']
-  opacity: ResolvableTo<KeyValuePair>
-  boxShadow: ResolvableTo<KeyValuePair>
-  boxShadowColor: ThemeConfig['colors']
-  outlineWidth: ResolvableTo<KeyValuePair>
-  outlineOffset: ResolvableTo<KeyValuePair>
-  outlineColor: ThemeConfig['colors']
-  ringWidth: ResolvableTo<KeyValuePair>
-  ringColor: ThemeConfig['colors']
-  ringOpacity: ThemeConfig['opacity']
-  ringOffsetWidth: ResolvableTo<KeyValuePair>
-  ringOffsetColor: ThemeConfig['colors']
-  blur: ResolvableTo<KeyValuePair>
-  brightness: ResolvableTo<KeyValuePair>
-  contrast: ResolvableTo<KeyValuePair>
-  dropShadow: ResolvableTo<KeyValuePair<string, string | string[]>>
-  grayscale: ResolvableTo<KeyValuePair>
-  hueRotate: ResolvableTo<KeyValuePair>
-  invert: ResolvableTo<KeyValuePair>
-  saturate: ResolvableTo<KeyValuePair>
-  sepia: ResolvableTo<KeyValuePair>
-  backdropBlur: ThemeConfig['blur']
-  backdropBrightness: ThemeConfig['brightness']
-  backdropContrast: ThemeConfig['contrast']
-  backdropGrayscale: ThemeConfig['grayscale']
-  backdropHueRotate: ThemeConfig['hueRotate']
-  backdropInvert: ThemeConfig['invert']
-  backdropOpacity: ThemeConfig['opacity']
-  backdropSaturate: ThemeConfig['saturate']
-  backdropSepia: ThemeConfig['sepia']
-  transitionProperty: ResolvableTo<KeyValuePair>
-  transitionTimingFunction: ResolvableTo<KeyValuePair>
-  transitionDelay: ResolvableTo<KeyValuePair>
-  transitionDuration: ResolvableTo<KeyValuePair>
-  willChange: ResolvableTo<KeyValuePair>
-  content: ResolvableTo<KeyValuePair>
-
-  // Custom
-  [key: string]: any
-   */
 
   const result = {
     colors: resolveColor(extend.colors, 'colors'),
@@ -462,7 +344,7 @@ const resolveThemeExtensionAsCustomProps = (extend, api) => {
     blur: resolveKeyValuePair(extend.blur, 'blur'),
     brightness: resolveKeyValuePair(extend.brightness, 'brightness'),
     contrast: resolveKeyValuePair(extend.contrast, 'contrast'),
-    // dropShadow - not yet
+    dropShadow: resolveDropShadow(extend.dropShadow),
     grayscale: resolveKeyValuePair(extend.grayscale, 'grayscale'),
     hueRotate: resolveKeyValuePair(extend.hueRotate, 'hueRotate'),
     invert: resolveKeyValuePair(extend.invert, 'invert'),

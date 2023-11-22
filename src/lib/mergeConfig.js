@@ -1,5 +1,6 @@
 const themeConfig = require('../lib/themeConfig.js');
 const {cssEscape} = require("../lib/cssEscape.js");
+const {TonicConfigError} = require("../error/error.js");
 
 const shallowMerge = extendArr => {
 
@@ -23,6 +24,12 @@ const shallowMerge = extendArr => {
 
 // so need additional resolve [ supports , data , colors , container , keyframes , fontFamily , fontSize , dropShadow ]
 
+const getDoNothing = (config = {}, type) => {
+  const result = {};
+  for (const [key, value] of Object.entries(config)) value && (result[key] = value)
+  return result;
+}
+
 const getColors = (config = {}, type, result = {}, prefix = '') => {
 
   // ResolvableTo<KeyValuePair>
@@ -32,16 +39,16 @@ const getColors = (config = {}, type, result = {}, prefix = '') => {
 
     if (!value) continue;
     else if (typeof value === "function") result[key] = value;
-    else if (typeof value === "string" && value.startsWith('var')) result[key] = value;
-    else if (typeof value === "string" && !value.startsWith('var')) result[key] = `var(--${type}-${prefix}-${escapedKey})`;
+    else if (typeof value === "string" && value.includes('var')) result[key] = value;
+    else if (typeof value === "string" && !value.includes('var')) result[key] = `var(--${type}-${prefix}-${escapedKey})`;
     else if (typeof value === "object") getColors(value, type, result, `${prefix}-${escapedKey}`);
-    else throw new Error(`Config format error , [type=fontSize] ~ ${key}=${JSON.stringify(value, null, 2)}`);
+    else throw new TonicConfigError({type, key, value});
   }
 
   return result;
 }
 
-const getKeyValuePair = (config, type) => {
+const getKeyValuePair = (config = {}, type) => {
 
   // ResolvableTo<KeyValuePair>
 
@@ -54,11 +61,11 @@ const getKeyValuePair = (config, type) => {
       // md: 1,  => md: 'var(--order-md)'
       else if (typeof value === "number") return {[key]: `var(--${type}-${escapedKey})`};
       // xs: 'var(--ggg)', => xs: 'var(--ggg)'
-      else if (typeof value === "string" && value.startsWith('var')) return {[key]: value};
+      else if (typeof value === "string" && value.includes('var')) return {[key]: value};
       // xs: '12px', => xs: 'var(--spacing-xs)'
-      else if (typeof value === "string" && !value.startsWith('var')) return {[key]: `var(--${type}-${escapedKey})`};
+      else if (typeof value === "string" && !value.includes('var')) return {[key]: `var(--${type}-${escapedKey})`};
       // other type , not tailwind fontSize config
-      else throw new Error(`fontSize Config format error , config=${config}`);
+      else throw new TonicConfigError({type, key, value});
     })
     .reduce((pre, curr) => ({...pre, ...curr}), {});
 }
@@ -68,7 +75,25 @@ const getScreen = config => {
   // doc : https://tailwindcss.com/docs/screens
 }
 
-const getFontFontFamily = config => {
+const getDropShadow = (config = {}) => {
+  //   dropShadow: ResolvableTo<KeyValuePair<string, string | string[]>>
+  const result = {};
+
+  for (const [key, value] of Object.entries(config)) {
+    const escapedKey = cssEscape(key);
+
+    if (!value) continue;
+    else if (typeof value === "function") result[key] = value;
+    else if (typeof value === "string" && value.includes('var')) result[key] = value;
+    else if (typeof value === "string" && !value.includes('var')) result[key] = `var(--dropShadow-${escapedKey})`;
+    else if (Array.isArray(value)) result[key] = `var(--dropShadow-${escapedKey})`;
+    else throw new TonicConfigError({type: 'DropShadow', key, value});
+  }
+
+  return result;
+}
+
+const getFontFontFamily = (config = {}) => {
 
   /*
   fontFamily: ResolvableTo<
@@ -142,12 +167,12 @@ const getFontFontFamily = config => {
       // 'body': ['Helvetica', 'Arial', 'sans-serif'], => body : 'var(--fontFamily-body-0)'
       else if (Array.isArray(value)) return {[key]: `var(--fontFamily-${escapedKey}-0)`};
       // other type , not tailwind fontSize config
-      else throw new Error(`fontSize Config format error , config=${config}`);
+      else throw new TonicConfigError({type: 'fontFamily', key, value});
     })
     .reduce((pre, curr) => ({...pre, ...curr}), {});
 }
 
-const getFontSize = config => {
+const getFontSize = (config = {}) => {
 
   /*
   fontSize: ResolvableTo<
@@ -178,8 +203,10 @@ const getFontSize = config => {
   },
    */
 
+  const result = {};
+
   const getVarObj = (key, value, type) => {
-    if (typeof value === "string" && value.startsWith('var')) return value;
+    if (typeof value === "string" && value.includes('var')) return value;
     else if (type === 'fontSize') return `var(--fontSize-${key}-0)`;
     else if (type === 'lineHeight') return `var(--fontSize-${key}-1-lineHeight)`;
     else if (type === 'letterSpacing') return `var(--fontSize-${key}-1-letterSpacing)`;
@@ -187,52 +214,46 @@ const getFontSize = config => {
     else return value;
   }
 
-  return Object.entries(config)
-    .map(([key, value]) => {
-      const escapedKey = cssEscape(key);
+  for (const [key, value] of Object.entries(config)) {
+    const escapedKey = cssEscape(key);
 
-      // '5xl': 46px,  => '5xl': 'var(--fontSize-5xl-0)'
-      if (typeof value === "string") {
-        return {[key]: getVarObj(escapedKey, value, 'fontSize')};
-      }
+    // '5xl': 46px,  => '5xl': 'var(--fontSize-5xl-0)'
+    if (typeof value === "string") result[key] = getVarObj(escapedKey, value, 'fontSize');
 
-      // xs: ['10px', '16px'],  => xs: [ 'var(--fontSize-xs-0)' , 'var(--fontSize-xs-1-lineHeight)' ]
-      else if (Array.isArray(value) && value[1] && (typeof value[1] === "string" || typeof value[1] === "number")) {
-        return {
-          [key]: [
-            getVarObj(escapedKey, value[0], 'fontSize'),
-            getVarObj(escapedKey, value[1], 'lineHeight')
-          ]
+    // xs: ['10px', '16px'],  => xs: [ 'var(--fontSize-xs-0)' , 'var(--fontSize-xs-1-lineHeight)' ]
+    else if (Array.isArray(value) && value[1] && (typeof value[1] === "string" || typeof value[1] === "number")) {
+      result[key] = [
+        getVarObj(escapedKey, value[0], 'fontSize'),
+        getVarObj(escapedKey, value[1], 'lineHeight')
+      ]
+    }
+    /*
+      '8xl': ['126px', { lineHeight : '16px' , letterSpacing : '0px' , fontWeight : '700' }],
+      ---------------------------------------------------------------------
+      '8xl': [
+          'var(--fontSize-8xl-0)',
+          {
+            lineHeight:  'var(--fontSize-8xl-1-lineHeight)',
+            letterSpacing: 'var(--fontSize-8xl-1-letterSpacing)',
+            fontWeight:  'var(--fontSize-8xl-1-fontWeight)',
+          }
+        ]
+     */
+    else if (Array.isArray(value) && value[1]) {
+      result[key] = [
+        getVarObj(escapedKey, value[0], 'fontSize'),
+        {
+          lineHeight: getVarObj(escapedKey, value[1].lineHeight, 'lineHeight'),
+          letterSpacing: getVarObj(escapedKey, value[1].letterSpacing, 'letterSpacing'),
+          fontWeight: getVarObj(escapedKey, value[1].fontWeight, 'fontWeight'),
         }
-      }
-      /*
-        '8xl': ['126px', { lineHeight : '16px' , letterSpacing : '0px' , fontWeight : '700' }],
-        ---------------------------------------------------------------------
-        '8xl': [
-            'var(--fontSize-8xl-0)',
-            {
-              lineHeight:  'var(--fontSize-8xl-1-lineHeight)',
-              letterSpacing: 'var(--fontSize-8xl-1-letterSpacing)',
-              fontWeight:  'var(--fontSize-8xl-1-fontWeight)',
-            }
-          ]
-       */
-      else if (Array.isArray(value) && value[1]) {
-        return {
-          [key]: [
-            getVarObj(escapedKey, value[0], 'fontSize'),
-            {
-              lineHeight: getVarObj(escapedKey, value[1].lineHeight, 'lineHeight'),
-              letterSpacing: getVarObj(escapedKey, value[1].letterSpacing, 'letterSpacing'),
-              fontWeight: getVarObj(escapedKey, value[1].fontWeight, 'fontWeight'),
-            }
-          ]
-        }
-      }
-      // other type , not tailwind fontSize config
-      else throw new Error(`fontSize Config format error , config=${config}`);
-    })
-    .reduce((pre, curr) => ({...pre, ...curr}), {});
+      ]
+    }
+    // other type , not tailwind fontSize config
+    else throw new TonicConfigError({type: 'fontSize', key, value});
+  }
+
+  return result;
 }
 
 module.exports = {
@@ -251,8 +272,19 @@ module.exports = {
     const output = {
       ...allExtend,
 
+      // Responsiveness
+      screens: getDoNothing(allExtend.screens, 'screens'),
+      supports: getDoNothing(allExtend.supports, 'supports'),
+      data: getDoNothing(allExtend.data, 'data'),
+
+      // Reusable base configs
       colors: getColors(allExtend.colors, 'colors'),
       spacing: getKeyValuePair(allExtend.spacing, 'spacing'),
+
+      // Components
+      container: getDoNothing(allExtend.container, 'container'),
+
+      // Utilities
       inset: getKeyValuePair(allExtend.inset, 'inset'),
       zIndex: getKeyValuePair(allExtend.zIndex, 'zIndex'),
       order: getKeyValuePair(allExtend.order, 'order'),
@@ -281,7 +313,7 @@ module.exports = {
       skew: getKeyValuePair(allExtend.skew, 'skew'),
       scale: getKeyValuePair(allExtend.scale, 'scale'),
       animation: getKeyValuePair(allExtend.animation, 'animation'),
-      // keyframes - not yet
+      keyframes: getDoNothing(allExtend.keyframes, 'keyframes'),
       cursor: getKeyValuePair(allExtend.cursor, 'cursor'),
       scrollMargin: getKeyValuePair(allExtend.scrollMargin, 'scrollMargin'),
       scrollPadding: getKeyValuePair(allExtend.scrollPadding, 'scrollPadding'),
@@ -302,7 +334,7 @@ module.exports = {
       borderOpacity: getKeyValuePair(allExtend.borderOpacity, 'borderOpacity'),
       backgroundColor: getColors(allExtend.backgroundColor, 'backgroundColor'),
       backgroundOpacity: getKeyValuePair(allExtend.backgroundOpacity, 'backgroundOpacity'),
-      // backgroundImage: getKeyValuePair(allExtend.backgroundImage, 'backgroundImage'),
+      backgroundImage: getKeyValuePair(allExtend.backgroundImage, 'backgroundImage'),
       gradientColorStops: getColors(allExtend.gradientColorStops, 'gradientColorStops'),
       backgroundSize: getKeyValuePair(allExtend.backgroundSize, 'backgroundSize'),
       backgroundPosition: getKeyValuePair(allExtend.backgroundPosition, 'backgroundPosition'),
@@ -340,7 +372,7 @@ module.exports = {
       blur: getKeyValuePair(allExtend.blur, 'blur'),
       brightness: getKeyValuePair(allExtend.brightness, 'brightness'),
       contrast: getKeyValuePair(allExtend.contrast, 'contrast'),
-      // dropShadow - not yet
+      dropShadow: getDropShadow(allExtend.dropShadow),
       grayscale: getKeyValuePair(allExtend.grayscale, 'grayscale'),
       hueRotate: getKeyValuePair(allExtend.hueRotate, 'hueRotate'),
       invert: getKeyValuePair(allExtend.invert, 'invert'),
