@@ -1,4 +1,3 @@
-const plugin = require('tailwindcss/plugin');
 const responsiveRegex = require('../lib/responsiveRegex');
 
 module.exports = {
@@ -7,6 +6,6 @@ module.exports = {
   ],
   safelist: responsiveRegex,
   plugins: [
-    require('../../gen/index.js').default,
+    require('../../gen/index.js'),
   ],
 };

@@ -27,3 +27,11 @@ copyFiles('gen/lib', 'dist/lib')
     () => copyFiles('gen/index.js', 'dist/index.js'),
     console.error
   )
+  .then(
+    () => copyFiles('src/img', 'dist/img'),
+    console.error
+  )
+  .then(
+    () => copyFiles('src/svg', 'dist/svg'),
+    console.error
+  )

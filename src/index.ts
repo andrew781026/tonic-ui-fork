@@ -57,7 +57,7 @@ const mainFunction = (options: MultiThemePluginOptions) => (api: PluginAPI) => {
 
 const tonicUiTheme = consumerDefaultTheme
 
-export default plugin.withOptions(
+const consumerTonicUiPlugin = plugin.withOptions(
   (options: MultiThemePluginOptions = {}) => mainFunction({...options, tonicUiTheme, tailwindTheme}),
   (options: MultiThemePluginOptions = {}) => {
 
@@ -74,6 +74,7 @@ export default plugin.withOptions(
   }
 )
 
-import responsiveRegex from './lib/responsiveRegex';
+export = consumerTonicUiPlugin;
 
-export const safelist = responsiveRegex;
+// import responsiveRegex from './lib/responsiveRegex';
+// export const safelist = responsiveRegex;
