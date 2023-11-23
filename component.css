@@ -2,20 +2,8 @@
 
 .tcsmd-btn-disabled {
   opacity: 0.4;
-  /* cursor: not-allowed; */
-  pointer-events: none;
+  cursor: not-allowed;
 }
-
-.tcsmd-btn-disabled::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: not-allowed;
-  }
 
 .tcsmd-btn-disabled:focus {
   border-color: var(--colors--transparent);
@@ -26,20 +14,8 @@
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
-  /* cursor: wait; */
-  pointer-events: none;
+  cursor: wait;
 }
-
-.tcsmd-btn-loading::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: wait;
-  }
 
 .tcsmd-btn-loading:focus {
   border-color: var(--colors--transparent);
@@ -50,7 +26,7 @@
   /* width = border + padding + width */
   min-height: var(--minHeight-btn-md);
   border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-2);
+  border-width: var(--borderWidth-\32);
   padding: 7px 24px; /* height = 40px */
   font-size: 18px;
   line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
@@ -90,9 +66,10 @@
 .tcsmd-text-btn {
   min-height: var(--minHeight-btn-md);
   border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-2);
+  border-width: var(--borderWidth-\32);
   border-color: var(--colors--transparent);
-  background-color: var(--colors--transparent); /* background-color: transparent */
+  background-color: var(--colors--transparent);
+  /* background-color: transparent */
 
   padding: 10px 24px; /* height = 40px */
   font-size: 18px;
@@ -141,20 +118,8 @@
 .tcsmd-text-btn:disabled, .tcsmd-text-btn.disabled {
   background-color: var(--colors--transparent);
   opacity: 0.4;
-  /* cursor: not-allowed; */
-  pointer-events: none;
+  cursor: not-allowed;
 }
-
-.tcsmd-text-btn:disabled::before, .tcsmd-text-btn.disabled::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: not-allowed;
-  }
 
 .tcsmd-text-btn:disabled:focus, .tcsmd-text-btn.disabled:focus {
   border-color: var(--colors--transparent);
@@ -171,20 +136,8 @@
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
-  /* cursor: wait; */
-  pointer-events: none;
+  cursor: wait;
 }
-
-.tcsmd-text-btn.loading::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: wait;
-  }
 
 .tcsmd-text-btn.loading:focus {
   border-color: var(--colors--transparent);
@@ -208,7 +161,7 @@
   /* width = border + padding + width */
   min-height: var(--minHeight-btn-md);
   border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-2);
+  border-width: var(--borderWidth-\32);
   padding: 7px 24px; /* height = 40px */
   font-size: 18px;
   line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
@@ -268,20 +221,8 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--tcsmd-ref-palette-red-70) var(--tw-gradient-to-position);
   opacity: 0.4;
-  /* cursor: not-allowed; */
-  pointer-events: none;
+  cursor: not-allowed;
 }
-
-.tcsmd-btn-primary:disabled::before, .tcsmd-btn-primary.disabled::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: not-allowed;
-  }
 
 .tcsmd-btn-primary:disabled:focus, .tcsmd-btn-primary.disabled:focus {
   border-color: var(--colors--transparent);
@@ -296,20 +237,8 @@
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
-  /* cursor: wait; */
-  pointer-events: none;
+  cursor: wait;
 }
-
-.tcsmd-btn-primary.loading::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: wait;
-  }
 
 .tcsmd-btn-primary.loading:focus {
   border-color: var(--colors--transparent);
@@ -317,7 +246,7 @@
 }
 
 .tcsmd-btn-primary:focus, .tcsmd-btn-primary.focus {
-  border-width: var(--borderWidth-2);
+  border-width: var(--borderWidth-\32);
   border-color: var(--colors--tcsmd-ref-palette-blue-60);
     box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 1);
 }
@@ -332,7 +261,7 @@
   /* width = border + padding + width */
   min-height: var(--minHeight-btn-md);
   border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-2);
+  border-width: var(--borderWidth-\32);
   padding: 7px 24px; /* height = 40px */
   font-size: 18px;
   line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
@@ -393,20 +322,8 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--tcsmd-ref-palette-gray-20) var(--tw-gradient-to-position);
   opacity: 0.4;
-  /* cursor: not-allowed; */
-  pointer-events: none;
+  cursor: not-allowed;
 }
-
-.tcsmd-btn-default:disabled::before, .tcsmd-btn-default.disabled::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: not-allowed;
-  }
 
 .tcsmd-btn-default:disabled:focus, .tcsmd-btn-default.disabled:focus {
   border-color: var(--colors--transparent);
@@ -425,20 +342,8 @@
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
-  /* cursor: wait; */
-  pointer-events: none;
+  cursor: wait;
 }
-
-.tcsmd-btn-default.loading::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: wait;
-  }
 
 .tcsmd-btn-default.loading:focus {
   border-color: var(--colors--transparent);
@@ -447,7 +352,12 @@
 
 .tcsmd-btn-default:focus, .tcsmd-btn-default.focus {
   border-color: var(--colors--tcsmd-ref-palette-blue-60);
-    box-shadow: inset 0 0 0 1.5px var(--tcsmd-ref-palette-blue-60);
+  --tw-shadow: inset 0 0 0 1.5px var(--tw-shadow-color);
+  --tw-shadow-colored: inset 0 0 0 1.5px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow-color: var(--colors--tcsmd-ref-palette-blue-60);
+  --tw-shadow: var(--tw-shadow-colored);
+    /* border-width: 2px; */
 }
 
 .tcsmd-btn-emphasis {
@@ -461,7 +371,7 @@
   /* width = border + padding + width */
   min-height: var(--minHeight-btn-md);
   border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-2);
+  border-width: var(--borderWidth-\32);
   padding: 7px 24px; /* height = 40px */
   font-size: 18px;
   line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
@@ -520,20 +430,8 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--tcsmd-ref-palette-blue-70) var(--tw-gradient-to-position);
   opacity: 0.4;
-  /* cursor: not-allowed; */
-  pointer-events: none;
+  cursor: not-allowed;
 }
-
-.tcsmd-btn-emphasis:disabled::before, .tcsmd-btn-emphasis.disabled::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: not-allowed;
-  }
 
 .tcsmd-btn-emphasis:disabled:focus, .tcsmd-btn-emphasis.disabled:focus {
   border-color: var(--colors--transparent);
@@ -548,20 +446,8 @@
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
-  /* cursor: wait; */
-  pointer-events: none;
+  cursor: wait;
 }
-
-.tcsmd-btn-emphasis.loading::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: wait;
-  }
 
 .tcsmd-btn-emphasis.loading:focus {
   border-color: var(--colors--transparent);
@@ -569,7 +455,7 @@
 }
 
 .tcsmd-btn-emphasis:focus, .tcsmd-btn-emphasis.focus {
-  border-width: var(--borderWidth-2);
+  border-width: var(--borderWidth-\32);
   border-color: var(--colors--tcsmd-ref-palette-blue-60);
     box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 1);
 }
@@ -581,7 +467,7 @@
   /* width = border + padding + width */
   min-height: var(--minHeight-btn-md);
   border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-2);
+  border-width: var(--borderWidth-\32);
   padding: 7px 24px; /* height = 40px */
   font-size: 18px;
   line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
@@ -619,7 +505,7 @@
 }
 
 .tcsmd-btn-ghost {
-  border-width:1px;
+  border-width: 1px;
 }
 
 .tcsmd-btn-ghost:hover, .tcsmd-btn-ghost.hover {
@@ -647,20 +533,8 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--transparent) var(--tw-gradient-to-position);
   opacity: 0.4;
-  /* cursor: not-allowed; */
-  pointer-events: none;
+  cursor: not-allowed;
 }
-
-.tcsmd-btn-ghost:disabled::before, .tcsmd-btn-ghost.disabled::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: not-allowed;
-  }
 
 .tcsmd-btn-ghost:disabled:focus, .tcsmd-btn-ghost.disabled:focus {
   border-color: var(--colors--transparent);
@@ -673,23 +547,15 @@
 
 .tcsmd-btn-ghost.loading {
   border-color: var(--colors--tcsmd-ref-palette-gray-30);
+  --tw-gradient-from: var(--colors--transparent) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+  --tw-gradient-to: var(--colors--transparent) var(--tw-gradient-to-position);
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
-  /* cursor: wait; */
-  pointer-events: none;
+  cursor: wait;
 }
-
-.tcsmd-btn-ghost.loading::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: wait;
-  }
 
 .tcsmd-btn-ghost.loading:focus {
   border-color: var(--colors--transparent);
@@ -700,12 +566,16 @@
   border-color: var(--colors--tcsmd-ref-palette-gray-26);
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-      border-width:1px;
+      border-width: 1px;
 }
 
 .tcsmd-btn-ghost:focus, .tcsmd-btn-ghost.focus {
   border-color: var(--colors--tcsmd-ref-palette-blue-60);
-    box-shadow: inset 0 0 0 1.5px var(--tcsmd-ref-palette-blue-60);
+  --tw-shadow: inset 0 0 0 1.5px var(--tw-shadow-color);
+  --tw-shadow-colored: inset 0 0 0 1.5px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  --tw-shadow-color: var(--colors--tcsmd-ref-palette-blue-60);
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 /* ----  Text Button  ---- */
@@ -714,9 +584,10 @@
   color: var(--colors--tcsmd-ref-palette-gray-90);
   min-height: var(--minHeight-btn-md);
   border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-2);
+  border-width: var(--borderWidth-\32);
   border-color: var(--colors--transparent);
-  background-color: var(--colors--transparent); /* background-color: transparent */
+  background-color: var(--colors--transparent);
+  /* background-color: transparent */
 
   padding: 10px 24px; /* height = 40px */
   font-size: 18px;
@@ -765,20 +636,8 @@
 .tcsmd-text-btn-primary:disabled,.tcsmd-text-btn-primary.disabled {
   background-color: var(--colors--transparent);
   opacity: 0.4;
-  /* cursor: not-allowed; */
-  pointer-events: none;
+  cursor: not-allowed;
 }
-
-.tcsmd-text-btn-primary:disabled::before,.tcsmd-text-btn-primary.disabled::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: not-allowed;
-  }
 
 .tcsmd-text-btn-primary:disabled:focus,.tcsmd-text-btn-primary.disabled:focus {
   border-color: var(--colors--transparent);
@@ -788,20 +647,8 @@
 .tcsmd-text-btn-primary:disabled,.tcsmd-text-btn-primary.disabled {
   background-color: var(--colors--transparent);
   opacity: 0.4;
-  /* cursor: not-allowed; */
-  pointer-events: none;
+  cursor: not-allowed;
 }
-
-.tcsmd-text-btn-primary:disabled::before,.tcsmd-text-btn-primary.disabled::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: not-allowed;
-  }
 
 .tcsmd-text-btn-primary:disabled:focus,.tcsmd-text-btn-primary.disabled:focus {
   border-color: var(--colors--transparent);
@@ -818,20 +665,8 @@
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
-  /* cursor: wait; */
-  pointer-events: none;
+  cursor: wait;
 }
-
-.tcsmd-text-btn-primary.loading::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: wait;
-  }
 
 .tcsmd-text-btn-primary.loading:focus {
   border-color: var(--colors--transparent);
@@ -846,9 +681,10 @@
   color: var(--colors--tcsmd-sys-color-brand-trend-red);
   min-height: var(--minHeight-btn-md);
   border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-2);
+  border-width: var(--borderWidth-\32);
   border-color: var(--colors--transparent);
-  background-color: var(--colors--transparent); /* background-color: transparent */
+  background-color: var(--colors--transparent);
+  /* background-color: transparent */
 
   padding: 10px 24px; /* height = 40px */
   font-size: 18px;
@@ -897,20 +733,8 @@
 .tcsmd-text-btn-default:disabled,.tcsmd-text-btn-default.disabled {
   background-color: var(--colors--transparent);
   opacity: 0.4;
-  /* cursor: not-allowed; */
-  pointer-events: none;
+  cursor: not-allowed;
 }
-
-.tcsmd-text-btn-default:disabled::before,.tcsmd-text-btn-default.disabled::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: not-allowed;
-  }
 
 .tcsmd-text-btn-default:disabled:focus,.tcsmd-text-btn-default.disabled:focus {
   border-color: var(--colors--transparent);
@@ -920,20 +744,8 @@
 .tcsmd-text-btn-default:disabled,.tcsmd-text-btn-default.disabled {
   background-color: var(--colors--transparent);
   opacity: 0.4;
-  /* cursor: not-allowed; */
-  pointer-events: none;
+  cursor: not-allowed;
 }
-
-.tcsmd-text-btn-default:disabled::before,.tcsmd-text-btn-default.disabled::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: not-allowed;
-  }
 
 .tcsmd-text-btn-default:disabled:focus,.tcsmd-text-btn-default.disabled:focus {
   border-color: var(--colors--transparent);
@@ -950,20 +762,8 @@
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
-  /* cursor: wait; */
-  pointer-events: none;
+  cursor: wait;
 }
-
-.tcsmd-text-btn-default.loading::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: wait;
-  }
 
 .tcsmd-text-btn-default.loading:focus {
   border-color: var(--colors--transparent);
@@ -978,9 +778,10 @@
   color: var(--colors--tcsmd-ref-palette-blue-60);
   min-height: var(--minHeight-btn-md);
   border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-2);
+  border-width: var(--borderWidth-\32);
   border-color: var(--colors--transparent);
-  background-color: var(--colors--transparent); /* background-color: transparent */
+  background-color: var(--colors--transparent);
+  /* background-color: transparent */
 
   padding: 10px 24px; /* height = 40px */
   font-size: 18px;
@@ -1029,20 +830,8 @@
 .tcsmd-text-btn-emphasis:disabled,.tcsmd-text-btn-emphasis.disabled {
   background-color: var(--colors--transparent);
   opacity: 0.4;
-  /* cursor: not-allowed; */
-  pointer-events: none;
+  cursor: not-allowed;
 }
-
-.tcsmd-text-btn-emphasis:disabled::before,.tcsmd-text-btn-emphasis.disabled::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: not-allowed;
-  }
 
 .tcsmd-text-btn-emphasis:disabled:focus,.tcsmd-text-btn-emphasis.disabled:focus {
   border-color: var(--colors--transparent);
@@ -1052,20 +841,8 @@
 .tcsmd-text-btn-emphasis:disabled,.tcsmd-text-btn-emphasis.disabled {
   background-color: var(--colors--transparent);
   opacity: 0.4;
-  /* cursor: not-allowed; */
-  pointer-events: none;
+  cursor: not-allowed;
 }
-
-.tcsmd-text-btn-emphasis:disabled::before,.tcsmd-text-btn-emphasis.disabled::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: not-allowed;
-  }
 
 .tcsmd-text-btn-emphasis:disabled:focus,.tcsmd-text-btn-emphasis.disabled:focus {
   border-color: var(--colors--transparent);
@@ -1082,20 +859,8 @@
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
 
   border: none;
-  /* cursor: wait; */
-  pointer-events: none;
+  cursor: wait;
 }
-
-.tcsmd-text-btn-emphasis.loading::before {
-    content: '';
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    pointer-events: auto;
-    cursor: wait;
-  }
 
 .tcsmd-text-btn-emphasis.loading:focus {
   border-color: var(--colors--transparent);
@@ -1140,43 +905,51 @@ svg.circle-progress .bg {
   opacity: 0.4;
 }
 
-svg.circle-progress .progress {
-  fill: none;
-  stroke-width: 2px;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-dasharray: 60;
-  transform-origin: 50% 50%;
-  animation: progress-circular-dash 1.4s ease-in-out infinite,progress-circular-rotate 1.4s linear infinite;
-}
-
 @keyframes progress-circular-dash {
+
   0% {
     stroke-dashoffset: 10;
   }
+
   30% {
     stroke-dashoffset: 55;
   }
+
   31% {
     stroke-dashoffset: 55;
   }
+
   100% {
     stroke-dashoffset: 10;
   }
 }
 
 @keyframes progress-circular-rotate {
+
   0% {
     transform: rotate(0deg);
   }
+
   30% {
     transform: rotate(720deg);
   }
+
   31% {
     transform: rotate(720deg);
   }
+
   100% {
     transform: rotate(1440deg);
   }
+}
+
+svg.circle-progress .progress {
+  animation: progress-circular-dash 1.4s ease-in-out infinite, progress-circular-rotate 1.4s linear infinite;
+  fill: none;
+  stroke: var(--colors--current);
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-dasharray: 60;
+  transform-origin: 50% 50%;
 }
 
