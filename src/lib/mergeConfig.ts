@@ -1,5 +1,5 @@
-import themeConfig from '../lib/themeConfig';
-import {cssEscape} from '../lib/cssEscape';
+import themeConfig from './themeConfig';
+import {cssEscape} from './cssEscape';
 import {TonicConfigError} from '../error/error';
 import {KeyValuePair, ResolvableTo, RecursiveKeyValuePair, ThemeConfig} from "tailwindcss/types/config";
 import {MultiThemePluginOptions} from "@/type/define";
@@ -319,7 +319,7 @@ export const mergeConfig = (option: MultiThemePluginOptions) => {
     rotate: getKeyValuePair(allExtend.rotate, 'rotate'),
     skew: getKeyValuePair(allExtend.skew, 'skew'),
     scale: getKeyValuePair(allExtend.scale, 'scale'),
-    animation: getKeyValuePair(allExtend.animation, 'animation'),
+    animation: getDoNothing(allExtend.animation),
     keyframes: getDoNothing(allExtend.keyframes),
     cursor: getKeyValuePair(allExtend.cursor, 'cursor'),
     scrollMargin: getKeyValuePair(allExtend.scrollMargin, 'scrollMargin'),

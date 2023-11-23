@@ -931,6 +931,27 @@ const consumerDefaultTheme = {
   name: 'consumerDefault',
   selectors: [':root', ':host'],
   extend: {
+    animation: {
+      loader: 'progress-circular-dash 1.4s ease-in-out infinite, progress-circular-rotate 1.4s linear infinite',
+    },
+    keyframes: {
+      'progress-circular-dash': {
+        '0%': {strokeDashoffset: 10},
+        '30%': {strokeDashoffset: 55},
+        '31%': {strokeDashoffset: 55},
+        '100%': {strokeDashoffset: 10},
+      },
+      'progress-circular-rotate': {
+        '0%': {transform: 'rotate(0deg)'},
+        '30%': {transform: 'rotate(720deg)'},
+        '31%': {transform: 'rotate(720deg)'},
+        '100%': {transform: 'rotate(1440deg)'},
+      },
+    },
+    boxShadow: {
+      'btn-default': 'inset 0 0 0 1.5px var(--tw-shadow-color)',
+      'btn-ghost': 'inset 0 0 0 1.5px var(--tw-shadow-color)',
+    },
     height: {
       'btn-xs': default_button_gen_float["tcsmd-comp-button-size-xs"],
       'btn-sm': default_button_gen_float["tcsmd-comp-button-size-sm"],
