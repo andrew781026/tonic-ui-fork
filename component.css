@@ -1,6 +1,7 @@
 /* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=35951-10712&mode=design&t=ldjOzrnvDwkiroPn-0 */
 
 .tcsmd-btn-disabled {
+  pointer-events: none;
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -12,6 +13,7 @@
 
 .tcsmd-btn-loading {
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
+  pointer-events: none;
 
   border: none;
   cursor: wait;
@@ -117,6 +119,7 @@
 
 .tcsmd-text-btn:disabled, .tcsmd-text-btn.disabled {
   background-color: var(--colors--transparent);
+  pointer-events: none;
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -134,6 +137,7 @@
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
+  pointer-events: none;
 
   border: none;
   cursor: wait;
@@ -220,6 +224,7 @@
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--tcsmd-ref-palette-red-70) var(--tw-gradient-to-position);
+  pointer-events: none;
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -235,6 +240,7 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--tcsmd-ref-palette-red-70) var(--tw-gradient-to-position);
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
+  pointer-events: none;
 
   border: none;
   cursor: wait;
@@ -321,6 +327,7 @@
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--tcsmd-ref-palette-gray-20) var(--tw-gradient-to-position);
+  pointer-events: none;
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -340,6 +347,7 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--tcsmd-ref-palette-gray-20) var(--tw-gradient-to-position);
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
+  pointer-events: none;
 
   border: none;
   cursor: wait;
@@ -429,6 +437,7 @@
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--tcsmd-ref-palette-blue-70) var(--tw-gradient-to-position);
+  pointer-events: none;
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -444,6 +453,7 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--tcsmd-ref-palette-blue-70) var(--tw-gradient-to-position);
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
+  pointer-events: none;
 
   border: none;
   cursor: wait;
@@ -532,6 +542,7 @@
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--transparent) var(--tw-gradient-to-position);
+  pointer-events: none;
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -552,6 +563,7 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--transparent) var(--tw-gradient-to-position);
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
+  pointer-events: none;
 
   border: none;
   cursor: wait;
@@ -635,6 +647,7 @@
 
 .tcsmd-text-btn-primary:disabled,.tcsmd-text-btn-primary.disabled {
   background-color: var(--colors--transparent);
+  pointer-events: none;
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -646,6 +659,7 @@
 
 .tcsmd-text-btn-primary:disabled,.tcsmd-text-btn-primary.disabled {
   background-color: var(--colors--transparent);
+  pointer-events: none;
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -663,6 +677,7 @@
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
+  pointer-events: none;
 
   border: none;
   cursor: wait;
@@ -732,6 +747,7 @@
 
 .tcsmd-text-btn-default:disabled,.tcsmd-text-btn-default.disabled {
   background-color: var(--colors--transparent);
+  pointer-events: none;
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -743,6 +759,7 @@
 
 .tcsmd-text-btn-default:disabled,.tcsmd-text-btn-default.disabled {
   background-color: var(--colors--transparent);
+  pointer-events: none;
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -760,6 +777,7 @@
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
+  pointer-events: none;
 
   border: none;
   cursor: wait;
@@ -829,6 +847,7 @@
 
 .tcsmd-text-btn-emphasis:disabled,.tcsmd-text-btn-emphasis.disabled {
   background-color: var(--colors--transparent);
+  pointer-events: none;
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -840,6 +859,7 @@
 
 .tcsmd-text-btn-emphasis:disabled,.tcsmd-text-btn-emphasis.disabled {
   background-color: var(--colors--transparent);
+  pointer-events: none;
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -857,6 +877,7 @@
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
+  pointer-events: none;
 
   border: none;
   cursor: wait;
@@ -952,4 +973,3 @@ svg.circle-progress .progress {
   stroke-dasharray: 60;
   transform-origin: 50% 50%;
 }
-
