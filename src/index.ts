@@ -46,7 +46,7 @@ const mainFunction = (options: MultiThemePluginOptions) => (api: PluginAPI) => {
     const component = require('./component.js');
     addComponents(component);
   } catch (e) {
-    console.log('error');
+    // console.log('error');
   }
 
   // const themeInjector = colorFunctions.injectThemes(addBase, config, themes);

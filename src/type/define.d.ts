@@ -1,4 +1,3 @@
-
 export {ThemeConfig} from 'tailwindcss/types/config'
 export * from 'tailwindcss/types/config'
 
@@ -10,10 +9,17 @@ export interface DefaultThemeConfig {
   theme?: ThemeConfig
 }
 
+export interface ThemeSetting {
+  name: String
+  disable: Boolean
+}
+
 export interface MultiThemePluginOptions {
   inShadowRoot?: Boolean
-  defaultTheme?: DefaultThemeConfig
+  settings?: ThemeSetting[]
+  defaultTheme?: Partial<DefaultThemeConfig, 'name'>
   tonicUiTheme?: DefaultThemeConfig
   tailwindTheme?: DefaultThemeConfig
   themes?: ThemeConfig[]
 }
+
