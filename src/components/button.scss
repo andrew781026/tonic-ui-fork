@@ -1,6 +1,7 @@
 /* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=35951-10712&mode=design&t=ldjOzrnvDwkiroPn-0 */
 
 .tcsmd-btn-disabled {
+  @apply pointer-events-none;
   opacity: 0.4;
   cursor: not-allowed;
 
@@ -12,6 +13,7 @@
 
 .tcsmd-btn-loading {
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
+  @apply pointer-events-none;
 
   border: none;
   cursor: wait;
