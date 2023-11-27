@@ -26,18 +26,9 @@
 
 .tcsmd-btn {
   /* width = border + padding + width */
-  @apply border-2 min-h-btn-md rounded-sm;
+  @apply relative border-2 min-h-btn-md min-w-btn-md rounded-sm text-lg flex items-center justify-center;
   padding: 7px 24px; /* height = 40px */
-  font-size: 18px;
-  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 8px;
-  position: relative;
-
-  min-width: 100px;
-
   margin: 4px;
 
   &.rounded {
@@ -45,38 +36,26 @@
   }
 
   &.xs {
-    @apply min-h-btn-xs;
+    @apply min-h-btn-xs min-w-btn-xs;
     padding: 0 16px; /* height = 24px */
-    min-width: 60px;
   }
 
   &.small {
-    @apply min-h-btn-sm;
+    @apply min-h-btn-sm min-w-btn-sm;
     padding: 4px 24px; /* height = 32px */
-    min-width: 80px;
   }
 
   &.large {
-    @apply min-h-btn-lg;
+    @apply min-h-btn-lg min-w-btn-lg;
     padding: 17px 40px; /* height = 60px */
-    min-width: 100px;
   }
 }
 
 .tcsmd-text-btn {
-  @apply bg-transparent border-2 border-transparent min-h-btn-md rounded-sm;
-  /* background-color: transparent */
+  @apply relative bg-transparent border-2 border-transparent min-h-btn-md min-w-btn-md rounded-sm text-lg flex items-center justify-center;
 
   padding: 10px 24px; /* height = 40px */
-  font-size: 18px;
-  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
-  display: flex;
-  align-items: center;
-  justify-content: center;
   gap: 8px;
-  position: relative;
-
-  min-width: 100px;
 
   margin: 4px;
 
@@ -85,21 +64,18 @@
   }
 
   &.xs {
-    @apply min-h-btn-xs;
+    @apply min-h-btn-xs min-w-btn-xs;
     padding: 0 16px; /* height = 24px */
-    min-width: 60px;
   }
 
   &.small {
-    @apply min-h-btn-sm;
+    @apply min-h-btn-sm min-w-btn-sm;
     padding: 4px 24px; /* height = 32px */
-    min-width: 80px;
   }
 
   &.large {
-    @apply min-h-btn-lg;
+    @apply min-h-btn-lg min-w-btn-lg;
     padding: 17px 40px; /* height = 60px */
-    min-width: 100px;
   }
 
   &:hover, &.hover {
@@ -180,7 +156,6 @@
 
   &:focus, &.focus {
     @apply border-tcsmd-ref-palette-blue-60 shadow-btn-default shadow-tcsmd-ref-palette-blue-60;
-    /* border-width: 2px; */
   }
 }
 

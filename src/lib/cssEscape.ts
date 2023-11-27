@@ -27,6 +27,6 @@ export const cssEscape = (css: string): string => {
       || (double bar) - column combinator in CSS Grid
       In CSS, you escape these characters by placing a backslash \ before them. For example, to select an element with the ID id#with#hash, you would write #id\#with\#hash in your CSS
    */
-  // return css.replaceAll('.', '\\.');
-  return escapeClassName(css);
+  return css.replaceAll('.', '\\.');
+  // return escapeClassName(css);
 }

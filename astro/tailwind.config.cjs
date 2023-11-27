@@ -1,4 +1,4 @@
-const {consumerDefaultTheme, consumerDarkTheme} = require('consumer-tonic-ui/themes/themes.js');
+const {consumerDefaultTheme, consumerDarkTheme,idpExtraTheme} = require('consumer-tonic-ui/themes/themes.js');
 
 const bgColors = Object.entries({
   ...consumerDefaultTheme.extend.colors,
@@ -19,7 +19,7 @@ const bgColors = Object.entries({
 
 // ========= tailwindcss-themer configs might need to add to plugin settings =========
 const themerExampleConfig = {
-  // inShadowRoot: false, // :root , :host
+  inShadowRoot: false, // :root , :host
   // defaultTheme: {extend: tailwindTheme},
   themes: [
     {
@@ -272,6 +272,7 @@ const themerExampleConfig = {
         },
       },
     },
+    idpExtraTheme
   ],
 };
 
