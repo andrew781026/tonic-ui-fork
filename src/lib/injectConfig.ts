@@ -1,6 +1,14 @@
 import {cssEscape} from "./cssEscape";
 import {TonicConfigError} from "../error/error";
-import {KeyValuePair, ResolvableTo, ThemeConfig, PluginAPI, MultiThemePluginOptions} from '../type/define'
+import {
+  KeyValuePair,
+  MultiThemePluginOptions,
+  PluginAPI,
+  ResolvableTo,
+  ThemeConfig,
+} from '../type/define.d'
+import {isThemeActive} from "./helper";
+import {ThemeName} from "./const";
 
 const resolveFontSize = (config = {}) => {
 
@@ -40,7 +48,7 @@ const resolveFontSize = (config = {}) => {
       if (!value) return {};
       else if (typeof value === "function") return {};
       else if (typeof value === "string" || typeof value === "number") return {[`--fontSize-${escapedKey}-0`]: value};
-      else if (Array.isArray(value) && value[1] && (typeof value[1] === "string" || typeof value === "number")) {
+      else if (Array.isArray(value) && value[1] && (typeof value[1] === "string" || typeof value[1] === "number")) {
         return {
           [`--fontSize-${escapedKey}-0`]: value[0],
           [`--fontSize-${escapedKey}-1-lineHeight`]: value[1]
@@ -235,7 +243,7 @@ const resolveKeyValuePair = (config = {}, type: string) => {
   return result;
 }
 
-const resolveThemeExtensionAsCustomProps = (extend: ThemeConfig, api: PluginAPI) => {
+const resolveAllProps = (extend: ThemeConfig, api: PluginAPI) => {
 
   /*
     ThemeConfig ref map :
@@ -374,48 +382,54 @@ const resolveThemeExtensionAsCustomProps = (extend: ThemeConfig, api: PluginAPI)
 export const injectConfig = (option: MultiThemePluginOptions, api: PluginAPI) => {
 
   const {addBase} = api;
-  const {defaultTheme, themes, inShadowRoot, tonicUiTheme, tailwindTheme} = option;
+  const {settings = [], defaultTheme, themes, inShadowRoot, tonicUiTheme, tailwindTheme} = option;
   const rootOrHost = inShadowRoot ? ':host' : ':root';
 
   // defaultTheme :root setting
   if (defaultTheme && defaultTheme.extend) {
     addBase({
-      [rootOrHost]: resolveThemeExtensionAsCustomProps(defaultTheme.extend, api)
+      [rootOrHost]: resolveAllProps(defaultTheme.extend, api)
     })
   }
 
   // tailwindTheme :root setting
-  if (tailwindTheme && tailwindTheme.theme) {
+  if (isThemeActive(settings, ThemeName.tailwind) && tailwindTheme?.theme) {
     addBase({
-      [rootOrHost]: resolveThemeExtensionAsCustomProps(tailwindTheme.theme, api)
+      [rootOrHost]: resolveAllProps(tailwindTheme.theme, api)
     })
   }
 
   // tonicUiTheme :root setting
-  if (tonicUiTheme && tonicUiTheme.extend) {
+  if (isThemeActive(settings, ThemeName.consumerTonicUi) && tonicUiTheme?.extend) {
     addBase({
-      [rootOrHost]: resolveThemeExtensionAsCustomProps(tonicUiTheme.extend, api)
+      [rootOrHost]: resolveAllProps(tonicUiTheme.extend, api)
     })
   }
 
   Array.isArray(themes) && themes.forEach(theme => {
-    const {mediaQuery, selectors} = theme;
+    if (!isThemeActive(settings, theme.name)) return;
+
+    const {mediaQuery, selectors = []} = theme;
 
     if (mediaQuery && selectors.length > 0) {
       addBase({
         [mediaQuery]: {
-          [selectors.join(', ')]: resolveThemeExtensionAsCustomProps(theme.extend, api)
+          [selectors.join(', ')]: resolveAllProps(theme.extend, api)
         }
       })
     } else if (selectors.length > 0) {
       addBase({
-        [selectors.join(', ')]: resolveThemeExtensionAsCustomProps(theme.extend, api)
+        [selectors.join(', ')]: resolveAllProps(theme.extend, api)
       })
     } else if (mediaQuery) {
       addBase({
         [mediaQuery]: {
-          [rootOrHost]: resolveThemeExtensionAsCustomProps(theme.extend, api)
+          [rootOrHost]: resolveAllProps(theme.extend, api)
         }
+      })
+    } else {
+      addBase({
+        [rootOrHost]: resolveAllProps(theme.extend, api)
       })
     }
   });

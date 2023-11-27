@@ -2,7 +2,9 @@ import themeConfig from './themeConfig';
 import {cssEscape} from './cssEscape';
 import {TonicConfigError} from '../error/error';
 import {KeyValuePair, ResolvableTo, RecursiveKeyValuePair, ThemeConfig} from "tailwindcss/types/config";
-import {MultiThemePluginOptions} from "@/type/define";
+import {MultiThemePluginOptions} from "../type/define.d";
+import {isThemeActive} from "./helper";
+import {ThemeName} from "./const";
 
 const shallowMerge = (extendArr: ThemeConfig[]): ThemeConfig => {
 
@@ -263,11 +265,11 @@ const getFontSize = (config: ThemeConfig['fontSize'] = {}): ThemeConfig['fontSiz
 }
 
 export const mergeConfig = (option: MultiThemePluginOptions) => {
-  const {defaultTheme, themes = [], tonicUiTheme, tailwindTheme} = option;
+  const {defaultTheme, settings = [], themes = [], tonicUiTheme, tailwindTheme} = option;
 
   const defaultExtend = defaultTheme?.extend || {};
-  const tonicUiThemeExtend = tonicUiTheme?.extend || {};
-  const tailwindThemeExtend = tailwindTheme?.theme || {};
+  const tonicUiThemeExtend = isThemeActive(settings, ThemeName.consumerTonicUi) && tonicUiTheme?.extend || {};
+  const tailwindThemeExtend = isThemeActive(settings, ThemeName.tailwind) && tailwindTheme?.theme || {};
 
   const themeExtends = themes.map(theme => theme?.extend).filter(extend => extend);
 

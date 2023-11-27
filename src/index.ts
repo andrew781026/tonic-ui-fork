@@ -5,12 +5,12 @@ import {existsSync} from 'fs';
 import {injectConfig} from './lib/injectConfig';
 import {mergeConfig} from './lib/mergeConfig';
 import plugin from 'tailwindcss/plugin';
+import {MultiThemePluginOptions} from "@/type/define";
+import {PluginAPI} from "tailwindcss/types/config";
 import {consumerDefaultTheme} from './themes/themes';
 
 // @ts-ignore
 import tailwindTheme from 'tailwindcss/stubs/config.full.js';
-import {MultiThemePluginOptions} from "@/type/define";
-import {PluginAPI} from "tailwindcss/types/config";
 
 const defaultOptions = {
   inShadowRoot: false, // setting used in shadow root or not ?
@@ -46,7 +46,7 @@ const mainFunction = (options: MultiThemePluginOptions) => (api: PluginAPI) => {
     const component = require('./component.js');
     addComponents(component);
   } catch (e) {
-    console.log('error');
+    // console.log('error');
   }
 
   // const themeInjector = colorFunctions.injectThemes(addBase, config, themes);
@@ -75,6 +75,3 @@ const consumerTonicUiPlugin = plugin.withOptions(
 )
 
 export = consumerTonicUiPlugin;
-
-// import responsiveRegex from './lib/responsiveRegex';
-// export const safelist = responsiveRegex;
