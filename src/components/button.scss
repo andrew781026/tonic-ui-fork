@@ -12,10 +12,8 @@
 }
 
 .tcsmd-btn-loading {
-  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
   @apply pointer-events-none;
 
-  border: none;
   cursor: wait;
 
   &:focus {
