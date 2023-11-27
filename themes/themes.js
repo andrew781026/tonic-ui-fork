@@ -942,17 +942,20 @@ const consumerDefaultTheme = {
             'btn-default': 'inset 0 0 0 1.5px var(--tw-shadow-color)',
             'btn-ghost': 'inset 0 0 0 1.5px var(--tw-shadow-color)',
         },
-        height: {
-            'btn-xs': default_button_gen_float["tcsmd-comp-button-size-xs"],
-            'btn-sm': default_button_gen_float["tcsmd-comp-button-size-sm"],
-            'btn-md': default_button_gen_float["tcsmd-comp-button-size-md"],
-            'btn-lg': default_button_gen_float["tcsmd-comp-button-size-lg"],
-        },
         minHeight: {
             'btn-xs': default_button_gen_float["tcsmd-comp-button-size-xs"],
             'btn-sm': default_button_gen_float["tcsmd-comp-button-size-sm"],
             'btn-md': default_button_gen_float["tcsmd-comp-button-size-md"],
             'btn-lg': default_button_gen_float["tcsmd-comp-button-size-lg"],
+        },
+        minWidth: {
+            'btn-xs': '60px',
+            'btn-sm': '80px',
+            'btn-md': '100px',
+            'btn-lg': '100px',
+        },
+        fontSize: {
+            lg: ['18px', '20px'],
         },
         borderRadius: {
             none: '0px',

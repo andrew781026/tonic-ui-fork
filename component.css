@@ -26,20 +26,18 @@
 
 .tcsmd-btn {
   /* width = border + padding + width */
-  min-height: var(--minHeight-btn-md);
-  border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-\32);
-  padding: 7px 24px; /* height = 40px */
-  font-size: 18px;
-  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
+  position: relative;
   display: flex;
+  min-height: var(--minHeight-btn-md);
+  min-width: var(--minWidth-btn-md);
   align-items: center;
   justify-content: center;
+  border-radius: var(--borderRadius-sm);
+  border-width: var(--borderWidth-2);
+  font-size: var(--fontSize-lg-0);
+  line-height: var(--fontSize-lg-1-lineHeight);
+  padding: 7px 24px; /* height = 40px */
   gap: 8px;
-  position: relative;
-
-  min-width: 100px;
-
   margin: 4px;
 }
 
@@ -49,40 +47,38 @@
 
 .tcsmd-btn.xs {
   min-height: var(--minHeight-btn-xs);
+  min-width: var(--minWidth-btn-xs);
     padding: 0 16px; /* height = 24px */
-    min-width: 60px;
 }
 
 .tcsmd-btn.small {
   min-height: var(--minHeight-btn-sm);
+  min-width: var(--minWidth-btn-sm);
     padding: 4px 24px; /* height = 32px */
-    min-width: 80px;
 }
 
 .tcsmd-btn.large {
   min-height: var(--minHeight-btn-lg);
+  min-width: var(--minWidth-btn-lg);
     padding: 17px 40px; /* height = 60px */
-    min-width: 100px;
 }
 
 .tcsmd-text-btn {
-  min-height: var(--minHeight-btn-md);
-  border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-\32);
-  border-color: var(--colors--transparent);
-  background-color: var(--colors--transparent);
-  /* background-color: transparent */
-
-  padding: 10px 24px; /* height = 40px */
-  font-size: 18px;
-  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
+  position: relative;
   display: flex;
+  min-height: var(--minHeight-btn-md);
+  min-width: var(--minWidth-btn-md);
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  position: relative;
+  border-radius: var(--borderRadius-sm);
+  border-width: var(--borderWidth-2);
+  border-color: var(--colors--transparent);
+  background-color: var(--colors--transparent);
+  font-size: var(--fontSize-lg-0);
+  line-height: var(--fontSize-lg-1-lineHeight);
 
-  min-width: 100px;
+  padding: 10px 24px; /* height = 40px */
+  gap: 8px;
 
   margin: 4px;
 }
@@ -93,20 +89,20 @@
 
 .tcsmd-text-btn.xs {
   min-height: var(--minHeight-btn-xs);
+  min-width: var(--minWidth-btn-xs);
     padding: 0 16px; /* height = 24px */
-    min-width: 60px;
 }
 
 .tcsmd-text-btn.small {
   min-height: var(--minHeight-btn-sm);
+  min-width: var(--minWidth-btn-sm);
     padding: 4px 24px; /* height = 32px */
-    min-width: 80px;
 }
 
 .tcsmd-text-btn.large {
   min-height: var(--minHeight-btn-lg);
+  min-width: var(--minWidth-btn-lg);
     padding: 17px 40px; /* height = 60px */
-    min-width: 100px;
 }
 
 .tcsmd-text-btn:hover, .tcsmd-text-btn.hover {
@@ -163,20 +159,18 @@
   --tw-gradient-to: var(--colors--tcsmd-ref-palette-red-70) var(--tw-gradient-to-position);
   color: var(--colors--tcsmd-ref-palette-white);
   /* width = border + padding + width */
-  min-height: var(--minHeight-btn-md);
-  border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-\32);
-  padding: 7px 24px; /* height = 40px */
-  font-size: 18px;
-  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
+  position: relative;
   display: flex;
+  min-height: var(--minHeight-btn-md);
+  min-width: var(--minWidth-btn-md);
   align-items: center;
   justify-content: center;
+  border-radius: var(--borderRadius-sm);
+  border-width: var(--borderWidth-2);
+  font-size: var(--fontSize-lg-0);
+  line-height: var(--fontSize-lg-1-lineHeight);
+  padding: 7px 24px; /* height = 40px */
   gap: 8px;
-  position: relative;
-
-  min-width: 100px;
-
   margin: 4px;
 }
 
@@ -186,20 +180,20 @@
 
 .tcsmd-btn-primary.xs {
   min-height: var(--minHeight-btn-xs);
+  min-width: var(--minWidth-btn-xs);
     padding: 0 16px; /* height = 24px */
-    min-width: 60px;
 }
 
 .tcsmd-btn-primary.small {
   min-height: var(--minHeight-btn-sm);
+  min-width: var(--minWidth-btn-sm);
     padding: 4px 24px; /* height = 32px */
-    min-width: 80px;
 }
 
 .tcsmd-btn-primary.large {
   min-height: var(--minHeight-btn-lg);
+  min-width: var(--minWidth-btn-lg);
     padding: 17px 40px; /* height = 60px */
-    min-width: 100px;
 }
 
 .tcsmd-btn-primary:hover, .tcsmd-btn-primary.hover {
@@ -252,7 +246,7 @@
 }
 
 .tcsmd-btn-primary:focus, .tcsmd-btn-primary.focus {
-  border-width: var(--borderWidth-\32);
+  border-width: var(--borderWidth-2);
   border-color: var(--colors--tcsmd-ref-palette-blue-60);
     box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 1);
 }
@@ -265,20 +259,18 @@
   --tw-gradient-to: var(--colors--tcsmd-ref-palette-gray-20) var(--tw-gradient-to-position);
   color: var(--colors--tcsmd-ref-palette-gray-90);
   /* width = border + padding + width */
-  min-height: var(--minHeight-btn-md);
-  border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-\32);
-  padding: 7px 24px; /* height = 40px */
-  font-size: 18px;
-  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
+  position: relative;
   display: flex;
+  min-height: var(--minHeight-btn-md);
+  min-width: var(--minWidth-btn-md);
   align-items: center;
   justify-content: center;
+  border-radius: var(--borderRadius-sm);
+  border-width: var(--borderWidth-2);
+  font-size: var(--fontSize-lg-0);
+  line-height: var(--fontSize-lg-1-lineHeight);
+  padding: 7px 24px; /* height = 40px */
   gap: 8px;
-  position: relative;
-
-  min-width: 100px;
-
   margin: 4px;
 }
 
@@ -288,20 +280,20 @@
 
 .tcsmd-btn-default.xs {
   min-height: var(--minHeight-btn-xs);
+  min-width: var(--minWidth-btn-xs);
     padding: 0 16px; /* height = 24px */
-    min-width: 60px;
 }
 
 .tcsmd-btn-default.small {
   min-height: var(--minHeight-btn-sm);
+  min-width: var(--minWidth-btn-sm);
     padding: 4px 24px; /* height = 32px */
-    min-width: 80px;
 }
 
 .tcsmd-btn-default.large {
   min-height: var(--minHeight-btn-lg);
+  min-width: var(--minWidth-btn-lg);
     padding: 17px 40px; /* height = 60px */
-    min-width: 100px;
 }
 
 .tcsmd-btn-default {
@@ -365,7 +357,6 @@
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
   --tw-shadow-color: var(--colors--tcsmd-ref-palette-blue-60);
   --tw-shadow: var(--tw-shadow-colored);
-    /* border-width: 2px; */
 }
 
 .tcsmd-btn-emphasis {
@@ -377,20 +368,18 @@
   --tw-gradient-to: var(--colors--tcsmd-ref-palette-blue-70) var(--tw-gradient-to-position);
   color: var(--colors--tcsmd-ref-palette-white);
   /* width = border + padding + width */
-  min-height: var(--minHeight-btn-md);
-  border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-\32);
-  padding: 7px 24px; /* height = 40px */
-  font-size: 18px;
-  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
+  position: relative;
   display: flex;
+  min-height: var(--minHeight-btn-md);
+  min-width: var(--minWidth-btn-md);
   align-items: center;
   justify-content: center;
+  border-radius: var(--borderRadius-sm);
+  border-width: var(--borderWidth-2);
+  font-size: var(--fontSize-lg-0);
+  line-height: var(--fontSize-lg-1-lineHeight);
+  padding: 7px 24px; /* height = 40px */
   gap: 8px;
-  position: relative;
-
-  min-width: 100px;
-
   margin: 4px;
 }
 
@@ -400,20 +389,20 @@
 
 .tcsmd-btn-emphasis.xs {
   min-height: var(--minHeight-btn-xs);
+  min-width: var(--minWidth-btn-xs);
     padding: 0 16px; /* height = 24px */
-    min-width: 60px;
 }
 
 .tcsmd-btn-emphasis.small {
   min-height: var(--minHeight-btn-sm);
+  min-width: var(--minWidth-btn-sm);
     padding: 4px 24px; /* height = 32px */
-    min-width: 80px;
 }
 
 .tcsmd-btn-emphasis.large {
   min-height: var(--minHeight-btn-lg);
+  min-width: var(--minWidth-btn-lg);
     padding: 17px 40px; /* height = 60px */
-    min-width: 100px;
 }
 
 .tcsmd-btn-emphasis:hover, .tcsmd-btn-emphasis.hover {
@@ -465,7 +454,7 @@
 }
 
 .tcsmd-btn-emphasis:focus, .tcsmd-btn-emphasis.focus {
-  border-width: var(--borderWidth-\32);
+  border-width: var(--borderWidth-2);
   border-color: var(--colors--tcsmd-ref-palette-blue-60);
     box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 1);
 }
@@ -475,20 +464,18 @@
   background-color: var(--colors--transparent);
   color: var(--colors--tcsmd-ref-palette-gray-90);
   /* width = border + padding + width */
-  min-height: var(--minHeight-btn-md);
-  border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-\32);
-  padding: 7px 24px; /* height = 40px */
-  font-size: 18px;
-  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
+  position: relative;
   display: flex;
+  min-height: var(--minHeight-btn-md);
+  min-width: var(--minWidth-btn-md);
   align-items: center;
   justify-content: center;
+  border-radius: var(--borderRadius-sm);
+  border-width: var(--borderWidth-2);
+  font-size: var(--fontSize-lg-0);
+  line-height: var(--fontSize-lg-1-lineHeight);
+  padding: 7px 24px; /* height = 40px */
   gap: 8px;
-  position: relative;
-
-  min-width: 100px;
-
   margin: 4px;
 }
 
@@ -498,20 +485,20 @@
 
 .tcsmd-btn-ghost.xs {
   min-height: var(--minHeight-btn-xs);
+  min-width: var(--minWidth-btn-xs);
     padding: 0 16px; /* height = 24px */
-    min-width: 60px;
 }
 
 .tcsmd-btn-ghost.small {
   min-height: var(--minHeight-btn-sm);
+  min-width: var(--minWidth-btn-sm);
     padding: 4px 24px; /* height = 32px */
-    min-width: 80px;
 }
 
 .tcsmd-btn-ghost.large {
   min-height: var(--minHeight-btn-lg);
+  min-width: var(--minWidth-btn-lg);
     padding: 17px 40px; /* height = 60px */
-    min-width: 100px;
 }
 
 .tcsmd-btn-ghost {
@@ -594,23 +581,21 @@
 
 .tcsmd-text-btn-primary {
   color: var(--colors--tcsmd-ref-palette-gray-90);
-  min-height: var(--minHeight-btn-md);
-  border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-\32);
-  border-color: var(--colors--transparent);
-  background-color: var(--colors--transparent);
-  /* background-color: transparent */
-
-  padding: 10px 24px; /* height = 40px */
-  font-size: 18px;
-  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
+  position: relative;
   display: flex;
+  min-height: var(--minHeight-btn-md);
+  min-width: var(--minWidth-btn-md);
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  position: relative;
+  border-radius: var(--borderRadius-sm);
+  border-width: var(--borderWidth-2);
+  border-color: var(--colors--transparent);
+  background-color: var(--colors--transparent);
+  font-size: var(--fontSize-lg-0);
+  line-height: var(--fontSize-lg-1-lineHeight);
 
-  min-width: 100px;
+  padding: 10px 24px; /* height = 40px */
+  gap: 8px;
 
   margin: 4px;
 }
@@ -621,20 +606,20 @@
 
 .tcsmd-text-btn-primary.xs {
   min-height: var(--minHeight-btn-xs);
+  min-width: var(--minWidth-btn-xs);
     padding: 0 16px; /* height = 24px */
-    min-width: 60px;
 }
 
 .tcsmd-text-btn-primary.small {
   min-height: var(--minHeight-btn-sm);
+  min-width: var(--minWidth-btn-sm);
     padding: 4px 24px; /* height = 32px */
-    min-width: 80px;
 }
 
 .tcsmd-text-btn-primary.large {
   min-height: var(--minHeight-btn-lg);
+  min-width: var(--minWidth-btn-lg);
     padding: 17px 40px; /* height = 60px */
-    min-width: 100px;
 }
 
 .tcsmd-text-btn-primary:hover,.tcsmd-text-btn-primary.hover {
@@ -694,23 +679,21 @@
 
 .tcsmd-text-btn-default {
   color: var(--colors--tcsmd-sys-color-brand-trend-red);
-  min-height: var(--minHeight-btn-md);
-  border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-\32);
-  border-color: var(--colors--transparent);
-  background-color: var(--colors--transparent);
-  /* background-color: transparent */
-
-  padding: 10px 24px; /* height = 40px */
-  font-size: 18px;
-  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
+  position: relative;
   display: flex;
+  min-height: var(--minHeight-btn-md);
+  min-width: var(--minWidth-btn-md);
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  position: relative;
+  border-radius: var(--borderRadius-sm);
+  border-width: var(--borderWidth-2);
+  border-color: var(--colors--transparent);
+  background-color: var(--colors--transparent);
+  font-size: var(--fontSize-lg-0);
+  line-height: var(--fontSize-lg-1-lineHeight);
 
-  min-width: 100px;
+  padding: 10px 24px; /* height = 40px */
+  gap: 8px;
 
   margin: 4px;
 }
@@ -721,20 +704,20 @@
 
 .tcsmd-text-btn-default.xs {
   min-height: var(--minHeight-btn-xs);
+  min-width: var(--minWidth-btn-xs);
     padding: 0 16px; /* height = 24px */
-    min-width: 60px;
 }
 
 .tcsmd-text-btn-default.small {
   min-height: var(--minHeight-btn-sm);
+  min-width: var(--minWidth-btn-sm);
     padding: 4px 24px; /* height = 32px */
-    min-width: 80px;
 }
 
 .tcsmd-text-btn-default.large {
   min-height: var(--minHeight-btn-lg);
+  min-width: var(--minWidth-btn-lg);
     padding: 17px 40px; /* height = 60px */
-    min-width: 100px;
 }
 
 .tcsmd-text-btn-default:hover,.tcsmd-text-btn-default.hover {
@@ -794,23 +777,21 @@
 
 .tcsmd-text-btn-emphasis {
   color: var(--colors--tcsmd-ref-palette-blue-60);
-  min-height: var(--minHeight-btn-md);
-  border-radius: var(--borderRadius-sm);
-  border-width: var(--borderWidth-\32);
-  border-color: var(--colors--transparent);
-  background-color: var(--colors--transparent);
-  /* background-color: transparent */
-
-  padding: 10px 24px; /* height = 40px */
-  font-size: 18px;
-  line-height: 20px; /* default value of roughly 1.2, depending on the element's font-family. */
+  position: relative;
   display: flex;
+  min-height: var(--minHeight-btn-md);
+  min-width: var(--minWidth-btn-md);
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  position: relative;
+  border-radius: var(--borderRadius-sm);
+  border-width: var(--borderWidth-2);
+  border-color: var(--colors--transparent);
+  background-color: var(--colors--transparent);
+  font-size: var(--fontSize-lg-0);
+  line-height: var(--fontSize-lg-1-lineHeight);
 
-  min-width: 100px;
+  padding: 10px 24px; /* height = 40px */
+  gap: 8px;
 
   margin: 4px;
 }
@@ -821,20 +802,20 @@
 
 .tcsmd-text-btn-emphasis.xs {
   min-height: var(--minHeight-btn-xs);
+  min-width: var(--minWidth-btn-xs);
     padding: 0 16px; /* height = 24px */
-    min-width: 60px;
 }
 
 .tcsmd-text-btn-emphasis.small {
   min-height: var(--minHeight-btn-sm);
+  min-width: var(--minWidth-btn-sm);
     padding: 4px 24px; /* height = 32px */
-    min-width: 80px;
 }
 
 .tcsmd-text-btn-emphasis.large {
   min-height: var(--minHeight-btn-lg);
+  min-width: var(--minWidth-btn-lg);
     padding: 17px 40px; /* height = 60px */
-    min-width: 100px;
 }
 
 .tcsmd-text-btn-emphasis:hover,.tcsmd-text-btn-emphasis.hover {
