@@ -153,10 +153,10 @@
 .tcsmd-btn-primary {
   border-color: var(--colors--transparent);
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-  --tw-gradient-from: var(--colors--tcsmd-ref-palette-red-60) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--colors--enabled-primary-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--colors--tcsmd-ref-palette-red-70) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--colors--enabled-primary-end) var(--tw-gradient-to-position);
   color: var(--colors--tcsmd-ref-palette-white);
   /* width = border + padding + width */
   position: relative;
@@ -198,26 +198,26 @@
 
 .tcsmd-btn-primary:hover, .tcsmd-btn-primary.hover {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-  --tw-gradient-from: var(--colors--tcsmd-ref-palette-red-70) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--colors--hover-primary-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--colors--tcsmd-ref-palette-red-80) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--colors--hover-primary-end) var(--tw-gradient-to-position);
 }
 
 .tcsmd-btn-primary:active, .tcsmd-btn-primary.active {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-  --tw-gradient-from: var(--colors--tcsmd-ref-palette-red-80) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--colors--active-primary-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--colors--tcsmd-ref-palette-red-90) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--colors--active-primary-end) var(--tw-gradient-to-position);
 }
 
 .tcsmd-btn-primary:disabled, .tcsmd-btn-primary.disabled {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-  --tw-gradient-from: var(--colors--tcsmd-ref-palette-red-60) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--colors--enabled-primary-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--colors--tcsmd-ref-palette-red-70) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--colors--enabled-primary-end) var(--tw-gradient-to-position);
   pointer-events: none;
   opacity: 0.4;
   cursor: not-allowed;
@@ -229,10 +229,10 @@
 }
 
 .tcsmd-btn-primary.loading {
-  --tw-gradient-from: var(--colors--tcsmd-ref-palette-red-60) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--colors--enabled-primary-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--colors--tcsmd-ref-palette-red-70) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--colors--enabled-primary-end) var(--tw-gradient-to-position);
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
   pointer-events: none;
 
@@ -253,11 +253,11 @@
 
 .tcsmd-btn-default {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-  --tw-gradient-from: var(--colors--tcsmd-ref-palette-gray-10) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--colors--enabled-default-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--colors--tcsmd-ref-palette-gray-20) var(--tw-gradient-to-position);
-  color: var(--colors--tcsmd-ref-palette-gray-90);
+  --tw-gradient-to: var(--colors--enabled-default-end) var(--tw-gradient-to-position);
+  color: var(--colors--tcsmd-sys-color-text-primary);
   /* width = border + padding + width */
   position: relative;
   display: flex;
@@ -301,24 +301,24 @@
 }
 
 .tcsmd-btn-default:hover, .tcsmd-btn-default.hover {
-  --tw-gradient-from: var(--colors--tcsmd-ref-palette-gray-22) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--colors--hover-default-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--colors--tcsmd-ref-palette-gray-24) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--colors--hover-default-end) var(--tw-gradient-to-position);
 }
 
 .tcsmd-btn-default:active, .tcsmd-btn-default.active {
-  --tw-gradient-from: var(--colors--tcsmd-ref-palette-gray-26) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--colors--active-default-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--colors--tcsmd-ref-palette-gray-28) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--colors--active-default-end) var(--tw-gradient-to-position);
 }
 
 .tcsmd-btn-default:disabled, .tcsmd-btn-default.disabled {
-  --tw-gradient-from: var(--colors--tcsmd-ref-palette-gray-10) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--colors--enabled-default-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--colors--tcsmd-ref-palette-gray-20) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--colors--enabled-default-end) var(--tw-gradient-to-position);
   pointer-events: none;
   opacity: 0.4;
   cursor: not-allowed;
@@ -334,10 +334,10 @@
 }
 
 .tcsmd-btn-default.loading {
-  --tw-gradient-from: var(--colors--tcsmd-ref-palette-gray-10) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--colors--enabled-default-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--colors--tcsmd-ref-palette-gray-20) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--colors--enabled-default-end) var(--tw-gradient-to-position);
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
   pointer-events: none;
 
@@ -362,10 +362,10 @@
 .tcsmd-btn-emphasis {
   border-color: var(--colors--transparent);
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-  --tw-gradient-from: var(--colors--tcsmd-ref-palette-blue-60) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--colors--enabled-emphasis-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--colors--tcsmd-ref-palette-blue-70) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--colors--enabled-emphasis-end) var(--tw-gradient-to-position);
   color: var(--colors--tcsmd-ref-palette-white);
   /* width = border + padding + width */
   position: relative;
@@ -407,25 +407,25 @@
 
 .tcsmd-btn-emphasis:hover, .tcsmd-btn-emphasis.hover {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-  --tw-gradient-from: var(--colors--tcsmd-ref-palette-blue-70) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--colors--hover-emphasis-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--colors--tcsmd-ref-palette-blue-80) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--colors--hover-emphasis-end) var(--tw-gradient-to-position);
 }
 
 .tcsmd-btn-emphasis:active, .tcsmd-btn-emphasis.active {
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
-  --tw-gradient-from: var(--colors--tcsmd-ref-palette-blue-80) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--colors--active-emphasis-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--colors--tcsmd-ref-palette-blue-90) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--colors--active-emphasis-end) var(--tw-gradient-to-position);
 }
 
 .tcsmd-btn-emphasis:disabled, .tcsmd-btn-emphasis.disabled {
-  --tw-gradient-from: var(--colors--tcsmd-ref-palette-blue-60) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--colors--enabled-emphasis-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--colors--tcsmd-ref-palette-blue-70) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--colors--enabled-emphasis-end) var(--tw-gradient-to-position);
   pointer-events: none;
   opacity: 0.4;
   cursor: not-allowed;
@@ -437,10 +437,10 @@
 }
 
 .tcsmd-btn-emphasis.loading {
-  --tw-gradient-from: var(--colors--tcsmd-ref-palette-blue-60) var(--tw-gradient-from-position);
+  --tw-gradient-from: var(--colors--enabled-emphasis-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-  --tw-gradient-to: var(--colors--tcsmd-ref-palette-blue-70) var(--tw-gradient-to-position);
+  --tw-gradient-to: var(--colors--enabled-emphasis-end) var(--tw-gradient-to-position);
   /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
   pointer-events: none;
 
@@ -462,7 +462,7 @@
 .tcsmd-btn-ghost {
   border-color: var(--colors--tcsmd-ref-palette-gray-26);
   background-color: var(--colors--transparent);
-  color: var(--colors--tcsmd-ref-palette-gray-90);
+  color: var(--colors--tcsmd-sys-color-text-primary);
   /* width = border + padding + width */
   position: relative;
   display: flex;
@@ -580,7 +580,7 @@
 /* ----  Text Button  ---- */
 
 .tcsmd-text-btn-primary {
-  color: var(--colors--tcsmd-ref-palette-gray-90);
+  color: var(--colors--tcsmd-sys-color-text-primary);
   position: relative;
   display: flex;
   min-height: var(--minHeight-btn-md);
