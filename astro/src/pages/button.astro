@@ -48,17 +48,21 @@ const textColor = variant => ['default', 'ghost'].includes(variant) ? 'text-blac
                 active
                 <IconPlus/>
               </button>
-              <button class={`${variant} disabled`}>disabled</button>
+              <span class="cursor-not-allowed">
+                <button class={`${variant} disabled`}>disabled</button>
+              </span>
 
-              <button class={`${variant} loading`}>
-                loading
-                <div class="loader">
-                  <svg class="circle-progress">
-                    <circle class="bg" cx="12" cy="12" r="9"></circle>
-                    <circle class="progress" cx="12" cy="12" r="9"></circle>
-                  </svg>
-                </div>
-              </button>
+              <span class="cursor-wait">
+                <button class={`${variant} loading`}>
+                  loading
+                  <div class="loader">
+                    <svg class="circle-progress">
+                      <circle class="bg" cx="12" cy="12" r="9"></circle>
+                      <circle class="progress" cx="12" cy="12" r="9"></circle>
+                    </svg>
+                  </div>
+                </button>
+              </span>
               <button class={`${variant} focus`}>focus</button>
             </div>
             <hr class="hr">
