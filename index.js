@@ -39,7 +39,7 @@ const mainFunction = (options) => (api) => {
         addComponents(component);
     }
     catch (e) {
-        console.log('error');
+        // console.log('error');
     }
     // const themeInjector = colorFunctions.injectThemes(addBase, config, themes);
     // themeInjector;
@@ -58,5 +58,3 @@ const consumerTonicUiPlugin = plugin_1.default.withOptions((options = {}) => mai
     };
 });
 module.exports = consumerTonicUiPlugin;
-// import responsiveRegex from './lib/responsiveRegex';
-// export const safelist = responsiveRegex;
