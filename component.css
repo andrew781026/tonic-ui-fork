@@ -315,6 +315,7 @@
 }
 
 .tcsmd-btn-default:disabled, .tcsmd-btn-default.disabled {
+  border-color: var(--colors--tcsmd-ref-palette-gray-50);
   --tw-gradient-from: var(--colors--enabled-default-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
