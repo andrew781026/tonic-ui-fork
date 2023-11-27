@@ -20,11 +20,16 @@ const textColor = variant => ['default', 'ghost'].includes(variant) ? 'text-blac
   <link rel="icon" type="image/png" sizes="16x16" href={DarkImage}>
 </head>
 <body>
-<main class="min-h-screen content-center p-8">
+<main id="main" class="min-h-screen content-center p-8">
   <h1 class="flex text-3xl items-center mb-16">
     <img class="mr-4" src={DarkImage} alt="logo" width="50" height="50"/>
     Buttons
   </h1>
+  <div class="flex items-center">
+    Theme：
+    <button class="tcsmd-btn-primary" onclick="changeTheme('consumerDefault')">Default</button>
+    <button class="tcsmd-btn-primary" onclick="changeTheme('idpExtra')">idp</button>
+  </div>
   <div class="flex flex-wrap gap-8">
     {
       btnVariants.map(variant => (
@@ -76,5 +81,11 @@ const textColor = variant => ['default', 'ghost'].includes(variant) ? 'text-blac
     }
   </div>
 </main>
+
+<script is:inline>
+  function changeTheme(theme){
+    document.querySelector('#main').setAttribute('data-theme',theme);
+  }
+</script>
 </body>
 </html>

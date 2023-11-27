@@ -46,6 +46,7 @@ const getColors = (config: ResolvableTo<RecursiveKeyValuePair> = {}, type: strin
 
     if (!value) continue;
     else if (typeof value === "function") result[key] = value;
+    else if (typeof value === "string" && value.startsWith('var')) result[key] = `var(--${type}-${prefix}-${escapedKey})`;
     else if (typeof value === "string" && value.includes('var')) result[key] = value;
     else if (typeof value === "string" && !value.includes('var')) result[key] = `var(--${type}-${prefix}-${escapedKey})`;
     else if (typeof value === "object") getColors(value, type, result, `${prefix}-${escapedKey}`);

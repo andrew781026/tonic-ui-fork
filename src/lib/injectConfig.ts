@@ -153,6 +153,7 @@ const resolveColor = (config = {}, type: string, result: KeyValuePair = {}, pref
 
     if (!value) continue;
     else if (typeof value === "function") continue;
+    else if (typeof value === "string" && value.startsWith('var')) result[`--${type}-${prefix}-${escapedKey}`] = value;
     else if (typeof value === "string" && value.includes('var')) continue;
     else if (typeof value === "string" && !value.includes('var')) result[`--${type}-${prefix}-${escapedKey}`] = value;
     else if (typeof value === "object") resolveColor(value, type, result, `${prefix}-${escapedKey}`);
