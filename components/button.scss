@@ -12,10 +12,8 @@
 }
 
 .tcsmd-btn-loading {
-  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
   pointer-events: none;
 
-  border: none;
   cursor: wait;
 }
 
@@ -132,10 +130,8 @@
 .tcsmd-text-btn.loading {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
   pointer-events: none;
 
-  border: none;
   cursor: wait;
 }
 
@@ -233,10 +229,8 @@
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--enabled-primary-end) var(--tw-gradient-to-position);
-  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
   pointer-events: none;
 
-  border: none;
   cursor: wait;
 }
 
@@ -339,10 +333,8 @@
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--enabled-default-end) var(--tw-gradient-to-position);
-  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
   pointer-events: none;
 
-  border: none;
   cursor: wait;
 }
 
@@ -442,10 +434,8 @@
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--enabled-emphasis-end) var(--tw-gradient-to-position);
-  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
   pointer-events: none;
 
-  border: none;
   cursor: wait;
 }
 
@@ -550,10 +540,8 @@
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--transparent) var(--tw-gradient-to-position);
-  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
   pointer-events: none;
 
-  border: none;
   cursor: wait;
 }
 
@@ -662,10 +650,8 @@
 .tcsmd-text-btn-primary.loading {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
   pointer-events: none;
 
-  border: none;
   cursor: wait;
 }
 
@@ -760,10 +746,8 @@
 .tcsmd-text-btn-default.loading {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
   pointer-events: none;
 
-  border: none;
   cursor: wait;
 }
 
@@ -858,10 +842,8 @@
 .tcsmd-text-btn-emphasis.loading {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-  /* @apply bg-tcsmd-gray-28;  background: #D5D5D5; */
   pointer-events: none;
 
-  border: none;
   cursor: wait;
 }
 
