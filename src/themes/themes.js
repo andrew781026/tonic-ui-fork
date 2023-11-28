@@ -964,22 +964,50 @@ const consumerDefaultTheme = {
       'btn-md': '100px',
       'btn-lg': '100px',
     },
-    fontSize:{
+    fontSize: {
       lg: ['18px', '20px'],
     },
     borderRadius: {
       none: '0px',
-      xs: default_gen_float["tcsmd-ref-radius-xs"],
+      // xs: default_gen_float["tcsmd-ref-radius-xs"],
       DEFAULT: default_gen_float["tcsmd-ref-radius-sm"],
-      sm: default_gen_float["tcsmd-ref-radius-sm"],
-      md: default_gen_float["tcsmd-ref-radius-md"],
-      lg: default_gen_float["tcsmd-ref-radius-lg"],
+      // sm: default_gen_float["tcsmd-ref-radius-sm"],
+      // md: default_gen_float["tcsmd-ref-radius-md"],
+      // lg: default_gen_float["tcsmd-ref-radius-lg"],
       full: default_gen_float["tcsmd-ref-radius-circle"],
+
+      ...Object.entries(default_gen_float)
+        .reduce((pre, curr = ['', '']) => {
+
+          const [key, value] = curr;
+
+          if (key.includes('radius') && key.split('-radius-')[1])
+            return {
+              ...pre,
+              [key.split('-radius-')[1]]: value
+            }
+          else return pre
+
+        }, {})
     },
     borderWidth: {
-      'extra-thin': default_gen_float["tcsmd-ref-border-extra-thin"],
-      'thin': default_gen_float["tcsmd-ref-border-thin"],
-      'thick': default_gen_float["tcsmd-ref-border-thick"],
+      // 'extra-thin': default_gen_float["tcsmd-ref-border-extra-thin"],
+      // 'thin': default_gen_float["tcsmd-ref-border-thin"],
+      // 'thick': default_gen_float["tcsmd-ref-border-thick"],
+
+      ...Object.entries(default_gen_float)
+        .reduce((pre, curr = ['', '']) => {
+
+          const [key, value] = curr;
+
+          if (key.includes('border') && key.split('-border-')[1])
+            return {
+              ...pre,
+              [key.split('-border-')[1]]: value
+            }
+          else return pre
+
+        }, {})
     },
     colors: {
       'transparent': 'transparent',
