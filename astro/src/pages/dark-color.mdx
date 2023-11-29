@@ -8,7 +8,7 @@ img: ../img/Dark.png
 import DarkImage from '../img/Dark.png';
 import colors from 'consumer-tonic-design-system/dark_gen_default_theme.json';
 
-<main class="h-screen content-center p-8">
+<main class="h-screen content-center p-8" data-theme="consumerDark">
   <h1 class="flex text-3xl items-center mb-16">
     <img class="mr-4" src={DarkImage} alt="logo" width="50" height="50"/>
     Token - Color Palettes
@@ -20,9 +20,9 @@ import colors from 'consumer-tonic-design-system/dark_gen_default_theme.json';
       </div>
       {
         Object.entries(colors).map(([colorName, colorValue]) => (
-          <div class={`flex w-full p-3 bg-${colorName} ${ colorName === 'sys-color-title' ? 'text-black' : 'text-white' }`}>
+          <div class={`flex w-full p-3 bg-${colorName} ${ colorName === 'sys-color-text-title' ? 'text-black' : 'text-white' }`}>
             <p class="flex-1 m-0">{colorName}</p>
-            <p class="m-0">{colorValue}</p>
+            <p class="m-0" style="max-width:50%">{colorValue}</p>
           </div>
         ))
       }

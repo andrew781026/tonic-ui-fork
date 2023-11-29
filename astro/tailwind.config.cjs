@@ -272,6 +272,7 @@ const themerExampleConfig = {
         },
       },
     },
+    consumerDarkTheme,
     idpExtraTheme
   ],
 };
