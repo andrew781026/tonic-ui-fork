@@ -4,22 +4,11 @@
   @apply pointer-events-none;
   opacity: 0.4;
   cursor: not-allowed;
-
-  &:focus {
-    @apply border-transparent;
-    box-shadow: none;
-  }
 }
 
 .tcsmd-btn-loading {
   @apply pointer-events-none;
-
   cursor: wait;
-
-  &:focus {
-    @apply border-transparent;
-    box-shadow: none;
-  }
 }
 
 .tcsmd-btn {
