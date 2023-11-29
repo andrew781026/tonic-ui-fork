@@ -6,20 +6,9 @@
   cursor: not-allowed;
 }
 
-.tcsmd-btn-disabled:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
-}
-
 .tcsmd-btn-loading {
   pointer-events: none;
-
   cursor: wait;
-}
-
-.tcsmd-btn-loading:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
 }
 
 .tcsmd-btn {
@@ -118,11 +107,6 @@
   cursor: not-allowed;
 }
 
-.tcsmd-text-btn:disabled:focus, .tcsmd-text-btn.disabled:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
-}
-
 .tcsmd-text-btn:disabled:focus, .tcsmd-text-btn:disabled.focus, .tcsmd-text-btn.disabled:focus, .tcsmd-text-btn.disabled.focus {
   border-color: var(--colors--transparent);
 }
@@ -131,13 +115,7 @@
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   pointer-events: none;
-
   cursor: wait;
-}
-
-.tcsmd-text-btn.loading:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
 }
 
 .tcsmd-text-btn:focus, .tcsmd-text-btn.focus {
@@ -219,24 +197,13 @@
   cursor: not-allowed;
 }
 
-.tcsmd-btn-primary:disabled:focus, .tcsmd-btn-primary.disabled:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
-}
-
 .tcsmd-btn-primary.loading {
   --tw-gradient-from: var(--colors--enabled-primary-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--enabled-primary-end) var(--tw-gradient-to-position);
   pointer-events: none;
-
   cursor: wait;
-}
-
-.tcsmd-btn-primary.loading:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
 }
 
 .tcsmd-btn-primary:focus, .tcsmd-btn-primary.focus {
@@ -319,11 +286,6 @@
   cursor: not-allowed;
 }
 
-.tcsmd-btn-default:disabled:focus, .tcsmd-btn-default.disabled:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
-}
-
 .tcsmd-btn-default:disabled:focus, .tcsmd-btn-default:disabled.focus, .tcsmd-btn-default.disabled:focus, .tcsmd-btn-default.disabled.focus {
   border-color: var(--colors--tcsmd-ref-palette-gray-50);
 }
@@ -334,13 +296,7 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--enabled-default-end) var(--tw-gradient-to-position);
   pointer-events: none;
-
   cursor: wait;
-}
-
-.tcsmd-btn-default.loading:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
 }
 
 .tcsmd-btn-default:focus, .tcsmd-btn-default.focus {
@@ -424,24 +380,13 @@
   cursor: not-allowed;
 }
 
-.tcsmd-btn-emphasis:disabled:focus, .tcsmd-btn-emphasis.disabled:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
-}
-
 .tcsmd-btn-emphasis.loading {
   --tw-gradient-from: var(--colors--enabled-emphasis-start) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--enabled-emphasis-end) var(--tw-gradient-to-position);
   pointer-events: none;
-
   cursor: wait;
-}
-
-.tcsmd-btn-emphasis.loading:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
 }
 
 .tcsmd-btn-emphasis:focus, .tcsmd-btn-emphasis.focus {
@@ -525,11 +470,6 @@
   cursor: not-allowed;
 }
 
-.tcsmd-btn-ghost:disabled:focus, .tcsmd-btn-ghost.disabled:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
-}
-
 .tcsmd-btn-ghost:disabled:focus, .tcsmd-btn-ghost:disabled.focus, .tcsmd-btn-ghost.disabled:focus, .tcsmd-btn-ghost.disabled.focus {
   border-color: var(--colors--tcsmd-ref-palette-gray-30);
 }
@@ -541,13 +481,7 @@
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
   --tw-gradient-to: var(--colors--transparent) var(--tw-gradient-to-position);
   pointer-events: none;
-
   cursor: wait;
-}
-
-.tcsmd-btn-ghost.loading:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
 }
 
 .tcsmd-btn-ghost.loading .loader {
@@ -625,23 +559,6 @@
   cursor: not-allowed;
 }
 
-.tcsmd-text-btn-primary:disabled:focus,.tcsmd-text-btn-primary.disabled:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
-}
-
-.tcsmd-text-btn-primary:disabled,.tcsmd-text-btn-primary.disabled {
-  background-color: var(--colors--transparent);
-  pointer-events: none;
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.tcsmd-text-btn-primary:disabled:focus,.tcsmd-text-btn-primary.disabled:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
-}
-
 .tcsmd-text-btn-primary:disabled:focus,.tcsmd-text-btn-primary:disabled.focus,.tcsmd-text-btn-primary.disabled:focus,.tcsmd-text-btn-primary.disabled.focus {
   border-color: var(--colors--transparent);
 }
@@ -650,13 +567,7 @@
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   pointer-events: none;
-
   cursor: wait;
-}
-
-.tcsmd-text-btn-primary.loading:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
 }
 
 .tcsmd-text-btn-primary:focus,.tcsmd-text-btn-primary.focus {
@@ -721,23 +632,6 @@
   cursor: not-allowed;
 }
 
-.tcsmd-text-btn-default:disabled:focus,.tcsmd-text-btn-default.disabled:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
-}
-
-.tcsmd-text-btn-default:disabled,.tcsmd-text-btn-default.disabled {
-  background-color: var(--colors--transparent);
-  pointer-events: none;
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.tcsmd-text-btn-default:disabled:focus,.tcsmd-text-btn-default.disabled:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
-}
-
 .tcsmd-text-btn-default:disabled:focus,.tcsmd-text-btn-default:disabled.focus,.tcsmd-text-btn-default.disabled:focus,.tcsmd-text-btn-default.disabled.focus {
   border-color: var(--colors--transparent);
 }
@@ -746,13 +640,7 @@
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   pointer-events: none;
-
   cursor: wait;
-}
-
-.tcsmd-text-btn-default.loading:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
 }
 
 .tcsmd-text-btn-default:focus,.tcsmd-text-btn-default.focus {
@@ -817,23 +705,6 @@
   cursor: not-allowed;
 }
 
-.tcsmd-text-btn-emphasis:disabled:focus,.tcsmd-text-btn-emphasis.disabled:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
-}
-
-.tcsmd-text-btn-emphasis:disabled,.tcsmd-text-btn-emphasis.disabled {
-  background-color: var(--colors--transparent);
-  pointer-events: none;
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.tcsmd-text-btn-emphasis:disabled:focus,.tcsmd-text-btn-emphasis.disabled:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
-}
-
 .tcsmd-text-btn-emphasis:disabled:focus,.tcsmd-text-btn-emphasis:disabled.focus,.tcsmd-text-btn-emphasis.disabled:focus,.tcsmd-text-btn-emphasis.disabled.focus {
   border-color: var(--colors--transparent);
 }
@@ -842,13 +713,7 @@
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
   pointer-events: none;
-
   cursor: wait;
-}
-
-.tcsmd-text-btn-emphasis.loading:focus {
-  border-color: var(--colors--transparent);
-    box-shadow: none;
 }
 
 .tcsmd-text-btn-emphasis:focus,.tcsmd-text-btn-emphasis.focus {
