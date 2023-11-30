@@ -1,20 +1,21 @@
 /* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=24061-21012&mode=design&t=ym52N9tlll785all-0 */
 
+.form-control label.required::after {
+    content: '*';
+    color: #ed0008;
+  }
 
 .tcsmd-input {
   position: relative;
 }
 
-
 .tcsmd-input[suffix] .tcsmd-input__inner {
     padding-right: 30px;
   }
 
-
 .tcsmd-input[prefix] .tcsmd-input__inner {
     padding-left: 30px;
   }
-
 
 .tcsmd-input .tcsmd-input__inner ~ .tcsmd-input--prefix {
       position: absolute;
@@ -24,7 +25,6 @@
       transition: all .3s;
       pointer-events: none;
     }
-
 
 .tcsmd-input .tcsmd-input__inner ~ .tcsmd-input--suffix {
       position: absolute;
@@ -36,46 +36,37 @@
       pointer-events: none;
     }
 
-
 .tcsmd-input .tcsmd-input__inner.xs ~ .tcsmd-input--prefix {
       top: 5px;
     }
-
 
 .tcsmd-input .tcsmd-input__inner.xs ~ .tcsmd-input--suffix {
       top: 5px;
     }
 
-
 .tcsmd-input .tcsmd-input__inner ~ .tcsmd-input--prefix {
       top: 8px;
     }
-
 
 .tcsmd-input .tcsmd-input__inner ~ .tcsmd-input--suffix {
       top: 8px;
     }
 
-
 .tcsmd-input .tcsmd-input__inner.md ~ .tcsmd-input--prefix {
       top: 8px;
     }
-
 
 .tcsmd-input .tcsmd-input__inner.md ~ .tcsmd-input--suffix {
       top: 8px;
     }
 
-
 .tcsmd-input .tcsmd-input__inner.lg ~ .tcsmd-input--prefix {
       top: 12px;
     }
 
-
 .tcsmd-input .tcsmd-input__inner.lg ~ .tcsmd-input--suffix {
       top: 12px;
     }
-
 
 .tcsmd-input .tcsmd-input__inner {
     /* enabled . filled */
@@ -91,38 +82,32 @@
     min-height: 32px;
   }
 
-
 .tcsmd-input .tcsmd-input__inner::-moz-placeholder {
-  color: var(--colors--tcsmd-ref-palette-gray-50);
+    color: var(--colors--tcsmd-ref-palette-gray-50);
       font-size: 14px;
       line-height: 16px;
       font-weight: 400;
 }
-
 
 .tcsmd-input .tcsmd-input__inner::placeholder {
-  color: var(--colors--tcsmd-ref-palette-gray-50);
+    color: var(--colors--tcsmd-ref-palette-gray-50);
       font-size: 14px;
       line-height: 16px;
       font-weight: 400;
 }
-
 
 .tcsmd-input .tcsmd-input__inner:disabled, .tcsmd-input .tcsmd-input__inner.disabled {
       opacity: 0.4;
       pointer-events: none;
     }
 
-
 .tcsmd-input .tcsmd-input__inner.error {
       border-color: #ed0008;
     }
 
-
 .tcsmd-input .tcsmd-input__inner.error:hover, .tcsmd-input .tcsmd-input__inner.error.hover {
         border-color: #b00c0c;
       }
-
 
 .tcsmd-input .tcsmd-input__inner.error:focus, .tcsmd-input .tcsmd-input__inner.error.focus {
         border-color: #ed0008;
@@ -130,16 +115,13 @@
         box-shadow: 0 0 0 0.2rem rgba(243, 20, 20, 0.25);
       }
 
-
 .tcsmd-input .tcsmd-input__inner:hover, .tcsmd-input .tcsmd-input__inner.hover {
       border-color: #0074e8;
     }
 
-
 .tcsmd-input .tcsmd-input__inner.loading {
 
     }
-
 
 .tcsmd-input .tcsmd-input__inner:focus, .tcsmd-input .tcsmd-input__inner.focus {
       outline: 0;
@@ -148,16 +130,13 @@
       box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
 
-
 .tcsmd-input .tcsmd-input__inner.xs {
       min-height: 24px;
     }
 
-
 .tcsmd-input .tcsmd-input__inner.md {
       min-height: 32px;
     }
-
 
 .tcsmd-input .tcsmd-input__inner.lg {
       min-height: 40px;
