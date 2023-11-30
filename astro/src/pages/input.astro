@@ -3,12 +3,13 @@ import DarkImage from "../img/Dark.png";
 import IconDanger from "../components/icons/IconDanger.astro";
 import IconEmail from "../components/icons/IconEmail.astro";
 import IconEye from "../components/icons/IconEye.astro";
+import IconInfo from "../components/icons/IconInfo.astro";
 ---
 
 <!DOCTYPE html>
 <html lang="zh-tw">
 <head>
-  <title>Color Palette</title>
+  <title>Input Components</title>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <link rel="icon" type="image/png" sizes="16x16" href={DarkImage}>
@@ -21,38 +22,104 @@ import IconEye from "../components/icons/IconEye.astro";
   </h1>
   <div class="flex flex-col">
 
-    <h2 class="text-2xl font-900 mr-auto mb-4"> 📃 State</h2>
-    <div class="flex items-center mb-4">
-      <label class="text-right min-w-[80px] mr-2">Enabled</label>
-      <span class="tcsmd-input">
-        <input type="text" class="tcsmd-input__inner" placeholder="Placeholder"/>
-      </span>
-    </div>
-    <div class="flex items-center mb-4">
-      <label class="text-right min-w-[80px] mr-2">Filled</label>
-      <span class="tcsmd-input">
+    <div class="flex flex-wrap gap-12">
+      <div class="flex flex-col flex-1">
+        <h2 class="text-2xl font-900 mr-auto mb-4"> 📃 State</h2>
+        <div class="flex items-center mb-4 form-control">
+          <label class="text-right min-w-[80px] mr-2 required">Enabled</label>
+          <span class="tcsmd-input mr-1">
+            <input type="text" class="tcsmd-input__inner" placeholder="Placeholder"/>
+          </span>
+          <IconInfo />
+        </div>
+        <div class="flex items-center mb-4">
+          <label class="text-right min-w-[80px] mr-2">Filled</label>
+          <span class="tcsmd-input">
         <input type="text" class="tcsmd-input__inner" value="Microsoft"/>
       </span>
-    </div>
-    <div class="flex items-center mb-4">
-      <label class="text-right min-w-[80px] mr-2">Disabled</label>
-      <span class="tcsmd-input cursor-not-allowed">
+        </div>
+        <div class="flex items-center mb-4">
+          <label class="text-right min-w-[80px] mr-2">Disabled</label>
+          <span class="tcsmd-input cursor-not-allowed">
         <input type="text" class="tcsmd-input__inner" disabled/>
       </span>
-    </div>
-    <div class="flex mb-8">
-      <label class="text-right min-w-[80px] mr-2 mt-1">Error</label>
-      <div class="tcsmd-input flex flex-col gap-1">
-        <input type="text" class="tcsmd-input__inner error" value="Error Input"/>
-        <div class="text-[12px] flex items-center text-red-500 gap-1">
-          <IconDanger/>
-          <span>Error message</span>
         </div>
-        <div class="text-[12px] flex items-center text-tcsmd-ref-palette-gray-60">
-          <span>Some other help text and information.</span>
+        <div class="flex items-center mb-4">
+          <label class="text-right min-w-[80px] mr-2">Hover</label>
+          <span class="tcsmd-input cursor-not-allowed">
+        <input type="text" class="tcsmd-input__inner hover"/>
+      </span>
+        </div>
+        <div class="flex items-center mb-4">
+          <label class="text-right min-w-[80px] mr-2">Focus</label>
+          <span class="tcsmd-input cursor-not-allowed">
+        <input type="text" class="tcsmd-input__inner focus"/>
+      </span>
+        </div>
+        <div class="flex mb-8">
+          <label class="text-right min-w-[80px] mr-2 mt-1">Error</label>
+          <div class="tcsmd-input flex flex-col gap-1">
+            <input type="text" class="tcsmd-input__inner error" value="Error Input"/>
+            <div class="text-[12px] flex items-center text-red-500 gap-1">
+              <IconDanger/>
+              <span>Error message</span>
+            </div>
+            <div class="text-[12px] flex items-center text-tcsmd-ref-palette-gray-60">
+              <span>Some other help text and information.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex flex-col flex-1 gap-4">
+        <div class="form-control flex flex-col mb-4">
+          <div class="flex mb-1 items-center gap-1">
+            <label class="required">Enabled</label>
+            <IconInfo />
+          </div>
+          <span class="tcsmd-input">
+            <input type="text" class="tcsmd-input__inner" placeholder="Placeholder"/>
+          </span>
+        </div>
+        <div class="flex flex-col mb-4">
+          <label class="mb-1">Filled</label>
+          <span class="tcsmd-input">
+        <input type="text" class="tcsmd-input__inner" value="Microsoft"/>
+      </span>
+        </div>
+        <div class="flex flex-col mb-4">
+          <label class="mb-1">Disabled</label>
+          <span class="tcsmd-input cursor-not-allowed">
+        <input type="text" class="tcsmd-input__inner" disabled/>
+      </span>
+        </div>
+        <div class="flex flex-col mb-4">
+          <label class="mb-1">Hover</label>
+          <span class="tcsmd-input cursor-not-allowed">
+        <input type="text" class="tcsmd-input__inner hover"/>
+      </span>
+        </div>
+        <div class="flex flex-col mb-4">
+          <label class="mb-1">Focus</label>
+          <span class="tcsmd-input cursor-not-allowed">
+        <input type="text" class="tcsmd-input__inner focus"/>
+      </span>
+        </div>
+        <div class="flex flex-col mb-8">
+          <label class="mb-1">Error</label>
+          <div class="tcsmd-input">
+            <input type="text" class="tcsmd-input__inner error" value="Error Input"/>
+            <div class="text-[12px] flex items-center text-red-500 gap-1 mt-1">
+              <IconDanger/>
+              <span>Error message</span>
+            </div>
+            <div class="text-[12px] flex items-center text-tcsmd-ref-palette-gray-60 mt-1">
+              <span>Some other help text and information.</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
 
     <hr>
     <h2 class="text-2xl font-900 mr-auto mb-4 mt-8"> 📃 Size</h2>

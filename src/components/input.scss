@@ -1,5 +1,13 @@
 /* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=24061-21012&mode=design&t=ym52N9tlll785all-0 */
 
+.form-control {
+
+  label.required::after {
+    content: '*';
+    color: #ed0008;
+  }
+
+}
 
 .tcsmd-input {
   position: relative;
