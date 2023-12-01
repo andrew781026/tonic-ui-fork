@@ -12,10 +12,11 @@
 
 ### Need To Confirm
 
-- 
+- [Input Component](https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui/input/)
 - Issue Co-work Pattern
 
 ### FED ToDo Topics
 
 - Astro Doc Layout
 - Component Input Page
+- Typology
