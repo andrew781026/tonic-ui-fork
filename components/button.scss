@@ -35,12 +35,20 @@
 .tcsmd-btn.xs {
   min-height: var(--minHeight-btn-xs);
   min-width: var(--minWidth-btn-xs);
+  font-size: var(--fontSize-sm-0);
+  line-height: var(--fontSize-sm-1-lineHeight);
+  letter-spacing: var(--fontSize-sm-1-letterSpacing);
+  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
 .tcsmd-btn.small {
   min-height: var(--minHeight-btn-sm);
   min-width: var(--minWidth-btn-sm);
+  font-size: var(--fontSize-base-0);
+  line-height: var(--fontSize-base-1-lineHeight);
+  letter-spacing: var(--fontSize-base-1-letterSpacing);
+  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -77,12 +85,20 @@
 .tcsmd-text-btn.xs {
   min-height: var(--minHeight-btn-xs);
   min-width: var(--minWidth-btn-xs);
+  font-size: var(--fontSize-sm-0);
+  line-height: var(--fontSize-sm-1-lineHeight);
+  letter-spacing: var(--fontSize-sm-1-letterSpacing);
+  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
 .tcsmd-text-btn.small {
   min-height: var(--minHeight-btn-sm);
   min-width: var(--minWidth-btn-sm);
+  font-size: var(--fontSize-base-0);
+  line-height: var(--fontSize-base-1-lineHeight);
+  letter-spacing: var(--fontSize-base-1-letterSpacing);
+  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -155,12 +171,20 @@
 .tcsmd-btn-primary.xs {
   min-height: var(--minHeight-btn-xs);
   min-width: var(--minWidth-btn-xs);
+  font-size: var(--fontSize-sm-0);
+  line-height: var(--fontSize-sm-1-lineHeight);
+  letter-spacing: var(--fontSize-sm-1-letterSpacing);
+  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
 .tcsmd-btn-primary.small {
   min-height: var(--minHeight-btn-sm);
   min-width: var(--minWidth-btn-sm);
+  font-size: var(--fontSize-base-0);
+  line-height: var(--fontSize-base-1-lineHeight);
+  letter-spacing: var(--fontSize-base-1-letterSpacing);
+  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -242,12 +266,20 @@
 .tcsmd-btn-default.xs {
   min-height: var(--minHeight-btn-xs);
   min-width: var(--minWidth-btn-xs);
+  font-size: var(--fontSize-sm-0);
+  line-height: var(--fontSize-sm-1-lineHeight);
+  letter-spacing: var(--fontSize-sm-1-letterSpacing);
+  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
 .tcsmd-btn-default.small {
   min-height: var(--minHeight-btn-sm);
   min-width: var(--minWidth-btn-sm);
+  font-size: var(--fontSize-base-0);
+  line-height: var(--fontSize-base-1-lineHeight);
+  letter-spacing: var(--fontSize-base-1-letterSpacing);
+  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -339,12 +371,20 @@
 .tcsmd-btn-emphasis.xs {
   min-height: var(--minHeight-btn-xs);
   min-width: var(--minWidth-btn-xs);
+  font-size: var(--fontSize-sm-0);
+  line-height: var(--fontSize-sm-1-lineHeight);
+  letter-spacing: var(--fontSize-sm-1-letterSpacing);
+  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
 .tcsmd-btn-emphasis.small {
   min-height: var(--minHeight-btn-sm);
   min-width: var(--minWidth-btn-sm);
+  font-size: var(--fontSize-base-0);
+  line-height: var(--fontSize-base-1-lineHeight);
+  letter-spacing: var(--fontSize-base-1-letterSpacing);
+  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -422,12 +462,20 @@
 .tcsmd-btn-ghost.xs {
   min-height: var(--minHeight-btn-xs);
   min-width: var(--minWidth-btn-xs);
+  font-size: var(--fontSize-sm-0);
+  line-height: var(--fontSize-sm-1-lineHeight);
+  letter-spacing: var(--fontSize-sm-1-letterSpacing);
+  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
 .tcsmd-btn-ghost.small {
   min-height: var(--minHeight-btn-sm);
   min-width: var(--minWidth-btn-sm);
+  font-size: var(--fontSize-base-0);
+  line-height: var(--fontSize-base-1-lineHeight);
+  letter-spacing: var(--fontSize-base-1-letterSpacing);
+  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -529,12 +577,20 @@
 .tcsmd-text-btn-primary.xs {
   min-height: var(--minHeight-btn-xs);
   min-width: var(--minWidth-btn-xs);
+  font-size: var(--fontSize-sm-0);
+  line-height: var(--fontSize-sm-1-lineHeight);
+  letter-spacing: var(--fontSize-sm-1-letterSpacing);
+  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
 .tcsmd-text-btn-primary.small {
   min-height: var(--minHeight-btn-sm);
   min-width: var(--minWidth-btn-sm);
+  font-size: var(--fontSize-base-0);
+  line-height: var(--fontSize-base-1-lineHeight);
+  letter-spacing: var(--fontSize-base-1-letterSpacing);
+  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -602,12 +658,20 @@
 .tcsmd-text-btn-default.xs {
   min-height: var(--minHeight-btn-xs);
   min-width: var(--minWidth-btn-xs);
+  font-size: var(--fontSize-sm-0);
+  line-height: var(--fontSize-sm-1-lineHeight);
+  letter-spacing: var(--fontSize-sm-1-letterSpacing);
+  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
 .tcsmd-text-btn-default.small {
   min-height: var(--minHeight-btn-sm);
   min-width: var(--minWidth-btn-sm);
+  font-size: var(--fontSize-base-0);
+  line-height: var(--fontSize-base-1-lineHeight);
+  letter-spacing: var(--fontSize-base-1-letterSpacing);
+  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -675,12 +739,20 @@
 .tcsmd-text-btn-emphasis.xs {
   min-height: var(--minHeight-btn-xs);
   min-width: var(--minWidth-btn-xs);
+  font-size: var(--fontSize-sm-0);
+  line-height: var(--fontSize-sm-1-lineHeight);
+  letter-spacing: var(--fontSize-sm-1-letterSpacing);
+  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
 .tcsmd-text-btn-emphasis.small {
   min-height: var(--minHeight-btn-sm);
   min-width: var(--minWidth-btn-sm);
+  font-size: var(--fontSize-base-0);
+  line-height: var(--fontSize-base-1-lineHeight);
+  letter-spacing: var(--fontSize-base-1-letterSpacing);
+  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
