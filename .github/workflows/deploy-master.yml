@@ -4,7 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - dev
+      - master
+  pull_request:
+    branches:
+      - master
 
 permissions:
   contents: write
@@ -59,41 +62,3 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TAG: ${{ steps.tag.outputs.TAG }}
-  ghpage:
-    needs: plugin
-    name: gh-page for doc
-    runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-ghpage
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v3
-        with:
-          ssh-key: ${{ secrets.SERVICE_ACCOUNT_SSH_KEY }}
-
-      - name: Check Node version
-        run: node -v
-
-      - name: Setup SSH Permission
-        uses: actions/ssh-config@v1
-        with:
-          config_dir: .ssh
-          ssh_key: ${{ secrets.SERVICE_ACCOUNT_SSH_KEY }}
-
-      - name: Default SSH Config Setting
-        shell: bash
-        run: |
-          touch ~/.ssh/config
-          printf "Host *\n\tStrictHostKeyChecking no\n\tIdentityFile ${{ env.SSH_KEY_FILE }}\n\tLogLevel ERROR\n" >> ~/.ssh/config
-          cat ~/.ssh/config
-
-      - name: build astro
-        run: |
-          cd astro
-          npm i
-          npm run astro:build
-
-      - name: deploy
-        run: cd astro && npm run astro:deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
