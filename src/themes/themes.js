@@ -965,6 +965,10 @@ const consumerDefaultTheme = {
       'btn-lg': '100px',
     },
     fontSize: {
+      xs: ['14px', '16px'],
+      sm: ['16px', '18px'],
+      base: ['16px', '18px'],
+      md: ['18px', '20px'],
       lg: ['18px', '20px'],
     },
     borderRadius: {
