@@ -23,12 +23,12 @@
   }
 
   &.xs {
-    @apply min-h-btn-xs min-w-btn-xs;
+    @apply min-h-btn-xs min-w-btn-xs text-sm;
     padding: 0 16px; /* height = 24px */
   }
 
   &.small {
-    @apply min-h-btn-sm min-w-btn-sm;
+    @apply min-h-btn-sm min-w-btn-sm text-base;
     padding: 4px 24px; /* height = 32px */
   }
 
@@ -51,12 +51,12 @@
   }
 
   &.xs {
-    @apply min-h-btn-xs min-w-btn-xs;
+    @apply min-h-btn-xs min-w-btn-xs text-sm;
     padding: 0 16px; /* height = 24px */
   }
 
   &.small {
-    @apply min-h-btn-sm min-w-btn-sm;
+    @apply min-h-btn-sm min-w-btn-sm text-base;
     padding: 4px 24px; /* height = 32px */
   }
 
