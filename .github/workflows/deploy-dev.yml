@@ -38,10 +38,7 @@ jobs:
 
       - name: Get version from package.json
         run: |
-          pwd
-          ls
-          cat ./package.json
-          echo "version=$(node -e "console.log(require('./package.json').version)").${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
+          echo "version=v$(node -e "console.log(require('./dist-package.json').version)").${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
         
       - name: Check Data
         run: |
