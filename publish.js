@@ -15,6 +15,7 @@ const repo = process.env.GITHUB_TOKEN
   : 'git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git';
 
 const options = {
+  tag: process.env.TAG,
   branch: 'dist',
   repo // project github repo
 };

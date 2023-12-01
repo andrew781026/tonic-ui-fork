@@ -60,6 +60,7 @@ jobs:
           node publish.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TAG: ${{ steps.tag.outputs.TAG }}
   ghpage:
     needs: plugin
     name: gh-page for doc
