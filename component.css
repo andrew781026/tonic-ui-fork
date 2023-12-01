@@ -37,8 +37,6 @@
   min-width: var(--minWidth-btn-xs);
   font-size: var(--fontSize-sm-0);
   line-height: var(--fontSize-sm-1-lineHeight);
-  letter-spacing: var(--fontSize-sm-1-letterSpacing);
-  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
@@ -47,8 +45,6 @@
   min-width: var(--minWidth-btn-sm);
   font-size: var(--fontSize-base-0);
   line-height: var(--fontSize-base-1-lineHeight);
-  letter-spacing: var(--fontSize-base-1-letterSpacing);
-  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -87,8 +83,6 @@
   min-width: var(--minWidth-btn-xs);
   font-size: var(--fontSize-sm-0);
   line-height: var(--fontSize-sm-1-lineHeight);
-  letter-spacing: var(--fontSize-sm-1-letterSpacing);
-  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
@@ -97,8 +91,6 @@
   min-width: var(--minWidth-btn-sm);
   font-size: var(--fontSize-base-0);
   line-height: var(--fontSize-base-1-lineHeight);
-  letter-spacing: var(--fontSize-base-1-letterSpacing);
-  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -173,8 +165,6 @@
   min-width: var(--minWidth-btn-xs);
   font-size: var(--fontSize-sm-0);
   line-height: var(--fontSize-sm-1-lineHeight);
-  letter-spacing: var(--fontSize-sm-1-letterSpacing);
-  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
@@ -183,8 +173,6 @@
   min-width: var(--minWidth-btn-sm);
   font-size: var(--fontSize-base-0);
   line-height: var(--fontSize-base-1-lineHeight);
-  letter-spacing: var(--fontSize-base-1-letterSpacing);
-  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -268,8 +256,6 @@
   min-width: var(--minWidth-btn-xs);
   font-size: var(--fontSize-sm-0);
   line-height: var(--fontSize-sm-1-lineHeight);
-  letter-spacing: var(--fontSize-sm-1-letterSpacing);
-  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
@@ -278,8 +264,6 @@
   min-width: var(--minWidth-btn-sm);
   font-size: var(--fontSize-base-0);
   line-height: var(--fontSize-base-1-lineHeight);
-  letter-spacing: var(--fontSize-base-1-letterSpacing);
-  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -373,8 +357,6 @@
   min-width: var(--minWidth-btn-xs);
   font-size: var(--fontSize-sm-0);
   line-height: var(--fontSize-sm-1-lineHeight);
-  letter-spacing: var(--fontSize-sm-1-letterSpacing);
-  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
@@ -383,8 +365,6 @@
   min-width: var(--minWidth-btn-sm);
   font-size: var(--fontSize-base-0);
   line-height: var(--fontSize-base-1-lineHeight);
-  letter-spacing: var(--fontSize-base-1-letterSpacing);
-  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -464,8 +444,6 @@
   min-width: var(--minWidth-btn-xs);
   font-size: var(--fontSize-sm-0);
   line-height: var(--fontSize-sm-1-lineHeight);
-  letter-spacing: var(--fontSize-sm-1-letterSpacing);
-  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
@@ -474,8 +452,6 @@
   min-width: var(--minWidth-btn-sm);
   font-size: var(--fontSize-base-0);
   line-height: var(--fontSize-base-1-lineHeight);
-  letter-spacing: var(--fontSize-base-1-letterSpacing);
-  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -579,8 +555,6 @@
   min-width: var(--minWidth-btn-xs);
   font-size: var(--fontSize-sm-0);
   line-height: var(--fontSize-sm-1-lineHeight);
-  letter-spacing: var(--fontSize-sm-1-letterSpacing);
-  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
@@ -589,8 +563,6 @@
   min-width: var(--minWidth-btn-sm);
   font-size: var(--fontSize-base-0);
   line-height: var(--fontSize-base-1-lineHeight);
-  letter-spacing: var(--fontSize-base-1-letterSpacing);
-  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -660,8 +632,6 @@
   min-width: var(--minWidth-btn-xs);
   font-size: var(--fontSize-sm-0);
   line-height: var(--fontSize-sm-1-lineHeight);
-  letter-spacing: var(--fontSize-sm-1-letterSpacing);
-  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
@@ -670,8 +640,6 @@
   min-width: var(--minWidth-btn-sm);
   font-size: var(--fontSize-base-0);
   line-height: var(--fontSize-base-1-lineHeight);
-  letter-spacing: var(--fontSize-base-1-letterSpacing);
-  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
@@ -741,8 +709,6 @@
   min-width: var(--minWidth-btn-xs);
   font-size: var(--fontSize-sm-0);
   line-height: var(--fontSize-sm-1-lineHeight);
-  letter-spacing: var(--fontSize-sm-1-letterSpacing);
-  font-weight: var(--fontSize-sm-1-fontWeight);
     padding: 0 16px; /* height = 24px */
 }
 
@@ -751,8 +717,6 @@
   min-width: var(--minWidth-btn-sm);
   font-size: var(--fontSize-base-0);
   line-height: var(--fontSize-base-1-lineHeight);
-  letter-spacing: var(--fontSize-base-1-letterSpacing);
-  font-weight: var(--fontSize-base-1-fontWeight);
     padding: 4px 24px; /* height = 32px */
 }
 
