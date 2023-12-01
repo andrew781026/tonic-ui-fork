@@ -1,0 +1,26 @@
+{
+  "name": "consumer-tonic-ui-astro",
+  "type": "module",
+  "version": "0.0.2",
+  "scripts": {
+    "astro:dev": "astro dev --port 3017",
+    "astro:start": "astro dev",
+    "astro:build": "astro build",
+    "astro:preview": "astro preview",
+    "astro:deploy": "node ghpages.cjs",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^0.19.0",
+    "@astrojs/rss": "^2.4.0",
+    "@astrojs/sitemap": "^1.2.2",
+    "@astrojs/tailwind": "^3.1.2",
+    "astro": "^2.3.3",
+    "tailwindcss": "^3.3.2",
+    "tailwindcss-themer": "^3.1.2"
+  },
+  "devDependencies": {
+    "consumer-tonic-ui": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git#dist",
+    "gh-pages": "^6.0.0"
+  }
+}

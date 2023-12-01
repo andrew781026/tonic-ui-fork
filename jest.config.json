@@ -1,0 +1,12 @@
+{
+  "verbose": true,
+  "collectCoverage": false,
+  "testMatch": [
+    "**/__tests__/**/*.js",
+    "**/__tests__/**/*.ts",
+    "**/?(*.)+(spec|test).js",
+    "**/?(*.)+(spec|test).ts"
+  ],
+  "preset": "ts-jest",
+  "testEnvironment": "node"
+}

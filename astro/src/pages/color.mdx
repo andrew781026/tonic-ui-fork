@@ -1,0 +1,18 @@
+---
+layout: ../layouts/BaseLayout.astro
+title: Color Palette
+author: andrew_wang
+description: listing Color Palette
+img: src/img/Dark.png
+---
+import DarkImage from '../img/Dark.png';
+import ColorPalette from '../components/partial/color.astro';
+import colors from 'consumer-tonic-design-system/default_grouped_design_token.json';
+
+<main class="h-screen content-center p-8">
+  <h1 class="flex text-3xl items-center mb-16">
+    <img class="mr-4" src={DarkImage} alt="logo" width="50" height="50"/>
+    Token - Color Palettes
+  </h1>
+  <ColorPalette colors={colors}/>
+</main>

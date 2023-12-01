@@ -1,130 +1,261 @@
-.btn {
-  padding: 10px 24px;
-  font-size: 18px;
-  line-height: 1.17;
-  color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+/* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=35951-10712&mode=design&t=ldjOzrnvDwkiroPn-0 */
 
-.btn-disabled {
+.tcsmd-btn-disabled {
+  @apply pointer-events-none;
   opacity: 0.4;
   cursor: not-allowed;
-
-  &:focus {
-    border: none;
-    outline: none;
-  }
 }
 
-.btn-loading {
-  background: #D5D5D5;
-  border: none;
+.tcsmd-btn-loading {
+  @apply pointer-events-none;
   cursor: wait;
-
-  &:focus {
-    border: none;
-    outline: none;
-  }
 }
 
-.btn-primary {
-  @apply btn;
-  background: linear-gradient(180deg, #EA0108, #D50107);
-  border-radius: 4px;
+.tcsmd-btn {
+  /* width = border + padding + width */
+  @apply relative border-2 min-h-btn-md min-w-btn-md rounded-sm text-lg flex items-center justify-center;
+  padding: 7px 24px; /* height = 40px */
+  gap: 8px;
   margin: 4px;
 
   &.rounded {
-    border-radius: 20px;
+    @apply rounded-full;
+  }
+
+  &.xs {
+    @apply min-h-btn-xs min-w-btn-xs text-sm;
+    padding: 0 16px; /* height = 24px */
   }
 
   &.small {
-    padding: 7px 24px;
-
-    &.rounded {
-      border-radius: 16px;
-    }
+    @apply min-h-btn-sm min-w-btn-sm text-base;
+    padding: 4px 24px; /* height = 32px */
   }
 
   &.large {
-    padding: 20px 40px;
-
-    &.rounded {
-      border-radius: 30px;
-    }
-  }
-
-  &:hover, &.hover {
-    background: linear-gradient(180deg, #DF0108, #CD0107);
-  }
-
-  &:active, &.active {
-    background: linear-gradient(180deg, #CE0107, #BB0106);
-  }
-
-  &:disabled, &.disabled {
-    @apply btn-disabled;
-  }
-
-  &.loading {
-    @apply btn-loading;
-  }
-
-  &:focus, &.focus {
-    border: 2px solid #fff;
-    outline: 2px solid #0074E8;
+    @apply min-h-btn-lg min-w-btn-lg;
+    padding: 17px 40px; /* height = 60px */
   }
 }
 
-.btn-default {
-  @apply btn;
-  background: linear-gradient(180deg, #FAFAFA, #F2F2F2);
-  border-radius: 4px;
+.tcsmd-text-btn {
+  @apply relative bg-transparent border-2 border-transparent min-h-btn-md min-w-btn-md rounded-sm text-lg flex items-center justify-center;
+
+  padding: 10px 24px; /* height = 40px */
+  gap: 8px;
+
   margin: 4px;
 
   &.rounded {
-    border-radius: 20px;
+    @apply rounded-full;
+  }
+
+  &.xs {
+    @apply min-h-btn-xs min-w-btn-xs text-sm;
+    padding: 0 16px; /* height = 24px */
   }
 
   &.small {
-    padding: 7px 24px;
-
-    &.rounded {
-      border-radius: 16px;
-    }
+    @apply min-h-btn-sm min-w-btn-sm text-base;
+    padding: 4px 24px; /* height = 32px */
   }
 
   &.large {
-    padding: 20px 40px;
-
-    &.rounded {
-      border-radius: 30px;
-    }
+    @apply min-h-btn-lg min-w-btn-lg;
+    padding: 17px 40px; /* height = 60px */
   }
 
   &:hover, &.hover {
-    background: linear-gradient(180deg, #ececec, #e7e7e7);
+    @apply bg-tcsmd-ref-palette-gray-22;
   }
 
   &:active, &.active {
-    background: linear-gradient(180deg, #DBDBDB, #D6D6D6);
+    @apply bg-tcsmd-ref-palette-gray-26;
   }
 
   &:disabled, &.disabled {
-    @apply btn-disabled;
+    @apply tcsmd-btn-disabled bg-transparent;
+
+    &:focus, &.focus {
+      @apply border-transparent;
+    }
   }
 
   &.loading {
-    @apply btn-loading;
+    @apply tcsmd-btn-loading bg-white;
   }
 
   &:focus, &.focus {
-    border: 2px solid #0074E8;
+    @apply border-tcsmd-ref-palette-blue-60;
   }
+}
+
+/* ----  Normal Button  ---- */
+
+.tcsmd-btn-primary {
+  @apply tcsmd-btn border-transparent bg-gradient-to-b from-enabled-primary-start to-enabled-primary-end text-tcsmd-ref-palette-white;
+
+  &:hover, &.hover {
+    @apply bg-gradient-to-b from-hover-primary-start to-hover-primary-end;
+  }
+
+  &:active, &.active {
+    @apply bg-gradient-to-b from-active-primary-start to-active-primary-end;
+  }
+
+  &:disabled, &.disabled {
+    @apply tcsmd-btn-disabled bg-gradient-to-b from-enabled-primary-start to-enabled-primary-end;
+  }
+
+  &.loading {
+    @apply tcsmd-btn-loading from-enabled-primary-start to-enabled-primary-end;
+  }
+
+  &:focus, &.focus {
+    @apply border-2 border-tcsmd-ref-palette-blue-60;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 1);
+  }
+}
+
+.tcsmd-btn-default {
+  @apply tcsmd-btn bg-gradient-to-b from-enabled-default-start to-enabled-default-end text-tcsmd-sys-color-text-primary;
+  border: 0.5px solid #8e8e8e;
+
+  &:hover, &.hover {
+    @apply from-hover-default-start to-hover-default-end;
+  }
+
+  &:active, &.active {
+    @apply from-active-default-start to-active-default-end;
+  }
+
+  &:disabled, &.disabled {
+    @apply tcsmd-btn-disabled from-enabled-default-start to-enabled-default-end border-tcsmd-ref-palette-gray-50;
+
+    &:focus, &.focus {
+      @apply border-tcsmd-ref-palette-gray-50;
+    }
+  }
+
+  &.loading {
+    @apply tcsmd-btn-loading from-enabled-default-start to-enabled-default-end;
+  }
+
+  &:focus, &.focus {
+    @apply border-tcsmd-ref-palette-blue-60 shadow-btn-default shadow-tcsmd-ref-palette-blue-60;
+  }
+}
+
+.tcsmd-btn-emphasis {
+  @apply tcsmd-btn border-transparent bg-gradient-to-b from-enabled-emphasis-start to-enabled-emphasis-end text-tcsmd-ref-palette-white;
+
+  &:hover, &.hover {
+    @apply bg-gradient-to-b from-hover-emphasis-start to-hover-emphasis-end;
+  }
+
+  &:active, &.active {
+    @apply bg-gradient-to-b from-active-emphasis-start to-active-emphasis-end;
+  }
+
+  &:disabled, &.disabled {
+    @apply tcsmd-btn-disabled from-enabled-emphasis-start to-enabled-emphasis-end;
+  }
+
+  &.loading {
+    @apply tcsmd-btn-loading from-enabled-emphasis-start to-enabled-emphasis-end;
+  }
+
+  &:focus, &.focus {
+    @apply border-2 border-tcsmd-ref-palette-blue-60;
+    box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 1);
+  }
+}
+
+.tcsmd-btn-ghost {
+  @apply tcsmd-btn bg-transparent border-tcsmd-ref-palette-gray-26 text-tcsmd-sys-color-text-primary;
+  border-width: 1px;
+
+  &:hover, &.hover {
+    @apply bg-gradient-to-b from-hover-ghost-start to-hover-ghost-end border-tcsmd-ref-palette-gray-50;
+  }
+
+  &:active, &.active {
+    @apply bg-gradient-to-b from-active-ghost-start to-active-ghost-end border-tcsmd-ref-palette-gray-50;
+  }
+
+  &:disabled, &.disabled {
+    @apply tcsmd-btn-disabled from-transparent to-transparent border-tcsmd-ref-palette-gray-30;
+
+    &:focus, &.focus {
+      @apply border-tcsmd-ref-palette-gray-30;
+    }
+  }
+
+  &.loading {
+    @apply tcsmd-btn-loading from-transparent to-transparent border-tcsmd-ref-palette-gray-30;
+
+    .loader {
+      @apply border-tcsmd-ref-palette-gray-26 bg-white;
+    }
+  }
+
+  &:focus, &.focus {
+    @apply border-tcsmd-ref-palette-blue-60 shadow-btn-ghost shadow-tcsmd-ref-palette-blue-60;
+  }
+}
+
+/* ----  Text Button  ---- */
+
+.tcsmd-text-btn-primary {
+  @apply tcsmd-text-btn text-tcsmd-sys-color-text-primary;
+}
+
+.tcsmd-text-btn-default {
+  @apply tcsmd-text-btn text-tcsmd-sys-color-brand-trend-red;
+}
+
+.tcsmd-text-btn-emphasis {
+  @apply tcsmd-text-btn text-tcsmd-ref-palette-blue-60;
 }
 
 .hr {
   margin: 16px 0;
   width: 100%;
+}
+
+/* https://fontello.com/ - svg to @font-face ~ https://yunusozcan.medium.com/how-to-create-icon-font-like-font-awesome-ce32ea7c7385 */
+
+.loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background: inherit;
+  border-radius: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+svg.circle-progress {
+  width: 24px;
+  height: 24px;
+}
+
+svg.circle-progress .bg {
+  fill: none;
+  stroke-width: 2px;
+  stroke: currentColor;
+  opacity: 0.4;
+}
+
+svg.circle-progress .progress {
+  @apply animate-loader fill-none stroke-current;
+  stroke-width: 2px;
+  stroke-linecap: round;
+  stroke-dasharray: 60;
+  transform-origin: 50% 50%;
 }

@@ -1,0 +1,92 @@
+name: consumer-tonic-ui-dist
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - dev
+
+permissions:
+  contents: write
+
+jobs:
+  plugin:
+    name: deploy plugin
+    runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-plugin
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          ref: dev
+          ssh-key: ${{ secrets.SERVICE_ACCOUNT_SSH_KEY }}
+
+      - name: Check Node version
+        run: node -v
+
+      - name: Setup SSH Permission
+        uses: actions/ssh-config@v1
+        with:
+          config_dir: .ssh
+          ssh_key: ${{ secrets.SERVICE_ACCOUNT_SSH_KEY }}
+
+      - name: Default SSH Config Setting
+        shell: bash
+        run: |
+          touch ~/.ssh/config
+          printf "Host *\n\tStrictHostKeyChecking no\n\tIdentityFile ${{ env.SSH_KEY_FILE }}\n\tLogLevel ERROR\n" >> ~/.ssh/config
+          cat ~/.ssh/config
+
+      - name: build dist
+        run: |
+          npm i
+          npm run new:build
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: deploy
+        if: ${{ github.ref == 'refs/heads/dev' }} # only deploy dev
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          node publish.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  ghpage:
+    needs: plugin
+    name: gh-page for doc
+    runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-ghpage
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+        with:
+          ssh-key: ${{ secrets.SERVICE_ACCOUNT_SSH_KEY }}
+
+      - name: Check Node version
+        run: node -v
+
+      - name: Setup SSH Permission
+        uses: actions/ssh-config@v1
+        with:
+          config_dir: .ssh
+          ssh_key: ${{ secrets.SERVICE_ACCOUNT_SSH_KEY }}
+
+      - name: Default SSH Config Setting
+        shell: bash
+        run: |
+          touch ~/.ssh/config
+          printf "Host *\n\tStrictHostKeyChecking no\n\tIdentityFile ${{ env.SSH_KEY_FILE }}\n\tLogLevel ERROR\n" >> ~/.ssh/config
+          cat ~/.ssh/config
+
+      - name: build astro
+        run: |
+          cd astro
+          npm i
+          npm run astro:build
+
+      - name: deploy
+        if: ${{ github.ref == 'refs/heads/dev' }} # only deploy dev
+        run: cd astro && npm run astro:deploy
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+
