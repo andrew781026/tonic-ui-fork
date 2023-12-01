@@ -3,8 +3,9 @@ name: consumer-tonic-ui-dist
 on:
   workflow_dispatch:
   push:
-    branches:
-      - dev
+    branches: [ dev, main ]
+  pull_request:
+    branches: [ dev, main ]
 
 permissions:
   contents: write
@@ -14,6 +15,14 @@ jobs:
     name: deploy plugin
     runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-plugin
     steps:
+      - name: Get version from package.json
+        run: |
+          echo "version=$(node -e "console.log(require('./package.json').version)").${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
+      
+      - name: Check Data
+        run: |
+          echo "version: ${{ env.version }}"
+
       - name: Check out code
         uses: actions/checkout@v3
         with:
@@ -51,7 +60,18 @@ jobs:
           node publish.js
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Tag Git repository
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+          git checkout dist
+          git tag -a ${{ env.version }} -m "Version ${{ env.version }}"
+          git push origin ${{ env.version }}
+
   ghpage:
+    if: github.ref == 'refs/heads/dev'
     needs: plugin
     name: gh-page for doc
     runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-ghpage
