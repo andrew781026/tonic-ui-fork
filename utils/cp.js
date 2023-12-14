@@ -14,7 +14,10 @@ const copyFile = (src, dest) => {
 
 const copyFolder = (srcFolder, destFolder) => {
   const srcFiles = glob.sync('**/*', {cwd: srcFolder});
-  srcFiles.forEach((file) => copyFile(`${srcFolder}/${file}`, `${destFolder}/${file}`));
+  srcFiles.forEach((file) => {
+    if (fs.lstatSync(`${srcFolder}/${file}`).isDirectory()) copyFolder(`${srcFolder}/${file}`, `${destFolder}/${file}`);
+    else copyFile(`${srcFolder}/${file}`, `${destFolder}/${file}`)
+  });
 };
 
 if (fs.lstatSync(src).isDirectory()) copyFolder(src, dest);
