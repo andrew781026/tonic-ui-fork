@@ -1,0 +1,91 @@
+/* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=27205-25468&mode=design&t=8FZSZyK9H2SdWpiB-0 */
+
+.tcsmd-tab-group.line {
+  @apply flex;
+}
+
+.tcsmd-tab.line {
+  /* height: var(--tcsmd-comp-button-size-md, 40px); */
+  @apply
+  cursor-pointer
+  rounded-none
+  text-tcsmd-sys-color-text-secondary
+  min-h-btn-md
+  flex flex-col justify-center items-center
+  border-b-2
+  border-transparent
+  border-solid;
+
+  min-width: 90px;
+
+  &:hover, &.hover {
+    @apply
+    text-tcsmd-sys-color-text-secondary
+    border-b-2
+    border-tcsmd-ref-palette-gray-50;
+  }
+
+  &[selected], &.selected {
+    @apply
+    text-tcsmd-sys-color-text-primary
+    border-tcsmd-sys-color-brand-trend-red;
+  }
+
+  &:focus, &.focus {
+    @apply
+    outline-none
+    text-tcsmd-sys-color-text-primary
+    border-2 border-tcsmd-ref-palette-blue-60;
+  }
+
+  &[disabled], &.disabled {
+    @apply
+    pointer-events-none
+    text-tcsmd-sys-color-text-disabled;
+  }
+}
+
+.tcsmd-tab-group.capsule {
+  @apply flex bg-tcsmd-ref-palette-gray-24;
+
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.tcsmd-tab.capsule {
+  /* height: var(--tcsmd-comp-button-size-md, 40px); */
+  @apply
+  cursor-pointer
+  text-tcsmd-sys-color-text-secondary
+  min-h-btn-md
+  flex flex-col justify-center items-center
+  rounded
+  border-solid;
+
+  min-width: 90px;
+
+  &:hover, &.hover {
+    @apply text-tcsmd-sys-color-text-secondary bg-tcsmd-ref-palette-gray-22;
+  }
+
+  &[selected], &.selected {
+    @apply
+    bg-white
+    text-tcsmd-sys-color-text-primary;
+  }
+
+  &:focus, &.focus {
+    @apply
+    outline-none
+    bg-white
+    text-tcsmd-sys-color-text-primary
+    border-2
+    border-tcsmd-ref-palette-blue-60;
+  }
+
+  &[disabled], &.disabled {
+    @apply
+    pointer-events-none
+    text-tcsmd-sys-color-text-disabled;
+  }
+}

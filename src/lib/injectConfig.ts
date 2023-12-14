@@ -1,3 +1,7 @@
+/**
+ * inject css variable to selector
+ * ex- :root { --fontSize-5xl: 46px; }
+ */
 import {cssEscape} from "./cssEscape";
 import {TonicConfigError} from "../error/error";
 import {

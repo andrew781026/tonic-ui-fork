@@ -15,9 +15,11 @@
     "@astrojs/rss": "^2.4.0",
     "@astrojs/sitemap": "^1.2.2",
     "@astrojs/tailwind": "^3.1.2",
+    "@astrojs/vue": "2.2.1",
     "astro": "^2.3.3",
     "tailwindcss": "^3.3.2",
-    "tailwindcss-themer": "^3.1.2"
+    "tailwindcss-themer": "^3.1.2",
+    "vue": "^3.3.11"
   },
   "devDependencies": {
     "consumer-tonic-ui": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git#dist",
