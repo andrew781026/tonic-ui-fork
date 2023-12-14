@@ -21,6 +21,7 @@ const shallowMerge = (extendArr: ThemeConfig[]): ThemeConfig => {
         result[key] = {
           // @ts-ignore
           ...(pre[key] || {}),
+          // @ts-ignore
           ...(curr[key] || {}),
         }
       }
