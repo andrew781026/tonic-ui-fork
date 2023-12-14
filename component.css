@@ -983,3 +983,99 @@ svg.circle-progress .progress {
     }
 
 
+/* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=27205-25468&mode=design&t=8FZSZyK9H2SdWpiB-0 */
+
+.tcsmd-tab-group.line {
+  display: flex;
+}
+
+.tcsmd-tab.line {
+  /* height: var(--tcsmd-comp-button-size-md, 40px); */
+  display: flex;
+  min-height: var(--minHeight-btn-md);
+  cursor: var(--cursor-pointer);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--borderRadius-none);
+  border-bottom-width: var(--borderWidth-2);
+  border-style: solid;
+  border-color: var(--colors--transparent);
+  color: var(--colors--tcsmd-sys-color-text-secondary);
+
+  min-width: 90px;
+}
+
+.tcsmd-tab.line:hover, .tcsmd-tab.line.hover {
+  border-bottom-width: var(--borderWidth-2);
+  border-color: var(--colors--tcsmd-ref-palette-gray-50);
+  color: var(--colors--tcsmd-sys-color-text-secondary);
+}
+
+.tcsmd-tab.line[selected], .tcsmd-tab.line.selected {
+  border-color: var(--colors--tcsmd-sys-color-brand-trend-red);
+  color: var(--colors--tcsmd-sys-color-text-primary);
+}
+
+.tcsmd-tab.line:focus, .tcsmd-tab.line.focus {
+  border-width: var(--borderWidth-2);
+  border-color: var(--colors--tcsmd-ref-palette-blue-60);
+  color: var(--colors--tcsmd-sys-color-text-primary);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.tcsmd-tab.line[disabled], .tcsmd-tab.line.disabled {
+  pointer-events: none;
+  color: var(--colors--tcsmd-sys-color-text-disabled);
+}
+
+.tcsmd-tab-group.capsule {
+  display: flex;
+  background-color: var(--colors--tcsmd-ref-palette-gray-24);
+
+  padding: 4px;
+  border-radius: 8px;
+}
+
+.tcsmd-tab.capsule {
+  /* height: var(--tcsmd-comp-button-size-md, 40px); */
+  display: flex;
+  min-height: var(--minHeight-btn-md);
+  cursor: var(--cursor-pointer);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--borderRadius-DEFAULT);
+  border-style: solid;
+  color: var(--colors--tcsmd-sys-color-text-secondary);
+
+  min-width: 90px;
+}
+
+.tcsmd-tab.capsule:hover, .tcsmd-tab.capsule.hover {
+  background-color: var(--colors--tcsmd-ref-palette-gray-22);
+  color: var(--colors--tcsmd-sys-color-text-secondary);
+}
+
+.tcsmd-tab.capsule[selected], .tcsmd-tab.capsule.selected {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  color: var(--colors--tcsmd-sys-color-text-primary);
+}
+
+.tcsmd-tab.capsule:focus, .tcsmd-tab.capsule.focus {
+  border-width: var(--borderWidth-2);
+  border-color: var(--colors--tcsmd-ref-palette-blue-60);
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  color: var(--colors--tcsmd-sys-color-text-primary);
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.tcsmd-tab.capsule[disabled], .tcsmd-tab.capsule.disabled {
+  pointer-events: none;
+  color: var(--colors--tcsmd-sys-color-text-disabled);
+}
+
