@@ -9,11 +9,11 @@ import * as fs from 'fs';
 import * as path from 'path';
 
 // Import icons
-const iconSet = importDirectorySync('svg/general/16px', {
+const iconSet = importDirectorySync('src/svg/general/16px', {
   prefix: 'consumer-tonic-ui',
 });
 
-const iconSet2 = importDirectorySync('svg/general/24px', {
+const iconSet2 = importDirectorySync('src/svg/general/24px', {
   prefix: 'consumer-tonic-ui',
 });
 
