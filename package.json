@@ -16,7 +16,8 @@
     "cp:img": "node utils/cp.js --src src/img --dest dist/img && node utils/cp.js --src src/svg --dest dist/svg",
     "cp:error": "node utils/cp.js --src src/error --dest dist/error",
     "cp:root": "node utils/cp.js --src src/index.js --dest dist/index.js",
-    "build": "tsc && npm run base && npm run components && node utils/copyFiles.js && npm run cp:img",
+    "gen:iconset": "ts-node src/iconSetGen.ts",
+    "build": "tsc && npm run base && npm run components && node utils/copyFiles.js && npm run cp:img && npm run gen:iconset",
     "doc:build": "npm run build && cd astro && npm run build",
     "dev": "npm run build && cd astro && npm run dev",
     "lint": "eslint src/**/*.js",
@@ -57,6 +58,7 @@
     "postcss-nested": "^6.0.1",
     "postcss-nesting": "^11.2.2",
     "ts-jest": "^29.1.1",
+    "ts-node": "^10.9.2",
     "typescript": "^5.2.2"
   },
   "peerDependencies": {

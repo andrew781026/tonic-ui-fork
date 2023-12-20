@@ -7,9 +7,6 @@ import {MultiThemePluginOptions} from "@/type/define";
 import {PluginAPI} from "tailwindcss/types/config";
 import {consumerDefaultTheme} from './themes/themes';
 
-// generate iconSet
-import './iconSetGen';
-
 // @ts-ignore
 import tailwindTheme from 'tailwindcss/stubs/config.full.js';
 
