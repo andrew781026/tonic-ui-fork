@@ -10,11 +10,11 @@ import * as path from 'path';
 
 // Import icons
 const iconSet = importDirectorySync('svg/general/16px', {
-  prefix: 'icons',
+  prefix: 'consumer-tonic-ui',
 });
 
 const iconSet2 = importDirectorySync('svg/general/24px', {
-  prefix: 'icons',
+  prefix: 'consumer-tonic-ui',
 });
 
 const forEachIconSet = (originIconSet: IconSet, targetIconSet: IconSet, namePrefix: string) => {
