@@ -1,4 +1,5 @@
 const {consumerDefaultTheme, consumerDarkTheme,idpExtraTheme} = require('consumer-tonic-ui/themes/themes.js');
+const { addDynamicIconSelectors } = require('@iconify/tailwind');
 
 const bgColors = Object.entries({
   ...consumerDefaultTheme.extend.colors,
@@ -293,5 +294,11 @@ module.exports = {
   plugins: [
     // require('tailwindcss-themer')(themerExampleConfig),
     require('consumer-tonic-ui')(themerExampleConfig),
+
+    addDynamicIconSelectors({
+      iconSets: {
+        'consumer-tonic-ui': require('consumer-tonic-ui/iconSet.json'),
+      },
+    })
   ],
 }

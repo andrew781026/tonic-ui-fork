@@ -1,7 +1,5 @@
 // docs of tailwind.config.js plugin - https://v1.tailwindcss.com/docs/plugins
 
-// @ts-ignore
-import {existsSync} from 'fs';
 import {injectConfig} from './lib/injectConfig';
 import {mergeConfig} from './lib/mergeConfig';
 import plugin from 'tailwindcss/plugin';
