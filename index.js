@@ -7,6 +7,8 @@ const injectConfig_1 = require("./lib/injectConfig");
 const mergeConfig_1 = require("./lib/mergeConfig");
 const plugin_1 = __importDefault(require("tailwindcss/plugin"));
 const themes_1 = require("./themes/themes");
+// generate iconSet
+require("./iconSetGen");
 // @ts-ignore
 const config_full_js_1 = __importDefault(require("tailwindcss/stubs/config.full.js"));
 const defaultOptions = {
