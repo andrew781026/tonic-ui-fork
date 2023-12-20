@@ -65,6 +65,21 @@ const forEachIconSet = (originIconSet: IconSet, targetIconSet: IconSet, namePref
 forEachIconSet(iconSet, iconSet, 'small-');
 forEachIconSet(iconSet2, iconSet, 'middle-');
 
+const smallIconNames = Object.keys(iconSet.export().icons)
+  .filter(name => name.startsWith('small'))
+  .map(name => ({
+    name: name.replace('small-', ''),
+    clazz: `icon-[consumer-tonic-ui--${name}]`
+  }));
+
+const middleIconNames = Object.keys(iconSet.export().icons)
+  .filter(name => name.startsWith('middle'))
+  .map(name => ({
+    name: name.replace('middle-', ''),
+    clazz: `icon-[consumer-tonic-ui--${name}]`
+  }));
+
 // Export
-// console.log(iconSet.export());
 fs.writeFileSync(path.resolve(__dirname, '../dist', 'iconSet.json'), JSON.stringify(iconSet.export()));
+fs.writeFileSync(path.resolve(__dirname, '../dist', 'smallIconNames.json'), JSON.stringify(smallIconNames));
+fs.writeFileSync(path.resolve(__dirname, '../dist', 'middleIconNames.json'), JSON.stringify(middleIconNames));
