@@ -1,10 +1,14 @@
-const {consumerDefaultTheme, consumerDarkTheme,idpExtraTheme} = require('consumer-tonic-ui/themes/themes.js');
-const { addDynamicIconSelectors } = require('@iconify/tailwind');
+const {consumerDefaultTheme, consumerDarkTheme, idpExtraTheme} = require('consumer-tonic-ui/themes/themes.js');
+const {addDynamicIconSelectors} = require('@iconify/tailwind');
 
 const bgColors = Object.entries({
   ...consumerDefaultTheme.extend.colors,
   ...consumerDarkTheme.extend.colors
 }).map(([key, value]) => `bg-${key}`);
+
+const iconNames =
+  Object.keys(require('consumer-tonic-ui/iconSet.json').icons)
+    .map(name => `icon-[consumer-tonic-ui--${name}]`);
 
 /*
 
@@ -286,6 +290,7 @@ module.exports = {
   // use safelist to avoid purging tonic-ui classes
   safelist: [
     ...bgColors,
+    ...iconNames,
   ],
 
   theme: {

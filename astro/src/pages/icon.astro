@@ -1,12 +1,12 @@
 ---
 import DarkImage from "../img/Dark.png";
 import {Icon} from 'astro-icon';
+import IconPreview from '../components/IconPreview.vue';
+import smallIconNames from 'consumer-tonic-ui/smallIconNames.json';
+import middleIconNames from 'consumer-tonic-ui/middleIconNames.json';
 
 const smallIcons = await Astro.glob('../../node_modules/consumer-tonic-ui/svg/general/16px/*.svg');
 const middleIcons = await Astro.glob('../../node_modules/consumer-tonic-ui/svg/general/24px/*.svg');
-
-const smallIconNames = smallIcons.map(icon => icon.default.split('/').pop().split('.')[0]);
-const middleIconNames = middleIcons.map(icon => icon.default.split('/').pop().split('.')[0]);
 ---
 
 <!DOCTYPE html>
@@ -24,41 +24,12 @@ const middleIconNames = middleIcons.map(icon => icon.default.split('/').pop().sp
     Icons
   </h1>
 
-  <span class="tcsmd-input">
-    Search：<input type="text" class="tcsmd-input__inner" placeholder="search"/>
-  </span>
+  <IconPreview
+    client:only="vue"
+    smallIconNames={smallIconNames}
+    middleIconNames={middleIconNames}
+  />
 
-  <h2 class="text-2xl font-900 mr-auto my-4"> 📃 16px</h2>
-  <div class="flex flex-wrap gap-4 m-4">
-    <span class="icon-[mdi-light--home]"></span>
-    <span class="icon-[consumer-tonic-ui--middle-add]"></span>
-    {smallIcons.map(icon => {
-      const iconName = icon.default.split('/').pop().split('.')[0];
-
-      return (
-        <div class="min-w-[200px] flex flex-col gap-2 items-center bg-tcsmd-ref-palette-gray-22 p-4 rounded-xl">
-          <Icon class="w-4 h-4" pack="consumer-tonic-ui" name={`16px/${iconName}`}/>
-          <span>{iconName}</span>
-        </div>
-      )
-    })}
-  </div>
-
-  <h2 class="text-2xl font-900 mr-auto mb-4"> 📃 24px</h2>
-  <div class="flex flex-wrap gap-8">
-    <div class="flex flex-wrap gap-4 m-4">
-      {middleIcons.map(icon => {
-        const iconName = icon.default.split('/').pop().split('.')[0];
-
-        return (
-          <div class="min-w-[200px] flex flex-col gap-2 items-center bg-tcsmd-ref-palette-gray-22 p-4 rounded-xl">
-            <Icon class="w-6 h-6" pack="consumer-tonic-ui" name={`24px/${iconName}`}/>
-            <span>{iconName}</span>
-          </div>
-        )
-      })}
-    </div>
-  </div>
 </main>
 
 </body>
