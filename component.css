@@ -1079,3 +1079,236 @@ svg.circle-progress .progress {
   color: var(--colors--tcsmd-sys-color-text-disabled);
 }
 
+/* notion define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=35951-10712&mode=design& */
+
+.tcsmd-sys-typ-h1-r {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-7xl-0);
+
+    font-weight: var(--fontWeight-regular)
+}
+
+.tcsmd-sys-typ-h1-sb {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-7xl-0);
+
+    font-weight: var(--fontWeight-semibold)
+}
+
+.tcsmd-sys-typ-h1-b {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-7xl-0);
+
+    font-weight: var(--fontWeight-bold)
+}
+
+.tcsmd-sys-typ-h2-r {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-6xl-0);
+
+    font-weight: var(--fontWeight-regular)
+}
+
+.tcsmd-sys-typ-h2-sb {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-6xl-0);
+
+    font-weight: var(--fontWeight-semibold)
+}
+
+.tcsmd-sys-typ-h2-b {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-6xl-0);
+
+    font-weight: var(--fontWeight-bold)
+}
+
+.tcsmd-sys-typ-h3-r {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-5xl-0);
+
+    font-weight: var(--fontWeight-regular)
+}
+
+.tcsmd-sys-typ-h3-sb {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-5xl-0);
+
+    font-weight: var(--fontWeight-semibold)
+}
+
+.tcsmd-sys-typ-h3-b {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-5xl-0);
+
+    font-weight: var(--fontWeight-bold)
+}
+
+.tcsmd-sys-typ-h4-r {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-4xl-0);
+
+    font-weight: var(--fontWeight-regular)
+}
+
+.tcsmd-sys-typ-h4-sb {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-4xl-0);
+
+    font-weight: var(--fontWeight-semibold)
+}
+
+.tcsmd-sys-typ-h4-b {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-4xl-0);
+
+    font-weight: var(--fontWeight-bold)
+}
+
+.tcsmd-sys-typ-h5-r {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-3xl-0);
+
+    font-weight: var(--fontWeight-regular)
+}
+
+.tcsmd-sys-typ-h5-sb {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-3xl-0);
+
+    font-weight: var(--fontWeight-semibold)
+}
+
+.tcsmd-sys-typ-h5-b {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-3xl-0);
+
+    font-weight: var(--fontWeight-bold)
+}
+
+.tcsmd-sys-typ-h6-r {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-2xl-0);
+
+    font-weight: var(--fontWeight-regular)
+}
+
+.tcsmd-sys-typ-h6-sb {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-2xl-0);
+
+    font-weight: var(--fontWeight-semibold)
+}
+
+.tcsmd-sys-typ-h6-b {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-2xl-0);
+
+    font-weight: var(--fontWeight-bold)
+}
+
+.tcsmd-sys-typ-body20-r {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-xl-0);
+
+    font-weight: var(--fontWeight-regular)
+}
+
+.tcsmd-sys-typ-body20-sb {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-xl-0);
+
+    font-weight: var(--fontWeight-semibold)
+}
+
+.tcsmd-sys-typ-body20-b {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-xl-0);
+
+    font-weight: var(--fontWeight-bold)
+}
+
+.tcsmd-sys-typ-body18-r {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-lg-0);
+
+    font-weight: var(--fontWeight-regular)
+}
+
+.tcsmd-sys-typ-body18-sb {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-lg-0);
+
+    font-weight: var(--fontWeight-semibold)
+}
+
+.tcsmd-sys-typ-body18-b {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-lg-0);
+
+    font-weight: var(--fontWeight-bold)
+}
+
+.tcsmd-sys-typ-body16-r {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-md-0);
+
+    font-weight: var(--fontWeight-regular)
+}
+
+.tcsmd-sys-typ-body16-sb {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-md-0);
+
+    font-weight: var(--fontWeight-semibold)
+}
+
+.tcsmd-sys-typ-body16-b {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-md-0);
+
+    font-weight: var(--fontWeight-bold)
+}
+
+.tcsmd-sys-typ-body14-r {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-sm-0);
+
+    font-weight: var(--fontWeight-regular)
+}
+
+.tcsmd-sys-typ-body14-sb {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-sm-0);
+
+    font-weight: var(--fontWeight-semibold)
+}
+
+.tcsmd-sys-typ-body14-b {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-sm-0);
+
+    font-weight: var(--fontWeight-bold)
+}
+
+.tcsmd-sys-typ-body12-r {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-xs-0);
+
+    font-weight: var(--fontWeight-regular)
+}
+
+.tcsmd-sys-typ-body12-sb {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-xs-0);
+
+    font-weight: var(--fontWeight-semibold)
+}
+
+.tcsmd-sys-typ-body12-b {
+
+    font-size: var(--fontSize-tcsmd-ref-typesetting-font-size-xs-0);
+
+    font-weight: var(--fontWeight-bold)
+}
+
