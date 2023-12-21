@@ -964,6 +964,9 @@ const consumerDefaultTheme = {
       'btn-md': '100px',
       'btn-lg': '100px',
     },
+    fontWeight: {
+      regular: 400,
+    },
     fontSize: {
       xs: ['14px', '16px'],
       sm: ['16px', '18px'],
