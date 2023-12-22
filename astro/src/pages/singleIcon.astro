@@ -1,0 +1,25 @@
+---
+import DarkImage from "../img/Dark.png";
+import SingleIcon from '../components/SingleIcon.vue';
+---
+
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <title>Icons</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+  <link rel="icon" type="image/png" sizes="16x16" href={DarkImage}>
+</head>
+<body>
+<main id="main" class="min-h-screen content-center p-8">
+  <h1 class="flex text-3xl items-center mb-16">
+    <img class="mr-4" src={DarkImage} alt="logo" width="50" height="50"/>
+    Icon
+  </h1>
+
+  <SingleIcon client:only="vue" iconClazz="icon-[consumer-tonic-ui--small-home]" iconName="home"/>
+</main>
+
+</body>
+</html>

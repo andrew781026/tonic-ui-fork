@@ -1,36 +1,15 @@
 ---
 import DarkImage from "../img/Dark.png";
-import {Icon} from 'astro-icon';
 import IconPreview from '../components/IconPreview.vue';
 import smallIconNames from 'consumer-tonic-ui/smallIconNames.json';
 import middleIconNames from 'consumer-tonic-ui/middleIconNames.json';
-
-const smallIcons = await Astro.glob('../../node_modules/consumer-tonic-ui/svg/general/16px/*.svg');
-const middleIcons = await Astro.glob('../../node_modules/consumer-tonic-ui/svg/general/24px/*.svg');
+import ComponentLayout from "../layouts/ComponentLayout.astro";
 ---
 
-<!DOCTYPE html>
-<html lang="zh-tw">
-<head>
-  <title>Icons</title>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-  <link rel="icon" type="image/png" sizes="16x16" href={DarkImage}>
-</head>
-<body>
-<main id="main" class="min-h-screen content-center p-8">
-  <h1 class="flex text-3xl items-center mb-16">
-    <img class="mr-4" src={DarkImage} alt="logo" width="50" height="50"/>
-    Icons
-  </h1>
-
+<ComponentLayout img={DarkImage} title="Icons">
   <IconPreview
     client:only="vue"
     smallIconNames={smallIconNames}
     middleIconNames={middleIconNames}
   />
-
-</main>
-
-</body>
-</html>
+</ComponentLayout>
