@@ -15,10 +15,11 @@ export default defineConfig({
       applyBaseStyles: true
     }),
     starlight({
-      title: 'My Docs',
+      title: 'Consumer Tonic UI',
       logo: {
         src: './src/assets/Dark.png',
       },
+      favicon: './src/assets/Dark.png',
       customCss: [
         // Path to your Tailwind base styles:
         './src/tailwind.css'
