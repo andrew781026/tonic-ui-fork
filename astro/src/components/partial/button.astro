@@ -17,9 +17,9 @@ const btnVariants = [
     {
       btnVariants.map(variant => (
         <div class="w-full md:w-[500px] rounded-2xl border-8 border-amber-200">
-          <h1 class="text-2xl font-900 bg-amber-200 p-2"> 📚 {variant}</h1>
+          <span class="text-2xl font-900 bg-amber-200 p-2"> 📚 {variant}</span>
           <div class="p-4">
-            <h2 class="text-2xl font-900 mr-auto mb-4"> 📃 State</h2>
+            <span class="text-2xl font-900 mr-auto mb-4"> 📃 State</span>
             <div class="flex flex-wrap gap-3">
               <button class={`${variant}`}>Default</button>
               <button class={`${variant} hover`}>
@@ -49,13 +49,13 @@ const btnVariants = [
               <button class={`${variant} focus`}>focus</button>
             </div>
             <hr class="hr">
-            <h2 class="text-2xl font-900 mr-auto mb-4"> 📃 Rounded</h2>
+            <span class="text-2xl font-900 mr-auto mb-4"> 📃 Rounded</span>
             <div class="flex flex-wrap gap-3">
               <button class={`${variant} hover`}>Default</button>
               <button class={`${variant} hover rounded`}>Default</button>
             </div>
             <hr class="hr">
-            <h2 class="text-2xl font-900 mr-auto mb-4"> 📃 Size</h2>
+            <span class="text-2xl font-900 mr-auto mb-4"> 📃 Size</span>
             <div class="flex flex-wrap gap-3 items-end">
               <button class={`${variant} hover xs`}>xs</button>
               <button class={`${variant} hover small`}>small</button>
