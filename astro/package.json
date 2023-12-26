@@ -4,10 +4,10 @@
   "version": "0.0.1",
   "scripts": {
     "astro:dev": "astro dev --port 3017",
-    "start": "astro dev --port 3017",
+    "astro:start": "astro dev --port 3017",
     "astro:build": "astro build",
-    "typecheck": "astro check",
-    "preview": "astro preview",
+    "astro:typecheck": "astro check",
+    "astro:preview": "astro preview",
     "astro:deploy": "node ghpages.cjs",
     "astro": "astro"
   },
