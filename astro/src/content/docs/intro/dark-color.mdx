@@ -1,0 +1,23 @@
+---
+title: Dark Color
+description: listing Color Palette
+---
+import colors from 'consumer-tonic-design-system/dark_gen_default_theme.json';
+
+<main class="content-center h-full" data-theme="consumerDark">
+  <div class="flex flex-wrap gap-4">
+    <div data-theme="dark" class="flex flex-col w-[360px] mix-blend-difference">
+      <div class={`text-2xl font-900 w-full p-3 uppercase bg-black text-white`}>
+        Dark Mode
+      </div>
+      {
+        Object.entries(colors).map(([colorName, colorValue]) => (
+          <div class={`flex w-full p-3 bg-${colorName} ${ colorName === 'sys-color-text-title' ? 'text-black' : 'text-white' }`}>
+            <p class="flex-1 m-0">{colorName}</p>
+            <p class="m-0" style="max-width:50%">{colorValue}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</main>

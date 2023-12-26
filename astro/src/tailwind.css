@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sl-markdown-content :not(a, strong, em, del, span, input, code) + :not(a, strong, em, del, span, input, code, :where(.not-content *)) {
+  margin-top: 0;
+}
+
+.sl-markdown-content main :not(a, strong, em, del, span, input, code) + button {
+  margin-top: 4px;
+}
+
+@media (min-width: 72rem) {
+  :root {
+    --sl-content-width: 65rem;
+  }
+}
+
+
+.content-panel + .content-panel {
+  overflow: auto;
+  height: calc(100vh - var(--sl-nav-height) - (var(--sl-text-5xl) * var(--sl-line-height)) - (2 * var(--sl-nav-pad-x)) );
+}
+
+main[data-pagefind-body]{
+  padding-bottom: 0;
+}

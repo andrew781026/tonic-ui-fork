@@ -1,10 +1,11 @@
 const {consumerDefaultTheme, consumerDarkTheme, idpExtraTheme} = require('consumer-tonic-ui/themes/themes.js');
 const {addDynamicIconSelectors} = require('@iconify/tailwind');
+const starlightPlugin = require('@astrojs/starlight-tailwind').default;
 
 const bgColors = Object.entries({
   ...consumerDefaultTheme.extend.colors,
   ...consumerDarkTheme.extend.colors
-}).map(([key, value]) => `bg-${key}`);
+}).map(([key]) => `bg-${key}`);
 
 const iconNames =
   Object.keys(require('consumer-tonic-ui/iconSet.json').icons)
@@ -297,9 +298,12 @@ module.exports = {
     extend: {},
   },
   plugins: [
+    starlightPlugin(),
+
     // require('tailwindcss-themer')(themerExampleConfig),
     require('consumer-tonic-ui')(themerExampleConfig),
 
+    // add svg to tailwind css
     addDynamicIconSelectors({
       iconSets: {
         'consumer-tonic-ui': require('consumer-tonic-ui/iconSet.json'),
@@ -307,3 +311,4 @@ module.exports = {
     })
   ],
 }
+

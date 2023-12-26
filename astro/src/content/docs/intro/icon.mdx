@@ -1,0 +1,14 @@
+---
+title: Icons
+description: show all icons
+---
+
+import IconPreview from '../../../components/IconPreview.vue';
+import smallIconNames from 'consumer-tonic-ui/smallIconNames.json';
+import middleIconNames from 'consumer-tonic-ui/middleIconNames.json';
+
+<IconPreview
+  client:only="vue"
+  smallIconNames={smallIconNames}
+  middleIconNames={middleIconNames}
+/>

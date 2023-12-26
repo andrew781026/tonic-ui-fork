@@ -1,22 +1,53 @@
 import {defineConfig} from 'astro/config';
-import mdx from '@astrojs/mdx';
-import sitemap from '@astrojs/sitemap';
+import starlight from '@astrojs/starlight';
+import tailwind from '@astrojs/tailwind';
 
-import tailwind from "@astrojs/tailwind";
-import vue from '@astrojs/vue';
-
-import monacoEditorPlugin from 'vite-plugin-monaco-editor';
+import vue from "@astrojs/vue";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://adc.github.trendmicro.com',
-  base: '/pages/Consumer-Frontend/consumer-tonic-ui',
-  integrations: [mdx(), sitemap(), tailwind(), vue()],
-  vite: {
-    plugins: [
-      monacoEditorPlugin({
-        languages: ['css', 'html', 'json', 'typescript', 'javascript']
-      })
-    ],
-  }
+  integrations: [
+    vue(),
+    tailwind({
+      // Disable the default base styles:
+      applyBaseStyles: true
+    }),
+    starlight({
+      title: 'My Docs',
+      logo: {
+        src: './src/assets/Dark.png',
+      },
+      customCss: [
+        // Path to your Tailwind base styles:
+        './src/tailwind.css'
+      ],
+      social: {
+        github: 'https://github.com/withastro/starlight'
+      },
+      sidebar: [
+        {
+          label: 'Guides',
+          items: [
+            // Each item here is one entry in the navigation menu.
+            {
+              label: 'Example Guide',
+              link: '/guides/example/'
+            }
+          ]
+        },
+        {
+          label: 'Intro',
+          autogenerate: {
+            directory: 'intro'
+          }
+        },
+        {
+          label: 'Reference',
+          autogenerate: {
+            directory: 'reference'
+          }
+        },
+      ]
+    }),
+  ],
 });
