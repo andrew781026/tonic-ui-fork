@@ -28,6 +28,7 @@
     </div>
   </div>
 
+  <div class="container" ref="container" ></div>
   <transition name="fade" @afterEnter="copySuccess = false">
     <span v-show="copySuccess" class="absolute pointer-events-none text-tcsmd-ref-palette-red-70" :style="{left,top}">Copied</span>
   </transition>
@@ -42,6 +43,7 @@ const search = ref('');
 const copySuccess = ref(false);
 const left = ref('');
 const top = ref('');
+const container = ref(null);
 
 const filteredSmallIconNames = computed(() => {
   return smallIconNames.filter(icon => icon.name.includes(search.value))
@@ -51,16 +53,41 @@ const filteredMiddleIconNames = computed(() => {
   return middleIconNames.filter(icon => icon.name.includes(search.value))
 });
 
-const copy = (clazz,event) => {
+const copy = (clazz, event) => {
   navigator.clipboard.writeText(clazz);
   left.value = `${event.clientX}px`;
   top.value = `${event.clientY - 20}px`;
-  copySuccess.value = true;
+  // copySuccess.value = true;
+  createSpan({top:`${event.clientY - 20}px`,left:`${event.clientX}px`});
+}
+
+const createSpan = ({top, left}) => {
+  const spanEl = window.document.createElement('span');
+  spanEl.className = 'absolute pointer-events-none copied text-tcsmd-ref-palette-red-70'
+  spanEl.style.top = top;
+  spanEl.style.left = left;
+  spanEl.innerText = 'Copied';
+  spanEl.ontransitionend = () => spanEl.remove();
+  container.value.append(spanEl);
+  setTimeout(() => spanEl.classList.add('fade'));
 }
 
 </script>
 
 <style>
+.copied {
+  opacity: 1;
+  transform: translateY(0px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.copied.fade {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+</style>
+
+<style scoped>
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s ease, transform 0.5s ease;
