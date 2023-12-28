@@ -89,6 +89,7 @@ jobs:
         run: |
           cd astro
           npm i
+          node postinstall.cjs
           npm run astro:build
 
       - name: deploy
