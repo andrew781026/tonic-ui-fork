@@ -17,8 +17,9 @@ main[data-pagefind-body] {
   padding-bottom: 0;
 }
 
-.sl-markdown-content :is(img,svg):not(:where(.not-content *)) {
+.sl-markdown-content :is(img):not(:where(.not-content *)) {
   display: inline-block;
   max-width: 100%;
   height: auto;
 }
+

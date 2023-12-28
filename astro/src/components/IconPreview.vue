@@ -28,10 +28,7 @@
     </div>
   </div>
 
-  <div class="container" ref="container" ></div>
-  <transition name="fade" @afterEnter="copySuccess = false">
-    <span v-show="copySuccess" class="absolute pointer-events-none text-tcsmd-ref-palette-red-70" :style="{left,top}">Copied</span>
-  </transition>
+  <div class="container" ref="container"></div>
 </template>
 
 <script setup lang="ts">
@@ -40,7 +37,6 @@ import {computed, ref} from "vue";
 const {smallIconNames, middleIconNames} = defineProps(['smallIconNames', 'middleIconNames']);
 
 const search = ref('');
-const copySuccess = ref(false);
 const left = ref('');
 const top = ref('');
 const container = ref(null);
@@ -57,19 +53,25 @@ const copy = (clazz, event) => {
   navigator.clipboard.writeText(clazz);
   left.value = `${event.clientX}px`;
   top.value = `${event.clientY - 20}px`;
-  // copySuccess.value = true;
   createSpan({top:`${event.clientY - 20}px`,left:`${event.clientX}px`});
 }
 
 const createSpan = ({top, left}) => {
   const spanEl = window.document.createElement('span');
+  const intersectionObserver = new IntersectionObserver((entries) => {
+    entries[0].isIntersecting && spanEl.classList.add('fade');
+  });
+  // <span class="absolute pointer-events-none copied text-tcsmd-ref-palette-red-70">Copied</span>
   spanEl.className = 'absolute pointer-events-none copied text-tcsmd-ref-palette-red-70'
   spanEl.style.top = top;
   spanEl.style.left = left;
   spanEl.innerText = 'Copied';
-  spanEl.ontransitionend = () => spanEl.remove();
+  spanEl.ontransitionend = () => {
+    intersectionObserver.disconnect();
+    spanEl.remove();
+  };
   container.value.append(spanEl);
-  setTimeout(() => spanEl.classList.add('fade'));
+  intersectionObserver.observe(spanEl);
 }
 
 </script>
@@ -84,27 +86,5 @@ const createSpan = ({top, left}) => {
 .copied.fade {
   opacity: 0;
   transform: translateY(-20px);
-}
-</style>
-
-<style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.fade-enter-from {
-  opacity: 0;
-  transform: translateY(0px);
-}
-
-.fade-enter-to {
-  opacity: 1;
-  transform: translateY(-10px);
-}
-
-.fade-leave-from,
-.fade-leave-to {
-  opacity: 0;
 }
 </style>
