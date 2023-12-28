@@ -1,7 +1,5 @@
 ---
 import IconDanger from "../../components/icons/IconDanger.astro";
-import IconEmail from "../../components/icons/IconEmail.astro";
-import IconEye from "../../components/icons/IconEye.astro";
 import IconInfo from "../../components/icons/IconInfo.astro";
 ---
 
@@ -130,9 +128,9 @@ import IconInfo from "../../components/icons/IconInfo.astro";
       <label class="text-right min-w-[80px] mr-2">Prefix</label>
       <span class="tcsmd-input" prefix>
         <input type="text" class="tcsmd-input__inner xs" value="Prefix"/>
-        <span class="tcsmd-input--prefix">
-          <IconEmail />
-        </span>
+        <p class="tcsmd-input--prefix">
+          <span class="icon-[consumer-tonic-ui--small-email]" />
+        </p>
       </span>
     </div>
     <div class="flex items-center mb-4">
@@ -140,7 +138,7 @@ import IconInfo from "../../components/icons/IconInfo.astro";
       <span class="tcsmd-input" suffix>
         <input type="text" class="tcsmd-input__inner lg" value="Suffix"/>
         <span class="tcsmd-input--suffix">
-          <span class="text-black icon-[consumer-tonic-ui--small-eye] h-24 w-24" />
+          <span class="text-black icon-[consumer-tonic-ui--small-eye]" />
         </span>
       </span>
     </div>
@@ -148,12 +146,12 @@ import IconInfo from "../../components/icons/IconInfo.astro";
       <label class="text-right min-w-[80px] mr-2 mt-1">Both</label>
       <div class="tcsmd-input flex flex-col gap-1" suffix prefix>
         <input type="text" class="tcsmd-input__inner error" value="Error Input"/>
-        <span class="tcsmd-input--prefix">
-          <IconEmail />
-        </span>
-        <span class="tcsmd-input--suffix">
+        <p class="tcsmd-input--prefix">
+           <span class="icon-[consumer-tonic-ui--small-email]" />
+        </p>
+        <p class="tcsmd-input--suffix">
           <span class="icon-[consumer-tonic-ui--small-eye]" />
-        </span>
+        </p>
         <div class="text-[12px] flex items-center text-red-500 gap-1">
           <IconDanger/>
           <span>Error message</span>
