@@ -870,7 +870,8 @@ svg.circle-progress .progress {
       position: absolute;
       left: 8px;
       text-align: center;
-      color: #c0c4cc;
+      display: block;
+      /* color: #c0c4cc; */
       transition: all .3s;
       pointer-events: none;
     }
@@ -880,7 +881,8 @@ svg.circle-progress .progress {
       height: 100%;
       right: 8px;
       text-align: center;
-      color: #c0c4cc;
+      display: block;
+      /* color: #c0c4cc; */
       transition: all .3s;
       pointer-events: none;
     }
