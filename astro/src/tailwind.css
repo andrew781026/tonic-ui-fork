@@ -10,7 +10,7 @@
 
 .content-panel + .content-panel {
   overflow: auto;
-  height: calc(100vh - var(--sl-nav-height) - (var(--sl-text-5xl) * var(--sl-line-height)) - (2 * var(--sl-nav-pad-x)));
+  height: calc(100vh - var(--sl-nav-height) - var(--sl-mobile-toc-height) - (var(--sl-text-5xl) * var(--sl-line-height)) - (2 * var(--sl-nav-pad-x)));
 }
 
 main[data-pagefind-body] {
@@ -23,3 +23,5 @@ main[data-pagefind-body] {
   height: auto;
 }
 
+
+/* starlight styles : https://github.com/withastro/starlight/blob/main/packages/starlight/style/props.css */
