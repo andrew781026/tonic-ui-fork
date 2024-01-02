@@ -1,20 +1,21 @@
-# Consumer-Tonic-UI
+---
+title: Get Start
+description: A guide for install and sample used consumer-tonic-ui
+---
 
- This is not office for Consumer-Tonic-UI , it's a trial for making a Tailwind plugin for Consumer-Tonic-UI.
+consumer-tonic-ui is a UI framework pre-defined some components that consumer HIE commonly reused
 
-#### How to develop and build
+Such as :
 
-```shell
-npm install && npm run install:doc # install node_modules
-npm run build # build plugin to dist folder
-npm run dev # run doc server
-npm run full # build full css for external use
-```
+1. Button
+2. Typology
+3. Input
 
+...etc.
 
-#### How to use
+## Install
 
-1. You need [Node.js](https://tailwindcss.com/docs/installation) and [Tailwind CSS](https://tailwindcss.com/docs/installation) installed.
+1. You need to pre-setup [Node.js](https://tailwindcss.com/docs/installation) & [Tailwind CSS](https://tailwindcss.com/docs/installation) 
 2. Install consumer-tonic-ui
 ```js
 npm install --save git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git#dist
@@ -22,6 +23,7 @@ npm install --save git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/con
 3.Then add consumer-tonic-ui to your tailwind.config.js files:
 ```js
 module.exports = {
+ 
   plugins: [
     // add component to tailwind css
     require("consumer-tonic-ui")({
@@ -55,7 +57,7 @@ module.exports = {
         idpExtraTheme
       ],
     }),
-
+    
     // add svg to tailwind css
     addDynamicIconSelectors({
       iconSets: {
@@ -66,25 +68,19 @@ module.exports = {
 }
 ```
 
-## Astro Doc - Starlight
 
-- [github page](https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui/)
-- [figma](https://www.figma.com/file/n5hWrEPvvmFWY9Tql47TR4/Consumer-Style-Portal-(draft)?type=design&node-id=0-1&mode=design&t=aQYapAIHNmyFgsta-0)
+## How to use
 
+in Vite project , used the pre-defined classes
 
-## Repos 
+```html
+<div class="container">
+  <h1 class="tcsmd-sys-typ-h1-sb">Typology</h1>
+  <button class="tcsmd-btn-primary">
+    <span class="text-tcsmd-ref-palette-red-70 icon-[consumer-tonic-ui--small-plus] w-4 h-4"></span>
+    Hover
+  </button>
+</div>
+```
 
-listing repo & library branch
-
-![repo-list](./astro/src/assets/screenshot/repo-list.png)
-
-
-## NativeWind - TailwindCss with React Native platforms
-
-- Nativewind - css var is in unreleased v4 😭
-  - https://github.com/marklawlor/nativewind/issues/600
-  - https://www.nativewind.dev/v4/announcement
-
-> we need to wait until v4 release
-
-- [how it works](https://www.nativewind.dev/overview/how-it-works)
+Of course , you can use the feature that tailwind-css supported 
