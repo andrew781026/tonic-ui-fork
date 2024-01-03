@@ -1,6 +1,6 @@
 <template>
   <KeepAlive>
-    <div ref="editor" class="editor"></div>
+    <div ref="editor" class="editor not-content"></div>
   </KeepAlive>
 </template>
 
@@ -13,8 +13,6 @@ import {basicSetup} from 'codemirror';
 import {onMounted, ref} from "vue";
 
 const editor = ref(null);
-
-
 
 onMounted(() => {
 
