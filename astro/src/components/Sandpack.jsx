@@ -62,6 +62,9 @@ const ExpendDiv = props => {
 
 const CustomCodeEditor = props => {
 
+  // const {showCode} = props;
+  const {code, updateCode} = useActiveCode();
+  const [isCopied, updateIsCopied] = useState(false);
   const wrapperRef = useRef(null);
 
   const copier = css`
@@ -70,18 +73,15 @@ const CustomCodeEditor = props => {
     position: absolute;
   `;
 
-  const {showCode} = props;
-  const {code, updateCode} = useActiveCode();
-  const [isCopied, updateIsCopied] = useState(false);
 
-  useLayoutEffect(() => {
-    if (wrapperRef.current) {
-      if (showCode) wrapperRef.current.style.maxHeight = "300px"; // (wrapperRef.current.scrollHeight + 20) + "px";
-      else wrapperRef.current.style.maxHeight = null;
-    }
-  }, [showCode]);
-
-  console.log('updated');
+  // useLayoutEffect(() => {
+  //   if (wrapperRef.current) {
+  //     if (showCode) wrapperRef.current.style.maxHeight = "300px"; // (wrapperRef.current.scrollHeight + 20) + "px";
+  //     else wrapperRef.current.style.maxHeight = null;
+  //   }
+  // }, [showCode]);
+  //
+  // console.log('updated');
 
   return (
     <div
@@ -92,12 +92,12 @@ const CustomCodeEditor = props => {
           position: relative;
 
           // ref : https://www.w3schools.com/howto/howto_js_collapsible.asp
-          max-height: 0;
-          overflow: hidden;
-          transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+          //max-height: 0;
+          //overflow: hidden;
+          //transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         `
       }>
-      <SandpackCodeEditor wrapContent readOnly/>
+      <SandpackCodeEditor readOnly/>
       <div
         className={`${copier} border-tcsmd-ref-palette-gray-40 border p-1 rounded z-40 bg-white hover:bg-tcsmd-ref-palette-gray-20`}
         title="copy">
@@ -159,7 +159,9 @@ export default () => {
       template="react">
       <SandpackLayout>
         <SandpackPreview/>
-        <CustomCodeEditor showCode={showCode}/>
+        {showCode && <CustomCodeEditor
+          // showCode={showCode}
+        />}
         <ExpendDiv showCode={showCode} updateShowCode={updateShowCode}/>
       </SandpackLayout>
     </SandpackProvider>
