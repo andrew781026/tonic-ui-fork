@@ -16,17 +16,18 @@ Such as :
 
 ## Install
 
-1. You need to pre-setup [Node.js](https://tailwindcss.com/docs/installation) & [Tailwind CSS](https://tailwindcss.com/docs/installation) 
+1. You need to pre-setup [Node.js](https://tailwindcss.com/docs/installation) & [Tailwind CSS](https://tailwindcss.com/docs/installation)
 2. Install consumer-tonic-ui
+
 <Tabs>
   <TabItem label="Tailwind">
     ```js
-    npm install --save git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git#dist
+    npm install --save git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git#dist --force
     ```
   </TabItem>
   <TabItem label="Vue">
     ```js
-    npm install --save git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui-vue.git#v0.0.2
+    npm i -s git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui-vue.git#v0.0.2
     ```
   </TabItem>
   <TabItem label="React">
@@ -35,44 +36,50 @@ Such as :
     ```
   </TabItem>
 </Tabs>
-3.Then add consumer-tonic-ui to your tailwind.config.js files:
+
+3. Then add consumer-tonic-ui to your tailwind.config.js files:
 ```js
+// tailwind.config.js
+const {consumerDefaultTheme, consumerDarkTheme, idpExtraTheme} = require('consumer-tonic-ui/themes/themes.js');
+
+const customThemes = [
+  {
+    name: 'dark',
+    selectors: [`[data-theme="dark"]`],
+    mediaQuery: '@media (prefers-color-scheme: dark)',
+    extend: {
+      colors: {
+        "sys-color-surface-bkg": "var(--colors--tcsmd-ref-palette-gray-100)",
+      }
+    },
+  },
+  {
+    name: 'ja',
+    selectors: [`[data-theme="ja"]`, '.ja'],
+    extend: {
+      fontSize: {
+        xs: ['10px', '16px'],
+        sm: ['12px', '20px'],
+        base: ['14px', '24px'],
+        lg: ['16px', '28px'],
+        xl: ['18px', '28px'],
+      },
+    },
+  },
+  consumerDarkTheme,
+  idpExtraTheme
+];
+
 module.exports = {
- 
+
   plugins: [
     // add component to tailwind css
     require("consumer-tonic-ui")({
       inShadowRoot: false, // :root , :host
-      defaultTheme: {extend: customTheme},
-      themes: [
-        {
-          name: 'dark',
-          selectors: [`[data-theme="dark"]`],
-          mediaQuery: '@media (prefers-color-scheme: dark)',
-          extend: {
-            colors: {
-              "sys-color-surface-bkg": "var(--colors--tcsmd-ref-palette-gray-100)",
-            }
-          },
-        },
-        {
-          name: 'ja',
-          selectors: [`[data-theme="ja"]`, '.ja'],
-          extend: {
-            fontSize: {
-              xs: ['10px', '16px'],
-              sm: ['12px', '20px'],
-              base: ['14px', '24px'],
-              lg: ['16px', '28px'],
-              xl: ['18px', '28px'],
-            },
-          },
-        },
-        consumerDarkTheme,
-        idpExtraTheme
-      ],
+      defaultTheme: {extend: consumerDefaultTheme},
+      themes: customThemes
     }),
-    
+
     // add svg to tailwind css
     addDynamicIconSelectors({
       iconSets: {
@@ -98,4 +105,4 @@ in Vite project , used the pre-defined classes
 </div>
 ```
 
-Of course , you can use the feature that tailwind-css supported 
+Of course , you can use the feature that tailwind-css supported
