@@ -6,7 +6,7 @@ import {
   useActiveCode
 } from "@codesandbox/sandpack-react";
 import {css} from "@emotion/css";
-import {useState, useRef, useEffect,useLayoutEffect} from "react";
+import {useState, useRef, useEffect, useLayoutEffect} from "react";
 
 const ExpendDiv = props => {
 
@@ -118,16 +118,19 @@ const CustomCodeEditor = props => {
 
 
 // doc : https://sandpack.codesandbox.io/docs/advanced-usage/components
-export default () => {
+export default props => {
 
   const [showCode, updateShowCode] = useState(false);
+  const {files, activeFile, lang} = props;
 
   // sp-editor
 
   return (
     <SandpackProvider
-      files={{"/button.js": `export default () => <button />`}}
+      template={lang}
+      files={files}
       options={{
+        activeFile,
 
         classes: {
           "sp-wrapper": `${showCode ? 'open' : ''} not-content`,
@@ -148,15 +151,11 @@ export default () => {
         editorHeight: 280, // default - 300
         editorWidthPercentage: 100, // default - 50
 
-
         recompileMode: "delayed",
         recompileDelay: 300,
 
         layout: "preview", // preview | tests | console
-        visibleFiles: ["/App.js", "/button.js", "/index.js"],
-        activeFile: "/button.js",
-      }}
-      template="react">
+      }}>
       <SandpackLayout>
         <SandpackPreview/>
         {showCode && <CustomCodeEditor

@@ -20,6 +20,9 @@ npm i -s @codemirror/state @codemirror/view @replit/codemirror-lang-svelte codem
 npm i @codesandbox/sandpack-react
 ```
 
-<Sandpack client:only="react" />
+<Sandpack client:only="react"
+          files={{"/button.js": `export default () => <button />`}}
+          activeFile="/button.js"
+          lang="react" />
 
 ## [CodeHike](https://github.com/code-hike/codehike)
