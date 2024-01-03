@@ -9,8 +9,7 @@
     "astro:typecheck": "astro check",
     "astro:preview": "astro preview",
     "astro:deploy": "node ghpages.cjs",
-    "astro": "astro",
-    "postinstall": "node postinstall.cjs"
+    "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.3.4",

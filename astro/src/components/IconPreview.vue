@@ -1,34 +1,36 @@
 <template>
-  <span class="tcsmd-input">
+  <div class="not-content">
+      <span class="tcsmd-input">
     Search：<input type="text" class="tcsmd-input__inner" placeholder="search" v-model="search"/>
   </span>
-  <h2 class="text-2xl font-900 mr-auto my-4"> 📃 16px</h2>
-  <div class="select-none flex flex-wrap gap-4 m-4">
-    <div
-      @click="copy(icon.clazz,$event)"
-      v-for="icon in filteredSmallIconNames"
-      :key="icon"
-      class="cursor-pointer min-w-[200px] flex flex-col gap-2 items-center bg-tcsmd-ref-palette-gray-22 hover:bg-tcsmd-ref-palette-gray-26 active:bg-tcsmd-ref-palette-gray-20 p-4 rounded-xl">
-      <span :class="`${icon.clazz} w-4 h-4 text-tcsmd-ref-palette-red-70`"></span>
-      <span>{{ icon.name }}</span>
-    </div>
-  </div>
-
-  <h2 class="text-2xl font-900 mr-auto mb-4"> 📃 24px</h2>
-  <div class="select-none flex flex-wrap gap-8">
-    <div class="flex flex-wrap gap-4 m-4">
+    <h2 class="text-2xl font-900 mr-auto my-4"> 📃 16px</h2>
+    <div class="select-none flex flex-wrap gap-4 m-4">
       <div
         @click="copy(icon.clazz,$event)"
-        v-for="icon in filteredMiddleIconNames"
+        v-for="icon in filteredSmallIconNames"
         :key="icon"
         class="cursor-pointer min-w-[200px] flex flex-col gap-2 items-center bg-tcsmd-ref-palette-gray-22 hover:bg-tcsmd-ref-palette-gray-26 active:bg-tcsmd-ref-palette-gray-20 p-4 rounded-xl">
-        <span :class="`${icon.clazz} w-6 h-6`"></span>
+        <span :class="`${icon.clazz} w-4 h-4 text-tcsmd-ref-palette-red-70`"></span>
         <span>{{ icon.name }}</span>
       </div>
     </div>
-  </div>
 
-  <div class="container" ref="container"></div>
+    <h2 class="text-2xl font-900 mr-auto mb-4"> 📃 24px</h2>
+    <div class="select-none flex flex-wrap gap-8">
+      <div class="flex flex-wrap gap-4 m-4">
+        <div
+          @click="copy(icon.clazz,$event)"
+          v-for="icon in filteredMiddleIconNames"
+          :key="icon"
+          class="cursor-pointer min-w-[200px] flex flex-col gap-2 items-center bg-tcsmd-ref-palette-gray-22 hover:bg-tcsmd-ref-palette-gray-26 active:bg-tcsmd-ref-palette-gray-20 p-4 rounded-xl">
+          <span :class="`${icon.clazz} w-6 h-6`"></span>
+          <span>{{ icon.name }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="container" ref="container"></div>
+  </div>
 </template>
 
 <script setup lang="ts">
