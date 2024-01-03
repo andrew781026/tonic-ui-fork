@@ -4,5 +4,158 @@ description: A guide in my new Starlight docs site.
 template: doc
 ---
 import ButtonDoc from '../../../components/partial/button.astro';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
 
+<div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-2">
+        <div>
+            ## Import
+        </div>
+        <Tabs>
+            <TabItem label="Vue">
+                ```js
+                import { Button } from 'consumer-tonic-ui-vue';
+                ```
+            </TabItem>
+            <TabItem label="React">
+                ```js
+                TBD
+                ```
+            </TabItem>
+        </Tabs>
+    </div>
+    <div class="flex flex-col gap-4">
+        <div>
+            ## Usage
+        </div>
+        <div class="border-[1px] border-gray-500">
+            <button class="tcsmd-btn-default">Default</button>
+        </div>
+        <div>
+            <Tabs>
+                <TabItem label="Tailwind">
+                    ```js
+                    <button class="tcsmd-btn-default">Default</button>
+                    ```
+                </TabItem>
+                <TabItem label="Vue">
+                    ```js
+                    <Button variant="default">Default</Button>
+                    ```
+                </TabItem>
+            </Tabs>
+        </div>
+    </div>
+    <div class="flex flex-col gap-4">
+        <div>
+            ## Variants
+        </div>
+        <div class="border-[1px] border-gray-500">
+            <button class="tcsmd-btn-primary">Primary Button</button>
+            <button class="tcsmd-btn-default">Default Button</button>
+            <button class="tcsmd-btn-emphasis">Emphasis Button</button>
+            <button class="tcsmd-btn-ghost">Ghost Button</button>
+            <button class="tcsmd-text-btn-primary">Text Primary Button</button>
+            <button class="tcsmd-text-btn-default">Text Default Button</button>
+            <button class="tcsmd-text-btn-emphasis">Text Emphasis Button</button>
+        </div>
+        <div>
+            <Tabs>
+                <TabItem label="Tailwind">
+                    ```js
+                    <button class="tcsmd-btn-primary">Primary Button</button>
+                    <button class="tcsmd-btn-default">Default Button</button>
+                    <button class="tcsmd-btn-emphasis">Emphasis Button</button>
+                    <button class="tcsmd-btn-ghost">Ghost Button</button>
+                    <button class="tcsmd-text-btn-primary">Text Primary Button</button>
+                    <button class="tcsmd-text-btn-default">Text Default Button</button>
+                    <button class="tcsmd-text-btn-emphasis">Text Emphasis Button</button>
+                    ```
+                </TabItem>
+                <TabItem label="Vue">
+                    ```js
+                    <Button variant="primary">Primary Button</Button>
+                    <Button variant="default">Default Button</Button>
+                    <Button variant="emphasis">Emphasis Button</Button>
+                    <Button variant="ghost">Ghost Button</Button>
+                    <Button variant="text-primary">Text Primary Button</Button>
+                    <Button variant="text-default">Text Default Button</Button>
+                    <Button variant="text-emphasis">Text Emphasis Button</Button>
+                    ```
+                </TabItem>
+            </Tabs>
+        </div>
+    </div>
+    <div class="flex flex-col gap-4">
+        <div>
+            ## Size
+        </div>
+        <div class="border-[1px] border-gray-500">
+            <button class="tcsmd-btn-primary xs">XS Button</button>
+            <button class="tcsmd-btn-primary small">Small Button</button>
+            <button class="tcsmd-btn-primary">Default Button</button>
+            <button class="tcsmd-btn-primary large">Large Button</button>
+        </div>
+        <div>
+            <Tabs>
+                <TabItem label="Tailwind">
+                    ```js
+                    <button class="tcsmd-btn-primary xs">XS Button</button>
+                    <button class="tcsmd-btn-primary small">Small Button</button>
+                    <button class="tcsmd-btn-primary">Default Button</button>
+                    <button class="tcsmd-btn-primary large">Large Button</button>
+                    ```
+                </TabItem>
+                <TabItem label="Vue">
+                    ```js
+                    <Button variant="primary" size="xs">XS Button</Button>
+                    <Button variant="primary" size="small">Small Button</Button>
+                    <Button variant="primary">Default Button</Button>
+                    <Button variant="primary" size="large">Large Button</Button>
+                    ```
+                </TabItem>
+            </Tabs>
+        </div>
+    </div>
+    <div class="flex flex-col gap-4">
+        <div>
+            ## State
+        </div>
+        <div class="border-[1px] border-gray-500">
+            <button class="tcsmd-btn-primary disabled">Disabled Button</button>
+            <button class="tcsmd-btn-primary loading">
+                <div class="loader">
+                    <svg class="circle-progress">
+                        <circle class="bg" cx="12" cy="12" r="9"></circle>
+                        <circle class="progress" cx="12" cy="12" r="9"></circle>
+                    </svg>
+                </div>
+            </button>
+        </div>
+        <div>
+            <Tabs>
+                <TabItem label="Tailwind">
+                    ```js
+                    <button class="tcsmd-btn-primary disabled">Disabled Button</button>
+                    <button class="tcsmd-btn-primary loading">
+                        <div class="loader">
+                            <svg class="circle-progress">
+                                <circle class="bg" cx="12" cy="12" r="9"></circle>
+                                <circle class="progress" cx="12" cy="12" r="9"></circle>
+                            </svg>
+                        </div>
+                    </button>
+                    ```
+                </TabItem>
+                <TabItem label="Vue">
+                    ```js
+                    <Button variant="primary" disabled>Disabled Button</Button>
+                    <Button variant="primary" loading="true">Loading Button</Button>
+                    ```
+                </TabItem>
+            </Tabs>
+        </div>
+    </div>
+</div>
+<hr/>
 <ButtonDoc/>
