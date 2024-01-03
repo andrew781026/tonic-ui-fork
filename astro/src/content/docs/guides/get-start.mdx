@@ -2,6 +2,7 @@
 title: Get Start
 description: A guide for install and sample used consumer-tonic-ui
 ---
+import { Tabs, TabItem } from '@astrojs/starlight/components';
 
 consumer-tonic-ui is a UI framework pre-defined some components that consumer HIE commonly reused
 
@@ -17,9 +18,23 @@ Such as :
 
 1. You need to pre-setup [Node.js](https://tailwindcss.com/docs/installation) & [Tailwind CSS](https://tailwindcss.com/docs/installation) 
 2. Install consumer-tonic-ui
-```js
-npm install --save git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git#dist
-```
+<Tabs>
+  <TabItem label="Tailwind">
+    ```js
+    npm install --save git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git#dist
+    ```
+  </TabItem>
+  <TabItem label="Vue">
+    ```js
+    npm install --save git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui-vue.git#v0.0.2
+    ```
+  </TabItem>
+  <TabItem label="React">
+    ```js
+    TBD
+    ```
+  </TabItem>
+</Tabs>
 3.Then add consumer-tonic-ui to your tailwind.config.js files:
 ```js
 module.exports = {
