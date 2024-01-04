@@ -240,6 +240,10 @@
   pointer-events: none;
 }
 
+.loader > svg {
+  animation: rotating 2s linear 0s infinite;
+}
+
 svg.circle-progress {
   width: 24px;
   height: 24px;
@@ -256,6 +260,10 @@ svg.circle-progress .progress {
   @apply animate-loader fill-none stroke-current;
   stroke-width: 2px;
   stroke-linecap: round;
-  stroke-dasharray: 60;
-  transform-origin: 50% 50%;
+}
+
+@keyframes rotating {
+  100% {
+    transform: rotate(360deg);
+  }
 }

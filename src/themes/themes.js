@@ -932,14 +932,22 @@ const consumerDefaultTheme = {
   selectors: [':root', ':host'],
   extend: {
     animation: {
-      loader: 'progress-circular-dash 1.4s ease-in-out infinite, progress-circular-rotate 1.4s linear infinite',
+      loader: 'progress-circular-dash 1.5s ease-in-out 0s infinite',
     },
     keyframes: {
       'progress-circular-dash': {
-        '0%': {strokeDashoffset: 10},
-        '30%': {strokeDashoffset: 55},
-        '31%': {strokeDashoffset: 55},
-        '100%': {strokeDashoffset: 10},
+        '0%': {
+          strokeDashoffset: 0,
+          strokeDasharray: '0, 150',
+        },
+        '50%': {
+          strokeDashoffset:  -44,
+          strokeDasharray: '90, 150',
+        },
+        '100%': {
+          strokeDashoffset: -134,
+          strokeDasharray: '90, 150',
+        },
       },
       'progress-circular-rotate': {
         '0%': {transform: 'rotate(0deg)'},
