@@ -50,7 +50,13 @@ export default defineConfig({
           autogenerate: {
             directory: 'reference'
           }
-        }
+        },
+        {
+          label: 'Release',
+          autogenerate: {
+            directory: 'release'
+          }
+        },
       ]
     }),
   ]
