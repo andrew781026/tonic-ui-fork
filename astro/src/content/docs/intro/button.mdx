@@ -159,3 +159,50 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
 </div>
 <hr/>
 <ButtonDoc/>
+
+### Design Token
+
+<details>
+  <summary>
+    <h5 class="contents">How To Use ?</h5>
+  </summary>
+
+  You can override Design Token in config
+
+  ```js
+  // tailwind.config.mjs
+
+  module.exports = {
+
+  plugins: [
+  // add component to tailwind css
+  require("consumer-tonic-ui")({
+  inShadowRoot: false, // :root , :host
+  defaultTheme: {extend: {
+  minWidth: {
+  'btn-xs': '60px',
+  'btn-sm': '80px',
+  'btn-md': '100px',
+  'btn-lg': '100px'
+}
+}}
+})
+  ]
+}
+  ```
+
+</details>
+
+The pre-defined tokens for button export from HIE figma
+
+Below are some sample
+
+| Token Name | Description | Type | Default Value |
+|---|---|---|---|
+| btn-xs | width of xs button | `minWidth` | 60px |
+| btn-sm | width of xs button | `minWidth` | 80px |
+
+:::caution
+More pre-defined tokens please take a look of [Defined](https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-design-system/blob/web-dist/consumer_buttons.json) or [Figma](https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=35951-10712&mode=design&t=ldjOzrnvDwkiroPn-0)
+:::
+

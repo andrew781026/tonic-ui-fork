@@ -76,7 +76,7 @@ module.exports = {
     // add component to tailwind css
     require("consumer-tonic-ui")({
       inShadowRoot: false, // :root , :host
-      defaultTheme: {extend: consumerDefaultTheme},
+      defaultTheme: {extend: consumerDefaultTheme.extend},
       themes: customThemes
     }),
 
