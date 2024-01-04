@@ -17,3 +17,8 @@ you can add component .scss file in [/src/component folder](https://adc.github.t
 which it can use nest css feature parsed by [postcss-nested](https://www.npmjs.com/package/postcss-nested)
 
 ( Note : it didn't a real scss , it only can use css-nested )
+
+
+### Add Consumer-Tonic-UI Icon
+
+add icon svg to [/src/svg folder](https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui/tree/dev/src/svg)
