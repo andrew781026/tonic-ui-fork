@@ -1,7 +1,59 @@
 ---
 title: Typology
 description: font-size . font-weight ...etc. setting
+editUrl: https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui/blob/dev/astro/src/content/docs/intro/typology.mdx
 ---
-import TypologyDoc from "../../../components/partial/typology.astro";
 
-<TypologyDoc />
+export const fontSizes = [
+  'text-tcsmd-ref-typesetting-font-size-7xl',
+  'text-tcsmd-ref-typesetting-font-size-6xl',
+  'text-tcsmd-ref-typesetting-font-size-5xl',
+  'text-tcsmd-ref-typesetting-font-size-4xl',
+  'text-tcsmd-ref-typesetting-font-size-3xl',
+  'text-tcsmd-ref-typesetting-font-size-2xl',
+  'text-tcsmd-ref-typesetting-font-size-xl',
+  'text-tcsmd-ref-typesetting-font-size-lg',
+  'text-tcsmd-ref-typesetting-font-size-md',
+  'text-tcsmd-ref-typesetting-font-size-sm',
+  'text-tcsmd-ref-typesetting-font-size-xs',
+  'tcsmd-sys-typ-h1-r',
+  'tcsmd-sys-typ-h1-sb',
+  'tcsmd-sys-typ-h1-b',
+  'tcsmd-sys-typ-h2-r',
+  'tcsmd-sys-typ-h2-sb',
+  'tcsmd-sys-typ-h2-b',
+  'tcsmd-sys-typ-h3-r',
+  'tcsmd-sys-typ-h3-sb',
+  'tcsmd-sys-typ-h3-b',
+  'tcsmd-sys-typ-h4-r',
+  'tcsmd-sys-typ-h4-sb',
+  'tcsmd-sys-typ-h4-b',
+  'tcsmd-sys-typ-h5-r',
+  'tcsmd-sys-typ-h5-sb',
+  'tcsmd-sys-typ-h5-b',
+  'tcsmd-sys-typ-h6-r',
+  'tcsmd-sys-typ-h6-sb',
+  'tcsmd-sys-typ-h6-b',
+  'tcsmd-sys-typ-body20-r',
+  'tcsmd-sys-typ-body20-sb',
+  'tcsmd-sys-typ-body20-b',
+  'tcsmd-sys-typ-body18-r',
+  'tcsmd-sys-typ-body18-sb',
+  'tcsmd-sys-typ-body18-b',
+  'tcsmd-sys-typ-body16-r',
+  'tcsmd-sys-typ-body16-sb',
+  'tcsmd-sys-typ-body16-b',
+  'tcsmd-sys-typ-body14-r',
+  'tcsmd-sys-typ-body14-sb',
+  'tcsmd-sys-typ-body14-b',
+  'tcsmd-sys-typ-body12-r',
+  'tcsmd-sys-typ-body12-sb',
+  'tcsmd-sys-typ-body12-b',
+];
+
+<main id="main" class="min-h-screen content-center p-8 not-content">
+  <div class="flex flex-col gap-4">
+    {fontSizes.map(fontSize => <span class={fontSize}>{fontSize}</span>)}
+  </div>
+</main>
+

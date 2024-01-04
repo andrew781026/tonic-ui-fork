@@ -1,10 +1,29 @@
 ---
 title: Color Palette
 description: listing Color Palette
+editUrl: https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui/blob/dev/astro/src/content/docs/intro/color.mdx
 ---
-import ColorPalette from '../../../components/partial/color.astro';
+import {getHex} from '../../../utils/colorUtil.js';
 import colors from 'consumer-tonic-design-system/default_grouped_design_token.json';
 
+export const textColorSwitcher = l => l > 0.65 ? 'text-black' : 'text-white'
+
 <main class="not-content">
-  <ColorPalette colors={colors}/>
+  <div class="flex flex-wrap gap-4">
+    {Object.entries(colors).map(([key, value]) => (
+      <div class="flex flex-col w-[360px] mix-blend-difference">
+        <div class={`text-2xl font-900 w-full p-3 uppercase bg-${value[0]?.colorName} ${ textColorSwitcher(value[0]?.hsl?.l) }`}>
+          {key}
+        </div>
+        {
+          value.map(item => (
+            <div class={`flex w-full p-3 bg-${item.colorName} ${ textColorSwitcher(item?.hsl?.l) }`}>
+              <p class="flex-1 m-0">{item.colorName}</p>
+              <p class="m-0 text-right" style="max-width:50%">{getHex(item.color)}</p>
+            </div>
+          ))
+        }
+      </div>
+    ))}
+  </div>
 </main>
