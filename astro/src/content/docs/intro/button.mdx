@@ -122,9 +122,13 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
         <div>
             ## State
         </div>
-        <div class="border-[1px] border-gray-500">
+        <div class="flex border-[1px] border-gray-500">
+          <span class="cursor-not-allowed">
             <button class="tcsmd-btn-primary disabled">Disabled Button</button>
+          </span>
+          <span class="cursor-wait not-content">
             <button class="tcsmd-btn-primary loading">
+              loading
                 <div class="loader">
                     <svg class="circle-progress">
                         <circle class="bg" cx="12" cy="12" r="9"></circle>
@@ -132,12 +136,16 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
                     </svg>
                 </div>
             </button>
+          </span>
         </div>
         <div>
             <Tabs>
                 <TabItem label="Tailwind">
                     ```js
+                  <span class="cursor-not-allowed">
                     <button class="tcsmd-btn-primary disabled">Disabled Button</button>
+                  </span>
+                  <span class="cursor-wait">
                     <button class="tcsmd-btn-primary loading">
                         <div class="loader">
                             <svg class="circle-progress">
@@ -146,6 +154,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
                             </svg>
                         </div>
                     </button>
+                  </span>
                     ```
                 </TabItem>
                 <TabItem label="Vue">
