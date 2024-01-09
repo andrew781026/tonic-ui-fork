@@ -16,7 +16,7 @@
   @apply relative border-2 min-h-btn-md min-w-btn-md rounded-sm text-lg flex items-center justify-center cursor-pointer;
   padding: 7px 24px; /* height = 40px */
   gap: 8px;
-  margin: 4px;
+  /* margin: 4px; */
 
   &.rounded {
     @apply rounded-full;
@@ -44,7 +44,7 @@
   padding: 10px 24px; /* height = 40px */
   gap: 8px;
 
-  margin: 4px;
+  /* margin: 4px; */
 
   &.rounded {
     @apply rounded-full;
