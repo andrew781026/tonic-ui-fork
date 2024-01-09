@@ -27,12 +27,12 @@
     padding: 0 16px; /* height = 24px */
   }
 
-  &.small {
+  &.small, &.sm {
     @apply min-h-btn-sm min-w-btn-sm text-base;
     padding: 4px 24px; /* height = 32px */
   }
 
-  &.large {
+  &.large, &.lg {
     @apply min-h-btn-lg min-w-btn-lg;
     padding: 17px 40px; /* height = 60px */
   }
@@ -55,12 +55,12 @@
     padding: 0 16px; /* height = 24px */
   }
 
-  &.small {
+  &.small, &.sm {
     @apply min-h-btn-sm min-w-btn-sm text-base;
     padding: 4px 24px; /* height = 32px */
   }
 
-  &.large {
+  &.large, &.lg {
     @apply min-h-btn-lg min-w-btn-lg;
     padding: 17px 40px; /* height = 60px */
   }
