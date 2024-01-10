@@ -7,7 +7,7 @@ import react from "@astrojs/react";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://adc.github.trendmicro.com',
-  base: '/pages/Consumer-Frontend/consumer-tonic-ui',
+  base: '/pages/Consumer-Frontend/consumer-tonic-ui/',
   integrations: [
     react(),
     vue(),
