@@ -931,6 +931,33 @@ const consumerDefaultTheme = {
   name: 'consumerDefault',
   selectors: [':root', ':host'],
   extend: {
+    screens: {
+      /**
+       * Default Breakpoint prefix  Minimum width CSS
+       * sm  640px  @media (min-width: 640px) { ... }
+       * md  768px  @media (min-width: 768px) { ... }
+       * lg  1024px  @media (min-width: 1024px) { ... }
+       * xl  1280px  @media (min-width: 1280px) { ... }
+       * 2xl  1536px  @media (min-width: 1536px) { ... }
+       */
+
+      // phone => @media (max-width: 640px) { ... }
+
+      'tablet': '640px',
+      // 平板 ( 640 ~ 800 ) => @media (min-width: 640px) { ... }
+
+      'laptop': '800px',
+      // 筆電 ( 800 ~ 960 ) => @media (min-width: 800px) { ... }
+
+      'desktop': '960px',
+      // 桌機 ( 960 ~ 1280 ) => @media (min-width: 960px) { ... }
+
+      'lg-desktop': '1280px',
+      // 大桌機 ( 1280 ~ 1440 ) => @media (min-width: 1280px) { ... }
+
+      'tv': '1440px',
+      // 電視 ( 1440+ ) => @media (min-width: 1440px) { ... }
+    },
     animation: {
       loader: 'progress-circular-dash 1.5s ease-in-out 0s infinite',
     },
