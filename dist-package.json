@@ -3,20 +3,23 @@
   "version": "0.0.7",
   "description": "tonic-ui for tailwind version",
   "main": "index.js",
+  "author": {
+    "name": "andrew",
+    "email": "andrew_wang@trendmicro.com"
+  },
   "scripts": {
     "dev": "echo 'dev'"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrew781026/tonic-ui-fork.git"
+    "url": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-design-system.git"
   },
   "keywords": [],
-  "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andrew781026/tonic-ui-fork/issues"
+    "url": "https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui/issues"
   },
-  "homepage": "https://github.com/andrew781026/tonic-ui-fork#readme",
+  "homepage": "https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui/blob/dev/README.md",
   "dependencies": {
     "consumer-tonic-design-system": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-design-system.git#v0.0.4"
   },
