@@ -23,7 +23,7 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
             </TabItem>
             <TabItem label="React">
                 ```js
-                TBD
+                import { Button } from 'consumer-tonic-ui-react';
                 ```
             </TabItem>
         </Tabs>
@@ -43,6 +43,11 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
                     ```
                 </TabItem>
                 <TabItem label="Vue">
+                    ```js
+                    <Button variant="default">Default</Button>
+                    ```
+                </TabItem>
+                <TabItem label="React">
                     ```js
                     <Button variant="default">Default</Button>
                     ```
@@ -87,6 +92,17 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
                     <Button variant="text-emphasis">Text Emphasis Button</Button>
                     ```
                 </TabItem>
+                <TabItem label="React">
+                    ```js
+                    <Button variant="primary">Primary Button</Button>
+                    <Button variant="default">Default Button</Button>
+                    <Button variant="emphasis">Emphasis Button</Button>
+                    <Button variant="ghost">Ghost Button</Button>
+                    <Button variant="text-primary">Text Primary Button</Button>
+                    <Button variant="text-default">Text Default Button</Button>
+                    <Button variant="text-emphasis">Text Emphasis Button</Button>
+                    ```
+                </TabItem>
             </Tabs>
         </div>
     </div>
@@ -111,6 +127,14 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
                     ```
                 </TabItem>
                 <TabItem label="Vue">
+                    ```js
+                    <Button variant="primary" size="xs">XS Button</Button>
+                    <Button variant="primary" size="small">Small Button</Button>
+                    <Button variant="primary">Default Button</Button>
+                    <Button variant="primary" size="large">Large Button</Button>
+                    ```
+                </TabItem>
+                <TabItem label="React">
                     ```js
                     <Button variant="primary" size="xs">XS Button</Button>
                     <Button variant="primary" size="small">Small Button</Button>
@@ -164,6 +188,12 @@ import { Tabs, TabItem } from '@astrojs/starlight/components';
                     ```js
                     <Button variant="primary" disabled>Disabled Button</Button>
                     <Button variant="primary" loading="true">Loading Button</Button>
+                    ```
+                </TabItem>
+                <TabItem label="React">
+                    ```js
+                    <Button variant="primary" disabled>Disabled Button</Button>
+                    <Button variant="primary" loading>Loading Button</Button>
                     ```
                 </TabItem>
             </Tabs>
