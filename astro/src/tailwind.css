@@ -8,20 +8,24 @@
   }
 }
 
+@media (min-width: 50rem) {
+  .sidebar-pane {
+    border: none;
+  }
+}
+
+body {
+  background-color: var(--colors--tcsmd-ref-palette-gray-20);
+}
+
 .content-panel + .content-panel {
   overflow: auto;
+  /*scroll-behavior: smooth;*/
   height: calc(100vh - var(--sl-nav-height) - var(--sl-mobile-toc-height) - (var(--sl-text-5xl) * var(--sl-line-height)) - (2 * var(--sl-nav-pad-x)));
 }
 
 main[data-pagefind-body] {
   padding-bottom: 0;
 }
-
-.sl-markdown-content :is(img):not(:where(.not-content *)) {
-  display: inline-block;
-  max-width: 100%;
-  height: auto;
-}
-
 
 /* starlight styles : https://github.com/withastro/starlight/blob/main/packages/starlight/style/props.css */
