@@ -31,19 +31,6 @@ jobs:
         id: tag
         run: echo "TAG=v$(node -e "console.log(require('./dist-package.json').version)")-${{ steps.extract_branch.outputs.branch }}.${{ github.run_number }}" >> $GITHUB_OUTPUT
 
-      - name: Setup SSH Permission
-        uses: actions/ssh-config@v1
-        with:
-          config_dir: .ssh
-          ssh_key: ${{ secrets.SERVICE_ACCOUNT_SSH_KEY }}
-
-      - name: Default SSH Config Setting
-        shell: bash
-        run: |
-          touch ~/.ssh/config
-          printf "Host *\n\tStrictHostKeyChecking no\n\tIdentityFile ${{ env.SSH_KEY_FILE }}\n\tLogLevel ERROR\n" >> ~/.ssh/config
-          cat ~/.ssh/config
-
       - name: build dist
         run: |
           npm i
@@ -80,19 +67,6 @@ jobs:
 
       - name: Check Node version
         run: node -v
-
-      - name: Setup SSH Permission
-        uses: actions/ssh-config@v1
-        with:
-          config_dir: .ssh
-          ssh_key: ${{ secrets.SERVICE_ACCOUNT_SSH_KEY }}
-
-      - name: Default SSH Config Setting
-        shell: bash
-        run: |
-          touch ~/.ssh/config
-          printf "Host *\n\tStrictHostKeyChecking no\n\tIdentityFile ${{ env.SSH_KEY_FILE }}\n\tLogLevel ERROR\n" >> ~/.ssh/config
-          cat ~/.ssh/config
 
       - name: build astro
         run: |
