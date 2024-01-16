@@ -14,6 +14,40 @@ Add or modify `.scss` file in `/src/components` folder
 
 note : you can only use nested css feature in .scss file
 
+> Local Preview
+
+please change `astro/tailwind.config.cjs` file require local plugin
+
+```diff
+module.exports = {
+  mode: 'jit',
+  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+
+  // use safelist to avoid purging tonic-ui classes
+  safelist: [
+    ...bgColors,
+    ...iconNames,
+  ],
+
+  theme: {
+    extend: {},
+  },
+  plugins: [
+    starlightPlugin(),
+
+-   require('consumer-tonic-ui')(themerExampleConfig),
++   require('../dist/index.js')(themerExampleConfig),
+
+    // add svg to tailwind css
+    addDynamicIconSelectors({
+      iconSets: {
+        'consumer-tonic-ui': require('consumer-tonic-ui/iconSet.json'),
+      },
+    })
+  ],
+}
+```
+
 #### How to use
 
 Look [Get Started](https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui/guides/get-start/)
