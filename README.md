@@ -10,7 +10,7 @@ npm run build # build plugin to dist folder
 npm run dev # run doc server
 ```
 
-Add or modify `.scss` file in `/src/components` folder
+Add or modify `.nested.css` file in `/src/components` folder
 
 note : you can only use nested css feature in .scss file
 
