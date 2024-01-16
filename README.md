@@ -1,6 +1,6 @@
 # Consumer-Tonic-UI
 
- This is not office for Consumer-Tonic-UI , it's a trial for making a Tailwind plugin for Consumer-Tonic-UI.
+ This is non-official for Consumer-Tonic-UI , it's a trial for making a Tailwind plugin for Consumer-Tonic-UI.
 
 #### How to develop and build
 
@@ -8,69 +8,20 @@
 npm install && npm run install:doc # install node_modules
 npm run build # build plugin to dist folder
 npm run dev # run doc server
-npm run full # build full css for external use
 ```
 
+Add or modify `.scss` file in `/src/components` folder
+
+note : you can only use nested css feature in .scss file
 
 #### How to use
 
-1. You need [Node.js](https://tailwindcss.com/docs/installation) and [Tailwind CSS](https://tailwindcss.com/docs/installation) installed.
-2. Install consumer-tonic-ui
-```js
-npm install --save git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git#dist
-```
-3.Then add consumer-tonic-ui to your tailwind.config.js files:
-```js
-module.exports = {
-  plugins: [
-    // add component to tailwind css
-    require("consumer-tonic-ui")({
-      inShadowRoot: false, // :root , :host
-      defaultTheme: {extend: customTheme},
-      themes: [
-        {
-          name: 'dark',
-          selectors: [`[data-theme="dark"]`],
-          mediaQuery: '@media (prefers-color-scheme: dark)',
-          extend: {
-            colors: {
-              "sys-color-surface-bkg": "var(--colors--tcsmd-ref-palette-gray-100)",
-            }
-          },
-        },
-        {
-          name: 'ja',
-          selectors: [`[data-theme="ja"]`, '.ja'],
-          extend: {
-            fontSize: {
-              xs: ['10px', '16px'],
-              sm: ['12px', '20px'],
-              base: ['14px', '24px'],
-              lg: ['16px', '28px'],
-              xl: ['18px', '28px'],
-            },
-          },
-        },
-        consumerDarkTheme,
-        idpExtraTheme
-      ],
-    }),
-
-    // add svg to tailwind css
-    addDynamicIconSelectors({
-      iconSets: {
-        'consumer-tonic-ui': require('consumer-tonic-ui/iconSet.json'),
-      },
-    })
-  ],
-}
-```
+Look [Get Started](https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui/guides/get-start/)
 
 ## Astro Doc - Starlight
 
 - [github page](https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui/)
 - [figma](https://www.figma.com/file/n5hWrEPvvmFWY9Tql47TR4/Consumer-Style-Portal-(draft)?type=design&node-id=0-1&mode=design&t=aQYapAIHNmyFgsta-0)
-
 
 ## Repos 
 
