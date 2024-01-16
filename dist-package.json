@@ -1,6 +1,6 @@
 {
-  "name": "consumer-tonic-ui",
-  "version": "0.0.7",
+  "name": "@consumer-tonic-ui/tailwind",
+  "version": "0.0.1",
   "description": "tonic-ui for tailwind version",
   "main": "index.js",
   "author": {
