@@ -23,7 +23,7 @@
 <script setup lang="ts">
 import {computed, ref} from "vue";
 import {getHex} from '@/utils/colorUtil.js';
-import colors from 'consumer-tonic-design-system/default_grouped_design_token.json';
+import colors from '@consumer-tonic-ui/design-system/default_grouped_design_token.json';
 
 const textColorSwitcher = l => l > 0.65 ? 'text-black' : 'text-white';
 

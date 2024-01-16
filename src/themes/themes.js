@@ -1,8 +1,8 @@
-const gen_default_theme = require('consumer-tonic-design-system/default_gen_default_theme.json');
-const default_button_gen_float = require('consumer-tonic-design-system/default_button_gen_float.json');
-const default_button_gen_default_theme = require('consumer-tonic-design-system/default_button_gen_default_theme.json');
-const default_gen_float = require('consumer-tonic-design-system/default_gen_float.json');
-const dark_default_theme = require('consumer-tonic-design-system/dark_gen_default_theme.json');
+const gen_default_theme = require('@consumer-tonic-ui/design-system/default_gen_default_theme.json');
+const default_button_gen_float = require('@consumer-tonic-ui/design-system/default_button_gen_float.json');
+const default_button_gen_default_theme = require('@consumer-tonic-ui/design-system/default_button_gen_default_theme.json');
+const default_gen_float = require('@consumer-tonic-ui/design-system/default_gen_float.json');
+const dark_default_theme = require('@consumer-tonic-ui/design-system/dark_gen_default_theme.json');
 
 const pwmTheme = {
   name: 'pwm',

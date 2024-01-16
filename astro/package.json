@@ -33,7 +33,6 @@
     "@types/react-dom": "^18.2.18",
     "astro": "^4.0.1",
     "codemirror": "^6.0.1",
-    "consumer-tonic-ui-vue": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui-vue.git#v0.0.2",
     "nanostores": "^0.9.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -44,6 +43,7 @@
   },
   "devDependencies": {
     "@iconify/tailwind": "^0.1.4",
+    "consumer-tonic-ui-vue": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui-vue.git#v0.0.2",
     "consumer-tonic-ui": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-ui.git#dist",
     "gh-pages": "^6.0.0"
   }

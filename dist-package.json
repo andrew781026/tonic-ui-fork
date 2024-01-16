@@ -1,6 +1,6 @@
 {
   "name": "@consumer-tonic-ui/tailwind",
-  "version": "0.0.1",
+  "version": "0.0.1-alpha.1",
   "description": "tonic-ui for tailwind version",
   "main": "index.js",
   "author": {
@@ -14,14 +14,17 @@
     "type": "git",
     "url": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-design-system.git"
   },
-  "keywords": [],
+  "keywords": [
+    "tailwind",
+    "consumer-tonic-ui"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui/issues"
   },
   "homepage": "https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui/blob/dev/README.md",
   "dependencies": {
-    "consumer-tonic-design-system": "git+ssh://git@adc.github.trendmicro.com:Consumer-Frontend/consumer-tonic-design-system.git#v0.0.4"
+    "@consumer-tonic-ui/design-system": "0.0.1"
   },
   "peerDependencies": {
     "autoprefixer": "^10.0.2",
