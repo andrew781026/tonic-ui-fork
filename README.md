@@ -50,7 +50,7 @@ module.exports = {
 
 #### How to use
 
-Look [Get Started](https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui/guides/get-start/)
+Look [Get Started](https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui/guides/get-started/)
 
 ## Astro Doc - Starlight
 

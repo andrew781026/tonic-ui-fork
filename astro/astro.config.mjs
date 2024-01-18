@@ -48,7 +48,7 @@ export default defineConfig({
             // Each item here is one entry in the navigation menu.
             {
               label: 'Get Start',
-              link: '/guides/get-start/'
+              link: '/guides/get-started/'
             }
           ]
         },
