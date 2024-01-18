@@ -47,14 +47,14 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 #          TAG: ${{ steps.tag.outputs.TAG }}
 
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v3
+      - name: Setup .npmrc file to publish to npm
+        uses: actions/setup-node@v3
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
 
-      # version specific version - https://stackoverflow.com/questions/48423867/npm-version-update-to-specific-version
-      - run: |
+      - name: Setup specific version # version specific version - https://stackoverflow.com/questions/48423867/npm-version-update-to-specific-version
+        run: |
           cd dist
           npm version "0.0.8-alpha.${{ github.run_number }}" --no-git-tag-version
           npm publish --access=public
