@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@iconify/tailwind": "^0.1.4",
+    "@consumer-tonic-ui/vue": "0.0.2",
     "@consumer-tonic-ui/tailwind": "latest",
     "gh-pages": "^6.0.0"
   }
