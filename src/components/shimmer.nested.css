@@ -1,0 +1,32 @@
+/* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=28956-28814&mode=design&t=C0l1AlYMlR79X0v8-0 */
+
+.tcsmd-shimmer {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, .04);
+  mask-image: radial-gradient(#fff, #000);
+  border-radius: 8px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 0;
+    background: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, .4), transparent);
+    animation: skeleton-animate 1.75s linear infinite
+  }
+}
+
+
+@keyframes skeleton-animate {
+  0% {
+    transform: translateX(-100%)
+  }
+
+  100% {
+    transform: translateX(100%)
+  }
+}
