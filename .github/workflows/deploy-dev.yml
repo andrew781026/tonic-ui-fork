@@ -52,6 +52,7 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
+      # version update - https://stackoverflow.com/questions/39206082/npm-version-to-add-alpha-postfix
       - run: |
           cd dist
           npm version prerelease --no-git-tag-version
