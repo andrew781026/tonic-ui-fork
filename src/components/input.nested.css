@@ -3,91 +3,46 @@
 .form-control {
 
   label.required::after {
+    @apply text-tcsmd-ref-palette-red-60;
     content: '*';
-    color: #ed0008;
   }
 
 }
 
 .tcsmd-input {
-  position: relative;
-
-  &[suffix] .tcsmd-input__inner {
-    padding-right: 30px;
-  }
-
-  &[prefix] .tcsmd-input__inner {
-    padding-left: 30px;
+  .tcsmd-input__wrapper {
+    @apply relative;
   }
 
   .tcsmd-input__inner {
-
-    ~ .tcsmd-input--prefix {
-      position: absolute;
-      left: 8px;
-      text-align: center;
-      display: block;
+    ~ .tcsmd-input--prefix,
+    ~ .tcsmd-input--suffix {
+      @apply absolute top-1/2 transform -translate-y-1/2 text-center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       /* color: #c0c4cc; */
       transition: all .3s;
       pointer-events: none;
     }
 
-    ~ .tcsmd-input--suffix {
-      position: absolute;
-      height: 100%;
-      right: 8px;
-      text-align: center;
-      display: block;
-      /* color: #c0c4cc; */
-      transition: all .3s;
-      pointer-events: none;
-    }
-
-    &.xs ~ .tcsmd-input--prefix {
-      top: 5px;
-    }
-
-    &.xs ~ .tcsmd-input--suffix {
-      top: 5px;
-    }
-
     ~ .tcsmd-input--prefix {
-      top: 8px;
+      @apply left-2;
     }
 
     ~ .tcsmd-input--suffix {
-      top: 8px;
-    }
-
-    &.md ~ .tcsmd-input--prefix {
-      top: 8px;
-    }
-
-    &.md ~ .tcsmd-input--suffix {
-      top: 8px;
-    }
-
-    &.lg ~ .tcsmd-input--prefix {
-      top: 12px;
-    }
-
-    &.lg ~ .tcsmd-input--suffix {
-      top: 12px;
+      @apply right-2;
     }
   }
 
   .tcsmd-input__inner {
+    @apply rounded-sm border caret-tcsmd-ref-palette-gray-90 border-tcsmd-ref-palette-gray-50 text-tcsmd-ref-palette-gray-90;
     /* enabled . filled */
     min-width: 280px;
-    border-width: 1px;
-    border-color: #8e8e8e;
-    border-style: solid;
-    border-radius: 4px;
-    color: #222222;
-    padding: 3px 8px;
+    padding: 6px 8px;
     font-size: 14px;
     line-height: 16px;
-    min-height: 32px;
+    height: 32px;
 
     &::placeholder {
       @apply text-tcsmd-ref-palette-gray-50;
@@ -102,45 +57,76 @@
     }
 
     &.error {
-      border-color: #ed0008;
+      @apply border-tcsmd-ref-palette-red-60;
 
       &:hover, &.hover {
         border-color: #b00c0c;
       }
 
       &:focus, &.focus {
-        border-color: #ed0008;
-        outline: 0;
-        box-shadow: 0 0 0 0.2rem rgba(243, 20, 20, 0.25);
+        @apply outline outline-1 outline-tcsmd-ref-palette-red-60 border-tcsmd-ref-palette-red-60;
+        /* box-shadow: 0 0 0 0.2rem rgba(243, 20, 20, 0.25); */
       }
     }
 
     &:hover, &.hover {
-      border-color: #0074e8;
+      @apply border-tcsmd-ref-palette-blue-60;
     }
 
     &.loading {
-
+      @apply outline outline-1 outline-tcsmd-ref-palette-blue-60 border-tcsmd-ref-palette-blue-60;
     }
 
     &:focus, &.focus {
-      outline: 0;
-      border-color: #0074e8;
-      caret-color: #0074e8; /* 閃爍的游標顏色 */
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+      @apply outline outline-1 outline-tcsmd-ref-palette-blue-60 border-tcsmd-ref-palette-blue-60;
+      /* box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); */
     }
 
-    &.xs {
-      min-height: 24px;
+    &.sm {
+      padding: 3px 8px;
+      height: 24px;
     }
 
     &.md {
-      min-height: 32px;
+      height: 32px;
     }
 
     &.lg {
-      min-height: 40px;
+      height: 40px;
+      font-size: 16px;
     }
+  }
+
+  &[suffix] .tcsmd-input__inner {
+    padding-right: 32px;
+  }
+
+  &[prefix] .tcsmd-input__inner {
+    padding-left: 32px;
+  }
+}
+
+svg.circle-progress {
+  animation: rotating 2s linear 0s infinite;
+  width: 16px;
+  height: 16px;
+}
+
+svg.circle-progress .bg {
+  @apply stroke-tcsmd-ref-palette-gray-30;
+  fill: none;
+  stroke-width: 2px;
+}
+
+svg.circle-progress .progress {
+  @apply animate-loader fill-none stroke-tcsmd-ref-palette-blue-60;
+  stroke-width: 2px;
+  stroke-linecap: round;
+}
+
+@keyframes rotating {
+  100% {
+    transform: rotate(360deg);
   }
 }
 

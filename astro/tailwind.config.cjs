@@ -301,7 +301,7 @@ module.exports = {
     starlightPlugin(),
 
     // require('tailwindcss-themer')(themerExampleConfig),
-    require('../dist/index')(themerExampleConfig),
+    require('@consumer-tonic-ui/tailwind')(themerExampleConfig),
 
     // add svg to tailwind css
     addDynamicIconSelectors({

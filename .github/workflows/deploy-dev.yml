@@ -52,7 +52,10 @@ jobs:
         with:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: cd dist && npm publish --access=public
+      - run: |
+          cd dist
+          npm version prerelease --no-git-tag-version
+          npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   ghpage:
