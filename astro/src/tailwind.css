@@ -28,4 +28,8 @@ main[data-pagefind-body] {
   padding-bottom: 0;
 }
 
+.header {
+  background-color: var(--sl-color-bg-sidebar);
+}
+
 /* starlight styles : https://github.com/withastro/starlight/blob/main/packages/starlight/style/props.css */

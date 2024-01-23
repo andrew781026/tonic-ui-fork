@@ -29,16 +29,9 @@ export default defineConfig({
         github: 'https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui/tree/dev'
       },
       components: {
-        // Override the default `PageSidebar` component.
-        PageFrame: './src/components/override/PageFrame.astro',
-        // Header: './src/components/override/Header.astro',
-        Search: './src/components/override/Search.astro',
-        Sidebar: './src/components/override/Sidebar.astro',
-        TwoColumnContent: './src/components/override/TwoColumnContent.astro',
-        PageSidebar: './src/components/override/PageSidebar.astro',
-        ContentPanel: './src/components/override/ContentPanel.astro',
-        MarkdownContent: './src/components/override/MarkdownContent.astro',
-        PageTitle: './src/components/override/PageTitle.astro',
+        // Override the default `XXX` component.
+        // PageFrame: './src/components/override/PageFrame.astro',
+        Header: './src/components/override/Header.astro',
         SiteTitle: './src/components/override/SiteTitle.astro',
       },
       sidebar: [
