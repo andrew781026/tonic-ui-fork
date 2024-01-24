@@ -962,6 +962,11 @@ const consumerDefaultTheme = {
       loader: 'progress-circular-dash 1.5s ease-in-out 0s infinite',
     },
     keyframes: {
+      'rotating': {
+        '100%': {
+          transform: 'rotate(360deg)'
+        },
+      },
       'progress-circular-dash': {
         '0%': {
           strokeDashoffset: 0,

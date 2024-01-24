@@ -105,28 +105,3 @@
     padding-left: 32px;
   }
 }
-
-svg.circle-progress {
-  animation: rotating 2s linear 0s infinite;
-  width: 16px;
-  height: 16px;
-}
-
-svg.circle-progress .bg {
-  @apply stroke-tcsmd-ref-palette-gray-30;
-  fill: none;
-  stroke-width: 2px;
-}
-
-svg.circle-progress .progress {
-  @apply animate-loader fill-none stroke-tcsmd-ref-palette-blue-60;
-  stroke-width: 2px;
-  stroke-linecap: round;
-}
-
-@keyframes rotating {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
