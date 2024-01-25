@@ -3,21 +3,17 @@ import {
   cleanupSVG,
   runSVGO,
   parseColorsSync,
-  isEmptyColor, IconSet,
+  isEmptyColor,
+  IconSet,
+  blankIconSet,
 } from '@iconify/tools';
 import * as fs from 'fs';
 import * as path from 'path';
 
-// Import icons
-const iconSet = importDirectorySync('src/svg/general/16px', {
-  prefix: 'consumer-tonic-ui',
-});
+const emptyIconSet = blankIconSet('consumer-tonic-ui');
 
-const iconSet2 = importDirectorySync('src/svg/general/24px', {
-  prefix: 'consumer-tonic-ui',
-});
-
-const forEachIconSet = (originIconSet: IconSet, targetIconSet: IconSet, namePrefix: string) => {
+// Validate, clean up, fix palette and optimise
+const forEachIconSet = (originIconSet: IconSet, targetIconSet: IconSet, namePrefix: string, isColorful: boolean = false) => {
 
   originIconSet.forEachSync((name, type) => {
     if (type !== 'icon') {
@@ -38,14 +34,16 @@ const forEachIconSet = (originIconSet: IconSet, targetIconSet: IconSet, namePref
 
       // Assume icon is monotone: replace color with currentColor, add if missing
       // If icon is not monotone, remove this code
-      parseColorsSync(svg, {
-        defaultColor: 'currentColor',
-        callback: (attr, colorStr, color) => {
-          return !color || isEmptyColor(color)
-            ? colorStr
-            : 'currentColor';
-        },
-      });
+      if (!isColorful) {
+        parseColorsSync(svg, {
+          defaultColor: 'currentColor',
+          callback: (attr, colorStr, color) => {
+            return !color || isEmptyColor(color)
+              ? colorStr
+              : 'currentColor';
+          },
+        });
+      }
 
       // Optimise
       runSVGO(svg);
@@ -61,18 +59,21 @@ const forEachIconSet = (originIconSet: IconSet, targetIconSet: IconSet, namePref
   });
 }
 
-// Validate, clean up, fix palette and optimise
-forEachIconSet(iconSet, iconSet, 'small-');
-forEachIconSet(iconSet2, iconSet, 'middle-');
+// Import icons
+forEachIconSet(importDirectorySync('src/svg/general/16px', {prefix: 'consumer-tonic-ui'}), emptyIconSet, 'small-');
+forEachIconSet(importDirectorySync('src/svg/general/24px', {prefix: 'consumer-tonic-ui'}), emptyIconSet, 'middle-');
+forEachIconSet(importDirectorySync('src/svg/color/line', {prefix: 'consumer-tonic-ui'}), emptyIconSet, 'color-line-');
+forEachIconSet(importDirectorySync('src/svg/color/outline', {prefix: 'consumer-tonic-ui'}), emptyIconSet, 'color-outline-');
+forEachIconSet(importDirectorySync('src/svg/color/solid', {prefix: 'consumer-tonic-ui'}), emptyIconSet, 'color-solid-');
 
-const smallIconNames = Object.keys(iconSet.export().icons)
+const smallIconNames = Object.keys(emptyIconSet.export().icons)
   .filter(name => name.startsWith('small'))
   .map(name => ({
     name: name.replace('small-', ''),
     clazz: `icon-[consumer-tonic-ui--${name}]`
   }));
 
-const middleIconNames = Object.keys(iconSet.export().icons)
+const middleIconNames = Object.keys(emptyIconSet.export().icons)
   .filter(name => name.startsWith('middle'))
   .map(name => ({
     name: name.replace('middle-', ''),
@@ -80,6 +81,6 @@ const middleIconNames = Object.keys(iconSet.export().icons)
   }));
 
 // Export
-fs.writeFileSync(path.resolve(__dirname, '../dist', 'iconSet.json'), JSON.stringify(iconSet.export()));
+fs.writeFileSync(path.resolve(__dirname, '../dist', 'iconSet.json'), JSON.stringify(emptyIconSet.export()));
 fs.writeFileSync(path.resolve(__dirname, '../dist', 'smallIconNames.json'), JSON.stringify(smallIconNames));
 fs.writeFileSync(path.resolve(__dirname, '../dist', 'middleIconNames.json'), JSON.stringify(middleIconNames));
