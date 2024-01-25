@@ -16,7 +16,7 @@
 }
 
 svg.circle-progress {
-  animation: rotating 2s linear 0s infinite;
+  @apply animate-rotating;
   width: 24px;
   height: 24px;
 }

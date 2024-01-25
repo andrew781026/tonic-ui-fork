@@ -960,6 +960,7 @@ const consumerDefaultTheme = {
     },
     animation: {
       loader: 'progress-circular-dash 1.5s ease-in-out 0s infinite',
+      rotating: 'rotating 2s linear 0s infinite',
     },
     keyframes: {
       'rotating': {
