@@ -1,0 +1,78 @@
+/* https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=25944-25252&mode=design&t=St3fddlBfWvsECfa-0 */
+
+.badge {
+
+  @apply absolute rounded-full;
+  border: 1px solid #fff;
+  color: #fff;
+
+  &.left {
+    left: 0;
+    transform: translateX(-50%);
+  }
+
+  &.right {
+    right: 0;
+    transform: translateX(50%);
+  }
+
+  &.top {
+    top: 0;
+    transform: translateY(-50%);
+  }
+
+  &.bottom {
+    bottom: 0;
+    transform: translateY(50%);
+  }
+
+  &.dot {
+    height: 8px;
+    width: 8px;
+  }
+
+  &.sm {
+    height: 16px;
+    width: 16px;
+  }
+
+  &.md {
+    height: 24px;
+    width: 24px;
+  }
+
+  &.lg {
+    height: 32px;
+    width: 32px;
+  }
+
+  &.digit {
+    padding: 1px 4px;
+  }
+
+  &.red, &.new, &.danger {
+    @apply bg-tcsmd-sys-color-text-error;
+    /* background-color: #ed0008; */
+  }
+
+  &.orange, &.risk {
+    @apply bg-tcsmd-sys-color-severity-warning;
+    /* background-color: #F26500; */
+  }
+
+  &.green, &.protected {
+    @apply bg-tcsmd-sys-color-text-safe;
+    /* @apply bg-tcsmd-sys-color-severity-safe; */
+    /* background-color: #00A91D; */
+  }
+
+  &.blue, &.info {
+    @apply bg-tcsmd-sys-color-severity-info;
+    /* background-color: #2E96FF; */
+  }
+
+  &.gray, &.unknown {
+    @apply bg-tcsmd-sys-color-severity-unknown;
+    /* background-color: #8E8E8E; */
+  }
+}
