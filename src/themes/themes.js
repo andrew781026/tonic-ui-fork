@@ -1008,6 +1008,9 @@ const consumerDefaultTheme = {
     fontWeight: {
       regular: 400,
     },
+    translate: {
+      'n-half': '-50%',
+    },
     fontSize: {
       xs: ['14px', '16px'],
       sm: ['16px', '18px'],

@@ -3,27 +3,29 @@
 .badge {
 
   @apply absolute rounded-full;
-  border: 1px solid #fff;
+  border: 2px solid #fff;
   color: #fff;
+  font-size: 12px;
+  box-sizing: content-box;
 
   &.left {
+    @apply translate-x-n-half;
     left: 0;
-    transform: translateX(-50%);
-  }
-
-  &.right {
-    right: 0;
-    transform: translateX(50%);
   }
 
   &.top {
+    @apply translate-y-n-half;
     top: 0;
-    transform: translateY(-50%);
+  }
+
+  &.right {
+    @apply translate-x-1/2;
+    right: 0;
   }
 
   &.bottom {
+    @apply translate-y-1/2;
     bottom: 0;
-    transform: translateY(50%);
   }
 
   &.dot {
