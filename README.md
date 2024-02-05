@@ -4,11 +4,6 @@
 
 # HIE and RD working model
 ```mermaid
-graph LR
-    id1[This is the text in the box]
-```
-
-```mermaid
 graph TD
     A["HIE update UI component<br/> in <a href="https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=8-0&mode=design&t=zxM7DbPxpa8hHSTt-0" target="_blank">Figma</a>"]-->B["FED use Scss and Tailwind to develop style of UI component <br/> in <a href="https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui" target="_blank">consumer-tonic-ui</a>"];
     B-->C["FED use consumer-tonic-ui style to develop react component <br/>in <a href="https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui-react" target="_blank">consumer-tonic-ui-react</a>"];
@@ -17,21 +12,23 @@ graph TD
     D-->E["Update react and vue component </br> in <a href="https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui-docs" target="_blank">consumer-tonic-ui-docs</a>"];
 ```
 
-#### How to develop and build
+### Requirement
+Nodejs version: 18 above
+
+#### How to build
 
 ```shell
-npm install && npm run install:doc # install node_modules
+npm install # install node_modules
 npm run build # build plugin to dist folder
-npm run dev # run doc server
 ```
 
 Add or modify `.nested.css` file in `/src/components` folder
 
 note : you can only use nested css feature in .scss file
 
-> Local Preview
+### How to local preview
 
-please change `astro/tailwind.config.cjs` file require local plugin
+Please clone [doc repo](https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui-docs), and change `astro/tailwind.config.cjs` file require local plugin
 
 ```diff
 module.exports = {
@@ -61,6 +58,11 @@ module.exports = {
     })
   ],
 }
+```
+
+```shell
+npm install
+npm run dev # run doc server
 ```
 
 #### How to use
