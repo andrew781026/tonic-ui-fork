@@ -5,11 +5,11 @@
 # HIE and RD working model
 ```mermaid
 graph TD
-    A["HIE update UI component<br/> in <a href="https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=8-0&mode=design&t=zxM7DbPxpa8hHSTt-0" target="_blank">Figma</a>"]-->B["FED use Scss and Tailwind to develop style of UI component <br/> in <a href="https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui" target="_blank">consumer-tonic-ui</a>"];
-    B-->C["FED use consumer-tonic-ui style to develop react component <br/>in <a href="https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui-react" target="_blank">consumer-tonic-ui-react</a>"];
-    B-->D["FED use consumer-tonic-ui style to develop vue component <br/>in <a href="https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui-vue" target="_blank">consumer-tonic-ui-vue</a>"];
+    A["HIE update UI component<br/> in Figma"]-->B["FED use Scss and Tailwind to develop style of UI component <br/> in consumer-tonic-ui"];
+    B-->C["FED use consumer-tonic-ui style to develop react component <br/>in consumer-tonic-ui-react"];
+    B-->D["FED use consumer-tonic-ui style to develop vue component <br/>in consumer-tonic-ui-vue"];
     C-->E["empty"];
-    D-->E["Update react and vue component </br> in <a href="https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui-docs" target="_blank">consumer-tonic-ui-docs</a>"];
+    D-->E["Update react and vue component </br> in consumer-tonic-ui-docs"];
 ```
 
 ### Requirement
