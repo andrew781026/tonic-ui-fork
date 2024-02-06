@@ -136,10 +136,10 @@
   }
 
   &[suffix] .tcsmd-input__inner {
-    padding-right: 32px;
+    padding-right: 28px;
   }
 
   &[prefix] .tcsmd-input__inner {
-    padding-left: 32px;
+    padding-left: 28px;
   }
 }
