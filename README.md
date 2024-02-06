@@ -66,18 +66,23 @@ npm run dev # run doc server
 
 #### How to use
 
-Look [Get Started](https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui/guides/get-started/)
+Look [Get Started](https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui-docs/guides/get-started/)
 
 ## Astro Doc - Starlight
 
-- [github page](https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui/)
-- [figma](https://www.figma.com/file/n5hWrEPvvmFWY9Tql47TR4/Consumer-Style-Portal-(draft)?type=design&node-id=0-1&mode=design&t=aQYapAIHNmyFgsta-0)
+- [Official Doc](https://starlight.astro.build/getting-started/)
+
+## Project Reference
+
+- [github page](https://adc.github.trendmicro.com/pages/Consumer-Frontend/consumer-tonic-ui-docs/)
+- [Figma - Style Guide](https://www.figma.com/file/3IUPRpbFX7r0xU9kh05fQ1/%F0%9F%8F%A0-Consumer-Tonic---Style-Guide?type=design&node-id=11029-12731&mode=design&t=r7Y1N4MpgxWa7KJI-0)
+- [Figma - Component](https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=35951-10712&mode=design&t=hHYCJjNjjwdezh3K-0)
 
 ## Repos 
 
 listing repo & library branch
 
-![repo-list](./astro/src/assets/screenshot/repo-list.png)
+![repo-list](./notes/imgs/screenshot/repo-list.png)
 
 
 ## NativeWind - TailwindCss with React Native platforms
