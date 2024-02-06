@@ -85,6 +85,11 @@
     &.sm {
       padding: 3px 8px;
       height: 24px;
+
+      ~ .tcsmd-input--prefix,
+      ~ .tcsmd-input--suffix {
+        top: calc(50% + 1px);
+      }
     }
 
     &.md {

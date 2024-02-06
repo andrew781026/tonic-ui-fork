@@ -9,12 +9,12 @@
   box-sizing: content-box;
 
   &.left {
-    @apply translate-x-n-half;
+    @apply -translate-x-1/2;
     left: 0;
   }
 
   &.top {
-    @apply translate-y-n-half;
+    @apply -translate-y-1/2;
     top: 0;
   }
 
