@@ -86,7 +86,7 @@
     }
 
     &.error {
-      @apply border-tcsmd-ref-palette-red-60;
+      @apply border-tcsmd-ref-palette-red-60 caret-tcsmd-ref-palette-red-60;
 
       &:hover, &.hover {
         @apply border-tcsmd-ref-palette-red-70;
