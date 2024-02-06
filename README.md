@@ -13,6 +13,7 @@ graph TD
 ```
 
 ### Requirement
+
 Nodejs version: 18 above
 
 #### How to build
@@ -23,8 +24,6 @@ npm run build # build plugin to dist folder
 ```
 
 Add or modify `.nested.css` file in `/src/components` folder
-
-note : you can only use nested css feature in .scss file
 
 ### How to local preview
 
@@ -48,7 +47,7 @@ module.exports = {
     starlightPlugin(),
 
 -   require('consumer-tonic-ui')(themerExampleConfig),
-+   require('../dist/index.js')(themerExampleConfig),
++   require('../[consumer-tonic-ui folder]/dist/index.js')(themerExampleConfig),
 
     // add svg to tailwind css
     addDynamicIconSelectors({

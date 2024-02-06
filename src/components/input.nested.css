@@ -10,6 +10,35 @@
 }
 
 .tcsmd-input {
+
+  .error-text {
+    @apply text-[14px] flex items-center text-red-500 gap-1 ml-2 leading-normal
+  }
+
+  .help-text {
+    @apply text-[14px] ml-2 flex items-center text-tcsmd-ref-palette-gray-60 leading-normal
+  }
+
+  &[sm] .error-text ,&[sm] .help-text {
+    @apply text-tcsmd-ref-typesetting-font-size-xs
+  }
+
+  &[lg] .error-text, &[lg] .help-text {
+    @apply text-tcsmd-ref-typesetting-font-size-md
+  }
+
+  .icon.sm {
+    @apply w-3 h-3
+  }
+
+  .icon.md {
+    @apply w-3.5 h-3.5
+  }
+
+  .icon.lg {
+    @apply w-4 h-4
+  }
+
   .tcsmd-input__wrapper {
     @apply relative;
   }
@@ -41,13 +70,13 @@
     min-width: 280px;
     padding: 6px 8px;
     font-size: 14px;
-    line-height: 16px;
+    line-height: 1.171875;
     height: 32px;
 
     &::placeholder {
       @apply text-tcsmd-ref-palette-gray-50;
       font-size: 14px;
-      line-height: 16px;
+      line-height: 1.171875;
       font-weight: 400;
     }
 
@@ -60,7 +89,7 @@
       @apply border-tcsmd-ref-palette-red-60;
 
       &:hover, &.hover {
-        border-color: #b00c0c;
+        @apply border-tcsmd-ref-palette-red-70;
       }
 
       &:focus, &.focus {
@@ -97,8 +126,12 @@
     }
 
     &.lg {
+      @apply text-tcsmd-ref-typesetting-font-size-md;
       height: 40px;
-      font-size: 16px;
+
+      &::placeholder {
+        @apply text-tcsmd-ref-typesetting-font-size-md;
+      }
     }
   }
 
