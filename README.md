@@ -82,7 +82,7 @@ Look [Get Started](https://adc.github.trendmicro.com/pages/Consumer-Frontend/con
 
 listing repo & library branch
 
-![repo-list](./notes/imgs/screenshot/repo-list.png)
+![repo-list](./notes/screenshot/repo-list.png)
 
 
 ## NativeWind - TailwindCss with React Native platforms
