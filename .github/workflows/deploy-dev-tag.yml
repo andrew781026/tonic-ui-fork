@@ -1,4 +1,4 @@
-name: consumer-tonic-ui-dist
+name: npm publish with target tag
 
 on:
   workflow_dispatch:
