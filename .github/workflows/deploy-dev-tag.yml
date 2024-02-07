@@ -1,0 +1,68 @@
+name: consumer-tonic-ui-dist
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'publish version'
+        required: true
+        default: "0.0.8"
+
+permissions:
+  contents: write
+
+jobs:
+  plugin:
+    name: deploy plugin
+    runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-plugin
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Check Node version
+        run: node -v
+
+      - name: Extract branch name
+        id: extract_branch
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+
+      - name: Create tag env
+        id: tag
+        run: echo "TAG=v$(node -e "console.log(require('./dist-package.json').version)")-${{ steps.extract_branch.outputs.branch }}.${{ github.run_number }}" >> $GITHUB_OUTPUT
+
+      - name: build dist
+        run: |
+          npm i
+          npm run build
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: setup git user
+        run: |
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup .npmrc file to publish to npm
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x'
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Setup specific version # version specific version - https://stackoverflow.com/questions/48423867/npm-version-update-to-specific-version
+        run: |
+          cd dist
+          npm version "${{ github.event.inputs.version }}"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: publish
+        run: |
+          cd dist
+          npm publish --access=public --tag=latest
+          cd ..
+          git push "https://git:${process.env.GITHUB_TOKEN}@adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui.git" dev:dev
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
