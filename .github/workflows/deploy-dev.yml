@@ -57,7 +57,7 @@ jobs:
         run: |
           cd dist
           npm version "0.0.8-alpha.${{ github.run_number }}" --no-git-tag-version
-          npm publish --access=public
+          npm publish --access=public --tag=experimental
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   ghpage:
