@@ -7,9 +7,6 @@ on:
         description: 'publish version'
         required: true
         default: "0.0.8"
-  push:
-    branches:
-      - dev
 
 permissions:
   contents: write
