@@ -36,6 +36,9 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: cp dist-package.json
+        run: cp dist-package.json dist/package.json
+
       - name: setup git user
         run: |
           git config --local user.email "actions@github.com"
