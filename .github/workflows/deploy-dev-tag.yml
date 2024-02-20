@@ -32,7 +32,7 @@ jobs:
 
       - name: Create tag env
         id: tag
-        run: echo "TAG=v$(node -e "console.log(require('./dist-package.json').version)")-${{ steps.extract_branch.outputs.branch }}.${{ github.run_number }}" >> $GITHUB_OUTPUT
+        run: echo "TAG=$(node -e "console.log(require('./dist-package.json').version)")-${{ steps.extract_branch.outputs.branch }}.${{ github.run_number }}" >> $GITHUB_OUTPUT
 
       - name: build dist
         run: |
