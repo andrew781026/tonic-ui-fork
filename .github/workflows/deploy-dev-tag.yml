@@ -1,6 +1,9 @@
 name: npm publish with target tag
 
 on:
+  push:
+    tags:
+      - '*'
   workflow_dispatch:
     inputs:
       version:
