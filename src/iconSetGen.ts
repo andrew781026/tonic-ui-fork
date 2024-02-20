@@ -9,6 +9,7 @@ import {
 } from '@iconify/tools';
 import * as fs from 'fs';
 import * as path from 'path';
+import importSVG from './svg/importSVG';
 
 const emptyIconSet = blankIconSet('consumer-tonic-ui');
 
@@ -60,11 +61,46 @@ const forEachIconSet = (originIconSet: IconSet, targetIconSet: IconSet, namePref
 }
 
 // Import icons
-forEachIconSet(importDirectorySync('src/svg/general/16px', {prefix: 'consumer-tonic-ui'}), emptyIconSet, 'small-');
-forEachIconSet(importDirectorySync('src/svg/general/24px', {prefix: 'consumer-tonic-ui'}), emptyIconSet, 'middle-');
-forEachIconSet(importDirectorySync('src/svg/color/line', {prefix: 'consumer-tonic-ui'}), emptyIconSet, 'color-line-',true);
-forEachIconSet(importDirectorySync('src/svg/color/outline', {prefix: 'consumer-tonic-ui'}), emptyIconSet, 'color-outline-',true);
-forEachIconSet(importDirectorySync('src/svg/color/solid', {prefix: 'consumer-tonic-ui'}), emptyIconSet, 'color-solid-',true);
+// forEachIconSet(importDirectorySync('src/svg/general/16px', {prefix: 'consumer-tonic-ui'}), emptyIconSet, 'small-');
+// forEachIconSet(importDirectorySync('src/svg/general/24px', {prefix: 'consumer-tonic-ui'}), emptyIconSet, 'middle-');
+// forEachIconSet(importDirectorySync('src/svg/color/line', {prefix: 'consumer-tonic-ui'}), emptyIconSet, 'color-line-', true);
+// forEachIconSet(importDirectorySync('src/svg/color/outline', {prefix: 'consumer-tonic-ui'}), emptyIconSet, 'color-outline-', true);
+// forEachIconSet(importDirectorySync('src/svg/color/solid', {prefix: 'consumer-tonic-ui'}), emptyIconSet, 'color-solid-', true);
+
+importSVG({
+  isColorful: false,
+  svgPath: 'src/svg/general/16px/*.svg',
+  prefix: 'small-',
+  target: emptyIconSet
+});
+
+importSVG({
+  isColorful: false,
+  svgPath: 'src/svg/general/24px/*.svg',
+  prefix: 'middle-',
+  target: emptyIconSet
+});
+
+importSVG({
+  isColorful: true,
+  svgPath: 'src/svg/color/line/*.svg',
+  prefix: 'color-line-',
+  target: emptyIconSet
+});
+
+importSVG({
+  isColorful: true,
+  svgPath: 'src/svg/color/outline/*.svg',
+  prefix: 'color-outline-',
+  target: emptyIconSet
+});
+
+importSVG({
+  isColorful: true,
+  svgPath: 'src/svg/color/solid/*.svg',
+  prefix: 'color-solid-',
+  target: emptyIconSet
+});
 
 const smallIconNames = Object.keys(emptyIconSet.export().icons)
   .filter(name => name.startsWith('small'))
