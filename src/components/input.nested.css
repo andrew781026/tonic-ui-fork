@@ -135,11 +135,11 @@
     }
   }
 
-  &[suffix] .tcsmd-input__inner {
+  &[data-suffix] .tcsmd-input__inner {
     padding-right: 28px;
   }
 
-  &[prefix] .tcsmd-input__inner {
+  &[data-prefix] .tcsmd-input__inner {
     padding-left: 28px;
   }
 }
