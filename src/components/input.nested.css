@@ -65,11 +65,9 @@
   }
 
   .tcsmd-input__inner {
-    @apply rounded-sm border caret-tcsmd-ref-palette-gray-90 border-tcsmd-ref-palette-gray-50 text-tcsmd-ref-palette-gray-90;
+    @apply rounded-sm text-[14px] border caret-tcsmd-ref-palette-gray-90 border-tcsmd-ref-palette-gray-50 text-tcsmd-ref-palette-gray-90 md:min-w-[280px];
     /* enabled . filled */
-    min-width: 280px;
     padding: 6px 8px;
-    font-size: 14px;
     line-height: 1.171875;
     height: 32px;
 
