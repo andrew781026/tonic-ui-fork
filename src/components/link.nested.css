@@ -1,0 +1,88 @@
+/* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=35951-10712&mode=design&t=ldjOzrnvDwkiroPn-0 */
+
+/*
+  sm = [ 12px , 14.06px ] , line-height = 1.171875
+  md = [ 14px , 16.41px ] , line-height = 1.171875
+  lg = [ 16px , 18.75px ] , line-height = 1.171875
+*/
+
+.tcsmd-link-disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  /* pointer-none => need vue / react to avoid event */
+}
+
+.tcsmd-link-default {
+  text-decoration: none;
+
+  &:hover, &.hover {
+    text-decoration: underline;
+  }
+
+  &:active, &.active {
+    text-decoration: underline;
+  }
+
+  &:disabled, &.disabled {
+    text-decoration: none;
+  }
+
+  &:focus, &.focus {
+    text-decoration: underline;
+  }
+
+  &:visited, &.visited {
+    text-decoration: none;
+  }
+}
+
+.tcsmd-link-underline {
+  text-decoration: underline;
+
+  &:hover, &.hover {
+    text-decoration: none;
+  }
+
+  &:active, &.active,
+  &:focus, &.focus,
+  &:disabled, &.disabled,
+  &:visited, &.visited {
+    text-decoration: underline;
+  }
+}
+
+/* .mini-browser = Ti-client */
+.tcsmd-link-tag {
+  @apply text-tcsmd-sys-color-text-link tcsmd-link-default;
+  text-decoration: underline;
+  font-size: 12px;
+  line-height: 14px;
+
+  .underline {
+    @apply tcsmd-link-underline;
+  }
+
+  &:visited, &.visited {
+    @apply text-tcsmd-ref-palette-purple-60;
+  }
+
+  &:disabled, &.disabled {
+    @apply tcsmd-btn-disabled;
+  }
+
+  .subtle {
+    @apply text-tcsmd-sys-color-text-secondary;
+
+    &:visited, &.visited {
+      @apply text-tcsmd-ref-palette-indigo-60;
+    }
+  }
+
+  > *:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  .sm > *:not(:last-child) {
+    margin-right: 4px;
+  }
+}
