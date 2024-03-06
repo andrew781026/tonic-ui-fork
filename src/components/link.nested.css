@@ -67,7 +67,7 @@
   }
 
   &:disabled, &.disabled {
-    @apply tcsmd-btn-disabled;
+    @apply tcsmd-link-disabled;
   }
 
   .subtle {
