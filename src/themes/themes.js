@@ -1009,6 +1009,7 @@ const consumerDefaultTheme = {
       regular: 400,
     },
     fontSize: {
+      xxs: ['12px', '14px'],
       xs: ['14px', '16px'],
       sm: ['16px', '18px'],
       base: ['16px', '18px'],

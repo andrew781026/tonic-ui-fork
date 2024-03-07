@@ -1,4 +1,4 @@
-/* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=35951-10712&mode=design&t=ldjOzrnvDwkiroPn-0 */
+/* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=23750-21285&mode=design&t=JKpgH3S4LPeijnQD-0 */
 
 /*
   sm = [ 12px , 14.06px ] , line-height = 1.171875
@@ -53,12 +53,21 @@
 
 /* .mini-browser = Ti-client */
 .tcsmd-link-tag {
-  @apply text-tcsmd-sys-color-text-link tcsmd-link-default;
-  text-decoration: underline;
-  font-size: 12px;
-  line-height: 14px;
+  @apply text-tcsmd-sys-color-text-link tcsmd-link-default cursor-pointer flex items-center justify-center;
 
-  .underline {
+  &.sm {
+    @apply text-xxs;
+  }
+
+  &.md {
+    @apply text-xs;
+  }
+
+  &.lg {
+    @apply text-sm;
+  }
+
+  &.underline {
     @apply tcsmd-link-underline;
   }
 
@@ -82,7 +91,7 @@
     margin-right: 8px;
   }
 
-  .sm > *:not(:last-child) {
+  &.sm > *:not(:last-child) {
     margin-right: 4px;
   }
 }
