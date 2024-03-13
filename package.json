@@ -41,7 +41,7 @@
   "devDependencies": {
     "@types/jest": "^29.5.10",
     "autoprefixer": "^10.4.14",
-    "@consumer-tonic-ui/design-system": "0.0.1",
+    "@consumer-tonic-ui/design-system": "0.0.3",
     "eslint": "^8.40.0",
     "eslint-config-google": "^0.14.0",
     "gh-pages": "^6.0.0",
