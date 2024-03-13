@@ -58,28 +58,3 @@ jobs:
           npm publish --access=public --tag=experimental
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-  ghpage:
-    needs: plugin
-    name: gh-page for doc
-    runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-ghpage
-    steps:
-      - name: Check out code
-        uses: actions/checkout@v3
-        with:
-          ssh-key: ${{ secrets.SERVICE_ACCOUNT_SSH_KEY }}
-
-      - name: Check Node version
-        run: node -v
-
-      - name: build astro
-        run: |
-          cd astro
-          npm i
-          npm run astro:build
-
-      - name: deploy
-        run: cd astro && npm run astro:deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
