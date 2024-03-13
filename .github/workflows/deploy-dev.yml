@@ -16,8 +16,6 @@ jobs:
     steps:
       - name: Check out code
         uses: actions/checkout@v3
-        with:
-          ssh-key: ${{ secrets.SERVICE_ACCOUNT_SSH_KEY }}
 
       - name: Check Node version
         run: node -v
