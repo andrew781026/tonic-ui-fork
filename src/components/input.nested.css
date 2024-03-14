@@ -1,43 +1,42 @@
 /* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=24061-21012&mode=design&t=ym52N9tlll785all-0 */
 
-.form-control {
-
-  label.required::after {
-    @apply text-tcsmd-ref-palette-red-60;
-    content: '*';
-  }
-
-}
-
+.form-item,
 .tcsmd-input {
-
   .error-text {
-    @apply text-[14px] flex items-center text-red-500 gap-1 ml-2 leading-normal
+    @apply text-tcsmd-ref-typesetting-font-size-sm flex items-center text-red-500 gap-1 ml-2 leading-normal
   }
 
   .help-text {
-    @apply text-[14px] ml-2 flex items-center text-tcsmd-ref-palette-gray-60 leading-normal
+    @apply text-tcsmd-ref-typesetting-font-size-sm ml-2 flex items-center text-tcsmd-ref-palette-gray-60 leading-normal
   }
 
   &[sm] .error-text ,&[sm] .help-text {
     @apply text-tcsmd-ref-typesetting-font-size-xs
   }
 
+  &[md] .error-text, &[md] .help-text {
+    @apply text-tcsmd-ref-typesetting-font-size-sm
+  }
+
   &[lg] .error-text, &[lg] .help-text {
     @apply text-tcsmd-ref-typesetting-font-size-md
   }
 
-  .icon.sm {
+  .icon {
+    @apply w-4 h-4
+  }
+
+  /* &[sm] .icon {
     @apply w-3 h-3
   }
 
-  .icon.md {
+  &[md] .icon {
     @apply w-3.5 h-3.5
   }
 
-  .icon.lg {
+  &[lg] .icon {
     @apply w-4 h-4
-  }
+  } */
 
   .tcsmd-input__wrapper {
     @apply relative;
@@ -65,7 +64,7 @@
   }
 
   .tcsmd-input__inner {
-    @apply rounded-sm text-[14px] border caret-tcsmd-ref-palette-gray-90 border-tcsmd-ref-palette-gray-50 text-tcsmd-ref-palette-gray-90 md:min-w-[280px];
+    @apply w-full rounded-sm text-[14px] border caret-tcsmd-ref-palette-gray-90 border-tcsmd-ref-palette-gray-50 text-tcsmd-ref-palette-gray-90 md:min-w-[280px];
     /* enabled . filled */
     padding: 6px 8px;
     line-height: 1.171875;
@@ -108,28 +107,28 @@
       @apply outline outline-1 outline-tcsmd-ref-palette-blue-60 border-tcsmd-ref-palette-blue-60;
       /* box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); */
     }
+  }
 
-    &.sm {
-      padding: 3px 8px;
-      height: 24px;
+  &[sm] .tcsmd-input__inner {
+    padding: 3px 8px;
+    height: 24px;
 
-      ~ .tcsmd-input--prefix,
-      ~ .tcsmd-input--suffix {
-        top: calc(50% + 1px);
-      }
+    ~ .tcsmd-input--prefix,
+    ~ .tcsmd-input--suffix {
+      top: calc(50% + 1px);
     }
+  }
 
-    &.md {
-      height: 32px;
-    }
+  &[md] .tcsmd-input__inner {
+    height: 32px;
+  }
 
-    &.lg {
+  &[lg] .tcsmd-input__inner {
+    @apply text-tcsmd-ref-typesetting-font-size-md;
+    height: 40px;
+
+    &::placeholder {
       @apply text-tcsmd-ref-typesetting-font-size-md;
-      height: 40px;
-
-      &::placeholder {
-        @apply text-tcsmd-ref-typesetting-font-size-md;
-      }
     }
   }
 
@@ -137,7 +136,15 @@
     padding-right: 28px;
   }
 
+  &[data-suffix="false"] .tcsmd-input__inner {
+    padding-right: 8px;
+  }
+
   &[data-prefix] .tcsmd-input__inner {
     padding-left: 28px;
+  }
+
+  &[data-prefix="false"] .tcsmd-input__inner {
+    padding-left: 8px;
   }
 }

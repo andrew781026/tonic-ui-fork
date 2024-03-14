@@ -1,0 +1,67 @@
+.form-control,
+.form-item {
+  .label,
+  .slot-after {
+    @apply text-tcsmd-ref-typesetting-font-size-sm;
+  }
+
+  &[sm] .label,
+  &[sm] .slot-after {
+    @apply text-tcsmd-ref-typesetting-font-size-xs;
+  }
+
+  &[md] .label,
+  &[md] .slot-after {
+    @apply text-tcsmd-ref-typesetting-font-size-sm;
+  }
+
+  &[lg] .label,
+  &[lg] .slot-after {
+    @apply text-tcsmd-ref-typesetting-font-size-md;
+  }
+
+  label.required::after {
+    @apply text-tcsmd-ref-palette-red-60;
+    content: '*';
+  }
+}
+
+.form-control .form-item,
+.form-item {
+  display: flex;
+
+  .label,
+  .slot-after {
+    @apply flex items-center;
+    height: 32px;
+  }
+
+  &[sm] .label,
+  &[sm] .slot-after {
+    height: 24px;
+  }
+
+  &[md] .label,
+  &[md] .slot-after {
+    height: 32px;
+  }
+
+  &[lg] .label,
+  &[lg] .slot-after {
+    height: 40px;
+  }
+}
+
+.form-control.vertical .form-item,
+.form-item.vertical {
+  flex-direction: column;
+
+  .label {
+    @apply mb-1 gap-1;
+    height: unset;
+  }
+
+  .slot-after {
+    height: unset;
+  }
+}
