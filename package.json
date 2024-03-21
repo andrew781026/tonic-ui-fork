@@ -17,6 +17,7 @@
     "cp:error": "node utils/cp.js --src src/error --dest dist/error",
     "cp:root": "node utils/cp.js --src src/index.js --dest dist/index.js",
     "gen:iconset": "ts-node src/iconSetGen.ts",
+    "gen:purge": "ts-node src/lib/purgecss.ts",
     "build": "tsc && npm run base && npm run components && node utils/copyFiles.js && npm run cp:img && npm run gen:iconset",
     "doc:build": "npm run build && cd astro && npm run build",
     "dev": "npm run build && cd astro && npm run astro:dev",
@@ -39,9 +40,9 @@
     "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
+    "@consumer-tonic-ui/design-system": "0.0.4",
     "@types/jest": "^29.5.10",
     "autoprefixer": "^10.4.14",
-    "@consumer-tonic-ui/design-system": "0.0.3",
     "eslint": "^8.40.0",
     "eslint-config-google": "^0.14.0",
     "gh-pages": "^6.0.0",
@@ -57,6 +58,7 @@
     "postcss-js": "^4.0.1",
     "postcss-nested": "^6.0.1",
     "postcss-nesting": "^11.2.2",
+    "purgecss": "^5.0.0",
     "ts-jest": "^29.1.1",
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2"
