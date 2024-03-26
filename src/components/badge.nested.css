@@ -1,80 +1,81 @@
 /* https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=25944-25252&mode=design&t=St3fddlBfWvsECfa-0 */
 
-.badge {
+.tcsmd-comp-status-badge-box {
+  @apply inline-flex relative w-fit h-fit;
+}
 
-  @apply absolute rounded-full;
+.tcsmd-comp-status-badge {
+  @apply rounded-full h-3 w-3 bg-tcsmd-sys-color-text-error mt-0 text-tcsmd-ref-palette-white flex items-center justify-center text-tcsmd-ref-typesetting-font-size-xs;
   border: 2px solid #fff;
-  color: #fff;
-  font-size: 12px;
-  box-sizing: content-box;
 
   &.left {
-    @apply -translate-x-1/2;
-    left: 0;
+    @apply -translate-x-1/2 left-0;
   }
 
   &.top {
-    @apply -translate-y-1/2;
-    top: 0;
+    @apply -translate-y-1/2 top-0;
   }
 
   &.right {
-    @apply translate-x-1/2;
-    right: 0;
+    @apply translate-x-1/2 right-0;
   }
 
   &.bottom {
-    @apply translate-y-1/2;
-    bottom: 0;
+    @apply translate-y-1/2 bottom-0;
   }
-
-  &.dot {
-    height: 8px;
-    width: 8px;
-  }
-
-  &.sm {
-    height: 16px;
-    width: 16px;
-  }
-
-  &.md {
-    height: 24px;
-    width: 24px;
-  }
-
-  &.lg {
-    height: 32px;
-    width: 32px;
-  }
-
-  &.digit {
-    padding: 1px 4px;
-  }
-
-  &.red, &.new, &.danger {
+  &.red,
+  &.new,
+  &.danger {
     @apply bg-tcsmd-sys-color-text-error;
-    /* background-color: #ed0008; */
   }
 
-  &.orange, &.risk {
+  &.orange,
+  &.risk {
     @apply bg-tcsmd-sys-color-severity-warning;
-    /* background-color: #F26500; */
   }
 
-  &.green, &.protected {
+  &.green,
+  &.protected {
     @apply bg-tcsmd-sys-color-text-safe;
-    /* @apply bg-tcsmd-sys-color-severity-safe; */
-    /* background-color: #00A91D; */
   }
 
-  &.blue, &.info {
+  &.blue,
+  &.info {
     @apply bg-tcsmd-sys-color-severity-info;
-    /* background-color: #2E96FF; */
   }
 
-  &.gray, &.unknown {
+  &.gray,
+  &.unknown {
     @apply bg-tcsmd-sys-color-severity-unknown;
-    /* background-color: #8E8E8E; */
   }
+}
+
+.tcsmd-comp-status-badge-digit {
+  @apply tcsmd-comp-status-badge;
+  padding: 2px 4px;
+  height: 18px;
+  min-width: 18px;
+  width: max-content;
+}
+
+.tcsmd-comp-status-badge-icon {
+  @apply tcsmd-comp-status-badge;
+  padding: 2px;
+  height: 18px;
+  min-width: 18px;
+  width: max-content;
+  span {
+    width: 8.7px;
+    height: 8.7px;
+  }
+}
+
+.tcsmd-comp-status-badge-box > .tcsmd-comp-status-badge {
+  @apply absolute;
+}
+.tcsmd-comp-status-badge-box > .tcsmd-comp-status-digit {
+  @apply absolute;
+}
+.tcsmd-comp-status-badge-box > .tcsmd-comp-status-icon {
+  @apply absolute;
 }
