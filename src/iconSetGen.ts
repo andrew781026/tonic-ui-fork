@@ -116,7 +116,27 @@ const middleIconNames = Object.keys(emptyIconSet.export().icons)
     clazz: `icon-[consumer-tonic-ui--${name}]`
   }));
 
+const colorIconNames = (() => {
+
+  const result = [];
+
+  const paths = ['line', 'outline', 'solid'];
+  const types = ['danger', 'info', 'protected', 'risk', 'unknown'];
+
+  for (const type of types) {
+    for (const path of paths) {
+      result.push({
+        clazz: `icon-[consumer-tonic-ui--color-${path}-${type}]`,
+        name: `color-${path}-${type}`,
+      })
+    }
+  }
+
+  return result
+})()
+
 // Export
 fs.writeFileSync(path.resolve(__dirname, '../dist', 'iconSet.json'), JSON.stringify(emptyIconSet.export()));
 fs.writeFileSync(path.resolve(__dirname, '../dist', 'smallIconNames.json'), JSON.stringify(smallIconNames));
 fs.writeFileSync(path.resolve(__dirname, '../dist', 'middleIconNames.json'), JSON.stringify(middleIconNames));
+fs.writeFileSync(path.resolve(__dirname, '../dist', 'colorIconNames.json'), JSON.stringify(colorIconNames));
