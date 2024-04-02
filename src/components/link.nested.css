@@ -9,45 +9,35 @@
 .tcsmd-link-disabled {
   opacity: 0.4;
   cursor: not-allowed;
-  /* pointer-none => need vue / react to avoid event */
 }
 
 .tcsmd-link-default {
-  text-decoration: none;
+  @apply no-underline;
 
-  &:hover, &.hover {
-    text-decoration: underline;
-  }
-
-  &:active, &.active {
-    text-decoration: underline;
-  }
-
-  &:disabled, &.disabled {
-    text-decoration: none;
-  }
-
+  &:hover, &.hover ,
+  &:active, &.active ,
   &:focus, &.focus {
-    text-decoration: underline;
+    @apply underline;
   }
 
+  &:disabled, &.disabled ,
   &:visited, &.visited {
-    text-decoration: none;
+    @apply no-underline;
   }
 }
 
 .tcsmd-link-underline {
-  text-decoration: underline;
+  @apply underline;
 
   &:hover, &.hover {
-    text-decoration: none;
+    @apply no-underline;
   }
 
   &:active, &.active,
   &:focus, &.focus,
   &:disabled, &.disabled,
   &:visited, &.visited {
-    text-decoration: underline;
+    @apply underline;
   }
 }
 
@@ -56,15 +46,15 @@
   @apply text-tcsmd-sys-color-text-link tcsmd-link-default cursor-pointer flex items-center justify-center;
 
   &.sm {
-    @apply text-xxs;
+    @apply tcsmd-ref-typesetting-font-size-xs;
   }
 
   &.md {
-    @apply text-xs;
+    @apply tcsmd-ref-typesetting-font-size-sm;
   }
 
   &.lg {
-    @apply text-sm;
+    @apply tcsmd-ref-typesetting-font-size-md;
   }
 
   &.underline {
@@ -88,10 +78,10 @@
   }
 
   > *:not(:last-child) {
-    margin-right: 8px;
+    @apply mr-2;
   }
 
   &.sm > *:not(:last-child) {
-    margin-right: 4px;
+    @apply mr-1;
   }
 }
