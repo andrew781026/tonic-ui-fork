@@ -17,7 +17,7 @@
   &:hover, &.hover ,
   &:active, &.active ,
   &:focus, &.focus {
-    @apply underline;
+    text-decoration-line: underline;
   }
 
   &:disabled, &.disabled ,
@@ -27,7 +27,7 @@
 }
 
 .tcsmd-link-underline {
-  @apply underline;
+  text-decoration-line: underline;
 
   &:hover, &.hover {
     @apply no-underline;
@@ -37,7 +37,7 @@
   &:focus, &.focus,
   &:disabled, &.disabled,
   &:visited, &.visited {
-    @apply underline;
+    text-decoration-line: underline;
   }
 }
 
@@ -46,15 +46,15 @@
   @apply text-tcsmd-sys-color-text-link tcsmd-link-default cursor-pointer flex items-center justify-center;
 
   &.sm {
-    @apply tcsmd-ref-typesetting-font-size-xs;
+    @apply text-tcsmd-ref-typesetting-font-size-xs;
   }
 
   &.md {
-    @apply tcsmd-ref-typesetting-font-size-sm;
+    @apply text-tcsmd-ref-typesetting-font-size-sm;
   }
 
   &.lg {
-    @apply tcsmd-ref-typesetting-font-size-md;
+    @apply text-tcsmd-ref-typesetting-font-size-md;
   }
 
   &.underline {
