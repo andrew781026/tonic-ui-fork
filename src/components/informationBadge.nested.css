@@ -167,7 +167,7 @@
 }
 
 .tcsmd-information-badge-gradient {
-  @apply font-bold h-6 text-xs gap-0.5 flex items-center w-fit bg-tcsmd-ref-palette-purple-60 bg-gradient-to-r from-[#FFEDA9] via-[#FFFCEF] to-[#EBD27B];
+  @apply font-bold h-6 text-xs gap-1 flex items-center w-fit bg-tcsmd-ref-palette-purple-60 bg-gradient-to-r from-[#FFEDA9] via-[#FFFCEF] to-[#EBD27B];
   padding: 4px 8px;
   border: 1px solid #ebd27b66;
   border-radius: 8px;
@@ -252,7 +252,7 @@
     @apply rbn-side;
   }
   .content {
-    @apply w-fit h-6 bg-tcsmd-ref-palette-orange-30 rounded px-3 flex items-center text-tcsmd-ref-palette-white font-bold text-xs;
+    @apply w-fit h-6 bg-tcsmd-ref-palette-orange-30 rounded px-3 flex items-center text-tcsmd-ref-palette-white font-bold text-xs gap-1;
   }
   &.sm {
     @apply rbn-sm;
