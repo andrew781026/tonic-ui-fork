@@ -1,0 +1,122 @@
+/* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?node-id=23720%3A20429&mode=dev */
+
+.tscmd-radio-group {
+    @apply flex flex-1 items-start;
+    
+    &.vertical {
+        @apply flex-col gap-1;
+    }
+
+    &.horizontal {
+        @apply flex-row gap-4;
+    }
+}
+
+.tcsmd-radio-container {
+    input {
+        @apply hidden;
+    }
+
+    .tcsmd-radio-wrapper {
+        @apply flex justify-center items-center gap-1;
+
+        .tcsmd-radio {
+            @apply flex items-center justify-center w-[18px] h-[18px] rounded-full border border-tcsmd-ref-palette-gray-50 bg-tcsmd-ref-palette-white;
+            
+            .tcsmd-radio-inner {
+                @apply w-0 h-0 rounded-full bg-tcsmd-ref-palette-blue-60;
+            }
+        }
+    
+        .tcsmd-radio-label {
+            @apply text-tcsmd-ref-typesetting-font-size-xs font-normal text-tcsmd-ref-palette-gray-90 m-0 p-0;
+        }
+    }
+
+    &:hover, &.hover {
+        @apply cursor-pointer;
+    
+        .tcsmd-radio {
+            @apply border-tcsmd-ref-palette-gray-60 bg-tcsmd-ref-palette-gray-20;
+        }
+
+        .tcsmd-radio-label {
+            @apply cursor-pointer;
+        }
+    }
+
+    &.checked {
+        .tcsmd-radio {
+            @apply w-[18px] h-[18px] border-tcsmd-ref-palette-blue-60;
+
+            .tcsmd-radio-inner {
+                @apply w-2 h-2;
+            }
+        }
+    }
+
+    &:disabled, &.disabled {
+        @apply cursor-not-allowed pointer-events-none opacity-40;
+    }
+
+    &:focus, &.focus {
+        .tcsmd-radio {
+            @apply border-2 border-tcsmd-ref-palette-blue-60;
+        }
+    }
+
+    
+    &.small {
+        .tcsmd-radio {
+            @apply w-3.5 h-3.5;
+        }
+
+        &.checked {
+            .tcsmd-radio {
+                .tcsmd-radio-inner {
+                    @apply w-1.5 h-1.5;
+                }
+            }
+        }
+
+        .tcsmd-radio-label {
+            @apply text-tcsmd-ref-typesetting-font-size-xs;
+        }
+    }
+
+    &.medium {
+        .tcsmd-radio {
+            @apply w-[18px] h-[18px];
+        }
+
+        &.checked {
+            .tcsmd-radio {
+                .tcsmd-radio-inner {
+                    @apply w-2 h-2;
+                }
+            }
+        }
+
+        .tcsmd-radio-label {
+            @apply text-tcsmd-ref-typesetting-font-size-sm;
+        }
+    }
+
+    &.large {
+        .tcsmd-radio {
+            @apply w-6 h-6;
+        }
+
+        &.checked {
+            .tcsmd-radio {
+                .tcsmd-radio-inner {
+                    @apply w-2.5 h-2.5;
+                }
+            }
+        }
+
+        .tcsmd-radio-label {
+            @apply text-tcsmd-ref-typesetting-font-size-lg;
+        }
+    }
+}
