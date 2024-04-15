@@ -12,7 +12,7 @@
 
   &.small,
   &.sm {
-    @apply text-xxs h-[18px];
+    @apply text-tcsmd-ref-typesetting-font-size-xs h-[18px];
   }
 
   &.large,
@@ -174,7 +174,7 @@
 
   &.small,
   &.sm {
-    @apply text-xxs h-[20px];
+    @apply text-tcsmd-ref-typesetting-font-size-xs h-[20px];
   }
 
   &.large,
@@ -214,7 +214,7 @@
 
 .rbn-sm {
   .content {
-    @apply h-5 text-xxs;
+    @apply h-5 text-tcsmd-ref-typesetting-font-size-xs;
   }
   .left {
     @apply w-[17px] h-[19px] top-[5px] left-[5px];

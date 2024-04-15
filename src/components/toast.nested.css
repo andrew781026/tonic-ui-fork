@@ -1,29 +1,28 @@
 /* https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?type=design&node-id=24898-23822&mode=design&t=MG1HRGaY3iAMJ6IC-0 */
 
-.toast__wrapper {
+.toast {
   @apply flex fixed bottom-0 w-full p-3 gap-3 justify-center items-center;
 
-  .toast {
-    @apply p-4 font-regular text-tcsmd-ref-typesetting-font-size-sm;
-    border-radius: 4px;
-    max-width: 85%;
-    /*  Max-width Handset: 85%
-        Tablet portrait view: 85%
-        Tablet landscape view: 54.7% */
 
-    /* Name Regular/P14 - R
-       Font Roboto
-       Weight 400
-       Size 14px
-       Line height 16.41px */
-    line-height: 16.41px;
+  @apply p-4 font-regular text-tcsmd-ref-typesetting-font-size-sm;
+  border-radius: 4px;
+  max-width: 85%;
+  /*  Max-width Handset: 85%
+      Tablet portrait view: 85%
+      Tablet landscape view: 54.7% */
 
-    &.rounded {
-      @apply rounded-full;
-    }
+  /* Name Regular/P14 - R
+     Font Roboto
+     Weight 400
+     Size 14px
+     Line height 16.41px */
+  line-height: 16.41px;
 
-    &.black {
-      @apply bg-tcsmd-ref-palette-gray-90 text-white;
-    }
+  &.rounded {
+    @apply rounded-full;
+  }
+
+  &.black {
+    @apply bg-tcsmd-ref-palette-gray-90 text-white;
   }
 }
