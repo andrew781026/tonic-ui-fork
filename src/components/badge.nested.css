@@ -4,16 +4,8 @@
   @apply inline-flex relative w-fit h-fit;
 }
 
-.tcsmd-comp-status-badge {
+.basic-badge {
   @apply rounded-full bg-tcsmd-sys-color-text-error mt-0 text-tcsmd-ref-palette-white flex items-center justify-center text-tcsmd-ref-typesetting-font-size-xs;
-  height: 8px;
-  width: 8px;
-
-  &.border{
-    @apply h-[10px] w-[10px];
-    border: 1px solid #fff;
-  }
-
   &.left {
     @apply -translate-x-1/2 left-0;
   }
@@ -56,35 +48,41 @@
   }
 }
 
-.status-border {
-  @apply h-[18px] w-[18px];
+.add-border {
   border: 1px solid #fff;
 }
 
+.tcsmd-comp-status-badge {
+  @apply basic-badge;
+  height: 8px;
+  width: 8px;
+  &.border{
+    @apply h-[10px] w-[10px] add-border;
+  }
+}
+
+
 .tcsmd-comp-status-badge-digit {
-  @apply tcsmd-comp-status-badge font-semibold;
+  @apply basic-badge font-semibold;
   height: 16px;
   min-width: 16px;
   padding: 2px 4px;
   width: max-content;
   &.border{
-    @apply status-border;
+    @apply add-border h-[18px];
+    min-width: 18px;
   };
 }
 
 .tcsmd-comp-status-badge-icon {
-  @apply tcsmd-comp-status-badge;
+  @apply basic-badge;
   height: 16px;
   min-width: 16px;
   padding: 2px;
   width: max-content;
   &.border{
-    @apply status-border;
+    @apply h-[18px] w-[18px] add-border;
   };
-  span {
-    width: 8.7px;
-    height: 8.7px;
-  }
 }
 
 .tcsmd-comp-status-badge-box > .tcsmd-comp-status-badge {
