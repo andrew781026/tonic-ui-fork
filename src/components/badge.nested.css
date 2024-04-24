@@ -4,6 +4,10 @@
   @apply inline-flex relative w-fit h-fit;
 }
 
+.tcsmd-comp-status-badge-icon-box {
+  @apply flex w-fit h-fit;
+}
+
 .basic-badge {
   @apply rounded-full bg-tcsmd-sys-color-text-error mt-0 text-tcsmd-ref-palette-white flex items-center justify-center text-tcsmd-ref-typesetting-font-size-xs;
   &.left {
@@ -16,6 +20,38 @@
 
   &.right {
     @apply translate-x-1/2 right-0;
+  }
+
+  &.digit-pos-icon-lg {
+    @apply relative;
+    top: -5px;
+    right: 12px;
+  }
+
+  &.digit-pos-icon-md {
+    @apply relative;
+    top: -7px;
+    right: 10px;
+  }
+
+  &.digit-pos-icon-sm {
+    @apply relative;
+    top: -11px;
+    right: 6px;
+  }
+  &.dot-pos-icon-lg {
+    top: 0px;
+    right: 0px;
+  }
+
+  &.dot-pos-icon-md {
+    top: 0px;
+    right: 0px;
+  }
+
+  &.dot-pos-icon-sm {
+    top: -5px;
+    right: -3px;
   }
 
   &.bottom {
