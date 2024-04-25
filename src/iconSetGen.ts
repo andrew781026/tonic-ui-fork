@@ -126,8 +126,8 @@ const colorIconNames = (() => {
   for (const type of types) {
     for (const path of paths) {
       result.push({
-        clazz: `icon-[consumer-tonic-ui--color-${path}-${type}]`,
-        name: `color-${path}-${type}`,
+        clazz: `icon-[consumer-tonic-ui--status-${path}-${type}]`,
+        name: `status-${path}-${type}`,
       })
     }
   }
