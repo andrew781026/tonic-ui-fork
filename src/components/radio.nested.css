@@ -8,7 +8,7 @@
     }
 
     &.horizontal {
-        @apply flex-row gap-4;
+        @apply flex-row flex-wrap gap-4;
     }
 }
 
@@ -56,7 +56,10 @@
     }
 
     &:disabled, &.disabled {
-        @apply cursor-not-allowed pointer-events-none opacity-40;
+        @apply cursor-not-allowed pointer-events-none;
+        .tcsmd-radio {
+            @apply opacity-40;
+        }
     }
 
     &:focus, &.focus {
