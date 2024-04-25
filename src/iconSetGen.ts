@@ -84,21 +84,21 @@ importSVG({
 importSVG({
   isColorful: true,
   svgPath: 'src/svg/color/line/*.svg',
-  prefix: 'color-line-',
+  prefix: 'status-line-',
   target: emptyIconSet
 });
 
 importSVG({
   isColorful: true,
   svgPath: 'src/svg/color/outline/*.svg',
-  prefix: 'color-outline-',
+  prefix: 'status-outline-',
   target: emptyIconSet
 });
 
 importSVG({
   isColorful: true,
   svgPath: 'src/svg/color/solid/*.svg',
-  prefix: 'color-solid-',
+  prefix: 'status-solid-',
   target: emptyIconSet
 });
 
