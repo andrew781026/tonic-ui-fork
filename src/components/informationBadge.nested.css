@@ -17,7 +17,7 @@
 
   &.large,
   &.lg {
-    @apply text-base h-[22px];
+    @apply text-tcsmd-ref-typesetting-font-size-md h-[22px];
   }
 
   &.round {
@@ -179,7 +179,7 @@
 
   &.large,
   &.lg {
-    @apply text-base h-[28px];
+    @apply text-tcsmd-ref-typesetting-font-size-md h-[28px];
   }
   &.top {
     border-radius: 0 0 8px 8px;
