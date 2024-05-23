@@ -51,6 +51,11 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: ls checking
+        run: |
+          cd gen
+          ls -al
+
       - name: Setup specific version # version specific version - https://stackoverflow.com/questions/48423867/npm-version-update-to-specific-version
         run: |
           cd dist
