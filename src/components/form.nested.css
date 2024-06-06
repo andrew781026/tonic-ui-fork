@@ -5,24 +5,24 @@
     @apply text-tcsmd-ref-typesetting-font-size-sm;
   }
 
-  &[sm] .label,
-  &[sm] .slot-after {
+  &[data-size="sm"] .label,
+  &[data-size="sm"] .slot-after {
     @apply text-tcsmd-ref-typesetting-font-size-xs;
   }
 
-  &[md] .label,
-  &[md] .slot-after {
+  &[data-size="md"] .label,
+  &[data-size="md"] .slot-after {
     @apply text-tcsmd-ref-typesetting-font-size-sm;
   }
 
-  &[lg] .label,
-  &[lg] .slot-after {
+  &[data-size="lg"] .label,
+  &[data-size="lg"] .slot-after {
     @apply text-tcsmd-ref-typesetting-font-size-md;
   }
 
   label.required::after {
     @apply text-tcsmd-ref-palette-red-60;
-    content: '*';
+    content: "*";
   }
 }
 
@@ -36,18 +36,18 @@
     height: 32px;
   }
 
-  &[sm] .label,
-  &[sm] .slot-after {
+  &[data-size="sm"] .label,
+  &[data-size="sm"] .slot-after {
     height: 24px;
   }
 
-  &[md] .label,
-  &[md] .slot-after {
+  &[data-size="md"] .label,
+  &[data-size="md"] .slot-after {
     height: 32px;
   }
 
-  &[lg] .label,
-  &[lg] .slot-after {
+  &[data-size="lg"] .label,
+  &[data-size="lg"] .slot-after {
     height: 40px;
   }
 }

@@ -3,27 +3,30 @@
 .form-item,
 .tcsmd-input {
   .error-text {
-    @apply text-tcsmd-ref-typesetting-font-size-sm flex items-center text-red-500 gap-1 ml-2 leading-normal
+    @apply text-tcsmd-ref-typesetting-font-size-sm flex items-center text-red-500 gap-1 ml-2 leading-normal;
   }
 
   .help-text {
-    @apply text-tcsmd-ref-typesetting-font-size-sm ml-2 flex items-center text-tcsmd-ref-palette-gray-60 leading-normal
+    @apply text-tcsmd-ref-typesetting-font-size-sm ml-2 flex items-center text-tcsmd-ref-palette-gray-60 leading-normal;
   }
 
-  &[sm] .error-text ,&[sm] .help-text {
-    @apply text-tcsmd-ref-typesetting-font-size-xs
+  &[data-size="sm"] .error-text,
+  &[data-size="sm"] .help-text {
+    @apply text-tcsmd-ref-typesetting-font-size-xs;
   }
 
-  &[md] .error-text, &[md] .help-text {
-    @apply text-tcsmd-ref-typesetting-font-size-sm
+  &[data-size="md"] .error-text,
+  &[data-size="md"] .help-text {
+    @apply text-tcsmd-ref-typesetting-font-size-sm;
   }
 
-  &[lg] .error-text, &[lg] .help-text {
-    @apply text-tcsmd-ref-typesetting-font-size-md
+  &[data-size="lg"] .error-text,
+  &[data-size="lg"] .help-text {
+    @apply text-tcsmd-ref-typesetting-font-size-md;
   }
 
   .icon {
-    @apply w-4 h-4
+    @apply w-4 h-4;
   }
 
   /* &[sm] .icon {
@@ -50,8 +53,7 @@
       justify-content: center;
       align-items: center;
       /* color: #c0c4cc; */
-      transition: all .3s;
-      pointer-events: none;
+      transition: all 0.3s;
     }
 
     ~ .tcsmd-input--prefix {
@@ -77,7 +79,8 @@
       font-weight: 400;
     }
 
-    &:disabled, &.disabled {
+    &:disabled,
+    &.disabled {
       opacity: 0.4;
       pointer-events: none;
     }
@@ -85,17 +88,20 @@
     &.error {
       @apply border-tcsmd-ref-palette-red-60 caret-tcsmd-ref-palette-red-60;
 
-      &:hover, &.hover {
+      &:hover,
+      &.hover {
         @apply border-tcsmd-ref-palette-red-70;
       }
 
-      &:focus, &.focus {
+      &:focus,
+      &.focus {
         @apply outline outline-1 outline-tcsmd-ref-palette-red-60 border-tcsmd-ref-palette-red-60;
         /* box-shadow: 0 0 0 0.2rem rgba(243, 20, 20, 0.25); */
       }
     }
 
-    &:hover, &.hover {
+    &:hover,
+    &.hover {
       @apply border-tcsmd-ref-palette-blue-60;
     }
 
@@ -103,13 +109,14 @@
       @apply outline outline-1 outline-tcsmd-ref-palette-blue-60 border-tcsmd-ref-palette-blue-60;
     }
 
-    &:focus, &.focus {
+    &:focus,
+    &.focus {
       @apply outline outline-1 outline-tcsmd-ref-palette-blue-60 border-tcsmd-ref-palette-blue-60;
       /* box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); */
     }
   }
 
-  &[sm] .tcsmd-input__inner {
+  &[data-size="sm"] .tcsmd-input__inner {
     padding: 3px 8px;
     height: 24px;
 
@@ -119,11 +126,11 @@
     }
   }
 
-  &[md] .tcsmd-input__inner {
+  &[data-size="md"] .tcsmd-input__inner {
     height: 32px;
   }
 
-  &[lg] .tcsmd-input__inner {
+  &[data-size="lg"] .tcsmd-input__inner {
     @apply text-tcsmd-ref-typesetting-font-size-md;
     height: 40px;
 
