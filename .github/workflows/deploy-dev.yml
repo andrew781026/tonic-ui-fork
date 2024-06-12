@@ -51,6 +51,21 @@ jobs:
           node-version: '18.x'
           registry-url: 'https://registry.npmjs.org'
 
+      - name: Show info in annotation
+        run: |
+          echo "Running some code..."
+
+          # Example of an error annotation
+          if [[ -f some-file.txt ]]; then
+            echo "::error file=some-file.txt,line=10,col=5::File not found error"
+          fi
+
+          # Example of a warning annotation
+          echo "::warning npm version `0.0.8-alpha.${{ github.run_number }}`"
+
+          # Example of a notice annotation
+          echo "::notice file=another-file.txt,line=30,col=15::This is a notice message"
+
       - name: Setup specific version # version specific version - https://stackoverflow.com/questions/48423867/npm-version-update-to-specific-version
         run: |
           cd dist
