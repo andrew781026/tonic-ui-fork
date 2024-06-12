@@ -61,7 +61,7 @@ jobs:
           fi
 
           # Example of a warning annotation
-          echo "::warning npm version `0.0.8-alpha.${{ github.run_number }}`"
+          echo "::warning npm version `0.0.8-alpha.${{ github.run_number }}`::This is a warning message"
 
           # Example of a notice annotation
           echo "::notice file=another-file.txt,line=30,col=15::This is a notice message"
