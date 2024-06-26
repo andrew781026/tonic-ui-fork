@@ -5,11 +5,11 @@
 # HIE and RD working model
 ```mermaid
 graph TD
-    A["HIE update UI component<br/> in Figma"]-->B["FED use Scss and Tailwind to develop style of UI component <br/> in consumer-tonic-ui"];
-    B-->C["FED use consumer-tonic-ui style to develop react component <br/>in consumer-tonic-ui-react"];
-    B-->D["FED use consumer-tonic-ui style to develop vue component <br/>in consumer-tonic-ui-vue"];
+    A["HIE defines the UI component<br/> in Figma"]-->B["FED use Tailwind to develop the styles for the UI components <br/> in the consumer-tonic-ui repository"];
+    B-->C["FED utilizes the consumer-tonic-ui styles to develop React components <br/>in the consumer-tonic-ui-react repository"];
+    B-->D["FED utilizes the consumer-tonic-ui styles to develop Vue components <br/>in the consumer-tonic-ui-vue repository"];
     C-->E["empty"];
-    D-->E["Update react and vue component </br> in consumer-tonic-ui-docs"];
+    D-->E["Document the component usage  </br> in the consumer-tonic-ui-docs repository"];
 ```
 
 ### Requirement
