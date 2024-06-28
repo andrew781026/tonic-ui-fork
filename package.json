@@ -19,6 +19,7 @@
     "gen:iconset": "ts-node src/iconSetGen.ts",
     "gen:purge": "ts-node src/lib/purgecss.ts",
     "build": "tsc && npm run base && npm run components && node utils/copyFiles.js && npm run cp:img && npm run gen:iconset",
+    "full": "npm run build && postcss src/full/index.css -o dist/full.css --config src/full",
     "doc:build": "npm run build && cd astro && npm run build",
     "dev": "npm run build && cd astro && npm run astro:dev",
     "lint": "eslint src/**/*.js",
