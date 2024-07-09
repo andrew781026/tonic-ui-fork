@@ -33,13 +33,53 @@
   &.left {
     left: 0;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) translateX(-200%);
+
+    &.fade-in {
+      transform: translateY(-50%);
+      transition: transform 0.2s;
+    }
+
+    &.in {
+      transform: translateY(-50%);
+      transition: none;
+    }
+
+    &.fade-out {
+      transform: translateY(-50%) translateX(-200%);
+      transition: transform 0.2s;
+    }
+
+    &.out {
+      transform: translateY(-50%) translateX(-200%);
+      transition: none;
+    }
   }
 
   &.top {
     top: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(-200%);
+
+    &.fade-in {
+      transform: translateX(-50%);
+      transition: transform 0.2s;
+    }
+
+    &.in {
+      transform: translateX(-50%);
+      transition: none;
+    }
+
+    &.fade-out {
+      transform: translateX(-50%) translateY(-200%);
+      transition: transform 0.2s;
+    }
+
+    &.out {
+      transform: translateX(-50%) translateY(-200%);
+      transition: none;
+    }
   }
 
   &.top-right {
@@ -50,13 +90,53 @@
   &.right {
     right: 0;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) translateX(200%);
+
+    &.fade-in {
+      transform: translateY(-50%);
+      transition: transform 0.2s;
+    }
+
+    &.in {
+      transform: translateY(-50%);
+      transition: none;
+    }
+
+    &.fade-out {
+      transform: translateY(-50%) translateX(200%);
+      transition: transform 0.2s;
+    }
+
+    &.out {
+      transform: translateY(-50%) translateX(200%);
+      transition: none;
+    }
   }
 
   &.bottom {
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) translateY(200%);
+
+    &.fade-in {
+      transform: translateX(-50%);
+      transition: transform 0.2s;
+    }
+
+    &.in {
+      transform: translateX(-50%);
+      transition: none;
+    }
+
+    &.fade-out {
+      transform: translateX(-50%) translateY(200%);
+      transition: transform 0.2s;
+    }
+
+    &.out {
+      transform: translateX(-50%) translateY(200%);
+      transition: none;
+    }
   }
 
   &.bottom-left {
