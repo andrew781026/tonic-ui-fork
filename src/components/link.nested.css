@@ -73,7 +73,8 @@
     @apply text-tcsmd-sys-color-text-secondary;
 
     &:visited, &.visited {
-      @apply text-tcsmd-ref-palette-indigo-60;
+      @apply text-tcsmd-ref-palette-purple-60;
+      /* @apply text-tcsmd-comp-link-subtle-visited; */
     }
   }
 
