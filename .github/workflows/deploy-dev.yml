@@ -36,15 +36,6 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: deploy
-        run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          node publish.js
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-#          TAG: ${{ steps.tag.outputs.TAG }}
-
       - name: Setup .npmrc file to publish to npm
         uses: actions/setup-node@v3
         with:
