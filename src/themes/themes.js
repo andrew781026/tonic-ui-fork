@@ -974,7 +974,7 @@ const consumerDefaultTheme = {
           strokeDasharray: '0, 150',
         },
         '50%': {
-          strokeDashoffset:  -44,
+          strokeDashoffset: -44,
           strokeDasharray: '90, 150',
         },
         '100%': {
@@ -992,6 +992,10 @@ const consumerDefaultTheme = {
     boxShadow: {
       'btn-default': 'inset 0 0 0 1.5px var(--tw-shadow-color)',
       'btn-ghost': 'inset 0 0 0 1.5px var(--tw-shadow-color)',
+    },
+    lineHeight: {
+      jp: '1.4',
+      en: '1.2',
     },
     minHeight: {
       'btn-xs': default_button_gen_float["tcsmd-comp-button-size-xs"],

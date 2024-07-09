@@ -41,7 +41,7 @@
     "tailwindcss": "^3.3.2"
   },
   "devDependencies": {
-    "@consumer-tonic-ui/design-system": "0.0.5",
+    "@consumer-tonic-ui/design-system": "0.0.6",
     "@types/jest": "^29.5.10",
     "autoprefixer": "^10.4.14",
     "eslint": "^8.40.0",
