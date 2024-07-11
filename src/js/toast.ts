@@ -1,49 +1,35 @@
 let timeoutId: NodeJS.Timeout;
 
-export function openToast(position: string) {
+enum Position {
+  TopLeft = 'top-left',
+  Left = "left",
+  BottomLeft = "bottom-left",
+  Top = "top",
+  Bottom = "bottom",
+  TopRight = "top-right",
+  Right = "right",
+  BottomRight = "bottom-right",
+}
+
+export const openToast = (ele: HTMLElement, position: Position, delay = 2000) => {
+
   clearTimeout(timeoutId);
-  const toastEl = <HTMLElement>document.querySelector('#toast');
-
-  const animateInMap: {[index: string]:any}  = {
-    'top-left': 'animate__backInLeft',
-    'left': 'animate__backInLeft',
-    'bottom-left': 'animate__backInLeft',
-    'top': 'animate__backInDown',
-    'bottom': 'animate__backInUp',
-    'top-right': 'animate__backInRight',
-    'right': 'animate__backInRight',
-    'bottom-right': 'animate__backInRight',
-  }
-
-  const animateOutMap: {[index: string]:any}  = {
-    'top-left': 'animate__backOutLeft',
-    'left': 'animate__backOutLeft',
-    'bottom-left': 'animate__backOutLeft',
-    'top': 'animate__backOutUp',
-    'bottom': 'animate__backOutDown',
-    'top-right': 'animate__backOutRight',
-    'right': 'animate__backOutRight',
-    'bottom-right': 'animate__backOutRight',
-  }
-
-  const positionStyleMap: {[index: string]:any}  = {
-    'top-left': 'left:0;top:0',
-    'left': 'left:0;top:50%',
-    'top': 'top:0;left:50%',
-    'top-right': 'right:0;top:0',
-    'right': 'right:0;top:50%;',
-    'bottom': 'bottom:0;left:50%',
-    'bottom-left': 'left:0;bottom:0',
-    'bottom-right': 'right:0;bottom:0',
-  }
-
+  const toastEl = ele;
   if (!toastEl) return;
 
-  toastEl.className = `fixed z-10 toast gap-1 rounded animate__animated ${animateInMap[position]}`;
-  // @ts-ignore
-  toastEl.style = positionStyleMap[position];
-  document.body.append(toastEl);
+  toastEl.className = `fixed z-10 toast gap-1 rounded black fade-in ${position}`;
+  document.body.append(toastEl); // make element at root of body
+
+  // on animate-end
+  toastEl.addEventListener("animationend", (event) => {
+    const ele = <HTMLElement>event.target;
+    if (!ele) return;
+    else if (ele.classList.contains('fade-in')) ele.className = `fixed z-10 toast gap-1 rounded black in ${position}`;
+    else ele.className = `fixed z-10 toast gap-1 rounded black out ${position}`;
+  });
+
   timeoutId = setTimeout(() => {
-    toastEl.className = `fixed z-10 toast gap-1 rounded animate__animated ${animateOutMap[position]}`
-  }, 2000);
+    // fade-out
+    toastEl.className = `fixed z-10 toast gap-1 rounded black fade-out ${position}`
+  }, delay);
 }
