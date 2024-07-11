@@ -28,6 +28,27 @@
   &.top-left {
     left: 0;
     top: 0;
+    transform: translateX(-200%);
+
+    &.fade-in {
+      transform: translateX(0);
+      transition: transform 0.2s;
+    }
+
+    &.in {
+      transform: translateX(0);
+      transition: none;
+    }
+
+    &.fade-out {
+      transform: translateX(-200%);
+      transition: transform 0.2s;
+    }
+
+    &.out {
+      transform: translateX(-200%);
+      transition: none;
+    }
   }
 
   &.left {
@@ -85,6 +106,27 @@
   &.top-right {
     right: 0;
     top: 0;
+    transform: translateX(200%);
+
+    &.fade-in {
+      transform: translateX(0);
+      transition: transform 0.2s;
+    }
+
+    &.in {
+      transform: translateX(0);
+      transition: none;
+    }
+
+    &.fade-out {
+      transform: translateX(200%);
+      transition: transform 0.2s;
+    }
+
+    &.out {
+      transform: translateX(200%);
+      transition: none;
+    }
   }
 
   &.right {
@@ -141,12 +183,54 @@
 
   &.bottom-left {
     left: 0;
-    bottom: 0
+    bottom: 0;
+    transform: translateX(-200%);
+
+    &.fade-in {
+      transform: translateX(0);
+      transition: transform 0.2s;
+    }
+
+    &.in {
+      transform: translateX(0);
+      transition: none;
+    }
+
+    &.fade-out {
+      transform: translateX(-200%);
+      transition: transform 0.2s;
+    }
+
+    &.out {
+      transform: translateX(-200%);
+      transition: none;
+    }
   }
 
   &.bottom-right {
     right: 0;
-    bottom: 0
+    bottom: 0;
+    transform: translateX(200%);
+
+    &.fade-in {
+      transform: translateX(0);
+      transition: transform 0.2s;
+    }
+
+    &.in {
+      transform: translateX(0);
+      transition: none;
+    }
+
+    &.fade-out {
+      transform: translateX(200%);
+      transition: transform 0.2s;
+    }
+
+    &.out {
+      transform: translateX(200%);
+      transition: none;
+    }
   }
 
 }

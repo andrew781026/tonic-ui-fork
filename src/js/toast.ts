@@ -17,8 +17,9 @@ export const openToast = (ele: HTMLElement, position: Position, delay = 2000) =>
   const toastEl = ele;
   if (!toastEl) return;
 
-  toastEl.className = `fixed z-10 toast gap-1 rounded black fade-in ${position}`;
+  toastEl.className = `fixed z-10 toast gap-1 rounded black ${position}`;
   document.body.append(toastEl); // make element at root of body
+  timeoutId = setTimeout(() => toastEl.classList.add('fade-in'));
 
   // on animate-end
   toastEl.addEventListener("animationend", (event) => {
