@@ -23,11 +23,18 @@ const setOffset = (target: HTMLElement, position: Position, offset: Record<any, 
   // offset = { top:'4px', bottom:'4px', left:'4px', right:'4px' }
   // offset = '4px'
 
-  const offsetObj = (typeof offset === 'string') ? {top: offset, bottom: offset, left: offset, right: offset} : offset;
-  if (position.includes('top') && offsetObj.top) target.style.top = offsetObj.top;
-  if (position.includes('left') && offsetObj.left) target.style.left = offsetObj.left;
-  if (position.includes('bottom') && offsetObj.bottom) target.style.bottom = offsetObj.bottom;
-  if (position.includes('right') && offsetObj.right) target.style.right = offsetObj.right;
+  const resultObj: Record<any, any> = {top: 0, bottom: 0, left: 0, right: 0};
+  const offsetObj: Record<any, any> = (typeof offset === 'string') ? {top: offset, bottom: offset, left: offset, right: offset} : offset;
+  if (position.includes('top') && offsetObj.top) resultObj.top = offsetObj.top;
+  if (position.includes('left') && offsetObj.left) resultObj.left = offsetObj.left;
+  if (position.includes('bottom') && offsetObj.bottom) resultObj.bottom = offsetObj.bottom;
+  if (position.includes('right') && offsetObj.right) resultObj.right = offsetObj.right;
+
+  // setting
+  target.style.marginTop = resultObj.top;
+  target.style.marginBottom = resultObj.bottom;
+  target.style.marginLeft = resultObj.left;
+  target.style.marginRight = resultObj.right;
 }
 
 export const openToast = ({el, position, delay = 2000, offset}: openToastParams) => {
