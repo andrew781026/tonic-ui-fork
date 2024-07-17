@@ -1,0 +1,31 @@
+.tcsmd-spinner {
+    @apply block animate-spin w-[48px] h-[48px] border-[4px] border-t-[4px] border-tcsmd-comp-spinner-default-bg border-y-tcsmd-comp-spinner-default-color border-l-tcsmd-comp-spinner-default-color rounded-full;
+    
+    &.gray {
+        @apply border-y-tcsmd-comp-spinner-gray-color border-l-tcsmd-comp-spinner-gray-color;
+    }
+    
+    &.white {
+        @apply border-y-tcsmd-comp-spinner-white-color border-l-tcsmd-comp-spinner-white-color;
+    }
+
+    &.xs {
+        @apply w-4 h-4 border-[4px] border-t-[4px];
+    }
+
+    &.sm {
+        @apply w-8 h-8 border-[4px] border-t-[4px];
+    }
+
+    &.md {
+        @apply w-12 h-12 border-[4px] border-t-[4px];
+    }
+
+    &.lg {
+        @apply w-16 h-16 border-[4px] border-t-[4px];
+    }
+
+    &.xl {
+        @apply w-20 h-20 border-[4px] border-t-[4px];
+    }
+}
