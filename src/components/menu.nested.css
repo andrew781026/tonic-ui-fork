@@ -1,0 +1,64 @@
+/* https://www.figma.com/design/FPcYhygcr22tZS08P7hFF8/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?node-id=23706-18600&t=Xq9U6vGARCQXvt0H-0 */
+
+.tcsmd-menu {
+
+  @apply space-y-2 bg-tcsmd-comp-menu-bg p-2;
+  border-radius: 4px;
+  box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.12), 0px 0px 4px 0px rgba(0, 0, 0, 0.06);
+
+  &.sm {
+
+    .tcsmd-menu-item {
+      height: 24px;
+      font-size: 12px;
+      /* tcsmd-sys-typ-body12 -r */
+    }
+  }
+
+  &.md {
+
+    .tcsmd-menu-item {
+      height: 32px;
+      font-size: 14px;
+      /* tcsmd-sys-typ-body14 -r */
+    }
+  }
+
+  &.lg {
+
+    .tcsmd-menu-item {
+      height: 40px;
+      font-size: 16px;
+      /* tcsmd-sys-typ-body16 -r */
+    }
+  }
+
+  .tcsmd-menu-item {
+
+    @apply text-tcsmd-sys-color-text-secondary cursor-pointer flex justify-center items-center;
+    border-radius: 4px;
+
+    &:enabled, &.enabled {
+      @apply text-tcsmd-sys-color-text-secondary;
+    }
+
+    &:hover, &.hover {
+      @apply bg-tcsmd-comp-menu-item-hover-bg text-tcsmd-sys-color-text-primary;
+    }
+
+    &[selected], &.selected {
+      @apply bg-tcsmd-comp-menu-item-selected-bg text-tcsmd-sys-color-text-primary;
+    }
+
+    &[disabled], &.disabled {
+      @apply bg-tcsmd-comp-menu-item-hover-bg cursor-not-allowed text-tcsmd-sys-color-text-disabled;
+    }
+
+    &:focus, &.focus {
+      @apply text-tcsmd-sys-color-text-primary border-tcsmd-comp-menu-item-focus-border-color border-solid border-[2px];
+      /* border: 2px solid #0074E8; tcsmd/ref/palette/blue/60 */
+    }
+
+  }
+}
+
