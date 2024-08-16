@@ -43,7 +43,7 @@
 
 /* .mini-browser = Ti-client */
 .tcsmd-link-tag {
-  @apply text-tcsmd-sys-color-text-link tcsmd-link-default cursor-pointer flex items-center justify-center;
+  @apply text-tcsmd-sys-color-text-link tcsmd-link-default cursor-pointer inline-flex items-center justify-center;
 
   &.sm {
     @apply text-tcsmd-ref-typesetting-font-size-xs;
