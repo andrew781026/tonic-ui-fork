@@ -1,0 +1,35 @@
+name: Vue Consumer Tonic UI components dev publish
+
+on:
+  push:
+    branches:
+      - '*'
+      - '!main'
+
+permissions:
+    contents: write
+
+jobs:
+    build:
+      runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-consumer-tonic-ui-vue-dev-build
+      steps:
+        - name: Check out code
+          uses: actions/checkout@v3
+
+        - name: Check Node version
+          run: node -v
+
+        - name: build dist
+          run: |
+            npm i
+            npm run build
+
+        - uses: actions/setup-node@v3
+          with:
+            node-version: '18.x'
+            registry-url: 'https://registry.npmjs.org'
+        - run: |
+            npm version "0.0.8-alpha.${{ github.run_number }}" --no-git-tag-version
+            npm publish --access=public --tag=experimental
+          env:
+            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
