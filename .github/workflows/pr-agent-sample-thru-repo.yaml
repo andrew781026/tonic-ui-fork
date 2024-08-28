@@ -1,35 +1,27 @@
-name: Vue Consumer Tonic UI components dev publish
-
+name: pr-agent-sample-rdsec-aiendpoint
 on:
-  push:
-    branches:
-      - '*'
-      - '!main'
-
-permissions:
-    contents: write
-
+   pull_request:
+     types: [opened, reopened, ready_for_review, synchronize]
+   issue_comment:
+   pull_request_review_comment:
 jobs:
-    build:
-      runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-consumer-tonic-ui-vue-dev-build
-      steps:
-        - name: Check out code
-          uses: actions/checkout@v3
-
-        - name: Check Node version
-          run: node -v
-
-        - name: build dist
-          run: |
-            npm i
-            npm run build
-
-        - uses: actions/setup-node@v3
-          with:
-            node-version: '18.x'
-            registry-url: 'https://registry.npmjs.org'
-        - run: |
-            npm version "0.0.8-alpha.${{ github.run_number }}" --no-git-tag-version
-            npm publish --access=public --tag=experimental
-          env:
-            NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+   pr_agent_job:
+     if: ${{ github.event.sender.type != 'Bot' }}
+     runs-on: ebf-pod-ubuntu-2004@${{ github.run_id }}-pr_agent_job
+     permissions:
+       issues: write
+       pull-requests: write
+       contents: write
+     name: Run pr agent on every pull request, respond to user comments
+     steps:
+       - name: PR Agent action step
+         id: pragent
+         uses: actions/codium-ai-pr-agent@main
+         env:
+           # Acquire through process describe in https://trendmicro.atlassian.net/wiki/spaces/rdsecpub/pages/707467232/RDSec+One+-+AI+Endpoint
+           OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+           OPENAI_API_BASE: ${{ secrets.OPENAI_API_BASE }} # https://api.rdsec.trendmicro.com/prod/aiendpoint/v1
+           OPENAI_API_TYPE: custom_openai
+           CONFIG_MODEL: gpt-4o # write supported models name provided by RDsec AI endpoint, e.g. gpt-4o, llama3-70b, mistral-large
+           CONFIG_MODEL_TURBO: gpt-4o # write supported models name provided by RDsec AI endpoint, e.g. gpt-4o, llama3-70b, mistral-large
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
