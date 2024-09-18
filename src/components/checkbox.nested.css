@@ -18,13 +18,13 @@
 
 /* Checkbox Label */
 .tcsmd-checkbox-label {
-    @apply text-tcsmd-sys-color-text-primary font-roboto text-sm leading-[normal]
+    @apply text-tcsmd-sys-color-text-primary text-sm leading-[normal]
 }
 .tcsmd-checkbox-label-sm {
-    @apply text-tcsmd-sys-color-text-primary font-roboto text-xs leading-[normal]
+    @apply text-tcsmd-sys-color-text-primary text-xs leading-[normal]
 }
 .tcsmd-checkbox-label-lg {
-    @apply text-tcsmd-sys-color-text-primary font-roboto text-lg leading-[normal]
+    @apply text-tcsmd-sys-color-text-primary text-lg leading-[normal]
 }
 
 /* Checkbox state */

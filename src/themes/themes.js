@@ -997,7 +997,18 @@ const consumerDefaultTheme = {
       jp: '1.4',
       en: '1.2',
     },
+    height: {
+      'checkbox-sm': `calc(${default_button_gen_float["tcsmd-comp-checkbox-size-sm"]} - 1px* 2)`,
+      'checkbox-md': `calc(${default_button_gen_float["tcsmd-comp-checkbox-size-md"]} - 3px* 2)`,
+      'checkbox-lg': `calc(${default_button_gen_float["tcsmd-comp-checkbox-size-lg"]} - 4px* 2)`,
+    },
+    width: {
+      'checkbox-sm': `calc(${default_button_gen_float["tcsmd-comp-checkbox-size-sm"]} - 1px* 2)`,
+      'checkbox-md': `calc(${default_button_gen_float["tcsmd-comp-checkbox-size-md"]} - 3px* 2)`,
+      'checkbox-lg': `calc(${default_button_gen_float["tcsmd-comp-checkbox-size-lg"]} - 4px* 2)`,
+    },
     minHeight: {
+      "checkbox-sm": default_button_gen_float["tcsmd-comp-checkbox-size-sm"],
       'btn-xs': default_button_gen_float["tcsmd-comp-button-size-xs"],
       'btn-sm': default_button_gen_float["tcsmd-comp-button-size-sm"],
       'btn-md': default_button_gen_float["tcsmd-comp-button-size-md"],
