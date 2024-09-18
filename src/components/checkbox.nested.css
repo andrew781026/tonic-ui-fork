@@ -1,0 +1,52 @@
+/* figma define : https://www.figma.com/file/FPcYhygcr22tZS08P7hFF8/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?node-id=23696%3A18600&mode=dev */
+
+/* Wrapper */
+.tcsmd-checkbox-wrapper {
+    @apply flex items-center gap-1 cursor-pointer !m-0
+}
+
+/* Checkbox */
+.tcsmd-checkbox {
+    @apply flex justify-center items-center bg-tcsmd-comp-checkbox-default-bg border rounded border-tcsmd-comp-checkbox-default-border-color group-hover/checkbox:bg-tcsmd-comp-checkbox-hover-bg group-hover/checkbox:border-tcsmd-comp-checkbox-hover-border-color box-border h-checkbox-md w-checkbox-md m-[3px] transition
+}
+.tcsmd-checkbox-sm {
+    @apply h-checkbox-sm w-checkbox-sm m-[1px]
+}
+.tcsmd-checkbox-lg {
+    @apply h-checkbox-lg w-checkbox-lg m-1
+}
+
+/* Checkbox Label */
+.tcsmd-checkbox-label {
+    @apply text-tcsmd-sys-color-text-primary font-roboto text-sm leading-[normal]
+}
+.tcsmd-checkbox-label-sm {
+    @apply text-tcsmd-sys-color-text-primary font-roboto text-xs leading-[normal]
+}
+.tcsmd-checkbox-label-lg {
+    @apply text-tcsmd-sys-color-text-primary font-roboto text-lg leading-[normal]
+}
+
+/* Checkbox state */
+.tcsmd-checkbox-checked,
+.tcsmd-checkbox-indeterminate {
+    @apply border-tcsmd-ref-palette-blue-60 group-hover/checkbox:border-tcsmd-ref-palette-blue-60
+}
+
+.tcsmd-checkbox-indeterminate-line {
+    @apply w-2.5 h-0.5 rounded bg-tcsmd-ref-palette-blue-60
+}
+.tcsmd-checkbox-indeterminate-line-sm {
+    @apply w-2 h-[1.6px]
+}
+.tcsmd-checkbox-indeterminate-line-lg {
+    @apply w-3.5 h-[2.8px]
+}
+
+.tcsmd-checkbox-wrapper-disabled {
+    @apply opacity-40 cursor-not-allowed
+}
+
+.tcsmd-checkbox-focus {
+    @apply group-active/checkbox:border-tcsmd-ref-palette-blue-60 group-active/checkbox:border-[2px]
+}
