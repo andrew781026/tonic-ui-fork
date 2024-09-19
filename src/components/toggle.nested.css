@@ -1,60 +1,81 @@
 .tcsmd-toggle-wrapper {
   @apply inline-flex items-center cursor-pointer;
 
+  &:disabled,
+  &.disabled {
+    pointer-events: none;
+    .tcsmd-toggle-input ~ .tcsmd-toggle-background {
+      @apply bg-gradient-to-r from-[#8E8E8E] to-[#ADADAD];
+    }
+    .tcsmd-toggle-input:checked ~ .tcsmd-toggle-background {
+      @apply bg-gradient-to-r from-[#0074E8] to-[#2E96FF];
+    }
+  }
+
   .tcsmd-toggle-input {
     @apply sr-only;
   }
+  .tcsmd-toggle-label {
+    @apply ms-2 text-tcsmd-ref-typesetting-font-size-sm text-tcsmd-sys-color-text-primary;
+  }
+  .tcsmd-toggle-circle {
+    @apply absolute m-[3px] bg-tcsmd-ref-palette-white rounded-full h-[18px] w-[18px] transition-all;
+  }
   .tcsmd-toggle-background {
-    @apply relative w-11 h-6 bg-gray-200 rounded-full dark:bg-gray-700;
-    
-    .tcsmd-toggle-circle {
-      @apply absolute top-[2px] left-[2px] bg-white border-gray-300 border rounded-full h-5 w-5 transition-all dark:border-gray-600;
+    @apply relative w-12 h-6 rounded-full bg-gradient-to-r from-tcsmd-ref-palette-gray-50 to-tcsmd-ref-palette-gray-40;
+    &:hover {
+      @apply bg-gradient-to-r from-tcsmd-ref-palette-gray-60 to-tcsmd-ref-palette-gray-50;
     }
   }
-  .tcsmd-toggle-label {
-    @apply ms-2 text-tcsmd-ref-typesetting-font-size-sm;
-  }
+
   .tcsmd-toggle-input:checked ~ .tcsmd-toggle-background {
-    @apply bg-blue-600;
-  }
-  
-  .tcsmd-toggle-input:focus ~ .tcsmd-toggle-background {
-    @apply outline-none ring-4 ring-blue-300 dark:ring-blue-800;
-  }
-  
-  .tcsmd-toggle-input:checked ~ .tcsmd-toggle-background .tcsmd-toggle-circle {
-    @apply translate-x-full rtl:translate-x-0.5 border-white;
+    @apply bg-gradient-to-r from-tcsmd-ref-palette-blue-60 to-tcsmd-ref-palette-blue-50;
+    &:hover {
+      @apply bg-gradient-to-r from-tcsmd-ref-palette-blue-70 to-tcsmd-ref-palette-blue-60;
+    }
   }
 
-  &.sm, &.small {
+  .tcsmd-toggle-input:focus ~ .tcsmd-toggle-background {
+    @apply outline-none ring-2 ring-blue-600 ring-offset-1;
+  }
+
+  .tcsmd-toggle-input:checked ~ .tcsmd-toggle-background .tcsmd-toggle-circle {
+    @apply translate-x-6;
+  }
+
+  &.sm,
+  &.small {
     .tcsmd-toggle-background {
       @apply w-8 h-4;
     }
     .tcsmd-toggle-circle {
-      @apply top-[2px] left-[2px] h-3 w-3;
+      @apply h-3 w-3 m-0.5;
     }
     .tcsmd-toggle-label {
-      @apply ms-2 text-tcsmd-ref-typesetting-font-size-xs;
+      @apply text-tcsmd-ref-typesetting-font-size-xs;
     }
-    .tcsmd-toggle-input:checked ~ .tcsmd-toggle-background .tcsmd-toggle-circle {
-      @apply translate-x-4 border-white;
+    .tcsmd-toggle-input:checked
+      ~ .tcsmd-toggle-background
+      .tcsmd-toggle-circle {
+      @apply translate-x-4;
     }
   }
 
-  &.lg, &.large {
+  &.lg,
+  &.large {
     .tcsmd-toggle-background {
-      @apply w-[72px] h-9;
+      @apply w-16 h-8;
     }
     .tcsmd-toggle-circle {
-      @apply top-[4px] left-[4px] h-7 w-7;
+      @apply h-6 w-6 m-1;
     }
     .tcsmd-toggle-label {
       @apply ms-2 text-tcsmd-ref-typesetting-font-size-lg;
     }
-    .tcsmd-toggle-input:checked ~ .tcsmd-toggle-background .tcsmd-toggle-circle {
-      @apply translate-x-9 border-white;
+    .tcsmd-toggle-input:checked
+      ~ .tcsmd-toggle-background
+      .tcsmd-toggle-circle {
+      @apply translate-x-8;
     }
   }
 }
-
-
