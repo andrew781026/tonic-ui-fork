@@ -17,19 +17,22 @@
   }
   .tcsmd-toggle-background {
     @apply relative w-12 h-6 rounded-full bg-gradient-to-r from-tcsmd-ref-palette-gray-50 to-tcsmd-ref-palette-gray-40;
-    &:hover {
+    &:hover,
+    &.hover {
       @apply bg-gradient-to-r from-tcsmd-ref-palette-gray-60 to-tcsmd-ref-palette-gray-50;
     }
   }
 
   .tcsmd-toggle-input:checked ~ .tcsmd-toggle-background {
     @apply bg-gradient-to-r from-tcsmd-ref-palette-blue-60 to-tcsmd-ref-palette-blue-50;
-    &:hover {
+    &:hover,
+    &.hover {
       @apply bg-gradient-to-r from-tcsmd-ref-palette-blue-70 to-tcsmd-ref-palette-blue-60;
     }
   }
 
-  .tcsmd-toggle-input:focus ~ .tcsmd-toggle-background {
+  .tcsmd-toggle-input:focus ~ .tcsmd-toggle-background,
+  .tcsmd-toggle-input.focus ~ .tcsmd-toggle-background {
     @apply outline-none ring-2 ring-tcsmd-comp-toggle-focus-border_outside-color ring-offset-1;
   }
 
