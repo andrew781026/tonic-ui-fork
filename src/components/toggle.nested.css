@@ -3,13 +3,7 @@
 
   &:disabled,
   &.disabled {
-    pointer-events: none;
-    .tcsmd-toggle-input ~ .tcsmd-toggle-background {
-      @apply bg-gradient-to-r from-[#8E8E8E] to-[#ADADAD];
-    }
-    .tcsmd-toggle-input:checked ~ .tcsmd-toggle-background {
-      @apply bg-gradient-to-r from-[#0074E8] to-[#2E96FF];
-    }
+    @apply opacity-40 pointer-events-none;
   }
 
   .tcsmd-toggle-input {
@@ -36,7 +30,7 @@
   }
 
   .tcsmd-toggle-input:focus ~ .tcsmd-toggle-background {
-    @apply outline-none ring-2 ring-blue-600 ring-offset-1;
+    @apply outline-none ring-2 ring-tcsmd-comp-toggle-focus-border_outside-color ring-offset-1;
   }
 
   .tcsmd-toggle-input:checked ~ .tcsmd-toggle-background .tcsmd-toggle-circle {
