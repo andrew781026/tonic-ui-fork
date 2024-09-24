@@ -16,7 +16,7 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  @apply flex flex-col items-center justify-center p-0 w-[24px] h-[24px]  border rounded border-tcsmd-ref-palette-gray-40 bg-tcsmd-ref-palette-white cursor-pointer;
+  @apply flex flex-col items-center justify-center p-0 w-[18px] h-[18px]  border rounded border-tcsmd-ref-palette-gray-40 bg-tcsmd-ref-palette-white cursor-pointer;
 
   /*When checkbox is enable*/
   &:enabled {
@@ -41,7 +41,7 @@
 
     /*When checkbox got checked while enable*/
     &:checked {
-      @apply w-[24px] h-[24px] justify-center items-center rounded border border-tcsmd-ref-palette-blue-60;
+      @apply w-[18px] h-[18px] justify-center items-center rounded border border-tcsmd-ref-palette-blue-60;
     }
     &:checked:focus,
     .focus {
