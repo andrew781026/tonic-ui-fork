@@ -3,8 +3,9 @@ name: consumer-tonic-ui-dist
 on:
   workflow_dispatch:
   push:
-    branches:
-      - dev
+    branches: [ dev, main ]
+  pull_request:
+    branches: [ dev, main ]
 
 permissions:
   contents: write
@@ -29,6 +30,14 @@ jobs:
         id: tag
         run: echo "TAG=v$(node -e "console.log(require('./dist-package.json').version)")-${{ steps.extract_branch.outputs.branch }}.${{ github.run_number }}" >> $GITHUB_OUTPUT
 
+      - name: Get version from package.json
+        run: |
+          echo "version=v$(node -e "console.log(require('./dist-package.json').version)").${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
+        
+      - name: Check Data
+        run: |
+          echo "version: ${{ env.version }}"
+          
       - name: build dist
         run: |
           npm i
