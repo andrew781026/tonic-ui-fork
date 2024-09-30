@@ -1,0 +1,78 @@
+.tcsmd-toggle-wrapper {
+  @apply inline-flex items-center cursor-pointer;
+
+  &:disabled,
+  &.disabled {
+    @apply opacity-40 pointer-events-none;
+  }
+
+  .tcsmd-toggle-input {
+    @apply sr-only;
+  }
+  .tcsmd-toggle-label {
+    @apply ms-2 text-tcsmd-ref-typesetting-font-size-sm text-tcsmd-sys-color-text-primary;
+  }
+  .tcsmd-toggle-circle {
+    @apply absolute m-[3px] bg-tcsmd-ref-palette-white rounded-full h-[18px] w-[18px] transition-all;
+  }
+  .tcsmd-toggle-background {
+    @apply relative w-12 h-6 rounded-full bg-gradient-to-r from-tcsmd-ref-palette-gray-50 to-tcsmd-ref-palette-gray-40;
+    &:hover,
+    &.hover {
+      @apply bg-gradient-to-r from-tcsmd-ref-palette-gray-60 to-tcsmd-ref-palette-gray-50;
+    }
+  }
+
+  .tcsmd-toggle-input:checked ~ .tcsmd-toggle-background {
+    @apply bg-gradient-to-r from-tcsmd-ref-palette-blue-60 to-tcsmd-ref-palette-blue-50;
+    &:hover,
+    &.hover {
+      @apply bg-gradient-to-r from-tcsmd-ref-palette-blue-70 to-tcsmd-ref-palette-blue-60;
+    }
+  }
+
+  .tcsmd-toggle-input:focus ~ .tcsmd-toggle-background,
+  .tcsmd-toggle-input.focus ~ .tcsmd-toggle-background {
+    @apply outline-none ring-2 ring-tcsmd-comp-toggle-focus-border_outside-color ring-offset-1;
+  }
+
+  .tcsmd-toggle-input:checked ~ .tcsmd-toggle-background .tcsmd-toggle-circle {
+    @apply translate-x-6;
+  }
+
+  &.sm,
+  &.small {
+    .tcsmd-toggle-background {
+      @apply w-8 h-4;
+    }
+    .tcsmd-toggle-circle {
+      @apply h-3 w-3 m-0.5;
+    }
+    .tcsmd-toggle-label {
+      @apply text-tcsmd-ref-typesetting-font-size-xs;
+    }
+    .tcsmd-toggle-input:checked
+      ~ .tcsmd-toggle-background
+      .tcsmd-toggle-circle {
+      @apply translate-x-4;
+    }
+  }
+
+  &.lg,
+  &.large {
+    .tcsmd-toggle-background {
+      @apply w-16 h-8;
+    }
+    .tcsmd-toggle-circle {
+      @apply h-6 w-6 m-1;
+    }
+    .tcsmd-toggle-label {
+      @apply ms-2 text-tcsmd-ref-typesetting-font-size-lg;
+    }
+    .tcsmd-toggle-input:checked
+      ~ .tcsmd-toggle-background
+      .tcsmd-toggle-circle {
+      @apply translate-x-8;
+    }
+  }
+}
