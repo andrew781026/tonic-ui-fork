@@ -35,7 +35,7 @@
       @apply bg-tcsmd-ref-palette-white rounded border border-tcsmd-ref-palette-blue-60;
     }
     &:indeterminate::before {
-      content: "";
+      content: "-";
       @apply flex items-center justify-center text-tcsmd-ref-palette-blue-60 leading-none text-base;
     }
 
@@ -50,12 +50,12 @@
     &:checked::before {
       content: "\2713"; /* Unicode for checkmark */
       @apply flex items-center justify-center text-tcsmd-ref-palette-blue-60 leading-none text-base font-bold;
-
-      &:checked:hover {
-        @apply bg-transparent;
-      }
+    }
+    &:checked:hover {
+      @apply bg-transparent;
     }
   }
+  /*Size - Small*/
   &.size-sm {
     @apply w-[16px] h-[16px];
     &:checked {
@@ -65,6 +65,7 @@
       @apply text-tcsmd-ref-typesetting-font-size-sm;
     }
   }
+  /*Size - Medium*/
   &.size-md {
     @apply w-[24px] h-[24px];
     &:checked {
@@ -74,6 +75,7 @@
       @apply text-tcsmd-ref-typesetting-font-size-2xl;
     }
   }
+  /*Size - Large*/
   &.size-lg {
     @apply w-[32px] h-[32px];
     &:checked {
