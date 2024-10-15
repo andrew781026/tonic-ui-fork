@@ -1,28 +1,27 @@
 /* figma define: https://www.figma.com/design/FPcYhygcr22tZS08P7hFF8/branch/br6Diik6cv6zQUvrit6RQV/%F0%9F%8F%A0-Consumer-Tonic---UI-Components?node-id=23696-18600&node-type=canvas&t=s7arqmPMGunaxMTy-0 */
 
+
 .tscmd-checkbox-group {
-  @apply flex flex-1 items-start;
-
-  &.vertical {
-    @apply flex-row gap-1 items-center;
-  }
-
   &.horizontal {
-    @apply flex-row flex-wrap gap-4;
+    @apply flex flex-row flex-nowrap mr-3;
+    gap: 150px;
   }
 }
-
+.tcsmd-checkbox-label{
+  @apply whitespace-nowrap w-px block items-center;
+}
 .tcsmd-checkbox {
   appearance: none;
+  display: inline-block;
   -webkit-appearance: none;
   -moz-appearance: none;
-  @apply flex flex-col items-center justify-center p-0 w-[18px] h-[18px]  border rounded border-tcsmd-ref-palette-gray-40 bg-tcsmd-ref-palette-white cursor-pointer;
+  @apply align-middle inline-block justify-center p-0 w-[18px] h-[18px] m-1 border rounded border-tcsmd-ref-palette-gray-40 bg-tcsmd-ref-palette-white cursor-pointer;
 
   /*When checkbox is enable*/
   &:enabled {
     &:hover,
     .hover {
-      @apply bg-tcsmd-ref-palette-gray-22 border-tcsmd-ref-palette-gray-60;
+      @apply bg-tcsmd-ref-palette-gray-22 border-tcsmd-ref-palette-gray-60 bg-white;
     }
 
     &:focus,
