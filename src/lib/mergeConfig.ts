@@ -85,6 +85,24 @@ const getKeyValuePair = (config: ResolvableTo<KeyValuePair> = {}, type: string) 
 //   // doc : https://tailwindcss.com/docs/screens
 // }
 
+const getBoxShadow = (config: ResolvableTo<KeyValuePair<string, string | string[]>> = {}, type: string) => {
+  //   boxShadow: ResolvableTo<KeyValuePair<string, string | string[]>>
+  const result: ResolvableTo<KeyValuePair> = {};
+
+  for (const [key, value] of Object.entries(config)) {
+    const escapedKey = cssEscape(key);
+
+    if (!value) continue;
+    else if (typeof value === "function") result[key] = value;
+    else if (typeof value === "string" && value.includes('var')) result[key] = value;
+    else if (typeof value === "string" && !value.includes('var')) result[key] = `var(--boxShadow-${escapedKey})`;
+    else if (Array.isArray(value)) result[key] = `var(--boxShadow-${escapedKey})`;
+    else throw new TonicConfigError({type: 'BoxShadow', key, value});
+  }
+
+  return result;
+}
+
 const getDropShadow = (config: ResolvableTo<KeyValuePair<string, string | string[]>> = {}) => {
   //   dropShadow: ResolvableTo<KeyValuePair<string, string | string[]>>
   const result: ResolvableTo<KeyValuePair> = {};
@@ -370,7 +388,13 @@ export const mergeConfig = (option: MultiThemePluginOptions) => {
     caretColor: getColors(allExtend.caretColor, 'caretColor'),
     accentColor: getColors(allExtend.accentColor, 'accentColor'),
     opacity: getKeyValuePair(allExtend.opacity, 'opacity'),
-    boxShadow: getKeyValuePair(allExtend.boxShadow, 'boxShadow'),
+
+    /**
+     * Type fix hint -
+     *   in TailwindCss v3.3.2 , boxShadow is ResolvableTo<KeyValuePair>
+     * And in TailwindCss v3.4.15 , boxShadow is ResolvableTo<KeyValuePair<string, string | string[]>>
+     */
+    boxShadow: getBoxShadow(allExtend.boxShadow, 'boxShadow'),
     boxShadowColor: getColors(allExtend.boxShadowColor, 'boxShadowColor'),
     outlineWidth: getKeyValuePair(allExtend.outlineWidth, 'outlineWidth'),
     outlineOffset: getKeyValuePair(allExtend.outlineOffset, 'outlineOffset'),
