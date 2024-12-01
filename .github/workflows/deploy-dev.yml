@@ -26,18 +26,6 @@ jobs:
         shell: bash
         run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
 
-      - name: Create tag env
-        id: tag
-        run: echo "TAG=v$(node -e "console.log(require('./dist-package.json').version)")-${{ steps.extract_branch.outputs.branch }}.${{ github.run_number }}" >> $GITHUB_OUTPUT
-
-      - name: Get version from package.json
-        run: |
-          echo "version=v$(node -e "console.log(require('./dist-package.json').version)").${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
-        
-      - name: Check Data
-        run: |
-          echo "version: ${{ env.version }}"
-          
       - name: build dist
         run: |
           npm i

@@ -1,6 +1,6 @@
 {
   "name": "consumer-tonic-ui",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "tonic-ui for tailwind version",
   "main": "index.js",
   "scripts": {
@@ -53,7 +53,7 @@
     "jest-mock-extended": "^3.0.5",
     "minimist": "^1.2.8",
     "ncp": "^2.0.0",
-    "postcss": "^8.4.23",
+    "postcss": "8.4.23",
     "postcss-cli": "^10.1.0",
     "postcss-import": "^15.1.0",
     "postcss-js": "^4.0.1",
