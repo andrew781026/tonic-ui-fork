@@ -1,6 +1,8 @@
 # Consumer-Tonic-UI
 
- This is non-official for Consumer-Tonic-UI , it's a trial for making a Tailwind plugin for Consumer-Tonic-UI.
+ This is official for Consumer-Tonic-UI , it using Tailwind plugin as base of Consumer-Tonic-UI.
+
+ Inspired by [tailwindcss-themer](https://www.npmjs.com/package/tailwindcss-themer) & [daisyui](https://github.com/daisyui)
 
 # HIE and RD working model
 ```mermaid
