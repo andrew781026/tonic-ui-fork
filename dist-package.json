@@ -24,6 +24,7 @@
   },
   "homepage": "https://adc.github.trendmicro.com/Consumer-Frontend/consumer-tonic-ui/blob/dev/README.md",
   "dependencies": {
+    "tailwindcss": "^3.4.17",
     "@iconify/tailwind": "^0.1.4",
     "@iconify/tools": "^3.0.7",
     "@consumer-tonic-ui/design-system": "0.0.8"
