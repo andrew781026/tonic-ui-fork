@@ -32,6 +32,7 @@ const mainFunction = (options: MultiThemePluginOptions) => (api: PluginAPI) => {
   // postcss, for doing low-level manipulation with PostCSS directly
 
   const {addBase, addComponents, addUtilities, config, e} = api;
+  const {isTailwind4} = options;
 
   try {
     // inject @base style
@@ -41,7 +42,7 @@ const mainFunction = (options: MultiThemePluginOptions) => (api: PluginAPI) => {
 
     // inject components - button
     // @ts-ignore
-    const component = require('./component.js');
+    const component = isTailwind4 ? require('./component-v4.js') : require('./component.js');
     addComponents(component);
   } catch (e) {
     // console.warn('error=',e);

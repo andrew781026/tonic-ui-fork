@@ -15,6 +15,7 @@ export interface ThemeSetting {
 }
 
 export interface MultiThemePluginOptions {
+  isTailwind4?: Boolean
   inShadowRoot?: Boolean
   settings?: ThemeSetting[]
   defaultTheme?: Partial<DefaultThemeConfig, 'name'>
