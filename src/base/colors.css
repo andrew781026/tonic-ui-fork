@@ -3,3 +3,9 @@
   background-color: hsla(var(--b1) / var(--tw-bg-opacity, 1));
   color: hsla(var(--bc) / var(--tw-text-opacity, 1));
 }
+
+:root {
+  /* ✅ 確保位置變數也有定義 */
+  --tw-gradient-from-position: 0%;
+  --tw-gradient-to-position: 100%;
+}
