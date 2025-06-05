@@ -928,7 +928,7 @@ const newsTheme = {
   },
 };
 
-export const consumerDefaultTheme = {
+const consumerDefaultTheme = {
   name: 'consumerDefault',
   selectors: [':root', ':host'],
   extend: {
@@ -1132,7 +1132,7 @@ const consumerDarkTheme = {
   },
 };
 
-export default {
+export {
   pwmTheme,
   idpPortalTheme,
   idpExtraTheme,
