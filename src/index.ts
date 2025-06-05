@@ -9,6 +9,7 @@ import {consumerDefaultTheme} from './themes/themes';
 
 // @ts-ignore
 import tailwindTheme from 'tailwindcss/stubs/config.full.js';
+import fs from "fs";
 
 const defaultOptions = {
   inShadowRoot: false, // setting used in shadow root or not ?
@@ -32,19 +33,21 @@ const mainFunction = (options: MultiThemePluginOptions) => (api: PluginAPI) => {
   // postcss, for doing low-level manipulation with PostCSS directly
 
   const {addBase, addComponents, addUtilities, config, e} = api;
+  const {isTailwind4,isBuildComponent} = options;
 
-  try {
-    // inject @base style
-    // @ts-ignore
-    const base = require('./base.js');
-    addBase(base);
+  if (!isBuildComponent){
+    try {
+      // inject @base style
+      const base = JSON.parse(fs.readFileSync( './base.js' ,{ encoding: 'utf8' })); // require('./base.json');
+      addBase(base);
 
-    // inject components - button
-    // @ts-ignore
-    const component = require('./component.js');
-    addComponents(component);
-  } catch (e) {
-    // console.log('error');
+      // inject components - button
+      const componentFile = isTailwind4 ? './component-v4.json' : './component.json'; // require('./component-v4.json');
+      const component = JSON.parse(fs.readFileSync( componentFile,{ encoding: 'utf8' }));
+      addComponents(component);
+    } catch (e) {
+      console.warn('error=',e);
+    }
   }
 
   // const themeInjector = colorFunctions.injectThemes(addBase, config, themes);
@@ -72,4 +75,4 @@ const consumerTonicUiPlugin = plugin.withOptions(
   }
 )
 
-export = consumerTonicUiPlugin;
+export default consumerTonicUiPlugin;

@@ -1,4 +1,4 @@
-const themeConfig = {
+export default {
   // Responsiveness
   screens: `ResolvableTo<ScreensConfig>`,
   supports: `ResolvableTo<Record<string, string>>`,
@@ -153,5 +153,4 @@ const themeConfig = {
   transitionDuration: `ResolvableTo<KeyValuePair>`,
   willChange: `ResolvableTo<KeyValuePair>`,
   content: `ResolvableTo<KeyValuePair>`,
-}
-module.exports = themeConfig;
+};

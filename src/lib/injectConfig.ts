@@ -387,7 +387,7 @@ const resolveAllProps = (extend: ThemeConfig, api: PluginAPI) => {
 export const injectConfig = (option: MultiThemePluginOptions, api: PluginAPI) => {
 
   const {addBase} = api;
-  const {settings = [], defaultTheme, themes, inShadowRoot, tonicUiTheme, tailwindTheme} = option;
+  const {settings = [], defaultTheme, themes = [], inShadowRoot, tonicUiTheme, tailwindTheme} = option;
   const rootOrHost = inShadowRoot ? ':host' : ':root';
 
   // defaultTheme :root setting
@@ -412,6 +412,7 @@ export const injectConfig = (option: MultiThemePluginOptions, api: PluginAPI) =>
   }
 
   Array.isArray(themes) && themes.forEach(theme => {
+    if (!theme) return;
     if (!isThemeActive(settings, theme.name)) return;
 
     const {mediaQuery, selectors = []} = theme;

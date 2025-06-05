@@ -1,8 +1,9 @@
-const gen_default_theme = require('@consumer-tonic-ui/design-system/default_gen_default_theme.json');
-const default_button_gen_float = require('@consumer-tonic-ui/design-system/default_button_gen_float.json');
-const default_button_gen_default_theme = require('@consumer-tonic-ui/design-system/default_button_gen_default_theme.json');
-const default_gen_float = require('@consumer-tonic-ui/design-system/default_gen_float.json');
-const dark_default_theme = require('@consumer-tonic-ui/design-system/dark_gen_default_theme.json');
+/* eslint-disable camelcase */
+import gen_default_theme from '@consumer-tonic-ui/design-system/default_gen_default_theme.json';
+import default_button_gen_float from '@consumer-tonic-ui/design-system/default_button_gen_float.json';
+import default_button_gen_default_theme from '@consumer-tonic-ui/design-system/default_button_gen_default_theme.json';
+import default_gen_float from '@consumer-tonic-ui/design-system/default_gen_float.json';
+import dark_default_theme from '@consumer-tonic-ui/design-system/dark_gen_default_theme.json';
 
 const pwmTheme = {
   name: 'pwm',
@@ -213,302 +214,302 @@ const pwmTheme = {
       content: '0px 0px 12px rgba(0, 0, 0, 0.04)',
     },
   },
-}
+};
 
 const idpPortalTheme = {
   name: 'idpPortal',
   selectors: [`[data-theme="idpPortal"]`],
   extend: {
     lineHeight: {
-      "16p": "16px",
-      "17p": "17px",
-      "14p": "14px",
+      '16p': '16px',
+      '17p': '17px',
+      '14p': '14px',
     },
     fontFamily: {
       body: [
-        "Roboto",
-        "Microsoft JhengHei UI",
-        "Microsoft JhengHei",
-        "Heiti TC Light",
-        "Arial",
-        "Helvetica",
-        "sans-serif",
+        'Roboto',
+        'Microsoft JhengHei UI',
+        'Microsoft JhengHei',
+        'Heiti TC Light',
+        'Arial',
+        'Helvetica',
+        'sans-serif',
       ],
     },
     colors: {
-      tPrimary: "#222222",
-      tSecondary: "#555555",
-      tLink: "#0074E8",
-      tNote: "#8E8E8E",
-      tSafe: "#00A91D",
-      tDanger: "#ED0008",
-      tWhite: "#FFF",
+      tPrimary: '#222222',
+      tSecondary: '#555555',
+      tLink: '#0074E8',
+      tNote: '#8E8E8E',
+      tSafe: '#00A91D',
+      tDanger: '#ED0008',
+      tWhite: '#FFF',
       bgGray: {
-        light: "#F6F6F6",
-        dark: "#303030",
-        H0S0L96: "#F6F6F6",
-        H0S0L19: "#303030",
+        light: '#F6F6F6',
+        dark: '#303030',
+        H0S0L96: '#F6F6F6',
+        H0S0L19: '#303030',
       },
-      tDisabled: "#ADADAD",
-      borderRed: "#D71920",
-      borderOrange: "#FF7708",
-      borderPurple: "#8E78FF",
-      borderPrimary: "#C9C9C9",
-      borderSecondary: "#8E8E8E",
-      bgPink: "#8E78FF",
-      bgBlue: "#2E96FF",
-      bgLightRiver: "#E5F2FF",
-      bgWhite: "#FFF",
-      blue50: "#2E96FF", // for PWM pages
-      gray20: "#F2F2F2", // for PWM pages
-      gray30: "#C9C9C9", // for PWM pages
-      gray40: "#ADADAD", // for PWM pages
-      gray50: "#8E8E8E", // for PWM pages
-      gray60: "#555555", // for PWM pages
-      gray90: "#222222", // for PWM pages
-      toast: "rgba(34, 34, 34, 0.9)", // for PWM pages
-      trendRed: "#D71920", // for PWM pages
-      errorRed: "#ED0008", // for PWM pages
-      warning: "#F26500", // for PWM pages
+      tDisabled: '#ADADAD',
+      borderRed: '#D71920',
+      borderOrange: '#FF7708',
+      borderPurple: '#8E78FF',
+      borderPrimary: '#C9C9C9',
+      borderSecondary: '#8E8E8E',
+      bgPink: '#8E78FF',
+      bgBlue: '#2E96FF',
+      bgLightRiver: '#E5F2FF',
+      bgWhite: '#FFF',
+      blue50: '#2E96FF', // for PWM pages
+      gray20: '#F2F2F2', // for PWM pages
+      gray30: '#C9C9C9', // for PWM pages
+      gray40: '#ADADAD', // for PWM pages
+      gray50: '#8E8E8E', // for PWM pages
+      gray60: '#555555', // for PWM pages
+      gray90: '#222222', // for PWM pages
+      toast: 'rgba(34, 34, 34, 0.9)', // for PWM pages
+      trendRed: '#D71920', // for PWM pages
+      errorRed: '#ED0008', // for PWM pages
+      warning: '#F26500', // for PWM pages
     },
     boxShadow: {
-      "card-hover":
-        "0px 8px 16px 4px rgba(0, 0, 0, 0.16), 0px 0px 4px rgba(0, 0, 0, 0.06)",
-      content: "0px 0px 12px rgba(0, 0, 0, 0.04)", // for PWM pages
+      'card-hover':
+        '0px 8px 16px 4px rgba(0, 0, 0, 0.16), 0px 0px 4px rgba(0, 0, 0, 0.06)',
+      'content': '0px 0px 12px rgba(0, 0, 0, 0.04)', // for PWM pages
     },
     gridTemplateColumns: {
-      fluid: "repeat(auto-fill, minmax(236px, 1fr))",
+      fluid: 'repeat(auto-fill, minmax(236px, 1fr))',
     },
     keyframes: {
       fadeIn: {
-        "0%": {opacity: 0},
-        "100%": {opacity: 1},
+        '0%': {opacity: 0},
+        '100%': {opacity: 1},
       },
       slideInRight: {
-        "0%": {transform: "translateX(100%)"},
-        "100%": {transform: "translateX(0)"},
+        '0%': {transform: 'translateX(100%)'},
+        '100%': {transform: 'translateX(0)'},
       },
     },
     animation: {
-      "fade-in": "fadeIn 0.5s ease-in-out",
+      'fade-in': 'fadeIn 0.5s ease-in-out',
     },
     screens: {
-      phone: "640px",
-      tablet: "800px",
-      desktop: "960px",
-      "large-desktop": "1024px",
-      "larger-desktop": "1280px",
-      "pwm-sm": {max: "375px"}, // for PWM pages
-      "pwm-md": "880px", // for PWM pages
-      "pwm-tablet": {max: "880px"}, // For PWM password check
-      "pwm-lg": "1280px", // for PWM pages
-      "pwm-xl": "2560px", // for PWM pages
+      'phone': '640px',
+      'tablet': '800px',
+      'desktop': '960px',
+      'large-desktop': '1024px',
+      'larger-desktop': '1280px',
+      'pwm-sm': {max: '375px'}, // for PWM pages
+      'pwm-md': '880px', // for PWM pages
+      'pwm-tablet': {max: '880px'}, // For PWM password check
+      'pwm-lg': '1280px', // for PWM pages
+      'pwm-xl': '2560px', // for PWM pages
     },
     fontSize: {
-      base: "1rem", // for PWM pages
+      base: '1rem', // for PWM pages
       H1B: [
         // for PWM pages
-        "3rem", // 48px
+        '3rem', // 48px
         {
-          fontWeight: "700",
-          lineHeight: "56px",
+          fontWeight: '700',
+          lineHeight: '56px',
         },
       ],
       H1SB: [
         // for PWM pages
-        "3rem", // 48px
+        '3rem', // 48px
         {
-          fontWeight: "600", // SemiBold
-          lineHeight: "3.515625rem", // 56.25px
+          fontWeight: '600', // SemiBold
+          lineHeight: '3.515625rem', // 56.25px
         },
       ],
       H3B: [
         // for PWM pages
-        "2.25rem", // 36px
+        '2.25rem', // 36px
         {
-          fontWeight: "700", // Bold
-          lineHeight: "2.636875rem", // 42.19px
+          fontWeight: '700', // Bold
+          lineHeight: '2.636875rem', // 42.19px
         },
       ],
       H4R: [
         // for PWM pages
-        "2rem", // 32px
+        '2rem', // 32px
         {
-          fontWeight: "400",
-          lineHeight: "37.5px",
+          fontWeight: '400',
+          lineHeight: '37.5px',
         },
       ],
       H4B: [
         // for PWM pages
-        "2rem", // 32px
+        '2rem', // 32px
         {
-          fontWeight: "700",
-          lineHeight: "37.5px",
+          fontWeight: '700',
+          lineHeight: '37.5px',
         },
       ],
       H5SB: [
         // for PWM pages
-        "1.75rem", // 28px
+        '1.75rem', // 28px
         {
-          fontWeight: "600",
-          lineHeight: "32.81px",
+          fontWeight: '600',
+          lineHeight: '32.81px',
         },
       ],
       H5B: [
         // for PWM pages
-        "1.75rem", // 28px
+        '1.75rem', // 28px
         {
-          fontWeight: "700",
-          lineHeight: "32.81px",
+          fontWeight: '700',
+          lineHeight: '32.81px',
         },
       ],
       H6R: [
         // for PWM pages
-        "1.5rem", // 24px
+        '1.5rem', // 24px
         {
-          fontWeight: "400",
-          lineHeight: "1.758125rem",
+          fontWeight: '400',
+          lineHeight: '1.758125rem',
         },
       ],
       H6B: [
         // for PWM pages
-        "1.5rem", // 24px
+        '1.5rem', // 24px
         {
-          fontWeight: "700",
-          lineHeight: "1.758125rem",
+          fontWeight: '700',
+          lineHeight: '1.758125rem',
         },
       ],
       H6SB: [
         // for PWM pages
-        "1.5rem", // 24px
+        '1.5rem', // 24px
         {
-          fontWeight: "600", // SemiBold
-          lineHeight: "1.758125rem", // 28.13px
+          fontWeight: '600', // SemiBold
+          lineHeight: '1.758125rem', // 28.13px
         },
       ],
       P12R: [
         // for PWM pages
-        "0.75rem", // 12px
+        '0.75rem', // 12px
         {
-          fontWeight: "400",
-          lineHeight: "0.87875rem", // 14.06px
+          fontWeight: '400',
+          lineHeight: '0.87875rem', // 14.06px
         },
       ],
       P12SB: [
         // for PWM pages
-        "0.75rem", // 12px
+        '0.75rem', // 12px
         {
-          fontWeight: "600",
-          lineHeight: "0.87875rem", // 14.06px
+          fontWeight: '600',
+          lineHeight: '0.87875rem', // 14.06px
         },
       ],
       P12B: [
         // for PWM pages
-        "0.75rem", // 12px
+        '0.75rem', // 12px
         {
-          fontWeight: "700",
-          lineHeight: "0.87875rem", // 14.06px
+          fontWeight: '700',
+          lineHeight: '0.87875rem', // 14.06px
         },
       ],
       P14R: [
         // for PWM pages
-        "0.875rem", // 14px
+        '0.875rem', // 14px
         {
-          fontWeight: "400",
-          lineHeight: "1.025625rem", // 16.41px
+          fontWeight: '400',
+          lineHeight: '1.025625rem', // 16.41px
         },
       ],
       P14B: [
         // for PWM pages
-        "0.875rem", // 14px
+        '0.875rem', // 14px
         {
-          fontWeight: "700",
-          lineHeight: "1.025625rem", // 16.41px
+          fontWeight: '700',
+          lineHeight: '1.025625rem', // 16.41px
         },
       ],
       P16R: [
         // for PWM pages
-        "1rem", // 16px
+        '1rem', // 16px
         {
-          fontWeight: "400",
-          lineHeight: "1.17875rem",
+          fontWeight: '400',
+          lineHeight: '1.17875rem',
         },
       ],
       P16SB: [
         // for PWM pages
-        "1rem", // 16px
+        '1rem', // 16px
         {
-          fontWeight: "600",
-          lineHeight: "1.17875rem",
+          fontWeight: '600',
+          lineHeight: '1.17875rem',
         },
       ],
       P16B: [
         // for PWM pages
-        "1rem", // 16px
+        '1rem', // 16px
         {
-          fontWeight: "700",
-          lineHeight: "1.17875rem",
+          fontWeight: '700',
+          lineHeight: '1.17875rem',
         },
       ],
       P18R: [
         // for PWM pages
-        "1.125rem", // 18px
+        '1.125rem', // 18px
         {
-          fontWeight: "400",
-          lineHeight: "1.3125rem",
+          fontWeight: '400',
+          lineHeight: '1.3125rem',
         },
       ],
       P18SB: [
         // for PWM pages
-        "1.125rem", // 18px
+        '1.125rem', // 18px
         {
-          fontWeight: "600",
-          lineHeight: "21px",
+          fontWeight: '600',
+          lineHeight: '21px',
         },
       ],
       P18B: [
         // for PWM pages
-        "1.125rem", // 18px
+        '1.125rem', // 18px
         {
-          fontWeight: "700",
-          lineHeight: "21px",
+          fontWeight: '700',
+          lineHeight: '21px',
         },
       ],
       P20R: [
         // for PWM pages
-        "1.25rem", // 20px
+        '1.25rem', // 20px
         {
-          fontWeight: "400",
-          lineHeight: "28px",
+          fontWeight: '400',
+          lineHeight: '28px',
         },
       ],
       P20SB: [
         // for PWM pages
-        "1.25rem", // 20px
+        '1.25rem', // 20px
         {
-          fontWeight: "600",
-          lineHeight: "28px",
+          fontWeight: '600',
+          lineHeight: '28px',
         },
       ],
       P20B: [
         // for PWM pages
-        "1.25rem", // 20px
+        '1.25rem', // 20px
         {
-          fontWeight: "700",
-          lineHeight: "28px",
+          fontWeight: '700',
+          lineHeight: '28px',
         },
       ],
       P20BLH: [
         // for PWM pages
-        "1.25rem", // 20px
+        '1.25rem', // 20px
         {
-          fontWeight: "700",
-          lineHeight: "28px",
+          fontWeight: '700',
+          lineHeight: '28px',
         },
       ],
     },
   },
-}
+};
 
 const idpExtraTheme = {
   name: 'idpExtra',
@@ -537,7 +538,7 @@ const idpExtraTheme = {
       'active-emphasis-end': 'var(--colors--tcsmd-ref-palette-red-90)',
     },
   },
-}
+};
 
 const idpExtensionDarkTheme = {
   name: 'idpExtensionDark',
@@ -548,11 +549,11 @@ const idpExtensionDarkTheme = {
       roboto: ['Roboto', 'sans-serif'],
     },
     fontSize: {
-      xs: ['12px', '16px'],
-      sm: ['14px', '20px'],
-      base: ['16px', '24px'],
-      lg: ['18px', '28px'],
-      xl: ['20px', '28px'],
+      'xs': ['12px', '16px'],
+      'sm': ['14px', '20px'],
+      'base': ['16px', '24px'],
+      'lg': ['18px', '28px'],
+      'xl': ['20px', '28px'],
       '2xl': ['24px', '32px'],
       '2.5xl': ['28px', 'normal'],
       '3xl': ['30px', '36px'],
@@ -612,20 +613,20 @@ const idpExtensionDarkTheme = {
       10: '40px',
     },
     borderRadius: {
-      none: '0px',
-      sm: '2px',
-      DEFAULT: '4px',
-      md: '6px',
-      lg: '8px',
-      xl: '12px',
+      'none': '0px',
+      'sm': '2px',
+      'DEFAULT': '4px',
+      'md': '6px',
+      'lg': '8px',
+      'xl': '12px',
       '2xl': '16px',
       '3xl': '24px',
-      full: '9999px',
+      'full': '9999px',
     },
     colors: {
-      primary: '#222',
-      secondary: '#555',
-      tertiary: '#8E8E8E',
+      'primary': '#222',
+      'secondary': '#555',
+      'tertiary': '#8E8E8E',
       'gray-80': '#303030',
       'trend-red': '#D71920',
     },
@@ -663,7 +664,7 @@ const idpExtensionDarkTheme = {
       'popup-fade-in': 'popupFadeInAnimation 0.5s ease',
     },
   },
-}
+};
 
 const idpExtensionJaTheme = {
   name: 'idpExtensionJa',
@@ -673,11 +674,11 @@ const idpExtensionJaTheme = {
       roboto: ['Roboto', 'sans-serif'],
     },
     fontSize: {
-      xs: ['10px', '16px'],
-      sm: ['12px', '20px'],
-      base: ['14px', '24px'],
-      lg: ['16px', '28px'],
-      xl: ['18px', '28px'],
+      'xs': ['10px', '16px'],
+      'sm': ['12px', '20px'],
+      'base': ['14px', '24px'],
+      'lg': ['16px', '28px'],
+      'xl': ['18px', '28px'],
       '2xl': ['22px', '32px'],
       '2.5xl': ['26px', 'normal'],
       '3xl': ['28px', '36px'],
@@ -737,20 +738,20 @@ const idpExtensionJaTheme = {
       10: '40px',
     },
     borderRadius: {
-      none: '0px',
-      sm: '2px',
-      DEFAULT: '4px',
-      md: '6px',
-      lg: '8px',
-      xl: '12px',
+      'none': '0px',
+      'sm': '2px',
+      'DEFAULT': '4px',
+      'md': '6px',
+      'lg': '8px',
+      'xl': '12px',
       '2xl': '16px',
       '3xl': '24px',
-      full: '9999px',
+      'full': '9999px',
     },
     colors: {
-      primary: '#222',
-      secondary: '#555',
-      tertiary: '#8E8E8E',
+      'primary': '#222',
+      'secondary': '#555',
+      'tertiary': '#8E8E8E',
       'gray-80': '#303030',
       'trend-red': '#D71920',
     },
@@ -788,7 +789,7 @@ const idpExtensionJaTheme = {
       'popup-fade-in': 'popupFadeInAnimation 0.5s ease',
     },
   },
-}
+};
 
 const newsTheme = {
   name: 'news',
@@ -839,43 +840,43 @@ const newsTheme = {
 
       // Visual Designer defined FontSize with LightHeight
       // ref: https://www.figma.com/file/OAP5nxLps0vMSCtLgugNZ9/TM.com-Templates?node-id=2310%3A17828
-      48: [
+      '48': [
         '3rem',
         {
           lineHeight: '1.1',
         },
       ],
-      32: [
+      '32': [
         '2rem',
         {
           lineHeight: '1.1',
         },
       ],
-      24: [
+      '24': [
         '1.5rem',
         {
           lineHeight: '1.1',
         },
       ],
-      18: [
+      '18': [
         '1.125rem',
         {
           lineHeight: '1.5',
         },
       ],
-      16: [
+      '16': [
         '1rem',
         {
           lineHeight: '1.5',
         },
       ],
-      14: [
+      '14': [
         '14px',
         {
           lineHeight: '16px',
         },
       ],
-      12.5: [
+      '12.5': [
         '12.5px',
         {
           lineHeight: '17.02px',
@@ -913,10 +914,10 @@ const newsTheme = {
     screens: {
       'sm-mobile': {max: '340px'},
       'mobile-f': {max: '720px'},
-      mobile: {max: '640px'},
-      tablet: {max: '1150px'},
-      sm: {max: '1280px', min: '641px'},
-      xl: {min: '1281px'},
+      'mobile': {max: '640px'},
+      'tablet': {max: '1150px'},
+      'sm': {max: '1280px', min: '641px'},
+      'xl': {min: '1281px'},
     },
     ringColor: {
       gray: '#C9C9C9',
@@ -925,7 +926,7 @@ const newsTheme = {
       21: '21',
     },
   },
-}
+};
 
 const consumerDefaultTheme = {
   name: 'consumerDefault',
@@ -965,7 +966,7 @@ const consumerDefaultTheme = {
     keyframes: {
       'rotating': {
         '100%': {
-          transform: 'rotate(360deg)'
+          transform: 'rotate(360deg)',
         },
       },
       'progress-circular-dash': {
@@ -998,21 +999,21 @@ const consumerDefaultTheme = {
       en: '1.2',
     },
     height: {
-      'checkbox-sm': `calc(${default_button_gen_float["tcsmd-comp-checkbox-size-sm"]} - 1px* 2)`,
-      'checkbox-md': `calc(${default_button_gen_float["tcsmd-comp-checkbox-size-md"]} - 3px* 2)`,
-      'checkbox-lg': `calc(${default_button_gen_float["tcsmd-comp-checkbox-size-lg"]} - 4px* 2)`,
+      'checkbox-sm': `calc(${default_button_gen_float['tcsmd-comp-checkbox-size-sm']} - 1px* 2)`,
+      'checkbox-md': `calc(${default_button_gen_float['tcsmd-comp-checkbox-size-md']} - 3px* 2)`,
+      'checkbox-lg': `calc(${default_button_gen_float['tcsmd-comp-checkbox-size-lg']} - 4px* 2)`,
     },
     width: {
-      'checkbox-sm': `calc(${default_button_gen_float["tcsmd-comp-checkbox-size-sm"]} - 1px* 2)`,
-      'checkbox-md': `calc(${default_button_gen_float["tcsmd-comp-checkbox-size-md"]} - 3px* 2)`,
-      'checkbox-lg': `calc(${default_button_gen_float["tcsmd-comp-checkbox-size-lg"]} - 4px* 2)`,
+      'checkbox-sm': `calc(${default_button_gen_float['tcsmd-comp-checkbox-size-sm']} - 1px* 2)`,
+      'checkbox-md': `calc(${default_button_gen_float['tcsmd-comp-checkbox-size-md']} - 3px* 2)`,
+      'checkbox-lg': `calc(${default_button_gen_float['tcsmd-comp-checkbox-size-lg']} - 4px* 2)`,
     },
     minHeight: {
-      "checkbox-sm": default_button_gen_float["tcsmd-comp-checkbox-size-sm"],
-      'btn-xs': default_button_gen_float["tcsmd-comp-button-size-xs"],
-      'btn-sm': default_button_gen_float["tcsmd-comp-button-size-sm"],
-      'btn-md': default_button_gen_float["tcsmd-comp-button-size-md"],
-      'btn-lg': default_button_gen_float["tcsmd-comp-button-size-lg"],
+      'checkbox-sm': default_button_gen_float['tcsmd-comp-checkbox-size-sm'],
+      'btn-xs': default_button_gen_float['tcsmd-comp-button-size-xs'],
+      'btn-sm': default_button_gen_float['tcsmd-comp-button-size-sm'],
+      'btn-md': default_button_gen_float['tcsmd-comp-button-size-md'],
+      'btn-lg': default_button_gen_float['tcsmd-comp-button-size-lg'],
     },
     minWidth: {
       'btn-xs': '60px',
@@ -1045,25 +1046,23 @@ const consumerDefaultTheme = {
     borderRadius: {
       none: '0px',
       // xs: default_gen_float["tcsmd-ref-radius-xs"],
-      DEFAULT: default_gen_float["tcsmd-ref-radius-sm"],
+      DEFAULT: default_gen_float['tcsmd-ref-radius-sm'],
       // sm: default_gen_float["tcsmd-ref-radius-sm"],
       // md: default_gen_float["tcsmd-ref-radius-md"],
       // lg: default_gen_float["tcsmd-ref-radius-lg"],
-      full: default_gen_float["tcsmd-ref-radius-circle"],
+      full: default_gen_float['tcsmd-ref-radius-circle'],
 
       ...Object.entries(default_gen_float)
-        .reduce((pre, curr = ['', '']) => {
+          .reduce((pre, curr = ['', '']) => {
+            const [key, value] = curr;
 
-          const [key, value] = curr;
-
-          if (key.includes('radius') && key.split('-radius-')[1])
-            return {
-              ...pre,
-              [key.split('-radius-')[1]]: value
-            }
-          else return pre
-
-        }, {})
+            if (key.includes('radius') && key.split('-radius-')[1]) {
+              return {
+                ...pre,
+                [key.split('-radius-')[1]]: value,
+              };
+            } else return pre;
+          }, {}),
     },
     borderWidth: {
       // 'extra-thin': default_gen_float["tcsmd-ref-border-extra-thin"],
@@ -1071,18 +1070,16 @@ const consumerDefaultTheme = {
       // 'thick': default_gen_float["tcsmd-ref-border-thick"],
 
       ...Object.entries(default_gen_float)
-        .reduce((pre, curr = ['', '']) => {
+          .reduce((pre, curr = ['', '']) => {
+            const [key, value] = curr;
 
-          const [key, value] = curr;
-
-          if (key.includes('border') && key.split('-border-')[1])
-            return {
-              ...pre,
-              [key.split('-border-')[1]]: value
-            }
-          else return pre
-
-        }, {})
+            if (key.includes('border') && key.split('-border-')[1]) {
+              return {
+                ...pre,
+                [key.split('-border-')[1]]: value,
+              };
+            } else return pre;
+          }, {}),
     },
     colors: {
       'transparent': 'transparent',
@@ -1119,10 +1116,10 @@ const consumerDefaultTheme = {
 
       // generated
       ...gen_default_theme,
-      ...default_button_gen_default_theme
+      ...default_button_gen_default_theme,
     },
   },
-}
+};
 
 const consumerDarkTheme = {
   name: 'consumerDark',
@@ -1130,12 +1127,12 @@ const consumerDarkTheme = {
   // mediaQuery: '@media (prefers-color-scheme: dark)',
   extend: {
     colors: {
-      ...dark_default_theme
-    }
+      ...dark_default_theme,
+    },
   },
-}
+};
 
-module.exports = {
+export {
   pwmTheme,
   idpPortalTheme,
   idpExtraTheme,
@@ -1143,5 +1140,5 @@ module.exports = {
   idpExtensionJaTheme,
   newsTheme,
   consumerDefaultTheme,
-  consumerDarkTheme
-}
+  consumerDarkTheme,
+};
